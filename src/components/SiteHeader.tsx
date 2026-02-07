@@ -14,6 +14,7 @@ const nav = [
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
+  const toggleRef = useRef<HTMLButtonElement | null>(null); // ✅ LISÄTTY
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -22,6 +23,11 @@ export function SiteHeader() {
 
     const onMouseDown = (e: MouseEvent) => {
       if (!open) return;
+
+      // ✅ LISÄTTY: jos painettiin hamburger/X-nappia, älä sulje tässä
+      const btn = toggleRef.current;
+      if (btn && btn.contains(e.target as Node)) return;
+
       const el = panelRef.current;
       if (el && !el.contains(e.target as Node)) setOpen(false);
     };
@@ -47,21 +53,32 @@ export function SiteHeader() {
             KELMUTUS
           </Link>
 
-          {/* DESKTOP NAV (ennallaan) */}
-          <nav className="no-scrollbar max-w-[70%] overflow-x-auto hidden md:block">
-            <ul className="flex items-center gap-4 whitespace-nowrap font-serif text-[15px] text-white/95 drop-shadow sm:gap-6 sm:text-[16px]">
-              {nav.map((i) => (
-                <li key={i.href}>
-                  <Link href={i.href} className="hover:text-white">
-                    {i.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* DESKTOP: NAV + CTA yhtenä oikeaan reunaan (siirto oikealle md:-mr-6) */}
+          <div className="hidden md:flex items-center gap-6 md:-mr-6">
+            <nav className="block">
+              <ul className="flex items-center gap-4 whitespace-nowrap font-serif text-[15px] text-white/95 drop-shadow sm:gap-6 sm:text-[16px]">
+                {nav.map((i) => (
+                  <li key={i.href}>
+                    <Link href={i.href} className="hover:text-white">
+                      {i.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <Link
+              href="/#yhteys"
+              className="inline-flex items-center justify-center whitespace-nowrap rounded-md bg-[#f08a00] px-4 py-2 text-sm font-semibold text-white shadow hover:bg-[#e27f00]"
+              onClick={() => setOpen(false)}
+            >
+              Ota yhteyttä
+            </Link>
+          </div>
 
           {/* MOBILE HAMBURGER */}
           <button
+            ref={toggleRef} // ✅ LISÄTTY
             type="button"
             className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white/95 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             aria-label={open ? "Sulje valikko" : "Avaa valikko"}
@@ -71,7 +88,13 @@ export function SiteHeader() {
           >
             {open ? (
               // X icon
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
                 <path
                   d="M6 6l12 12M18 6L6 18"
                   stroke="currentColor"
@@ -81,7 +104,13 @@ export function SiteHeader() {
               </svg>
             ) : (
               // Hamburger icon
-              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                aria-hidden="true"
+              >
                 <path
                   d="M4 7h16M4 12h16M4 17h16"
                   stroke="currentColor"
@@ -117,6 +146,17 @@ export function SiteHeader() {
                   </Link>
                 </li>
               ))}
+
+              {/* MOBILE CTA */}
+              <li className="mt-1">
+                <Link
+                  href="/#yhteys"
+                  className="block rounded-lg px-4 py-3 font-semibold text-white bg-[#f08a00] hover:bg-[#e27f00] transition"
+                  onClick={() => setOpen(false)}
+                >
+                  Ota yhteyttä
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

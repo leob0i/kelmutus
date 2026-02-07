@@ -161,14 +161,7 @@ export default function HomePage() {
             päällä varmistavat sujuvan toteutuksen ja korkean asiakastytyväisyyden.
           </p>
 
-          <div className="mt-10">
-            <Link
-              href="/yhteystiedot"
-              className="inline-flex items-center justify-center rounded-md bg-[#f08a00] px-10 py-3 text-xl font-semibold text-white shadow hover:bg-[#e27f00]"
-            >
-              Ota yhteyttä
-            </Link>
-          </div>
+          
         </div>
       </section>
 
@@ -199,7 +192,24 @@ export default function HomePage() {
       </p>
     </div>
 
-    <form className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-slate-900/70 p-6 shadow-xl backdrop-blur">
+   <form
+  action="/api/contact"
+  method="POST"
+  encType="multipart/form-data"
+  className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-slate-900/70 p-6 shadow-xl backdrop-blur"
+>
+  <input type="hidden" name="source" value="etusivu / yhteys" />
+  <input type="hidden" name="redirect" value="/#yhteys" />
+
+  {/* Honeypot */}
+  <input
+    type="text"
+    name="website"
+    className="hidden"
+    tabIndex={-1}
+    autoComplete="off"
+  />
+
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-1.5 text-sm">
           <label
@@ -287,7 +297,7 @@ export default function HomePage() {
 
         />
         <p className="text-[11px] text-slate-400">
-          Voit liittää kuvan tai pdf-tiedoston.
+          Voit liittää kuvan tai pdf-tiedoston. (max 2MB)
         </p>
       </div>
 

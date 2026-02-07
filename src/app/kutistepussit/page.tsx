@@ -131,16 +131,6 @@ export default function KutistepussitPage() {
               </p>
             </div>
           </div>
-
-          {/* CTA */}
-          <div id="tarjous" className="mt-14 flex justify-center">
-            <a
-              href="#"
-              className="inline-flex items-center justify-center rounded-md bg-orange-500 px-10 py-4 font-serif text-2xl text-white shadow-md transition hover:bg-orange-600"
-            >
-              Pyydä tarjous - lähetä mitat
-            </a>
-          </div>
         </section>
 
 {/* Yhteydenottolomake */}
@@ -170,7 +160,24 @@ export default function KutistepussitPage() {
       </p>
     </div>
 
-    <form className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-slate-900/70 p-6 shadow-xl backdrop-blur">
+    <form
+  action="/api/contact"
+  method="POST"
+  encType="multipart/form-data"
+  className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-slate-900/70 p-6 shadow-xl backdrop-blur"
+>
+  <input type="hidden" name="source" value="toinen välilehti / yhteys" />
+  <input type="hidden" name="redirect" value="/#yhteys" />
+
+  {/* Honeypot */}
+  <input
+    type="text"
+    name="website"
+    className="hidden"
+    tabIndex={-1}
+    autoComplete="off"
+  />
+
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-1.5 text-sm">
           <label
@@ -258,7 +265,7 @@ export default function KutistepussitPage() {
 
         />
         <p className="text-[11px] text-slate-400">
-          Voit liittää kuvan tai pdf-tiedoston.
+          Voit liittää kuvan tai pdf-tiedoston. (max 2MB)
         </p>
       </div>
 
