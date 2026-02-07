@@ -8,7 +8,7 @@ export default function KutistepussitPage() {
     <>
       <main className="bg-white text-black">
         {/* HERO */}
-        <section className="relative min-h-[78vh] overflow-hidden">
+        <section className="relative min-h-[72vh] md:min-h-[78vh] overflow-hidden">
           {/* Hero taustakuva */}
           <Image
             src="/saxdor.png"
@@ -27,7 +27,7 @@ export default function KutistepussitPage() {
           </div>
 
           {/* Hero content */}
-          <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-6xl flex-col items-start justify-center px-6 pt-24">
+          <div className="relative z-10 mx-auto flex min-h-[72vh] md:min-h-[78vh] max-w-6xl flex-col items-start justify-center px-6 pt-24">
             <h1 className="font-serif text-4xl leading-tight text-white md:text-6xl">
               kutistepussit mittojen mukaan
             </h1>
