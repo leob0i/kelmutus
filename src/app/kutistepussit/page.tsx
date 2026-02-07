@@ -92,7 +92,7 @@ export default function KutistepussitPage() {
             <div className="md:pt-8">
               <div className="relative w-full overflow-hidden bg-gray-200">
                 <Image
-                  src="/kutistepussit-kaavio.png"
+                  src="/Finnmaster.png"
                   alt="Kutistepussit kaavio"
                   width={1200}
                   height={900}
@@ -106,7 +106,7 @@ export default function KutistepussitPage() {
           <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
             <div className="relative w-full overflow-hidden bg-gray-200">
               <Image
-                src="/kutistepussit-vene.jpg"
+                src="/buster.l.jpg"
                 alt="Vene kutistepussissa"
                 width={1200}
                 height={800}

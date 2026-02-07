@@ -19,19 +19,20 @@ export default function HomePage() {
         </video>
 
         {/* sinertävä overlay kuten kuvassa */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#4f90b4]/80 via-[#5aa0c0]/55 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#4f90b4]/60 via-[#5aa0c0]/35 to-transparent" />
+
 
         {/* header on absolute; varataan tilaa */}
         <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-24">
           
 
-          <div className="mt-40 max-w-3xl">
+          <div className="mt-50 max-w-3xl">
             <h1 className="font-serif text-[44px] leading-[1.05] text-white drop-shadow sm:text-[56px]">
               Veneesi ansaitsee talven parhaat vaatteet
             </h1>
             <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-white/95 drop-shadow sm:text-[18px]">
               Hyvin suojattu vene säilyttää arvonsa, pintansa ja edustavuutensa.
-              tehdään veneesi mukaan, ei toisin päin.
+              tehdään veneesi mukaan, ei toisin päin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.
             </p>
           </div>
         </div>
@@ -40,7 +41,8 @@ export default function HomePage() {
       {/* Valmiit kutistepussit */}
       <section className="relative overflow-hidden border-b border-black/10">
         <Image src="/kutistepussit.jpg" alt="" fill className="object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/25 to-black/10" />
+<div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/15" />
+
 
         <div className="relative mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:grid-cols-[1fr_auto] sm:items-end">
           <div>
@@ -67,13 +69,15 @@ export default function HomePage() {
 
       {/* 2 korttia */ }
 <section className="border-b border-black/10">
-  <div className="grid w-full grid-cols-1 sm:grid-cols-2">
+  <div className="grid w-full grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 sm:divide-y-0 sm:divide-x sm:divide-white/10">
+
 
 
     {/* ENSIN: Teollisuus & laitteet (oli ennen oikealla) */}
     <div className="relative min-h-[260px] overflow-hidden">
       <Image src="/kelmutus.talo.jpg" alt="" fill className="object-cover object-[50%_23%]" />
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-black/70" />
+
       <div className="relative p-6 text-white">
         <h3 className="font-serif text-[28px]">Teollisuus &amp; laitteet</h3>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">
@@ -95,7 +99,8 @@ export default function HomePage() {
     {/* TOISENA: Kelmutus paikan päällä (oli ennen vasemmalla) */}
     <div className="relative min-h-[260px] overflow-hidden">
       <Image src="/kelmutetaan.jpg" alt="" fill className="object-cover object-[50%_20%]" />
-      <div className="absolute inset-0 bg-black/55" />
+      <div className="absolute inset-0 bg-black/65" />
+
       <div className="relative p-6 text-white">
         <h3 className="font-serif text-[28px]">Kelmutus paikan päällä</h3>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">

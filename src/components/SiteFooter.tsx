@@ -28,23 +28,20 @@ export function SiteFooter() {
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div className="font-serif text-[22px] tracking-wide">KELMUTUS</div>
 
-          <div className="flex items-center gap-4">
-            <Link href="#" aria-label="Instagram" className="text-white/90 hover:text-white">
-              <InstagramIcon className="h-6 w-6" />
-            </Link>
-            <Link href="#" aria-label="Facebook" className="text-white/90 hover:text-white">
+          <div className="flex items-center gap-4 sm:ml-auto">
+            <Link href="https://www.facebook.com/profile.php?id=61580610997021" aria-label="Facebook" className="text-white/90 hover:text-white">
               <FacebookIcon className="h-6 w-6" />
             </Link>
           </div>
 
           <div className="text-sm text-white/90">
-            <div>Puhelin: +358 12345678</div>
-            <div>Sähköposti: esimerkki@esimerkki.fi</div>
+            <div>Puhelin: +358 400283123</div>
+            <div>Sähköposti: jari@kelmutus.fi</div>
           </div>
         </div>
 
         <div className="mt-6 flex flex-col gap-2 border-t border-white/15 pt-4 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between">
-          <div>© 2025 Kelmutus.fi. Kaikki oikeudet pidätetään.</div>
+          <div>© 2026 Kelmutus.fi. Kaikki oikeudet pidätetään.</div>
           <div className="flex gap-3">
             <Link href="#" className="hover:text-white">Tietosuojaseloste</Link>
             <span>•</span>
