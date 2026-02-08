@@ -121,17 +121,42 @@ export default function KutistepussitPage() {
 
               <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
                 Tarjoamme korkealaatuisia ja kestäviä kelmuja. Palvelumme avulla
-                voit suojata arvokasta tavarasi säältä ja kuljetuksen
+                voit suojata arvokasta tavaraasi säältä ja kuljetuksen
                 aiheuttamilta vaurioilta. Luotettavat ja nopeat toimitukset
                 takaavat korkean asiakastyytyväisyyden.
               </p>
 
               <p className="mt-8 font-serif text-lg text-black/90">
-                35€ / m alle 10 m veneet. &nbsp;&nbsp; esim. Buster L 179,55 €
-              </p>
+  <span className="block">
+    Hinnat 45 € alv 0 % / m alle 10 m pulpettiveneet.
+  </span>
+
+  <span className="block mt-2">
+    esim. <span className="whitespace-nowrap">Buster L 230,80 €</span>
+  </span>
+</p>
+
             </div>
           </div>
+
+          {/* UUSI INFO (sama leveys kuin kuva+teksti -alue, EI koko sivun levyinen) */}
+<div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
+  <div className="md:col-span-2">
+    <p className="font-serif text-lg leading-relaxed text-black/90 max-w-none">
+  Hinnat sisältävät perustason suojauksen ja työn asiakkaan osoittamassa paikassa Pääkaupunkiseudulla. Mikäli tarvitset lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan.
+</p>
+
+<p className="mt-3 font-serif text-lg leading-relaxed text-black/90 max-w-none">
+  Kysy myös isommista veneistä ja useamman veneen kimppahinnoista!
+</p>
+
+
+  </div>
+</div>
+
         </section>
+
+        
 
 {/* Yhteydenottolomake */}
 <section id="yhteys" className="relative bg-slate-950 py-16 md:py-20">

@@ -32,7 +32,7 @@ export default function HomePage() {
             </h1>
             <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-white/95 drop-shadow sm:text-[18px]">
               Hyvin suojattu vene säilyttää arvonsa, pintansa ja edustavuutensa.
-              tehdään veneesi mukaan, ei toisin päin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.
+              Kelmutus tehdään veneesi mukaan eikä toisinpäin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.
             </p>
           </div>
         </div>
@@ -40,7 +40,7 @@ export default function HomePage() {
 
       {/* Valmiit kutistepussit */}
       <section className="relative overflow-hidden border-b border-black/10">
-        <Image src="/kutistepussit.jpg" alt="" fill className="object-cover" />
+        <Image src="/saxdor.png" alt="" fill className="object-cover" />
 <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/15" />
 
 
@@ -51,11 +51,11 @@ export default function HomePage() {
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/90">
               Mittojen mukaan tehdyt kutistepussit istuvat täydellisesti, suojaavat varmasti
-              ja näyttävät siistiltä. <br />
-              Vähemmän muovia, nopeampi asennus, nopea toimitus - lähetä mitat tai veneellä,
-              me hoidamme loput!
+              ja näyttävät siistiltä. 
+              Vähemmän muovia, nopeampi asennus, nopea toimitus.<br /><br /> Lähetä mitat tai veneen piirrustukset!
+              Me hoidamme loput!
             </p>
-            <div className="mt-6 font-serif text-white/95">Alk: 179€</div>
+           
           </div>
 
           <Link
@@ -104,10 +104,9 @@ export default function HomePage() {
       <div className="relative p-6 text-white">
         <h3 className="font-serif text-[28px]">Kelmutus paikan päällä</h3>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">
-          Aina ei riitä pelkkä valmis pussi, joskus vene pitää suojata siellä missä se on.
+          Pelkkä valmis pussi ei aina riitä, vaan joskus vene pitää suojata siellä missä se on.
           <br />
-          Tulemme tarvittaessa paikan päälle (eteläinen Suomi) ja teemme kelmutuksen valmiiksi,
-          vene puhtaaksi, kuivaksi ja tiukasti suojattuna talvea ja kuljetusta varten.
+          Tulemme tarvittaessa paikan päälle (eteläinen Suomi) ja kelmutamme veneen säilytystä tai kuljetusta varten.
         </p>
 
         <Link
@@ -130,7 +129,7 @@ export default function HomePage() {
             Nopea asennus, jämäkkä lopputulos.
           </h2>
           <p className="mt-2 text-sm text-slate-700">
-            Katso video kun Axopar 38 menee ketterästi kelmuun.
+            Katso video kun Axopar 28 menee ketterästi kelmuun. Kahden henkilön asennusaika 45 minuuttia! Hinta vain 358,80€
           </p>
 
           <div className="mx-auto mt-8 max-w-4xl">
@@ -187,8 +186,7 @@ export default function HomePage() {
       <p className="text-sm leading-relaxed text-slate-100 sm:text-base">
         Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta
         suojauksesta. Voit liittää mukaan kuvan, luonnoksen tai PDF-tiedoston
-        mittojen ja kohteen hahmottamiseksi. Palaamme sinulle mahdollisimman
-        pian.
+        mittojen ja kohteen hahmottamiseksi. Vastaamme sinulle mahdollisimman pian!
       </p>
     </div>
 
@@ -320,8 +318,7 @@ export default function HomePage() {
 
       <div className="flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:justify-between">
         <p className="text-[11px] leading-relaxed text-slate-400">
-          Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä tarjouksen
-          ja lisäkysymysten kanssa.
+          Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä.
         </p>
         <button
           type="submit"

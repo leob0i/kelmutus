@@ -26,10 +26,25 @@ export function SiteFooter() {
     <footer className="bg-[#071a43] text-white">
       <div className="mx-auto max-w-6xl px-4 py-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div className="font-serif text-[22px] tracking-wide">KELMUTUS</div>
+          <div>
+            <div className="font-serif text-[22px] tracking-wide">KELMUTUS</div>
+
+            {/* ✅ Yritystiedot näkyvästi mutta tyylikkäästi */}
+            <div className="mt-1 text-sm text-white/90">
+              <span className="font-medium text-white">ShrinkPro Finland oy</span>
+              <span className="mx-2 text-white/40">•</span>
+              <span>Y-tunnus: 3578472-2</span>
+            </div>
+          </div>
 
           <div className="flex items-center gap-4 sm:ml-auto">
-            <Link href="https://www.facebook.com/profile.php?id=61580610997021" aria-label="Facebook" className="text-white/90 hover:text-white">
+            <Link
+              href="https://www.facebook.com/profile.php?id=61580610997021"
+              aria-label="Facebook"
+              className="text-white/90 hover:text-white"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FacebookIcon className="h-6 w-6" />
             </Link>
           </div>
@@ -41,13 +56,23 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-6 flex flex-col gap-2 border-t border-white/15 pt-4 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between">
-          <div>© 2026 Kelmutus.fi. Kaikki oikeudet pidätetään.</div>
+          <div className="space-y-1">
+            <div>© 2026 Kelmutus.fi. Kaikki oikeudet pidätetään.</div>
+            <div>Hinnat esitetty ilman arvonlisäveroa (ALV 0 %).</div>
+          </div>
+
           <div className="flex gap-3">
-            <Link href="#" className="hover:text-white">Tietosuojaseloste</Link>
+            <Link href="/tietosuoja" className="hover:text-white">
+              Tietosuojaseloste
+            </Link>
             <span>•</span>
-            <Link href="#" className="hover:text-white">Evästeasetukset</Link>
+            <Link href="/evasteasetukset" className="hover:text-white">
+              Evästeasetukset
+            </Link>
             <span>•</span>
-            <Link href="#" className="hover:text-white">Käyttöehdot</Link>
+            <Link href="/kayttoehdot" className="hover:text-white">
+              Käyttöehdot
+            </Link>
           </div>
         </div>
       </div>
