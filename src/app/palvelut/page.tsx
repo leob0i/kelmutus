@@ -48,11 +48,11 @@ export default function PalvelutPage() {
         {/* Taustakuva + tumma overlay */}
         <div className="absolute inset-0">
           <Image
-            src="/gallery/isovene.jpg"
+            src="/gallery/isovene.sivu.jpg"
             alt=""
             fill
             sizes="100vw"
-            className="object-cover object-center scale-95"
+            className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-slate-950/70" />
@@ -81,9 +81,10 @@ export default function PalvelutPage() {
       </section>
 
      {/* PALVELUT */}
-<section id="palvelut" className="mx-auto max-w-6xl px-4 pt-6 pb-16 md:pt-8 md:pb-20">
+<section id="palvelut" className="mx-auto max-w-7xl px-4 pt-6 pb-16 md:pt-8 md:pb-20">
+
   {/* 4 korttia / sama rivi desktopissa + taustakuva tummalla overlayllä */}
-  <div className="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+  <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
     {services.map((s) => (
       <div
         key={s.title}
@@ -127,7 +128,33 @@ export default function PalvelutPage() {
       {/* HINNAT + ALAOSA (sinun pyytämä loppu) */}
       <section id="hinnat" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
        
-        
+        {/* UUSI BLOKKI #1: vasen kuva + oikea teksti (ennen "Kestävä ratkaisu") */}
+<div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+  <div className="relative w-full overflow-hidden bg-gray-200">
+    <Image
+      src="/gallery/axopar28.png"
+      alt="Kelmutus paikan päällä"
+      width={1200}
+      height={800}
+      className="h-auto w-full object-cover"
+    />
+  </div>
+
+  <div>
+    <h3 className="font-serif text-4xl md:text-5xl">Kelmutus paikanpäällä</h3>
+
+    <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
+      Ei kuljetuksia, ei säätöä! <br />
+      Teemme kelmutukset puolestanne etelä-Suomen alueella.
+    </p>
+
+    <p className="mt-8 font-serif text-lg text-black/90">
+      <span className="block">Kerro kohde, mitat ja aikataulu. Me kelmutamme puolestasi!</span>
+   <span className="block">Kun kelmutuksella on kiire, soita meille: +358 400283123</span>
+    </p>
+  </div>
+</div>
+
 
         {/* Alaosa: vasen kuva + oikea teksti */}
         <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">

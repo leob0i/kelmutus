@@ -39,8 +39,15 @@ export default function HomePage() {
       </section>
 
       {/* Valmiit kutistepussit */}
-      <section className="relative overflow-hidden border-b border-black/10">
-        <Image src="/saxdor.png" alt="" fill className="object-cover" />
+     <section className="group relative overflow-hidden border-b border-black/10 transition hover:ring-1 hover:ring-white/20">
+
+       <Image
+  src="/saxdor.png"
+  alt=""
+  fill
+  className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+/>
+
 <div className="absolute inset-0 bg-gradient-to-r from-black/65 via-black/35 to-black/15" />
 
 
@@ -74,8 +81,16 @@ export default function HomePage() {
 
 
     {/* ENSIN: Teollisuus & laitteet (oli ennen oikealla) */}
-    <div className="relative min-h-[260px] overflow-hidden">
-      <Image src="/kelmutus.talo.jpg" alt="" fill className="object-cover object-[50%_23%]" />
+   <div className="group relative min-h-[260px] overflow-hidden transition hover:ring-1 hover:ring-white/20">
+
+
+      <Image
+  src="/kelmutus.talo.jpg"
+  alt=""
+  fill
+  className="object-cover object-[50%_23%] transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+/>
+
       <div className="absolute inset-0 bg-black/70" />
 
       <div className="relative p-6 text-white">
@@ -97,8 +112,15 @@ export default function HomePage() {
     </div>
 
     {/* TOISENA: Kelmutus paikan päällä (oli ennen vasemmalla) */}
-    <div className="relative min-h-[260px] overflow-hidden">
-      <Image src="/kelmutetaan.jpg" alt="" fill className="object-cover object-[50%_20%]" />
+    <div className="group relative min-h-[260px] overflow-hidden transition hover:ring-1 hover:ring-white/20">
+
+      <Image
+  src="/kelmutetaan.jpg"
+  alt=""
+  fill
+  className="object-cover object-[50%_20%] transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+/>
+
       <div className="absolute inset-0 bg-black/65" />
 
       <div className="relative p-6 text-white">
@@ -120,6 +142,10 @@ export default function HomePage() {
 
   </div>
 </section>
+
+
+{/* Pehmeä siirtymä (tumma → vaalea) */}
+<div aria-hidden className="h-16 bg-gradient-to-b from-slate-950/55 via-slate-950/15 to-white" />
 
 
       {/* Nopea asennus... + video */}
