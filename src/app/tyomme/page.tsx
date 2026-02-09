@@ -14,7 +14,7 @@ const gallery = [
   { src: "/gallery/auto.kelmus.jpg", alt: "Auto suojattuna kelmulla varastointiin" },
   { src: "/gallery/axopar28.png", alt: "Vene kelmutettuna hallissa" },
   { src: "/gallery/veneparkissa2.jpg", alt: "Kelmutus käynnissä veneen päällä" },
-  { src: "/kutistepussi.sivu.jpg", alt: "Iso kohde kelmutettuna kuljetusalustalla" },
+  { src: "/gallery/vene.ulkona.jpg", alt: "Iso kohde kelmutettuna kuljetusalustalla" },
   { src: "/kelmutus.talo.jpg", alt: "Rakennuskohteen suojaus kelmulla" },
   { src: "/gallery/vene.parkissa.jpg", alt: "Mitoitus/kaavio kutistepussille" },
   { src: "/gallery/saxdor.png", alt: "Vene ennen suojausta" },
@@ -22,8 +22,8 @@ const gallery = [
 
 // Ennen / jälkeen -pariksi valitsin “ennen”: /buster.l.jpg ja “jälkeen”: /gallery/isovene.sivu.jpg
 const beforeAfter = {
-  before: { src: "/gallery/vene.ulkona.ennen.jpg", alt: "Ennen: vene ilman suojausta" },
-  after: { src: "/gallery/vene.ulkona.jpg", alt: "Jälkeen: vene suojattuna kutistepussilla" },
+  before: { src: "/gallery/saxdor.aloitus.jpg", alt: "Ennen: vene ilman suojausta" },
+  after: { src: "/gallery/isovene.sivu.jpg", alt: "Jälkeen: vene suojattuna kutistepussilla" },
 };
 
 function CardImage({

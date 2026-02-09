@@ -65,14 +65,7 @@ export function SiteFooter() {
             <Link href="/tietosuoja" className="hover:text-white">
               Tietosuojaseloste
             </Link>
-            <span>•</span>
-            <Link href="/evasteasetukset" className="hover:text-white">
-              Evästeasetukset
-            </Link>
-            <span>•</span>
-            <Link href="/kayttoehdot" className="hover:text-white">
-              Käyttöehdot
-            </Link>
+           
           </div>
         </div>
       </div>

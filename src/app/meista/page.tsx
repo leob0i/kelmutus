@@ -50,10 +50,10 @@ export default function MeistaPage() {
 
             <p>
               Kelmutus.fi syntyi yhdestä käytännön tarpeesta: veneet ja laitteet tarvitsivat suojan, joka olisi nopea
-              asentaa, siisti ja kestävä. Perinteinen suojapussi isoille veneille painaa jopa 50kg ja sen asentaminenkin vie useamman tunnin. 
+              asentaa, siisti ja kestävä. Perinteinen kutistemuovi rulla painaa 50kg, asentaminen on työlästä ja jää paljon hukka paloja. 
             </p>
 
-            <p className="mt-3">Siitä tuli idea Kelmutukseen!</p>
+            <p className="mt-3">Siitä tuli idea mittojen mukaan tehtyihin kuistepusseihi!</p>
 
             <p className="mt-10">
               Meille tärkeintä on täsmällinen mitoitus, siisti lopputulos ja toimiva arki asiakkaalle. Pidämme kiinni aikatauluista ja huolehdimme, että suoja kestää
@@ -75,6 +75,10 @@ export default function MeistaPage() {
             </div>
 
             <p className="mt-4 font-serif text-lg text-white/90 md:text-xl">Jari Äyhö</p>
+<p className="mt-1 text-xs uppercase tracking-[0.22em] text-white/60 md:text-sm">
+  Toimitusjohtaja
+</p>
+
 
             {/* Yhteystiedot Jarin alle */}
             <div className="mt-3 space-y-1 text-sm text-white/80 md:text-base">

@@ -20,16 +20,17 @@ const services = [
   },
   {
     title: "Teollisuus kelmutus",
-    desc: "Suojaukset koneille, laitteille ja muille projekteille",
+    desc: "Suojaukset koneille, laitteille ja muille projekteille. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet sekä koneet turvassa säilytyksen ja kuljetuksen ajan.",
     img: "/gallery/mitat.jpg",
     bullets: ["Kuljetussuojaukset", "Varastointisuojaus", "Pakkaus"],
   },
   {
-    title: "Autojen kelmutus",
-    desc: "Suojaus kuljetukseen ja varastointiin. Pitää auton maalipinnan suojassa pitkäaikaisessa säilytyksessä..",
-    img: "/gallery/auto.kelmus.jpg", 
-    bullets: ["Kuljetussuoja",  "Suositeltu pitkäaikaiseen säilytykseen"],
-  },
+  title: "Autojen kelmutus",
+  desc: "Vahva ja tiivis suoja kuljetukseen, varastointiin ja kausisäilytykseen. Auttaa pitämään pinnat siistinä ja suojassa pieniltä kolhuilta sekä likaantumiselta.",
+  img: "/gallery/auto.kelmus.jpg",
+  bullets: ["Kuljetussuoja", "Varastointi & kausisäilytys", "Suojaa likaantumiselta ja naarmuilta"],
+}
+,
   {
     title: "Me laitetaan kelmuun mitä vaan",
     desc: "Erikoiskohteet ja poikkeavat muodot onnistuu – kerro mitä pitää suojata, niin tehdään ratkaisu.",

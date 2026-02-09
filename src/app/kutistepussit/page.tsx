@@ -68,6 +68,20 @@ export default function KutistepussitPage() {
                 rungon muotoihin, ilman rypytystä ja ylimääräistä muovia.
               </p>
 
+              {/* MOBIILISSA kuva heti tämän tekstin jälkeen */}
+<div className="mt-8 md:hidden">
+  <div className="relative w-full overflow-hidden bg-gray-200">
+    <Image
+      src="/gallery/isovene.sivu.jpg"
+      alt="Kutistepussit kaavio"
+      width={1200}
+      height={900}
+      className="h-auto w-full object-contain"
+    />
+  </div>
+</div>
+
+
               <h3 className="mt-10 font-serif text-4xl md:text-5xl">
                 Miksi tämä ratkaisu?
               </h3>
@@ -90,31 +104,33 @@ export default function KutistepussitPage() {
               </ul>
             </div>
 
-            {/* Oikea kuva (kaavio) */}
-            <div className="md:pt-8">
-              <div className="relative w-full overflow-hidden bg-gray-200">
-                <Image
-                  src="/Finnmaster.png"
-                  alt="Kutistepussit kaavio"
-                  width={1200}
-                  height={900}
-                  className="h-auto w-full object-contain"
-                />
-              </div>
-            </div>
+            {/* Oikea kuva (kaavio) – vain desktop/tablet */}
+<div className="hidden md:block md:pt-8">
+  <div className="relative w-full overflow-hidden bg-gray-200">
+    <Image
+      src="/gallery/isovene.sivu.jpg"
+      alt="Kutistepussit kaavio"
+      width={1200}
+      height={900}
+      className="h-auto w-full object-contain"
+    />
+  </div>
+</div>
+
           </div>
 
           {/* Alaosa: vasen kuva + oikea teksti */}
           <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
-            <div className="relative w-full overflow-hidden bg-gray-200">
-              <Image
-                src="/buster.l.jpg"
-                alt="Vene kutistepussissa"
-                width={1200}
-                height={800}
-                className="h-auto w-full object-cover"
-              />
-            </div>
+            <div className="relative hidden w-full overflow-hidden bg-gray-200 md:block">
+  <Image
+    src="/gallery/targa.23.png"
+    alt="Vene kutistepussissa"
+    width={1200}
+    height={800}
+    className="h-auto w-full object-cover"
+  />
+</div>
+
 
             <div>
               <h3 className="font-serif text-4xl md:text-5xl">
@@ -128,13 +144,27 @@ export default function KutistepussitPage() {
                 takaavat korkean asiakastyytyväisyyden.
               </p>
 
+{/* MOBIILISSA kuva tähän väliin */}
+<div className="mt-8 md:hidden">
+  <div className="relative w-full overflow-hidden bg-gray-200">
+    <Image
+      src="/gallery/targa.23.png"
+      alt="Vene kutistepussissa"
+      width={1200}
+      height={800}
+      className="h-auto w-full object-cover"
+    />
+  </div>
+</div>
+
+
               <p className="mt-8 font-serif text-lg text-black/90">
   <span className="block">
     Hinnat 45 € alv 0 % / m alle 10 m pulpettiveneet.
   </span>
-
+<br />
   <span className="block mt-2">
-    esim. <span className="whitespace-nowrap">Buster L 230,80 €</span>
+    esim. <span className="whitespace-pre">Targa 23.1       351 €</span>
   </span>
 </p>
 

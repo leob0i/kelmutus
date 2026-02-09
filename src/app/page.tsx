@@ -143,50 +143,60 @@ export default function HomePage() {
 
 
 {/* Pehmeä siirtymä (tumma → vaalea) */}
-<div aria-hidden className="h-16 bg-gradient-to-b from-slate-950/55 via-slate-950/15 to-white" />
+<div
+  aria-hidden
+  className="h-16 bg-gradient-to-b from-slate-950/55 via-slate-950/15 to-slate-50"
+/>
 
 
       {/* Nopea asennus... + video */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-12 text-center">
-          <h2 className="font-serif text-[44px] leading-tight text-slate-900">
-            Nopea asennus, jämäkkä lopputulos.
-          </h2>
-          <p className="mt-2 text-sm text-slate-700">
-            Katso video kun Axopar 28 menee ketterästi kelmuun. Kahden henkilön asennusaika 45 minuuttia! Hinta vain 358,80€
-          </p>
+<section className="bg-slate-50">
+  <div className="mx-auto max-w-6xl px-4 py-14 sm:py-16">
+    <div className="mx-auto max-w-3xl text-center">
+      <h2 className="font-serif text-[38px] leading-tight text-slate-900 sm:text-[44px]">
+        Nopea asennus, jämäkkä lopputulos.
+      </h2>
 
-          <div className="mx-auto mt-8 max-w-4xl">
-            <ClickToPlayVideo src="/axopar38.mp4" poster="/axopar38-poster.jpg" />
-          </div>
+      <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-[15px]">
+        Katso video kun Axopar 28 menee ketterästi kelmuun. Kahden henkilön asennusaika 45 minuuttia!
+        Hinta vain 358,80€
+      </p>
+    </div>
 
-          <div className="mt-8">
-            <Link
-              href="/tyomme"
-              className="inline-flex items-center justify-center rounded-md bg-[#6f79ff] px-8 py-3 font-semibold text-white shadow hover:brightness-95"
-            >
-              Katso lisää töitämme
-            </Link>
-          </div>
-        </div>
-      </section>
+    <div className="mx-auto mt-10 max-w-5xl">
+      <div className="overflow-hidden rounded-2xl border border-black/10 bg-black shadow-[0_24px_70px_-40px_rgba(0,0,0,0.45)]">
+        <ClickToPlayVideo src="/axopar38.mp4" poster="/axopar38-poster.jpg" />
+      </div>
+    </div>
+
+    <div className="mt-10 flex justify-center">
+      <Link
+        href="/tyomme"
+        className="inline-flex items-center justify-center rounded-full bg-[#f08a00] px-8 py-3 font-semibold text-white shadow hover:bg-[#e27f00]"
+      >
+        Katso lisää töitämme
+      </Link>
+    </div>
+  </div>
+</section>
+
 
      
+{/* Loppu-CTA */}
+<section className="bg-slate-50 border-t border-black/10">
+  <div className="mx-auto max-w-6xl px-4 py-14 sm:py-16">
+    <div className="mx-auto max-w-4xl rounded-2xl border border-black/10 bg-white p-8 text-center shadow-sm sm:p-10">
+      <p className="font-serif text-[18px] leading-relaxed text-slate-900 sm:text-[20px]">
+        Tarjoamme kestäviä, huipputason kelmuja ja mittojen mukaan tilattavia valmiita
+        kutistepusseja kuljetus-, logistiikka-, ja varastointitarpeisiin. Ratkaisumme
+        suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen
+        pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan
+        päällä varmistavat sujuvan toteutuksen ja korkean asiakastytyväisyyden.
+      </p>
+    </div>
+  </div>
+</section>
 
-      {/* Loppu-CTA */}
-      <section className="bg-white">
-        <div className="mx-auto max-w-4xl px-4 py-14 text-center">
-          <p className="mx-auto font-serif text-[20px] leading-relaxed text-slate-900">
-            Tarjoamme kestäviä, huipputason kelmuja ja mittojen mukaan tilattavia valmiita
-            kutistepusseja kuljetus-, logistiikka-, ja varastointitarpeisiin. Ratkaisumme
-            suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen
-            pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan
-            päällä varmistavat sujuvan toteutuksen ja korkean asiakastytyväisyyden.
-          </p>
-
-          
-        </div>
-      </section>
 
 {/* Yhteydenottolomake */}
 <section id="yhteys" className="relative bg-slate-950 py-16 md:py-20">
