@@ -96,10 +96,8 @@ export default function HomePage() {
       <div className="relative p-6 text-white">
         <h3 className="font-serif text-[28px]">Teollisuus &amp; laitteet</h3>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">
-          Kelmutamme myös teollisuuslaitteet, koneet ja laitekokoonpanot turvallisesti kuljetusta,
-          varastointia ja työmaaolosuhteita varten. Valmistamme mittojen mukaan tehdyt
-          kutistepussit tai teemme asennuksen paikan päällä, jolloin pinnat on siisti ja suoja
-          tiivis.
+          Kelmutamme teollisuuden laitteet, koneet ja valmiit laitekokonaisuudet niin, että ne ovat hyvin suojattuja kuljetukseen, varastoinnin ja työmaan aikana. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet ja koneet hyvässä kunnossa säilytyksen tai kuljetuksen ajan.
+          
         </p>
 
         <Link

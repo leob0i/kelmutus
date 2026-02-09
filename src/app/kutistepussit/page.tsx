@@ -27,7 +27,8 @@ export default function KutistepussitPage() {
           </div>
 
           {/* Hero content */}
-          <div className="relative z-10 mx-auto flex min-h-[72vh] md:min-h-[78vh] max-w-6xl flex-col items-start justify-center px-6 pt-24">
+          <div className="relative z-10 mx-auto flex min-h-[72vh] md:min-h-[78vh] max-w-6xl flex-col items-start justify-center px-6 pt-28 md:pt-24">
+
             <h1 className="font-serif text-4xl leading-tight text-white md:text-6xl">
               kutistepussit mittojen mukaan
             </h1>
@@ -37,12 +38,13 @@ export default function KutistepussitPage() {
               siisti pinta.
             </p>
 
-            <a
-              href="#tarjous"
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-3 text-base font-medium text-white shadow-md transition hover:bg-orange-600"
-            >
-              Pyydä tarjous - lähetä mitat
-            </a>
+           <a
+  href="#yhteys"
+  className="mt-8 inline-flex items-center justify-center rounded-full bg-orange-500 px-8 py-3 text-base font-medium text-white shadow-md transition hover:bg-orange-600"
+>
+  Pyydä tarjous - lähetä mitat
+</a>
+
           </div>
         </section>
 

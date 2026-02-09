@@ -8,7 +8,7 @@ const nav = [
   { label: "Työmme", href: "/tyomme" },
   { label: "Palvelut", href: "/palvelut" },
   { label: "Kutistepussit", href: "/kutistepussit" },
-  { label: "Yhteystiedot", href: "/yhteystiedot" },
+  // { label: "Yhteystiedot", href: "/yhteystiedot" }, // ❌ POISTETTU
 ];
 
 export function SiteHeader() {
@@ -88,13 +88,7 @@ export function SiteHeader() {
           >
             {open ? (
               // X icon
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
                   d="M6 6l12 12M18 6L6 18"
                   stroke="currentColor"
@@ -104,13 +98,7 @@ export function SiteHeader() {
               </svg>
             ) : (
               // Hamburger icon
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 24 24"
-                fill="none"
-                aria-hidden="true"
-              >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                 <path
                   d="M4 7h16M4 12h16M4 17h16"
                   stroke="currentColor"

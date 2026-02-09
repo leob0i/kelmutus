@@ -150,7 +150,11 @@ export default function PalvelutPage() {
 
     <p className="mt-8 font-serif text-lg text-black/90">
       <span className="block">Kerro kohde, mitat ja aikataulu. Me kelmutamme puolestasi!</span>
-   <span className="block">Kun kelmutuksella on kiire, soita meille: +358 400283123</span>
+  <span className="block">
+  Kun kelmutuksella on kiire,{" "}
+  <span className="block md:inline">soita meille: +358 400283123</span>
+</span>
+
     </p>
   </div>
 </div>
