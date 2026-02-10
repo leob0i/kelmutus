@@ -4,12 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 
 const nav = [
-  { label: "Meistä", href: "/meista" },
-  { label: "Työmme", href: "/tyomme" },
-  { label: "Palvelut", href: "/palvelut" },
   { label: "Kutistepussit", href: "/kutistepussit" },
-  // { label: "Yhteystiedot", href: "/yhteystiedot" }, // ❌ POISTETTU
+  { label: "Palvelut", href: "/palvelut" },
+  { label: "Työmme", href: "/tyomme" },
+  { label: "Meistä", href: "/meista" },
 ];
+
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
