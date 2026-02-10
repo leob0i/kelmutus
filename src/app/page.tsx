@@ -85,7 +85,7 @@ export default function HomePage() {
 
 
       <Image
-  src="/kelmutus.talo.jpg"
+  src="/gallery/rekka.kelmussa.jpg"
   alt=""
   fill
   className="object-cover object-[50%_23%] transition-transform duration-700 ease-out group-hover:scale-[1.05]"
@@ -159,7 +159,7 @@ export default function HomePage() {
 
       <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-[15px]">
         Katso video kun Axopar 28 menee ketterästi kelmuun. Kahden henkilön asennusaika 45 minuuttia!
-        Hinta vain 358,80€
+        <br></br>Pussin hinta vain 358,80€ 
       </p>
     </div>
 

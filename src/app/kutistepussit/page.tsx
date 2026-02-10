@@ -123,8 +123,8 @@ export default function KutistepussitPage() {
           <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
             <div className="relative hidden w-full overflow-hidden bg-gray-200 md:block">
   <Image
-    src="/gallery/targa.23.png"
-    alt="Vene kutistepussissa"
+    src="/gallery/targa23.1.jpg"
+    alt="Targa 23.1 "
     width={1200}
     height={800}
     className="h-auto w-full object-cover"
@@ -148,8 +148,8 @@ export default function KutistepussitPage() {
 <div className="mt-8 md:hidden">
   <div className="relative w-full overflow-hidden bg-gray-200">
     <Image
-      src="/gallery/targa.23.png"
-      alt="Vene kutistepussissa"
+      src="/gallery/targa23.1.jpg"
+      alt="targa 23.1"
       width={1200}
       height={800}
       className="h-auto w-full object-cover"
@@ -159,10 +159,7 @@ export default function KutistepussitPage() {
 
 
               <p className="mt-8 font-serif text-lg text-black/90">
-  <span className="block">
-    Hinnat 45 € alv 0 % / m alle 10 m pulpettiveneet.
-  </span>
-<br />
+ 
   <span className="block mt-2">
     esim. <span className="whitespace-pre">Targa 23.1       351 €</span>
   </span>
@@ -174,10 +171,7 @@ export default function KutistepussitPage() {
           {/* UUSI INFO (sama leveys kuin kuva+teksti -alue, EI koko sivun levyinen) */}
 <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
   <div className="md:col-span-2">
-    <p className="font-serif text-lg leading-relaxed text-black/90 max-w-none">
-  Hinnat sisältävät perustason suojauksen ja työn asiakkaan osoittamassa paikassa Pääkaupunkiseudulla. Mikäli tarvitset lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan.
-</p>
-
+    
 <p className="mt-3 font-serif text-lg leading-relaxed text-black/90 max-w-none">
   Kysy myös isommista veneistä ja useamman veneen kimppahinnoista!
 </p>

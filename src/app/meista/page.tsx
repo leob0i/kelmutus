@@ -29,7 +29,7 @@ export default function MeistaPage() {
         {/* SISÄLTÖ */}
         <div className="relative mx-auto max-w-6xl px-4 pt-32 pb-14 md:pt-44 md:pb-20">
           <h1 className="text-center font-serif text-6xl tracking-[0.08em] drop-shadow-[0_2px_2px_rgba(0,0,0,0.75)] md:text-8xl">
-            MEISTÄ
+            KELMUTUS
           </h1>
 
           <p className="mt-5 text-center font-serif text-lg text-white/90 drop-shadow-[0_2px_2px_rgba(0,0,0,0.75)] md:text-xl">
@@ -53,7 +53,7 @@ export default function MeistaPage() {
               asentaa, siisti ja kestävä. Perinteinen kutistemuovi rulla painaa 50kg, asentaminen on työlästä ja jää paljon hukka paloja. 
             </p>
 
-            <p className="mt-3">Siitä tuli idea mittojen mukaan tehtyihin kuistepusseihi!</p>
+            <p className="mt-3">Siitä tuli idea mittojen mukaan tehtyihin kutistepusseihin. Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE). Materiaalin paksuus on tyypillisesti 150–200 µm, mikä takaa siistin, jämäkän pinnan ja erinomaisen suojan talvisäilytykseen ja kuljetukseen.</p>
 
             <p className="mt-10">
               Meille tärkeintä on täsmällinen mitoitus, siisti lopputulos ja toimiva arki asiakkaalle. Pidämme kiinni aikatauluista ja huolehdimme, että suoja kestää

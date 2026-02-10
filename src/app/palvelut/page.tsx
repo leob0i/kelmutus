@@ -21,7 +21,7 @@ const services = [
   {
     title: "Teollisuus kelmutus",
     desc: "Suojaukset koneille, laitteille ja muille projekteille. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet sekä koneet turvassa säilytyksen ja kuljetuksen ajan.",
-    img: "/gallery/mitat.jpg",
+    img: "/gallery/rekka.kelmussa.jpg",
     bullets: ["Kuljetussuojaukset", "Varastointisuojaus", "Pakkaus"],
   },
   {
@@ -142,23 +142,36 @@ export default function PalvelutPage() {
   </div>
 
   <div>
-    <h3 className="font-serif text-4xl md:text-5xl">Kelmutus paikanpäällä</h3>
+    <h3 className="font-serif text-4xl md:text-5xl">Kelmutus paikanpäällä pääkaupunki seudulla</h3>
 
     <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
-      Ei kuljetuksia, ei säätöä! <br />
-      Teemme kelmutukset puolestanne etelä-Suomen alueella.
+      On kyseessä sitten vene, harrasteauto, laite taikka mikä vaan joka pitää saada nopeasti ja turvallisesti suojattua varastointia tai kuljetusta varten, me tulemme paikalle kelmuttamaan! <br />
+      
     </p>
 
     <p className="mt-8 font-serif text-lg text-black/90">
-      <span className="block">Kerro kohde, mitat ja aikataulu. Me kelmutamme puolestasi!</span>
-  <span className="block">
-  Kun kelmutuksella on kiire,{" "}
-  <span className="block md:inline">soita meille: +358 400283123</span>
-</span>
+      <span className="block"> Hinnat 45 € alv 0 % / m alle 10 m pulpettiveneet.</span>
+  
 
     </p>
   </div>
 </div>
+
+{/* UUSI INFO (Kestava ratkaisu) */}
+        <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
+          <div className="md:col-span-2">
+            <p className="font-serif text-lg leading-relaxed text-black/90 max-w-none">
+              Hinnat sisältävät perustason suojauksen ja työn asiakkaan
+              osoittamassa paikassa Pääkaupunkiseudulla. Mikäli tarvitset
+              lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan
+              yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan. 
+            </p>
+
+            <p className="mt-3 font-serif text-lg leading-relaxed text-black/90 max-w-none">
+              Kelmutamme myös pääkaupunkiseudun ulkopuolella lisähinnasta. Kysy lisää!
+            </p>
+          </div>
+        </div>
 
 
         {/* Alaosa: vasen kuva + oikea teksti */}
@@ -184,9 +197,7 @@ export default function PalvelutPage() {
             </p>
 
             <p className="mt-8 font-serif text-lg text-black/90">
-              <span className="block">
-                Hinnat 45 € alv 0 % / m alle 10 m pulpettiveneet.
-              </span>
+              
 
               <span className="block mt-2">
                 esim. <span className="whitespace-nowrap">Buster L 230,80 €</span>
@@ -195,21 +206,7 @@ export default function PalvelutPage() {
           </div>
         </div>
 
-        {/* UUSI INFO (Kestava ratkaisu) */}
-        <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
-          <div className="md:col-span-2">
-            <p className="font-serif text-lg leading-relaxed text-black/90 max-w-none">
-              Hinnat sisältävät perustason suojauksen ja työn asiakkaan
-              osoittamassa paikassa Pääkaupunkiseudulla. Mikäli tarvitset
-              lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan
-              yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan.
-            </p>
-
-            <p className="mt-3 font-serif text-lg leading-relaxed text-black/90 max-w-none">
-              Kysy myös isommista veneistä ja useamman veneen kimppahinnoista!
-            </p>
-          </div>
-        </div>
+        
       </section>
 
       {/* Yhteydenottolomake */}
