@@ -3,7 +3,16 @@ import { Resend } from "resend";
 
 export const runtime = "nodejs";
 
-const resend = new Resend(process.env.resend_api_key);
+// ✅ Tue sekä isot että pienet env-nimet (Vercel/Node on case-sensitive)
+const RESEND_API_KEY = process.env.RESEND_API_KEY ?? process.env.resend_api_key;
+
+const CONTACT_TO_EMAIL =
+  process.env.CONTACT_TO_EMAIL ?? process.env.contact_to_email ?? "jari@kelmutus.fi";
+
+const CONTACT_FROM_EMAIL =
+  process.env.CONTACT_FROM_EMAIL ?? process.env.contact_form_email;
+
+const resend = new Resend(RESEND_API_KEY);
 
 const HP_FIELDS = ["company", "website", "confirm_email", "fax", "hp", "honeypot"];
 
@@ -30,8 +39,9 @@ function formatFrom(fromEnv?: string) {
 
 export async function POST(req: Request) {
   try {
-    if (!process.env.resend_api_key) {
-      return NextResponse.json({ ok: false, error: "Missing resend_api_key" }, { status: 500 });
+    // ✅ Tarkista oikea avain (iso/pieni)
+    if (!RESEND_API_KEY) {
+      return NextResponse.json({ ok: false, error: "Missing RESEND_API_KEY" }, { status: 500 });
     }
 
     const fd = await req.formData();
@@ -60,9 +70,9 @@ export async function POST(req: Request) {
       }
     }
 
-    // ✅ Vastaanottaja tulee envistä -> vaihdat vain contact_to_email arvon
-    const to = process.env.contact_to_email ?? "jari@kelmutus.fi";
-    const from = formatFrom(process.env.contact_form_email);
+    // ✅ Vastaanottaja + lähettäjä sun env-nimillä
+    const to = CONTACT_TO_EMAIL;
+    const from = formatFrom(CONTACT_FROM_EMAIL);
 
     // jos lomakkeessa on email-kenttä (eri nimillä), käytetään reply-to:na
     const replyTo =
