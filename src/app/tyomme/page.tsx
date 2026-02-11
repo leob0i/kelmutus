@@ -13,7 +13,7 @@ const gallery = [
   { src: "/gallery/isovene.sivu.jpg", alt: "Vene kelmutettuna sivusta" },
   { src: "/gallery/auto.kelmus.jpg", alt: "Auto suojattuna kelmulla varastointiin" },
   { src: "/gallery/axopar28.png", alt: "Vene kelmutettuna hallissa" },
-  { src: "/gallery/veneparkissa2.jpg", alt: "Kelmutus käynnissä veneen päällä" },
+  { src: "/gallery/rekka.kelmussa.jpg", alt: "Kelmutus käynnissä veneen päällä" },
   { src: "/gallery/vene.ulkona.jpg", alt: "Iso kohde kelmutettuna kuljetusalustalla" },
   { src: "/kelmutus.talo.jpg", alt: "Rakennuskohteen suojaus kelmulla" },
   { src: "/gallery/vene.parkissa.jpg", alt: "Mitoitus/kaavio kutistepussille" },
@@ -22,8 +22,11 @@ const gallery = [
 
 // Ennen / jälkeen -pariksi valitsin “ennen”: /buster.l.jpg ja “jälkeen”: /gallery/isovene.sivu.jpg
 const beforeAfter = {
-  before: { src: "/gallery/saxdor.aloitus.jpg", alt: "Ennen: vene ilman suojausta" },
-  after: { src: "/gallery/isovene.sivu.jpg", alt: "Jälkeen: vene suojattuna kutistepussilla" },
+  before: { src: "/gallery/sar.musta.jpg", alt: "Ennen: vene ilman suojausta" },
+  after: { src: "/gallery/sar.musta.kelmussa.jpg", alt: "Jälkeen: vene suojattuna kutistepussilla" },
+
+
+
 };
 
 function CardImage({
@@ -127,6 +130,36 @@ export default function TyommePage() {
               label="Jälkeen"
             />
           </div>
+
+          {/* UUSI RIVI 1 (aina 2 kuvaa samalla rivillä myös mobiilissa) */}
+          <div className="mt-6 grid grid-cols-2 gap-6">
+            <CardImage
+              src="/gallery/saxdor.aloitus.jpg"
+              alt="Ennen: vene ilman suojausta"
+              label="Ennen"
+            />
+            <CardImage
+              src="/gallery/isovene.sivu.jpg"
+              alt="Jälkeen: vene suojattuna kutistepussilla"
+              label="Jälkeen"
+            />
+          </div>
+
+          {/* UUSI RIVI 2 (aina 2 kuvaa samalla rivillä myös mobiilissa) */}
+          <div className="mt-6 grid grid-cols-2 gap-6">
+            <CardImage
+              src="/gallery/sar.jpg"
+              alt="Ennen: kohde ilman suojausta"
+              label="Ennen"
+            />
+            <CardImage
+              src="/gallery/sar.kelmussa.jpg"
+              alt="Jälkeen: kohde suojattuna kelmulla"
+              label="Jälkeen"
+            />
+          </div>
+
+
         </div>
       </section>
     </main>

@@ -185,7 +185,7 @@ export default async function HomePage() {
         </p>
 
         <Link
-          href="/palvelut"
+          href="/palvelut#hinnat"
           className="mt-6 inline-flex rounded-md bg-[#f08a00] px-5 py-2.5 font-semibold text-white shadow hover:bg-[#e27f00]"
         >
           Lue lisää palveluistamme

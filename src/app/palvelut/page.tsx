@@ -194,10 +194,9 @@ export default function PalvelutPage() {
             <h3 className="font-serif text-4xl md:text-5xl">Kestävä ratkaisu</h3>
 
             <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
-              Tarjoamme korkealaatuisia ja kestäviä kelmuja. Palvelumme avulla
-              voit suojata arvokasta tavaraasi säältä ja kuljetuksen
-              aiheuttamilta vaurioilta. Luotettavat ja nopeat toimitukset
-              takaavat korkean asiakastyytyväisyyden.
+              Tarjoamme korkealaatuisia, kestäviä kelmuja arvokkaan tavaran suojaamiseen. Palvelumme auttaa ehkäisemään sään ja kuljetuksen aiheuttamia vaurioita, 
+              ja luotettavat sekä nopeat toimitukset tukevat korkeaa asiakastyytyväisyyttä. 
+              Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE), ja materiaalin paksuus on tyypillisesti 150–200 µm.
             </p>
 
             <p className="mt-8 font-serif text-lg text-black/90">
