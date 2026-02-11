@@ -22,8 +22,12 @@ async function getPromo(): Promise<Promo | null> {
     const data = JSON.parse(raw.slice(start, end + 1));
     const row = data?.table?.rows?.[0]?.c ?? [];
 
-    const title = row?.[0]?.v ?? "";
-    const body = row?.[1]?.v ?? "";
+
+
+   const getCell = (cell: any) => cell?.v ?? cell?.f ?? "";
+const title = getCell(row?.[0]);
+const body  = getCell(row?.[1]);
+
 
     if (!title && !body) return null;
 
@@ -41,6 +45,9 @@ export default async function HomePage() {
       body: "Tilaa mittojen mukaan tehty kutistepussi – toimitus nopeasti. Kysy myös asennus paikan päällä.",
     };
 
+
+
+    
   return (
 
     <main className="pt-0">
@@ -73,6 +80,15 @@ export default async function HomePage() {
               Hyvin suojattu vene säilyttää arvonsa, pintansa ja edustavuutensa.
               Kelmutus tehdään veneesi mukaan eikä toisinpäin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.
             </p>
+             {/* VAIN mobiili: ei vie tilaa (h-0), nappi oikealle tekstin alle */}
+  <div className="relative h-0 sm:hidden">
+    <Link
+      href="/#yhteys"
+      className="absolute right-0 -top-1 z-20 inline-flex h-8 items-center justify-center rounded-md bg-[#f08a00] px-4 text-[12px] font-semibold text-white shadow hover:bg-[#e27f00] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
+    >
+      Ota yhteyttä
+    </Link>
+  </div>
           </div>
         </div>
       </section>
@@ -135,7 +151,7 @@ export default async function HomePage() {
       <div className="relative p-6 text-white">
         <h3 className="font-serif text-[28px]">Teollisuus &amp; laitteet</h3>
         <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">
-          Kelmutamme teollisuuden laitteet, koneet ja valmiit laitekokonaisuudet niin, että ne ovat hyvin suojattuja kuljetukseen, varastoinnin ja työmaan aikana. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet ja koneet hyvässä kunnossa säilytyksen tai kuljetuksen ajan.
+          Kelmutamme teollisuuden laitteet, koneet ja valmiit laitekokonaisuudet niin, että ne ovat hyvin suojattuja kuljetuksen, varastoinnin ja työmaan aikana. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet ja koneet hyvässä kunnossa säilytyksen tai kuljetuksen ajan.
           
         </p>
 
@@ -220,50 +236,47 @@ export default async function HomePage() {
 </section>
 
 
-
-<section className="relative overflow-hidden border-t border-black/10 bg-[#0b1a33]">
-  {/* Taustakuva 
-  <Image
-    src="/gallery/.jpg"
-    alt=""
-    fill
-    priority={false}
-    sizes="100vw"
-    className="object-cover"
-  />*/}
-
-  {/* Vahva tummansininen overlay */}
-  <div className="absolute inset-0 bg-[#0b1a33]/85" />
-
-  {/* Sisältö */}
-  <div className="relative">
-    {/* Google Sheets - muokattava promo (otsikko + teksti) */}
-    <div className="mx-auto max-w-6xl px-4 py-10">
-      <div className="mx-auto max-w-3xl rounded-2xl border border-black/10 bg-white p-6 text-center shadow-sm sm:p-7">
-        <h2 className="font-serif text-[26px] leading-tight text-slate-900 sm:text-[30px]">
+{/* Promo + lupaus yhtenäisenä bandina (ei valkoisia pyöreitä kortteja) */}
+<section className="relative overflow-hidden bg-[#0b1a33]">
+  {/* kevyt “valo”-fiilis ilman kortteja */}
+  <div
+    aria-hidden
+    className="absolute inset-0 opacity-[0.55]"
+    style={{
+      background:
+        "radial-gradient(900px circle at 15% 0%, rgba(255,255,255,0.14), transparent 55%), radial-gradient(900px circle at 85% 65%, rgba(240,138,0,0.14), transparent 55%)",
+    }}
+  />
+  <div className="relative mx-auto max-w-6xl px-4 py-14 sm:py-16">
+    <div className="grid gap-10 lg:grid-cols-12 lg:items-start">
+      {/* Promo vasen */}
+      <div className="lg:col-span-7">
+        <h2 className="font-serif text-[28px] leading-tight text-white sm:text-[34px]">
           {promo.title}
         </h2>
 
-        <p className="mt-3 text-sm leading-relaxed text-slate-700 sm:text-[15px] whitespace-pre-line">
+        <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-[15px] whitespace-pre-line">
           {promo.body}
         </p>
+        
       </div>
-    </div>
 
-    {/* Loppu-CTA */}
-    <div className="mx-auto max-w-6xl px-4 py-14 sm:py-16">
-      <div className="mx-auto max-w-4xl rounded-2xl border border-black/10 bg-white p-8 text-center shadow-sm sm:p-10">
-        <p className="font-serif text-[18px] leading-relaxed text-slate-900 sm:text-[20px]">
-          Tarjoamme kestäviä, huipputason kelmuja ja mittojen mukaan tilattavia valmiita
-          kutistepusseja kuljetus-, logistiikka-, ja varastointitarpeisiin. Ratkaisumme
-          suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen
-          pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan
-          päällä varmistavat sujuvan toteutuksen ja korkean asiakastytyväisyyden.
-        </p>
+      {/* Lupaus oikea: callout-tyyli (ei pyöreä laatikko) */}
+      <div className="lg:col-span-5">
+        <div className="border-l-2 border-[#f08a00] pl-5">
+          <p className="font-serif text-[16px] leading-relaxed text-white/90 sm:text-[17px]">
+            Tarjoamme kestäviä, huipputason kelmuja ja mittojen mukaan tilattavia valmiita
+            kutistepusseja kuljetus-, logistiikka-, ja varastointitarpeisiin. Ratkaisumme
+            suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen
+            pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan
+            päällä varmistavat sujuvan toteutuksen ja korkean asiakastytyväisyyden.
+          </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
 
 
 {/* Yhteydenottolomake */}

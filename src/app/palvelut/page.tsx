@@ -21,7 +21,7 @@ const services = [
     ],
   },
   {
-    title: "Teollisuus kelmutus",
+    title: "Teollisuuskelmutus",
     desc: "Suojaukset koneille, laitteille ja muille projekteille. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet sekä koneet turvassa säilytyksen ja kuljetuksen ajan.",
     img: "/gallery/rekka.kelmussa.jpg",
     bullets: ["Kuljetussuojaukset", "Varastointisuojaus", "Pakkaus"],
@@ -34,7 +34,7 @@ const services = [
 }
 ,
   {
-    title: "Me laitetaan kelmuun mitä vaan",
+    title: "Laitamme kelmuun",
     desc: "Erikoiskohteet ja poikkeavat muodot onnistuu – kerro mitä pitää suojata, niin tehdään ratkaisu.",
     img: "/gallery/mitat.jpg", // tai vaihda jos haluat eri kuvan
     bullets: ["Erikoismitat", "Erikoiskohteet", ],
