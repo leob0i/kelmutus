@@ -4,6 +4,11 @@ import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.kelmutus.fi"),
+  alternates: {
+  canonical: "./",
+},
+
   title: "Kelmutus",
   description: "Kelmutus – veneiden ja laitteiden suojausratkaisut.",
 };

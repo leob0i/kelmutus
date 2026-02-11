@@ -3,10 +3,11 @@ import Image from "next/image";
 import Link from "next/link"; // ✅ lisää
 
 
+
 export const metadata: Metadata = {
   title: "Palvelut | Kelmutus",
   description:
-    "Kutistepussitus veneille ja teollisuuskohteille. Suojaus säältä, kuljetukselta ja varastoinnissa – nopeasti ja kestävästi.",
+    "Kutistepussitus veneille, autoille ja teollisuuskohteille. Suojaus säältä, kuljetukselta ja varastoinnissa – nopeasti ja kestävästi.",
 };
 
 const services = [

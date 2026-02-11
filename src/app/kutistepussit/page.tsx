@@ -3,6 +3,16 @@ import Image from "next/image";
 import Link from "next/link"; 
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import type { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+  title: "Kutistepussit mittojen mukaan | Veneen suojaus | Kelmutus.fi",
+  description:
+    "Valmiiksi mitoitetut kutistepussit veneille ja teollisuuteen. UV-stabiloitu PE/LDPE (150–200 µm). Tiivis ja siisti suoja talvisäilytykseen, kuljetukseen ja varastointiin.",
+};
+
+
 
 export default function KutistepussitPage() {
   return (

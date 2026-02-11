@@ -2,6 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { ClickToPlayVideo } from "@/components/ClickToPlayVideo";
 
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Veneen kelmutus & kutistepussit mittojen mukaan | Kelmutus.fi",
+  description:
+    "Veneen suojaus talvisäilytykseen, kuljetukseen ja varastointiin. Kutistepussit mittojen mukaan – myös teollisuuskelmutus ja kuljetussuojaukset.",
+};
+
+
 type Promo = { title: string; body: string };
 
 async function getPromo(): Promise<Promo | null> {
