@@ -12,24 +12,79 @@ const CONTACT_TO_EMAIL =
 const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL ?? process.env.contact_form_email;
 
-const resend = new Resend(RESEND_API_KEY);
-
 const HP_FIELDS = ["company", "website", "confirm_email", "fax", "hp", "honeypot"];
+
+// ✅ P0: Liitteiden server-side rajat + tyyppivalidointi
+const MAX_FILE_BYTES = 2 * 1024 * 1024; // 2MB
+const MAX_ATTACHMENTS = 2;
+
+const ALLOWED_MIME = new Set([
+  "application/pdf",
+  "image/jpeg",
+  "image/png",
+  "image/webp",
+]);
+
+const ALLOWED_EXT = new Set([".pdf", ".jpg", ".jpeg", ".png", ".webp"]);
+
+function getExt(name: string) {
+  const i = name.lastIndexOf(".");
+  return i >= 0 ? name.slice(i).toLowerCase() : "";
+}
+
+// ✅ P0: kevyt rate limit (in-memory)
+const RL_WINDOW_MS = 10 * 60 * 1000; // 10 min
+const RL_MAX = 10; // max requests per window
+const RL_BUCKET = new Map<string, number[]>();
+
+function getClientIp(req: Request) {
+  const xff = req.headers.get("x-forwarded-for");
+  if (xff) return xff.split(",")[0].trim();
+  const xrip = req.headers.get("x-real-ip");
+  if (xrip) return xrip.trim();
+  return "unknown";
+}
+
+function isRateLimited(ip: string) {
+  const now = Date.now();
+  const cutoff = now - RL_WINDOW_MS;
+
+  const arr = RL_BUCKET.get(ip) ?? [];
+  const fresh = arr.filter((t) => t > cutoff);
+
+  if (fresh.length >= RL_MAX) {
+    RL_BUCKET.set(ip, fresh);
+    return true;
+  }
+
+  fresh.push(now);
+  RL_BUCKET.set(ip, fresh);
+  return false;
+}
 
 function wantsHtml(req: Request) {
   const accept = req.headers.get("accept") ?? "";
   return accept.includes("text/html");
 }
 
+// ✅ P0: estä open-redirect (salli vain oma origin)
 function redirectBack(req: Request, ok: boolean) {
+  const base = new URL(req.url);
   const ref = req.headers.get("referer") ?? "/";
+
+  let url: URL;
   try {
-    const url = new URL(ref);
-    url.searchParams.set(ok ? "sent" : "error", "1");
-    return NextResponse.redirect(url.toString(), { status: 303 });
+    url = new URL(ref, base); // sallii myös relative polut
   } catch {
-    return NextResponse.redirect(ok ? "/?sent=1" : "/?error=1", { status: 303 });
+    url = new URL("/", base);
   }
+
+  if (url.origin !== base.origin) {
+    url = new URL("/", base);
+  }
+
+  url.searchParams.set(ok ? "sent" : "error", "1");
+  return NextResponse.redirect(url.toString(), { status: 303 });
 }
 
 function formatFrom(fromEnv?: string) {
@@ -39,10 +94,20 @@ function formatFrom(fromEnv?: string) {
 
 export async function POST(req: Request) {
   try {
+    // ✅ Rate limit ennen mitään raskasta
+    const ip = getClientIp(req);
+    if (isRateLimited(ip)) {
+      return wantsHtml(req)
+        ? redirectBack(req, false)
+        : NextResponse.json({ ok: false, error: "Too many requests" }, { status: 429 });
+    }
+
     // ✅ Tarkista oikea avain (iso/pieni)
     if (!RESEND_API_KEY) {
       return NextResponse.json({ ok: false, error: "Missing RESEND_API_KEY" }, { status: 500 });
     }
+
+    const resend = new Resend(RESEND_API_KEY); // uusi
 
     const fd = await req.formData();
 
@@ -63,9 +128,40 @@ export async function POST(req: Request) {
         if (!HP_FIELDS.includes(key)) fields[key] = value;
       } else {
         if (value.size > 0) {
+          // max määrä
+          if (attachments.length >= MAX_ATTACHMENTS) {
+            return wantsHtml(req)
+              ? redirectBack(req, false)
+              : NextResponse.json({ ok: false, error: "Too many attachments" }, { status: 400 });
+          }
+
+          // koko
+          if (value.size > MAX_FILE_BYTES) {
+            return wantsHtml(req)
+              ? redirectBack(req, false)
+              : NextResponse.json(
+                  { ok: false, error: `Attachment too large (max ${MAX_FILE_BYTES} bytes)` },
+                  { status: 413 }
+                );
+          }
+
+          // MIME + pääte
+          const filename = value.name || "attachment";
+          const ext = getExt(filename);
+          const mime = value.type || "";
+
+          if (!ALLOWED_MIME.has(mime) || !ALLOWED_EXT.has(ext)) {
+            return wantsHtml(req)
+              ? redirectBack(req, false)
+              : NextResponse.json(
+                  { ok: false, error: "Unsupported attachment type" },
+                  { status: 400 }
+                );
+          }
+
           const ab = await value.arrayBuffer();
           const b64 = Buffer.from(ab).toString("base64");
-          attachments.push({ filename: value.name || "attachment", content: b64 });
+          attachments.push({ filename, content: b64 });
         }
       }
     }
