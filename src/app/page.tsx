@@ -123,7 +123,7 @@ export default async function HomePage() {
             <p className="mt-4 max-w-2xl text-sm leading-relaxed text-white/90">
               Mittojen mukaan tehdyt kutistepussit istuvat täydellisesti, suojaavat varmasti
               ja näyttävät siistiltä. 
-              Vähemmän muovia, nopeampi asennus, nopea toimitus.<br /><br /> Lähetä mitat tai veneen piirrustukset!
+              Vähemmän muovia, nopeampi asennus, nopea toimitus.<br /><br /> Lähetä mitat tai veneen piirustukset!
               Me hoidamme loput!
             </p>
            
@@ -278,7 +278,7 @@ export default async function HomePage() {
             kutistepusseja kuljetus-, logistiikka-, ja varastointitarpeisiin. Ratkaisumme
             suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen
             pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan
-            päällä varmistavat sujuvan toteutuksen ja korkean asiakastytyväisyyden.
+            päällä varmistavat sujuvan toteutuksen ja korkean asiakastyytyväisyyden.
           </p>
         </div>
       </div>

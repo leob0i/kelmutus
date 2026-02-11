@@ -31,7 +31,7 @@ export function SiteFooter() {
 
             {/* ✅ Yritystiedot näkyvästi mutta tyylikkäästi */}
             <div className="mt-1 text-sm text-white/90">
-              <span className="font-medium text-white">ShrinkPro Finland oy</span>
+              <span className="font-medium text-white">ShrinkPro Finland Oy</span>
               <span className="mx-2 text-white/40">•</span>
               <span>Y-tunnus: 3578472-2</span>
             </div>

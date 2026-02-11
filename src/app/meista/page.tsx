@@ -51,7 +51,7 @@ export default function MeistaPage() {
 
             <p>
               Kelmutus.fi syntyi yhdestä käytännön tarpeesta: veneet ja laitteet tarvitsivat suojan, joka olisi nopea
-              asentaa, siisti ja kestävä. Perinteinen kutistemuovirulla painaa 50kg, asentaminen on työlästä ja jää paljon hukkapaloja. 
+              asentaa, siisti ja kestävä. Perinteinen kutistemuovirulla painaa 50 kg, asentaminen on työlästä ja jää paljon hukkapaloja. 
             </p>
 
             <p className="mt-3">Siitä tuli idea mittojen mukaan tehtyihin kutistepusseihin. Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE). Materiaalin paksuus on tyypillisesti 150–200 µm, mikä takaa siistin, jämäkän pinnan ja erinomaisen suojan talvisäilytykseen ja kuljetukseen.</p>

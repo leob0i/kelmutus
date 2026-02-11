@@ -41,7 +41,7 @@ export default function KutistepussitPage() {
           <div className="relative z-10 mx-auto flex min-h-[72vh] md:min-h-[78vh] max-w-6xl flex-col items-start justify-center px-6 pt-28 md:pt-24">
 
             <h1 className="font-serif text-4xl leading-tight text-white md:text-6xl">
-              kutistepussit mittojen mukaan
+              Kutistepussit mittojen mukaan
             </h1>
 
             <p className="mt-4 max-w-2xl font-serif text-lg text-white/90 md:text-2xl">
