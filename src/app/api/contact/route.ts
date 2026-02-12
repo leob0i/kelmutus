@@ -12,7 +12,9 @@ const CONTACT_TO_EMAIL =
 const CONTACT_FROM_EMAIL =
   process.env.CONTACT_FROM_EMAIL ?? process.env.contact_form_email;
 
-const HP_FIELDS = ["company", "website", "confirm_email", "fax", "hp", "honeypot"];
+// ✅ FIX: "company" EI saa olla honeypot, koska se on oikea käyttäjän kenttä.
+// Lisätään sen tilalle hp_company (frontiin tehdään myöhemmin input name="hp_company")
+const HP_FIELDS = ["hp_company", "website", "confirm_email", "fax", "hp", "honeypot"];
 
 // ✅ P0: Liitteiden server-side rajat + tyyppivalidointi
 const MAX_FILE_BYTES = 2 * 1024 * 1024; // 2MB

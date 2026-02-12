@@ -300,6 +300,16 @@ export default function PalvelutPage() {
               autoComplete="off"
             />
 
+            {/* Honeypot (2): hp_company */}
+<input
+  type="text"
+  name="hp_company"
+  className="hidden"
+  tabIndex={-1}
+  autoComplete="off"
+/>
+
+
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-1.5 text-sm">
                 <label

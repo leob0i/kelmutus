@@ -195,6 +195,28 @@ export default function KutistepussitPage() {
 
         
 
+
+{/* Pieni ohjenappi ennen yhteydenottolomaketta (oikeaan kulmaan) */}
+{/* Pieni ohjenappi ennen yhteydenottolomaketta (oikeaan kulmaan) */}
+<div className="relative -top-6 z-10 mx-auto max-w-6xl px-6">
+  <div className="flex justify-end">
+    <Link
+      href="/talvisailytys"
+      className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-medium text-black shadow-sm transition hover:bg-gray-50"
+      aria-label="Avaa veneen talvisäilytyksen ohjeet"
+    >
+      Ohjeet veneen talvisäilytykseen →
+    </Link>
+  </div>
+</div>
+
+
+
+
+
+
+
+
 {/* Yhteydenottolomake */}
 <section id="yhteys" className="relative bg-slate-950 py-16 md:py-20">
   {/* Taustakuva */}
@@ -279,6 +301,16 @@ export default function KutistepussitPage() {
     tabIndex={-1}
     autoComplete="off"
   />
+
+{/* Honeypot (2): hp_company */}
+<input
+  type="text"
+  name="hp_company"
+  className="hidden"
+  tabIndex={-1}
+  autoComplete="off"
+/>
+
 
       <div className="grid gap-4 md:grid-cols-2">
         <div className="space-y-1.5 text-sm">

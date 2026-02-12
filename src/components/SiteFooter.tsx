@@ -61,11 +61,26 @@ export function SiteFooter() {
             <div>Hinnat esitetty ilman arvonlisäveroa (ALV 0 %).</div>
           </div>
 
-          <div className="flex gap-3">
-            <Link href="/tietosuoja" className="hover:text-white">
-              Tietosuojaseloste
+          {/* OIKEA KULMA: linkit + LeoDigital niiden alle */}
+          <div className="flex flex-col items-start gap-1 sm:items-end">
+            <div className="flex gap-3">
+              <Link href="/talvisailytys" className="hover:text-white">
+                Veneen talvisäilytyksen ohjeet
+              </Link>
+
+              <Link href="/tietosuoja" className="hover:text-white">
+                Tietosuojaseloste
+              </Link>
+            </div>
+
+            <Link
+              href="https://www.leodigital.fi/"
+              className="text-[10px] text-white/60 hover:text-white"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Laadukkaat kotisivut LeoDigital
             </Link>
-           
           </div>
         </div>
       </div>
