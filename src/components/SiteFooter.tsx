@@ -1,4 +1,5 @@
-import Link from "next/link";
+import {useTranslations} from "next-intl";
+import {Link} from "@/i18n/navigation";
 
 function InstagramIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -22,6 +23,8 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
 }
 
 export function SiteFooter() {
+  const t = useTranslations("footer");
+
   return (
     <footer className="bg-[#071a43] text-white">
       <div className="mx-auto max-w-6xl px-4 py-6">
@@ -29,16 +32,17 @@ export function SiteFooter() {
           <div>
             <div className="font-serif text-[22px] tracking-wide">KELMUTUS</div>
 
-            {/* ✅ Yritystiedot näkyvästi mutta tyylikkäästi */}
             <div className="mt-1 text-sm text-white/90">
-              <span className="font-medium text-white">ShrinkPro Finland Oy</span>
+              <span className="font-medium text-white">{t("companyName")}</span>
               <span className="mx-2 text-white/40">•</span>
-              <span>Y-tunnus: 3578472-2</span>
+              <span>
+                {t("businessIdLabel")}: {t("businessIdValue")}
+              </span>
             </div>
           </div>
 
           <div className="flex items-center gap-4 sm:ml-auto">
-            <Link
+            <a
               href="https://www.facebook.com/profile.php?id=61580610997021"
               aria-label="Facebook"
               className="text-white/90 hover:text-white"
@@ -46,41 +50,40 @@ export function SiteFooter() {
               rel="noreferrer"
             >
               <FacebookIcon className="h-6 w-6" />
-            </Link>
+            </a>
           </div>
 
           <div className="text-sm text-white/90">
-            <div>Puhelin: +358 400283123</div>
-            <div>Sähköposti: jari@kelmutus.fi</div>
+            <div>{t("phoneLabel")}: +358 400283123</div>
+            <div>{t("emailLabel")}: jari@kelmutus.fi</div>
           </div>
         </div>
 
         <div className="mt-6 flex flex-col gap-2 border-t border-white/15 pt-4 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
-            <div>© 2026 Kelmutus.fi. Kaikki oikeudet pidätetään.</div>
-            <div>Hinnat esitetty ilman arvonlisäveroa (ALV 0 %).</div>
+            <div>{t("copyright")}</div>
+            <div>{t("vatNote")}</div>
           </div>
 
-          {/* OIKEA KULMA: linkit + LeoDigital niiden alle */}
           <div className="flex flex-col items-start gap-1 sm:items-end">
             <div className="flex gap-3">
               <Link href="/talvisailytys" className="hover:text-white">
-                Veneen talvisäilytyksen ohjeet
+                {t("winterStorage")}
               </Link>
 
               <Link href="/tietosuoja" className="hover:text-white">
-                Tietosuojaseloste
+                {t("privacy")}
               </Link>
             </div>
 
-            <Link
+            <a
               href="https://www.leodigital.fi/"
               className="text-[10px] text-white/60 hover:text-white"
               target="_blank"
               rel="noreferrer"
             >
-              Laadukkaat kotisivut LeoDigital
-            </Link>
+              {t("credit")}
+            </a>
           </div>
         </div>
       </div>

@@ -1,21 +1,36 @@
-import type { MetadataRoute } from "next";
+import type {MetadataRoute} from "next";
+import {getPathname} from "@/i18n/navigation";
 
-const BASE_URL = "https://www.kelmutus.fi";
+const host = "https://www.kelmutus.fi";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+const routes = [
+  "/",
+  "/kutistepussit",
+  "/palvelut",
+  "/tyomme",
+  "/meista",
+  "/talvisailytys",
+  "/tietosuoja"
+] as const;
 
-  const routes = [
-    "/",
-    "/meista",
-    "/tyomme",
-    "/palvelut",
-    "/kutistepussit",
-    "/tietosuoja",
-  ];
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const lastModified = new Date();
 
-  return routes.map((path) => ({
-    url: `${BASE_URL}${path}`,
-    lastModified: now,
-  }));
+  return Promise.all(
+    routes.map(async (href) => {
+      const fiPath = await getPathname({locale: "fi", href});
+      const enPath = await getPathname({locale: "en", href});
+
+      return {
+        url: host + fiPath,
+        lastModified,
+        alternates: {
+          languages: {
+            fi: host + fiPath,
+            en: host + enPath
+          }
+        }
+      };
+    })
+  );
 }

@@ -1,0 +1,501 @@
+{
+  "nav": {
+    "kutistepussit": "Kutistepussit",
+    "palvelut": "Palvelut",
+    "tyomme": "Työmme",
+    "meista": "Meistä",
+    "cta": "Ota yhteyttä",
+    "homeAria": "Kelmutus etusivu",
+    "openMenu": "Avaa valikko",
+    "closeMenu": "Sulje valikko"
+  },
+  "footer": {
+    "companyName": "ShrinkPro Finland Oy",
+    "businessIdLabel": "Y-tunnus",
+    "businessIdValue": "3578472-2",
+    "phoneLabel": "Puhelin",
+    "emailLabel": "Sähköposti",
+    "copyright": "© 2026 Kelmutus.fi. Kaikki oikeudet pidätetään.",
+    "vatNote": "Hinnat esitetty ilman arvonlisäveroa (ALV 0 %).",
+    "winterStorage": "Veneen talvisäilytyksen ohjeet",
+    "privacy": "Tietosuojaseloste",
+    "credit": "Laadukkaat kotisivut LeoDigital"
+  },
+  "home": {
+    "meta": {
+      "title": "Veneen kelmutus & kutistepussit mittojen mukaan | Kelmutus.fi",
+      "description": "Veneen suojaus talvisäilytykseen, kuljetukseen ja varastointiin. Kutistepussit mittojen mukaan – myös teollisuuskelmutus ja kuljetussuojaukset."
+    },
+    "hero": {
+      "title": "Veneesi ansaitsee talven parhaat vaatteet",
+      "body": "Hyvin suojattu vene säilyttää arvonsa, pintansa ja edustavuutensa. Kelmutus tehdään veneesi mukaan eikä toisinpäin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.",
+      "mobileCta": "Ota yhteyttä"
+    },
+    "bags": {
+      "title": "Valmiit kutistepussit mittojen mukaan",
+      "body1": "Mittojen mukaan tehdyt kutistepussit istuvat täydellisesti, suojaavat varmasti ja näyttävät siistiltä. Vähemmän muovia, nopeampi asennus, nopea toimitus.",
+      "body2": "Lähetä mitat tai veneen piirustukset! Me hoidamme loput!",
+      "cta": "Lue lisää kutistepusseista"
+    },
+    "cards": {
+      "industry": {
+        "title": "Teollisuus & laitteet",
+        "body": "Kelmutamme teollisuuden laitteet, koneet ja valmiit laitekokonaisuudet niin, että ne ovat hyvin suojattuja kuljetuksen, varastoinnin ja työmaan aikana. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet sekä koneet hyvässä kunnossa säilytyksen tai kuljetuksen ajan.",
+        "cta": "Lue lisää palveluistamme"
+      },
+      "onsite": {
+        "title": "Kelmutus paikan päällä",
+        "body1": "Pelkkä valmis pussi ei aina riitä, vaan joskus vene pitää suojata siellä missä se on.",
+        "body2": "Tulemme tarvittaessa paikan päälle (eteläinen Suomi) ja kelmutamme veneen säilytystä tai kuljetusta varten.",
+        "cta": "Lue lisää palveluistamme"
+      }
+    },
+    "install": {
+      "title": "Nopea asennus, jämäkkä lopputulos.",
+      "body1": "Katso video kun Axopar 28 menee ketterästi kelmuun. Kahden henkilön asennusaika 45 minuuttia!",
+      "body2": "Pussin hinta vain 358,80 €",
+      "cta": "Katso lisää töitämme"
+    },
+    "promise": {
+      "body": "Tarjoamme kestäviä, huipputason kelmuja ja mittojen mukaan tilattavia valmiita kutistepusseja kuljetus-, logistiikka- ja varastointitarpeisiin. Ratkaisumme suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan päällä varmistavat sujuvan toteutuksen ja korkean asiakastyytyväisyyden."
+    },
+    "contact": {
+      "bgAlt": "Kutistepussit taustakuva",
+      "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
+      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Voit liittää mukaan kuvan, luonnoksen tai PDF-tiedoston mittojen ja kohteen hahmottamiseksi. Vastaamme sinulle mahdollisimman pian!",
+      "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
+    },
+    "form": {
+      "nameLabel": "Nimi",
+      "namePlaceholder": "Etunimi Sukunimi",
+      "companyLabel": "Yritys (valinnainen)",
+      "companyPlaceholder": "Yrityksen nimi",
+      "emailLabel": "Sähköposti",
+      "emailPlaceholder": "nimi@yritys.fi",
+      "phoneLabel": "Puhelin",
+      "phonePlaceholder": "Puhelinnumero",
+      "attachmentLabel": "Liitä tiedosto (valinnainen)",
+      "attachmentHelp": "Voit liittää kuvan tai PDF-tiedoston. (max 2 MB)",
+      "messageLabel": "Kerro kohteesta ja mitoista",
+      "messagePlaceholder": "Kuvaile kohdetta (vene/teollisuuskohde, mikä?), mitat, aikataulu ja mahdolliset lisätoiveet.",
+      "consent": "Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä.",
+      "submit": "Lähetä tarjouspyyntö"
+    }
+  },
+  "kutistepussit": {
+    "meta": {
+      "title": "Kutistepussit mittojen mukaan | Veneen suojaus | Kelmutus.fi",
+      "description": "Valmiiksi mitoitetut kutistepussit veneille ja teollisuuteen. UV-stabiloitu PE/LDPE (150–200 µm). Tiivis ja siisti suoja talvisäilytykseen, kuljetukseen ja varastointiin."
+    },
+    "hero": {
+      "imageAlt": "Kutistepussit",
+      "title": "Kutistepussit mittojen mukaan",
+      "subtitle": "Suojat veneille ja teollisuuteen – mitoitettu, nopea toimitus, siisti pinta.",
+      "cta": "Pyydä tarjous - lähetä mitat"
+    },
+    "whatAre": {
+      "title": "Mitä kutistepussit ovat?",
+      "body": "Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE). Materiaalin paksuus on tyypillisesti 150–200 µm, mikä takaa siistin, jämäkän pinnan ja erinomaisen suojan talvisäilytykseen ja kuljetukseen. Pussi kutistetaan paikalleen lämpökäsittelyllä (kuumailmapuhallin/kaasupoltin), jolloin se kiristyy tiiviisti rungon muotoihin, ilman rypytystä ja ylimääräistä muovia."
+    },
+    "diagramAlt": "Kutistepussit kaavio",
+    "why": {
+      "title": "Miksi tämä ratkaisu?",
+      "items": [
+        "Täsmämitoitus: tehdään veneen mallin tai mittojen mukaan",
+        "Kestävä & siisti: UV-suoja, vahvistetut saumat, siisti lopputulos",
+        "Sään- ja suolankestävä: suojaa lialta, sateelta, jäältä ja merisuolalta",
+        "Nopea asennus: pussi paikoilleen ja lämpökutistus – valmis",
+        "Lisävarusteet: tuuletusventtiilit, tarkistusikkuna, merkintäteipit"
+      ]
+    },
+    "durable": {
+      "title": "Kestävä ratkaisu",
+      "body": "Tarjoamme korkealaatuisia ja kestäviä kelmuja. Palvelumme avulla voit suojata arvokasta tavaraasi säältä ja kuljetuksen aiheuttamilta vaurioilta. Luotettavat ja nopeat toimitukset takaavat korkean asiakastyytyväisyyden."
+    },
+    "priceExamplePrefix": "esim.",
+    "askBiggerBoats": "Kysy myös isommista veneistä ja useamman veneen kimppahinnoista!",
+    "winterStorageAria": "Avaa veneen talvisäilytyksen ohjeet",
+    "winterStorageBtn": "Ohjeet veneen talvisäilytykseen",
+    "contact": {
+      "bgAlt": "Kutistepussit taustakuva",
+      "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
+      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Voit liittää mukaan kuvan, luonnoksen tai PDF-tiedoston mittojen ja kohteen hahmottamiseksi. Palaamme sinulle mahdollisimman pian.",
+      "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
+    },
+    "form": {
+      "name": "Nimi",
+      "namePh": "Etunimi Sukunimi",
+      "company": "Yritys (valinnainen)",
+      "companyPh": "Yrityksen nimi",
+      "email": "Sähköposti",
+      "emailPh": "nimi@yritys.fi",
+      "phone": "Puhelin",
+      "phonePh": "Puhelinnumero",
+      "attachment": "Liitä tiedosto (valinnainen)",
+      "attachmentHelp": "Voit liittää kuvan tai PDF-tiedoston. (max 2 MB)",
+      "message": "Kerro kohteesta ja mitoista",
+      "messagePh": "Kuvaile kohdetta (vene/teollisuuskohde, mikä?), mitat, aikataulu ja mahdolliset lisätoiveet.",
+      "consent": "Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä tarjouksen ja lisäkysymysten kanssa.",
+      "submit": "Lähetä tarjouspyyntö"
+    }
+  },
+  "palvelut": {
+    "meta": {
+      "title": "Palvelut | Kelmutus",
+      "description": "Kutistepussitus veneille, autoille ja teollisuuskohteille. Suojaus säältä, kuljetukselta ja varastoinnilta – nopeasti ja kestävästi."
+    },
+    "hero": {
+      "title": "Palvelut",
+      "cta": "Pyydä tarjous",
+      "body": "Teemme kestävät kutistepussitukset veneille, teollisuuskohteille ja erilaisille laitteille. Lopputulos on tiivis, siisti ja suunniteltu suojaamaan kohdetta säältä, varastoinnilta ja kuljetuksen rasituksilta."
+    },
+    "services": [
+      {
+        "title": "Veneiden kelmutus",
+        "desc": "Suoja talvisäilytykseen, kuljetuksiin ja varastointiin. Tiivis, kestävä ja siisti lopputulos.",
+        "bullets": ["Säänkestävä suojaus", "Ulko- ja sisäsäilytykseen", "Paikan päällä kelmutus"]
+      },
+      {
+        "title": "Teollisuuskelmutus",
+        "desc": "Suojaukset koneille, laitteille ja muille projekteille. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet sekä koneet turvassa säilytyksen ja kuljetuksen ajan.",
+        "bullets": ["Kuljetussuojaukset", "Varastointisuojaus", "Pakkaus"]
+      },
+      {
+        "title": "Autojen kelmutus",
+        "desc": "Vahva ja tiivis suoja kuljetukseen, varastointiin ja kausisäilytykseen. Auttaa pitämään pinnat siistinä ja suojassa pieniltä kolhuilta sekä likaantumiselta.",
+        "bullets": ["Kuljetussuoja", "Varastointi & kausisäilytys", "Suojaa likaantumiselta ja naarmuilta"]
+      },
+      {
+        "title": "Laitamme kelmuun",
+        "desc": "Erikoiskohteet ja poikkeavat muodot onnistuu – kerro mitä pitää suojata, niin tehdään ratkaisu.",
+        "bullets": ["Erikoismitat", "Erikoiskohteet"]
+      }
+    ],
+    "onsite": {
+      "imageAlt": "Kelmutus paikan päällä",
+      "title": "Kelmutus paikan päällä pääkaupunkiseudulla",
+      "body": "On kyseessä sitten vene, harrasteauto, laite taikka mikä vaan joka pitää saada nopeasti ja turvallisesti suojattua varastointia tai kuljetusta varten, me tulemme paikalle kelmuttamaan!",
+      "priceLine": "Hinnat 45 € alv 0 % / m alle 10 m pulpettiveneet."
+    },
+    "pricingInfo": {
+      "paragraph1": "Hinnat sisältävät perustason suojauksen ja työn asiakkaan osoittamassa paikassa pääkaupunkiseudulla. Mikäli tarvitset lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan.",
+      "paragraph2": "Kelmutamme myös pääkaupunkiseudun ulkopuolella lisähinnasta. Kysy lisää!"
+    },
+    "durable": {
+      "imageAlt": "Vene kutistepussissa",
+      "title": "Kestävä ratkaisu",
+      "body": "Tarjoamme korkealaatuisia, kestäviä kelmuja arvokkaan tavaran suojaamiseen. Palvelumme auttaa ehkäisemään sään ja kuljetuksen aiheuttamia vaurioita, ja luotettavat sekä nopeat toimitukset tukevat korkeaa asiakastyytyväisyyttä. Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE), ja materiaalin paksuus on tyypillisesti 150–200 µm.",
+      "examplePrefix": "esim."
+    },
+    "contact": {
+      "bgAlt": "Kutistepussit taustakuva",
+      "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
+      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohteesta) sekä toivotusta suojauksesta. Voit liittää mukaan kuvan, luonnoksen tai PDF-tiedoston mittojen ja kohteen hahmottamiseksi. Palaamme sinulle mahdollisimman pian.",
+      "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
+    },
+    "form": {
+      "name": "Nimi",
+      "namePh": "Etunimi Sukunimi",
+      "company": "Yritys (valinnainen)",
+      "companyPh": "Yrityksen nimi",
+      "email": "Sähköposti",
+      "emailPh": "nimi@yritys.fi",
+      "phone": "Puhelin",
+      "phonePh": "Puhelinnumero",
+      "attachment": "Liitä tiedosto (valinnainen)",
+      "attachmentHelp": "Voit liittää kuvan tai PDF-tiedoston. (max 2 MB)",
+      "message": "Kerro kohteesta ja mitoista",
+      "messagePh": "Kuvaile kohdetta (vene/teollisuuskohde, mikä?), mitat, aikataulu ja mahdolliset lisätoiveet.",
+      "consent": "Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä tarjouksen ja lisäkysymysten kanssa.",
+      "submit": "Lähetä tarjouspyyntö"
+    }
+  },
+
+  "meista": {
+    "meta": {
+      "title": "Meistä | Kelmutus",
+      "description": "Kelmutus.fi – ShrinkPro Finland Oy. Tarina, tekemisen tapa ja kaksi selkeää ratkaisua veneille ja teollisuuteen."
+    },
+    "brand": {
+      "title": "KELMUTUS",
+      "company": "ShrinkPro Finland Oy",
+      "businessId": "Y-tunnus 3578472-2"
+    },
+    "story": {
+      "p1": "Kelmutus.fi syntyi yhdestä käytännön tarpeesta: veneet ja laitteet tarvitsivat suojan, joka olisi nopea asentaa, siisti ja kestävä. Perinteinen kutistemuovirulla painaa 50 kg, asentaminen on työlästä ja jää paljon hukkapaloja.",
+      "p2": "Siitä tuli idea mittojen mukaan tehtyihin kutistepusseihin. Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE). Materiaalin paksuus on tyypillisesti 150–200 µm, mikä takaa siistin, jämäkän pinnan ja erinomaisen suojan talvisäilytykseen ja kuljetukseen.",
+      "p3a": "Meille tärkeintä on täsmällinen mitoitus, siisti lopputulos ja toimiva arki asiakkaalle. Pidämme kiinni aikatauluista ja huolehdimme, että suoja kestää talven, kuljetuksen ja varastoinnin.",
+      "p3b": "Lähetä veneen malli tai mitat, me teemme niistä valmiin, huolettoman ratkaisun!"
+    },
+    "person": {
+      "photoAlt": "Jari Äyhö",
+      "name": "Jari Äyhö",
+      "title": "Toimitusjohtaja",
+      "phoneLabel": "Puhelin:",
+      "emailLabel": "Sähköposti:"
+    },
+    "contact": {
+      "bgAlt": "Kutistepussit taustakuva",
+      "title": "Ota yhteyttä",
+      "body": "Kiireellisissä asioissa voit soittaa numeroon: +358 400283123. \nVastaamme sinulle mahdollisimman pian!",
+      "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
+    },
+    "form": {
+      "name": "Nimi",
+      "namePh": "Etunimi Sukunimi",
+      "company": "Yritys (valinnainen)",
+      "companyPh": "Yrityksen nimi",
+      "email": "Sähköposti",
+      "emailPh": "nimi@yritys.fi",
+      "phone": "Puhelin",
+      "phonePh": "Puhelinnumero",
+      "attachment": "Liitä tiedosto (valinnainen)",
+      "attachmentHelp": "Voit liittää kuvan tai PDF-tiedoston. (max 2 MB)",
+      "message": "Kerro kohteesta ja mitoista",
+      "messagePh": "Kuvaile kohdetta (vene/teollisuuskohde, mikä?), mitat, aikataulu ja mahdolliset lisätoiveet.",
+      "consent": "Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä.",
+      "submit": "Lähetä tarjouspyyntö"
+    }
+  },
+
+
+  "tyomme": {
+    "meta": {
+      "title": "Työmme | Kelmutus",
+      "description": "Esimerkkejä Kelmutus.fi toteutuksista – veneet, teollisuus, autot ja erikoiskohteet. Katso ennen/jälkeen ja kuvagalleria."
+    },
+    "hero": {
+      "title": "Työmme",
+      "body": "Esimerkkejä toteutuksista veneisiin, teollisuuskohteisiin, autoihin ja erikoismuotoihin. Tiivis suoja, siisti pinta ja varma lopputulos."
+    },
+    "gallerySection": {
+      "title": "Kuvia toteutuksista"
+    },
+    "beforeAfter": {
+      "title": "Ennen & jälkeen",
+      "labels": {
+        "before": "Ennen",
+        "after": "Jälkeen"
+      },
+      "main": {
+        "beforeAlt": "Ennen: vene ilman suojausta",
+        "afterAlt": "Jälkeen: vene suojattuna kutistepussilla"
+      },
+      "row1": {
+        "beforeAlt": "Ennen: vene ilman suojausta",
+        "afterAlt": "Jälkeen: vene suojattuna kutistepussilla"
+      },
+      "row2": {
+        "beforeAlt": "Ennen: kohde ilman suojausta",
+        "afterAlt": "Jälkeen: kohde suojattuna kelmulla"
+      }
+    },
+    "gallery": {
+      "isovene": "Vene kelmutettuna – valmis lopputulos",
+      "isoveneSivu": "Vene kelmutettuna sivusta",
+      "autoKelmus": "Auto suojattuna kelmulla varastointiin",
+      "axopar28": "Vene kelmutettuna hallissa",
+      "rekkaKelmussa": "Kelmutus käynnissä veneen päällä",
+      "veneUlkona": "Iso kohde kelmutettuna kuljetusalustalla",
+      "talo": "Rakennuskohteen suojaus kelmulla",
+      "veneParkissa": "Mitoitus/kaavio kutistepussille",
+      "saxdor": "Vene ennen suojausta"
+    }
+  },
+
+
+  "talvisailytys": {
+    "meta": {
+      "title": "Veneen talvisäilytyksen ohjeet | Kelmutus",
+      "description": "Veneen talvisäilytyksen ohjeet: puhdistus, moottori, varusteet, suojaus ja turvallisuus."
+    },
+    "title": "Veneen talvisäilytyksen ohjeet",
+    "sections": {
+      "cleaning": {
+        "title": "1. Puhdistus ja kuivaus",
+        "items": {
+          "cleanSurfaces": {
+            "label": "Puhdista pinnat:",
+            "text": "Pese veneen sisätilat (kaapit, pinnat) miedolla saippua- tai etikkavedellä."
+          },
+          "removeMoisture": {
+            "label": "Poista kosteus:",
+            "text": "Tuuleta vene huolellisesti. Varmista, ettei letkuissa, jääkaapissa tai muissa syvennyksissä ole vettä."
+          },
+          "dryThoroughly": {
+            "label": "Kuivaa perusteellisesti:",
+            "text": "Anna kaikkien pintojen kuivua täysin, sillä kosteus edistää homeen kasvua."
+          },
+          "dehumidifier": "Laita kosteudenpoistajia esim. Motonetista Absodry kosteudenpoistaja."
+        }
+      },
+      "engine": {
+        "title": "2. Moottori ja polttoaine",
+        "items": {
+          "fillTank": {
+            "label": "Täytä tankki:",
+            "text": "Pidä polttoainesäiliö täynnä kondensaation ehkäisemiseksi."
+          },
+          "protectEngine": {
+            "label": "Suojaa moottori:",
+            "text": "Käytä valmistajan ohjeiden mukaisesti glykolia tai muuta jäätymisenestoainetta."
+          },
+          "service": {
+            "label": "Huolto:",
+            "text": "Vaihda öljyt ja suodattimet, tyhjennä tai vaihda vedenerottimen suodatin."
+          }
+        }
+      },
+      "gear": {
+        "title": "3. Varusteet ja tarvikkeet",
+        "items": {
+          "removeSensitive": {
+            "label": "Poista kosteudelle herkät materiaalit:",
+            "text": "Vie pois tekstiilit, työkalut, elektroniikka ja muu irtaimisto."
+          },
+          "storeBatteries": {
+            "label": "Säilytä akut oikein:",
+            "text": "Irrota akut ja vie ne kuivaan, lämpimään paikkaan talven ajaksi."
+          }
+        }
+      },
+      "storage": {
+        "title": "4. Säilytys ja suojaus",
+        "items": {
+          "washRopes": {
+            "label": "Pese köydet:",
+            "text": "Huuhtele köydet makealla vedellä ja kuivaa hyvin ennen säilytystä."
+          },
+          "shrinkWrap": "Kelmuta vene. Lisää tietoa: www.kelmutus.fi",
+          "ventilation": {
+            "label": "Huolehdi ilmanvaihdosta:",
+            "text": "Jätä luukut ja ovet hieman auki, sekä varmista tuuletusaukot kelmuun."
+          }
+        }
+      },
+      "safety": {
+        "title": "5. Turvallisuus ja muut huomiot",
+        "items": {
+          "emptyBilge": {
+            "label": "Tyhjennä pilssi:",
+            "text": "Avaa perätulppa ja tarkista, ettei pilssiin jää vettä. Jos jää niin märkäimurilla loput pois. Tarkista myös pilssipumpun toiminta."
+          },
+          "drainWaterSystems": {
+            "label": "Tyhjennä vesijärjestelmät:",
+            "text": "Tyhjennä makeavesijärjestelmä ja kaada WC-pönttöön glykolia."
+          },
+          "finalNote": "Vene on nyt odottamassa kevättä ja voit huoletta alkaa suunnittelemaan tulevan kauden reittejä ☺"
+        }
+      }
+    }
+  },
+
+
+  "tietosuoja": {
+    "meta": {
+      "title": "Tietosuojaseloste | Kelmutus",
+      "description": "Kelmutuksen tietosuojaseloste: mitä henkilötietoja kerätään, mihin niitä käytetään ja mitkä ovat oikeutesi."
+    },
+    "brand": "Kelmutus",
+    "pageTitle": "Tietosuojaseloste",
+    "lastUpdated": {
+      "label": "Viimeksi päivitetty:",
+      "date": "8.2.2026"
+    },
+    "sections": {
+      "1": {
+        "title": "1) Rekisterinpitäjä",
+        "controller": {
+          "name": "Kelmutus (kelmutus.com / Kelmutus.fi)",
+          "emailLabel": "Sähköposti:",
+          "email": "jari@kelmutus.fi",
+          "phoneLabel": "Puhelin:",
+          "phone": "+358 400 283123"
+        }
+      },
+      "2": {
+        "title": "2) Mitä henkilötietoja keräämme?",
+        "intro": "Keräämme tietoja, kun lähetät meille tarjouspyynnön tai otat yhteyttä:",
+        "list": {
+          "name": "Nimi",
+          "company": "Yritys (valinnainen)",
+          "email": "Sähköposti",
+          "phone": "Puhelin",
+          "message": "Viestin sisältö (esim. kohteen tiedot ja mitat)",
+          "attachment": "Mahdollinen liitetiedosto (esim. kuva/PDF)"
+        },
+        "extra": "Lisäksi verkkosivun käytöstä voi syntyä teknisiä lokitietoja (esim. IP-osoite, selaintiedot, ajankohta), joita tarvitaan sivuston toiminnan ja tietoturvan varmistamiseen."
+      },
+      "3": {
+        "title": "3) Miksi käsittelemme tietoja?",
+        "intro": "Käsittelemme tietoja, jotta voimme:",
+        "list": {
+          "reply": "vastata viestiisi ja tehdä tarjouksen",
+          "followup": "kysyä lisätietoja ja hoitaa yhteydenpitoa tarjous- tai asiakasasioissa"
+        }
+      },
+      "4": {
+        "title": "4) Käsittelyn oikeusperuste",
+        "intro": "Käsittelemme tietoja ensisijaisesti:",
+        "list": {
+          "contract": {
+            "bold": "sopimuksen tekemiseksi / sopimusta edeltävien toimenpiteiden toteuttamiseksi",
+            "rest": "(esim. tarjouksen laatiminen), ja/tai"
+          },
+          "legitimate": {
+            "bold": "oikeutetun edun perusteella",
+            "rest": "(asiakasviestintä ja toiminnan ylläpito)."
+          }
+        }
+      },
+      "5": {
+        "title": "5) Luovutetaanko tietoja muille?",
+        "noSell": "Emme myy henkilötietoja.",
+        "providers": "Voimme käyttää luotettavia palveluntarjoajia (esim. hosting, sähköposti/IT), jotka käsittelevät tietoja puolestamme vain palvelun tuottamiseksi. Tietoja luovutetaan viranomaisille vain, jos laki sitä edellyttää."
+      },
+      "6": {
+        "title": "6) Kuinka kauan säilytämme tietoja?",
+        "intro": "Säilytämme yhteydenottoihin ja tarjouspyyntöihin liittyviä tietoja niin kauan kuin asian hoitaminen sitä edellyttää, ja poistamme ne kohtuullisessa ajassa, ellei:",
+        "list": {
+          "relationship": "asiakassuhde alkaa, tai",
+          "law": "laki velvoita säilyttämään tietoja pidempään (esim. kirjanpitoon liittyvät tiedot)."
+        }
+      },
+      "7": {
+        "title": "7) Sinun oikeutesi",
+        "intro": "Sinulla on oikeus:",
+        "list": {
+          "info": "saada tietoa henkilötietojen käsittelystä",
+          "access": "tarkastaa tietosi",
+          "rectify": "pyytää tietojen oikaisua",
+          "erase": "pyytää tietojen poistoa tietyissä tilanteissa",
+          "restrict": "rajoittaa käsittelyä tietyissä tilanteissa",
+          "object": "vastustaa käsittelyä tietyissä tilanteissa"
+        },
+        "contactPrefix": "Voit käyttää oikeuksiasi ottamalla yhteyttä:",
+        "contactEmail": "jari@kelmutus.fi"
+      },
+      "8": {
+        "title": "8) Valitusoikeus",
+        "intro": "Jos koet, että henkilötietojasi on käsitelty lainvastaisesti, sinulla on oikeus tehdä valitus valvontaviranomaiselle:",
+        "authority": {
+          "name": "Tietosuojavaltuutetun toimisto (tietosuoja.fi)",
+          "linkText": "Yhteystiedot"
+        }
+      },
+      "9": {
+        "title": "9) Tietoturva",
+        "text": "Suojaamme tiedot asianmukaisilla teknisillä ja organisatorisilla keinoilla ja rajaamme pääsyn tietoihin vain niille, joilla on työnsä puolesta tarve käsitellä niitä."
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+

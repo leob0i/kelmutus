@@ -1,0 +1,507 @@
+{
+  "nav": {
+    "kutistepussit": "Shrink wrap covers",
+    "palvelut": "Services",
+    "tyomme": "Our work",
+    "meista": "About",
+    "cta": "Contact",
+    "homeAria": "Kelmutus home",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "footer": {
+    "companyName": "ShrinkPro Finland Oy",
+    "businessIdLabel": "Business ID",
+    "businessIdValue": "3578472-2",
+    "phoneLabel": "Phone",
+    "emailLabel": "Email",
+    "copyright": "© 2026 Kelmutus.fi. All rights reserved.",
+    "vatNote": "Prices shown without VAT (VAT 0%).",
+    "winterStorage": "Winter storage guide",
+    "privacy": "Privacy policy",
+    "credit": "High-quality websites by LeoDigital"
+  },
+  "home": {
+    "meta": {
+      "title": "Boat shrink wrapping & made-to-measure shrink wrap covers | Kelmutus.fi",
+      "description": "Boat protection for winter storage, transport and warehousing. Made-to-measure shrink wrap covers – also industrial shrink wrapping and transport protection."
+    },
+    "hero": {
+      "title": "Your boat deserves the best winter protection",
+      "body": "A well-protected boat keeps its value, finish and appearance. Shrink wrapping is tailored to your boat — not the other way around. We also provide wrapping for cars, houses and machinery.",
+      "mobileCta": "Contact us"
+    },
+    "bags": {
+      "title": "Made-to-measure shrink wrap covers",
+      "body1": "Made-to-measure shrink wrap covers fit perfectly, protect reliably and look neat. Less plastic, faster installation, fast delivery.",
+      "body2": "Send the measurements or specs! We’ll take care of the rest!",
+      "cta": "Read more about shrink wrap covers"
+    },
+    "cards": {
+      "industry": {
+        "title": "Industry & equipment",
+        "body": "We shrink wrap industrial equipment, machines and complete assemblies so they stay well protected during transport, storage and at the worksite. We can make covers to your measurements or come on-site to do the wrapping. The protection is neat, tight and keeps equipment and machines in good condition during storage or transport.",
+        "cta": "Read more about our services"
+      },
+      "onsite": {
+        "title": "On-site shrink wrapping",
+        "body1": "A ready-made cover isn’t always enough — sometimes the boat needs to be protected where it is.",
+        "body2": "If needed, we come on-site (southern Finland) and shrink wrap the boat for storage or transport.",
+        "cta": "Read more about our services"
+      }
+    },
+    "install": {
+      "title": "Fast installation, solid result.",
+      "body1": "Watch the video as an Axopar 28 is wrapped quickly. Two-person installation time: 45 minutes!",
+      "body2": "Cover price only 358.80 €",
+      "cta": "See more of our work"
+    },
+    "promise": {
+      "body": "We offer durable, high-quality, and made-to-measure ready shrink wrap covers for transport, logistics and storage needs. Our solutions protect your assets from weather and transport wear, preserving the finish and overall condition. Fast delivery and, if needed, on-site installation ensure a smooth process and high customer satisfaction."
+    },
+    "contact": {
+      "bgAlt": "Shrink wrap covers background image",
+      "title": "Request a quote or ask about shrink wrap covers",
+      "body": "Briefly describe the item (e.g. a boat or an industrial object) and the protection you need. You can attach a photo, a sketch or a PDF file to help us understand the measurements and the item. We’ll get back to you as soon as possible!",
+      "whatsappAria": "Open WhatsApp and contact us"
+    },
+    "form": {
+      "nameLabel": "Name",
+      "namePlaceholder": "First name Last name",
+      "companyLabel": "Company (optional)",
+      "companyPlaceholder": "Company name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "name@company.com",
+      "phoneLabel": "Phone",
+      "phonePlaceholder": "Phone number",
+      "attachmentLabel": "Attach a file (optional)",
+      "attachmentHelp": "You can attach an image or a PDF file. (max 2 MB)",
+      "messageLabel": "Tell us about the item and dimensions",
+      "messagePlaceholder": "Describe the item (boat/industrial object, what?), dimensions, schedule and any additional wishes.",
+      "consent": "By submitting the form, you agree that we may contact you.",
+      "submit": "Send quote request"
+    }
+  },
+  "kutistepussit": {
+    "meta": {
+      "title": "Custom shrink wrap covers | Boat protection | Kelmutus.fi",
+      "description": "Custom-sized shrink wrap covers for boats and industry. UV-stabilized PE/LDPE (150–200 µm). A tight, clean cover for winter storage, transport and warehousing."
+    },
+    "hero": {
+      "imageAlt": "Shrink wrap covers",
+      "title": "Custom shrink wrap covers",
+      "subtitle": "Covers for boats and industry – custom sized, fast delivery, clean finish.",
+      "cta": "Request a quote – send measurements"
+    },
+    "whatAre": {
+      "title": "What are shrink wrap covers?",
+      "body": "Our made-to-measure shrink wrap covers are made from durable UV-stabilized polyethylene (PE/LDPE). The typical thickness is 150–200 µm, which provides a clean, rigid surface and excellent protection for winter storage and transport. The cover is heat-shrunk into place with heat treatment (heat gun/gas burner), tightening closely to the hull shapes without wrinkling or excess material."
+    },
+    "diagramAlt": "Shrink wrap cover diagram",
+    "why": {
+      "title": "Why this solution?",
+      "items": [
+        "Precise sizing: made according to the boat model or measurements",
+        "Durable & clean: UV protection, reinforced seams, neat finish",
+        "Weather- and salt-resistant: protects from dirt, rain, ice and sea salt",
+        "Fast installation: place the cover and heat-shrink – done",
+        "Accessories: ventilation vents, inspection window, marking tapes"
+      ]
+    },
+    "durable": {
+      "title": "A durable solution",
+      "body": "We offer high-quality, durable wrap films. With our service you can protect valuable equipment from weather and transport damage. Reliable and fast deliveries ensure high customer satisfaction."
+    },
+    "priceExamplePrefix": "e.g.",
+    "askBiggerBoats": "Ask also about larger boats and group pricing for multiple boats!",
+    "winterStorageAria": "Open winter storage instructions for boats",
+    "winterStorageBtn": "Winter storage instructions for boats",
+    "contact": {
+      "bgAlt": "Shrink wrap covers background image",
+      "title": "Request a quote or ask about shrink wrap covers",
+      "body": "Briefly describe the item (e.g., boat or industrial equipment) and the protection you need. You can attach an image, sketch or PDF to help with measurements and details. We will get back to you as soon as possible.",
+      "whatsappAria": "Open WhatsApp and contact us"
+    },
+    "form": {
+      "name": "Name",
+      "namePh": "First name Last name",
+      "company": "Company (optional)",
+      "companyPh": "Company name",
+      "email": "Email",
+      "emailPh": "name@company.com",
+      "phone": "Phone",
+      "phonePh": "Phone number",
+      "attachment": "Attach a file (optional)",
+      "attachmentHelp": "You can attach an image or a PDF. (max 2 MB)",
+      "message": "Tell us about the item and measurements",
+      "messagePh": "Describe the item (boat/industrial, what?), dimensions, schedule and any additional requests.",
+      "consent": "By submitting the form you agree that we may contact you regarding an offer and any follow-up questions.",
+      "submit": "Send request for quote"
+    }
+  },
+  "palvelut": {
+    "meta": {
+      "title": "Services | Kelmutus",
+      "description": "Shrink wrapping for boats, cars and industrial sites. Protection from weather, transport and storage – fast and durable."
+    },
+    "hero": {
+      "title": "Services",
+      "cta": "Request a quote",
+      "body": "We create durable shrink wraps for boats, industrial sites and various equipment. The result is tight, clean and designed to protect the item from weather, storage conditions and transport stress."
+    },
+    "services": [
+      {
+        "title": "Boat shrink wrapping",
+        "desc": "Protection for winter storage, transport and warehousing. A tight, durable and clean finish.",
+        "bullets": [
+          "Weather-resistant protection",
+          "For outdoor and indoor storage",
+          "On-site shrink wrapping"
+        ]
+      },
+      {
+        "title": "Industrial shrink wrapping",
+        "desc": "Protection for machines, equipment and other projects. We make covers to measurement or come on-site to wrap. The cover is neat and tight, keeping equipment and machines safe during storage and transport.",
+        "bullets": ["Transport protection", "Storage protection", "Packing"]
+      },
+      {
+        "title": "Car shrink wrapping",
+        "desc": "A strong, tight cover for transport, storage and seasonal keeping. Helps keep surfaces clean and protected from minor knocks, dirt and scratches.",
+        "bullets": [
+          "Transport cover",
+          "Storage & seasonal keeping",
+          "Protects from dirt and scratches"
+        ]
+      },
+      {
+        "title": "We wrap it",
+        "desc": "Special items and unusual shapes are no problem – tell us what needs protection and we’ll build the right solution.",
+        "bullets": ["Custom measurements", "Special items"]
+      }
+    ],
+    "onsite": {
+      "imageAlt": "On-site shrink wrapping",
+      "title": "On-site shrink wrapping in the Helsinki capital area",
+      "body": "Whether it’s a boat, a hobby car, equipment or anything that needs to be protected quickly and safely for storage or transport, we can come on-site and wrap it!",
+      "priceLine": "Prices from 45 € (VAT 0%) / meter for under 10 m console boats."
+    },
+    "pricingInfo": {
+      "paragraph1": "Prices include basic protection and work at the location specified by the customer in the Helsinki capital area. If you need additional services such as transportation or special solutions, please contact us. We tailor an offer to your needs.",
+      "paragraph2": "We also wrap outside the capital area for an additional fee. Ask for details!"
+    },
+    "durable": {
+      "imageAlt": "Boat in shrink wrap",
+      "title": "A durable solution",
+      "body": "We provide high-quality, durable films for protecting valuable items. Our service helps prevent weather- and transport-related damage, and reliable, fast deliveries support high customer satisfaction. Our made-to-measure shrink wrap covers are made from UV-stabilized polyethylene (PE/LDPE) with a typical thickness of 150–200 µm.",
+      "examplePrefix": "e.g."
+    },
+    "contact": {
+      "bgAlt": "Shrink wrap covers background image",
+      "title": "Request a quote or ask about shrink wrap covers",
+      "body": "Briefly describe the item (e.g., a boat or an industrial site) and the protection you need. You can attach an image, sketch or PDF to help with measurements and details. We will get back to you as soon as possible.",
+      "whatsappAria": "Open WhatsApp and contact us"
+    },
+    "form": {
+      "name": "Name",
+      "namePh": "First name Last name",
+      "company": "Company (optional)",
+      "companyPh": "Company name",
+      "email": "Email",
+      "emailPh": "name@company.com",
+      "phone": "Phone",
+      "phonePh": "Phone number",
+      "attachment": "Attach a file (optional)",
+      "attachmentHelp": "You can attach an image or a PDF. (max 2 MB)",
+      "message": "Tell us about the item and measurements",
+      "messagePh": "Describe the item (boat/industrial, what?), dimensions, schedule and any additional requests.",
+      "consent": "By submitting the form you agree that we may contact you regarding an offer and any follow-up questions.",
+      "submit": "Send request for quote"
+    }
+  },
+
+  
+  "meista": {
+    "meta": {
+      "title": "About us | Kelmutus",
+      "description": "Kelmutus.fi – ShrinkPro Finland Oy. Our story, how we work, and two clear solutions for boats and industry."
+    },
+    "brand": {
+      "title": "KELMUTUS",
+      "company": "ShrinkPro Finland Oy",
+      "businessId": "Business ID 3578472-2"
+    },
+    "story": {
+      "p1": "Kelmutus.fi started from a practical need: boats and equipment required protection that is quick to install, clean and durable. A traditional shrink film roll weighs 50 kg, installation is labor-intensive and creates a lot of waste.",
+      "p2": "That led to the idea of made-to-measure shrink wrap covers. Our made-to-measure shrink wrap covers are made from durable UV-stabilized polyethylene (PE/LDPE). The typical thickness is 150–200 µm, which provides a clean, rigid surface and excellent protection for winter storage and transport.",
+      "p3a": "For us, the most important things are precise sizing, a clean finish and an easy everyday experience for the customer. We keep schedules and make sure the protection lasts through winter, transport and storage.",
+      "p3b": "Send the boat model or measurements, and we’ll make a ready, worry-free solution for you!"
+    },
+    "person": {
+      "photoAlt": "Jari Äyhö",
+      "name": "Jari Äyhö",
+      "title": "CEO",
+      "phoneLabel": "Phone:",
+      "emailLabel": "Email:"
+    },
+    "contact": {
+      "bgAlt": "Shrink wrap covers background image",
+      "title": "Contact",
+      "body": "For urgent matters, you can call: +358 400283123.\nWe will get back to you as soon as possible!",
+      "whatsappAria": "Open WhatsApp and contact us"
+    },
+    "form": {
+      "name": "Name",
+      "namePh": "First name Last name",
+      "company": "Company (optional)",
+      "companyPh": "Company name",
+      "email": "Email",
+      "emailPh": "name@company.com",
+      "phone": "Phone",
+      "phonePh": "Phone number",
+      "attachment": "Attach a file (optional)",
+      "attachmentHelp": "You can attach an image or a PDF. (max 2 MB)",
+      "message": "Tell us about the item and measurements",
+      "messagePh": "Describe the item (boat/industrial, what?), dimensions, schedule and any additional requests.",
+      "consent": "By submitting the form you agree that we may contact you.",
+      "submit": "Send request for quote"
+    }
+  },
+
+
+  "tyomme": {
+    "meta": {
+      "title": "Our work | Kelmutus",
+      "description": "Examples of Kelmutus.fi projects – boats, industrial sites, cars and special shapes. View before/after and the gallery."
+    },
+    "hero": {
+      "title": "Our work",
+      "body": "Examples of projects for boats, industrial sites, cars and special shapes.  Tight protection, a clean finish and a reliable result."
+    },
+    "gallerySection": {
+      "title": "Project gallery"
+    },
+    "beforeAfter": {
+      "title": "Before & after",
+      "labels": {
+        "before": "Before",
+        "after": "After"
+      },
+      "main": {
+        "beforeAlt": "Before: boat without protection",
+        "afterAlt": "After: boat protected with a shrink wrap cover"
+      },
+      "row1": {
+        "beforeAlt": "Before: boat without protection",
+        "afterAlt": "After: boat protected with a shrink wrap cover"
+      },
+      "row2": {
+        "beforeAlt": "Before: item without protection",
+        "afterAlt": "After: item protected with shrink wrap"
+      }
+    },
+    "gallery": {
+      "isovene": "Boat shrink-wrapped – finished result",
+      "isoveneSivu": "Boat shrink-wrapped from the side",
+      "autoKelmus": "Car protected with shrink wrap for storage",
+      "axopar28": "Boat shrink-wrapped indoors",
+      "rekkaKelmussa": "Shrink wrapping in progress on a boat",
+      "veneUlkona": "Large item shrink-wrapped on a transport base",
+      "talo": "Construction site protected with shrink wrap",
+      "veneParkissa": "Sizing/diagram for a shrink wrap cover",
+      "saxdor": "Boat before protection"
+    }
+  },
+
+
+  "talvisailytys": {
+    "meta": {
+      "title": "Boat winter storage guide | Kelmutus",
+      "description": "Boat winter storage guide: cleaning, engine, equipment, protection and safety."
+    },
+    "title": "Boat winter storage guide",
+    "sections": {
+      "cleaning": {
+        "title": "1. Cleaning and drying",
+        "items": {
+          "cleanSurfaces": {
+            "label": "Clean surfaces:",
+            "text": "Wash the boat’s interior (cabinets, surfaces) with mild soapy water or diluted vinegar water."
+          },
+          "removeMoisture": {
+            "label": "Remove moisture:",
+            "text": "Ventilate the boat thoroughly. Make sure there is no water left in hoses, the fridge, or other recesses."
+          },
+          "dryThoroughly": {
+            "label": "Dry thoroughly:",
+            "text": "Let all surfaces dry completely, as moisture promotes mold growth."
+          },
+          "dehumidifier": "Use moisture absorbers, e.g. an Absodry dehumidifier from Motonet."
+        }
+      },
+      "engine": {
+        "title": "2. Engine and fuel",
+        "items": {
+          "fillTank": {
+            "label": "Fill the tank:",
+            "text": "Keep the fuel tank full to prevent condensation."
+          },
+          "protectEngine": {
+            "label": "Protect the engine:",
+            "text": "Use antifreeze (glycol) or another freeze protection product according to the manufacturer’s instructions."
+          },
+          "service": {
+            "label": "Service:",
+            "text": "Change oils and filters, and empty or replace the water separator filter."
+          }
+        }
+      },
+      "gear": {
+        "title": "3. Gear and accessories",
+        "items": {
+          "removeSensitive": {
+            "label": "Remove moisture-sensitive items:",
+            "text": "Take out textiles, tools, electronics and other loose items."
+          },
+          "storeBatteries": {
+            "label": "Store batteries properly:",
+            "text": "Disconnect the batteries and store them in a dry, warm place for the winter."
+          }
+        }
+      },
+      "storage": {
+        "title": "4. Storage and protection",
+        "items": {
+          "washRopes": {
+            "label": "Wash ropes:",
+            "text": "Rinse ropes with fresh water and dry them well before storage."
+          },
+          "shrinkWrap": "Shrink-wrap the boat. More information: www.kelmutus.fi",
+          "ventilation": {
+            "label": "Ensure ventilation:",
+            "text": "Leave hatches and doors slightly open, and make sure there are ventilation openings in the shrink wrap."
+          }
+        }
+      },
+      "safety": {
+        "title": "5. Safety and other notes",
+        "items": {
+          "emptyBilge": {
+            "label": "Empty the bilge:",
+            "text": "Open the drain plug and check that no water remains in the bilge. If needed, remove the rest with a wet vacuum. Also check that the bilge pump works."
+          },
+          "drainWaterSystems": {
+            "label": "Drain water systems:",
+            "text": "Drain the fresh water system and pour antifreeze into the toilet bowl."
+          },
+          "finalNote": "Your boat is now ready for spring — you can safely start planning the routes for the next season ☺"
+        }
+      }
+    }
+  },
+
+
+  "tietosuoja": {
+    "meta": {
+      "title": "Privacy policy | Kelmutus",
+      "description": "Kelmutus privacy policy: what personal data we collect, why we use it, and what your rights are."
+    },
+    "brand": "Kelmutus",
+    "pageTitle": "Privacy policy",
+    "lastUpdated": {
+      "label": "Last updated:",
+      "date": "8 Feb 2026"
+    },
+    "sections": {
+      "1": {
+        "title": "1) Data controller",
+        "controller": {
+          "name": "Kelmutus (kelmutus.com / Kelmutus.fi)",
+          "emailLabel": "Email:",
+          "email": "jari@kelmutus.fi",
+          "phoneLabel": "Phone:",
+          "phone": "+358 400 283123"
+        }
+      },
+      "2": {
+        "title": "2) What personal data do we collect?",
+        "intro": "We collect information when you send us a quote request or contact us:",
+        "list": {
+          "name": "Name",
+          "company": "Company (optional)",
+          "email": "Email",
+          "phone": "Phone",
+          "message": "Message content (e.g., details and dimensions of the item)",
+          "attachment": "Possible attachment (e.g., image/PDF)"
+        },
+        "extra": "In addition, technical log data may be generated from using the website (e.g., IP address, browser details, timestamp), which is needed to ensure the site’s functionality and security."
+      },
+      "3": {
+        "title": "3) Why do we process the data?",
+        "intro": "We process the data so that we can:",
+        "list": {
+          "reply": "reply to your message and provide a quote",
+          "followup": "ask for additional details and handle communication regarding quotes or customer matters"
+        }
+      },
+      "4": {
+        "title": "4) Legal basis for processing",
+        "intro": "We process the data primarily on the basis of:",
+        "list": {
+          "contract": {
+            "bold": "entering into a contract / taking steps prior to entering into a contract",
+            "rest": "(e.g., preparing an offer), and/or"
+          },
+          "legitimate": {
+            "bold": "legitimate interests",
+            "rest": "(customer communications and maintaining operations)."
+          }
+        }
+      },
+      "5": {
+        "title": "5) Do we disclose data to others?",
+        "noSell": "We do not sell personal data.",
+        "providers": "We may use trusted service providers (e.g., hosting, email/IT) who process data on our behalf only to provide the service. Data is disclosed to authorities only if required by law."
+      },
+      "6": {
+        "title": "6) How long do we retain the data?",
+        "intro": "We retain data related to contacts and quote requests as long as necessary to handle the matter, and delete it within a reasonable time unless:",
+        "list": {
+          "relationship": "a customer relationship begins, or",
+          "law": "the law requires longer retention (e.g., accounting-related records)."
+        }
+      },
+      "7": {
+        "title": "7) Your rights",
+        "intro": "You have the right to:",
+        "list": {
+          "info": "receive information about the processing of your personal data",
+          "access": "access your data",
+          "rectify": "request correction of your data",
+          "erase": "request deletion of your data in certain situations",
+          "restrict": "restrict processing in certain situations",
+          "object": "object to processing in certain situations"
+        },
+        "contactPrefix": "You can exercise your rights by contacting:",
+        "contactEmail": "jari@kelmutus.fi"
+      },
+      "8": {
+        "title": "8) Right to lodge a complaint",
+        "intro": "If you believe your personal data has been processed unlawfully, you have the right to lodge a complaint with the supervisory authority:",
+        "authority": {
+          "name": "Office of the Data Protection Ombudsman (tietosuoja.fi)",
+          "linkText": "Contact details"
+        }
+      },
+      "9": {
+        "title": "9) Security",
+        "text": "We protect the data using appropriate technical and organizational measures and restrict access to the data only to those who need it for their work."
+      }
+    }
+  }
+}
+
+
+
+
+
+

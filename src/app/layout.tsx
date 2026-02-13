@@ -1,26 +1,26 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { SiteHeader } from "@/components/SiteHeader";
-import { SiteFooter } from "@/components/SiteFooter";
+import { getLocale } from "next-intl/server";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.kelmutus.fi"),
-  alternates: {
-  canonical: "./",
-},
-
-  title: "Kelmutus",
-  description: "Kelmutus – veneiden ja laitteiden suojausratkaisut.",
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children
+}: {
+  children: React.ReactNode;
+}) {
+  let locale = "fi";
+  try {
+    locale = await getLocale();
+  } catch {
+    // fallback ok
+  }
+
   return (
-    <html lang="fi">
-      <body className="bg-white text-slate-900">
-        <SiteHeader />
-        {children}
-        <SiteFooter />
-      </body>
+    <html lang={locale}>
+      <body className="bg-white text-slate-900">{children}</body>
     </html>
   );
 }

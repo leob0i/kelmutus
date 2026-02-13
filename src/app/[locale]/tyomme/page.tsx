@@ -1,32 +1,38 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import TyommeHeroVideo from "@/components/TyommeHeroVideo";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Työmme | Kelmutus",
-  description:
-    "Esimerkkejä Kelmutus.fi toteutuksista – veneet, teollisuus, autot ja erikoiskohteet. Katso ennen/jälkeen ja kuvagalleria.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "tyomme" });
+
+  return {
+    title: t("meta.title"),
+    description: t("meta.description"),
+  };
+}
 
 const gallery = [
-  { src: "/gallery/isovene.jpg", alt: "Vene kelmutettuna – valmis lopputulos" },
-  { src: "/gallery/isovene.sivu.jpg", alt: "Vene kelmutettuna sivusta" },
-  { src: "/gallery/auto.kelmus.jpg", alt: "Auto suojattuna kelmulla varastointiin" },
-  { src: "/gallery/axopar28.png", alt: "Vene kelmutettuna hallissa" },
-  { src: "/gallery/rekka.kelmussa.jpg", alt: "Kelmutus käynnissä veneen päällä" },
-  { src: "/gallery/vene.ulkona.jpg", alt: "Iso kohde kelmutettuna kuljetusalustalla" },
-  { src: "/kelmutus.talo.jpg", alt: "Rakennuskohteen suojaus kelmulla" },
-  { src: "/gallery/vene.parkissa.jpg", alt: "Mitoitus/kaavio kutistepussille" },
-  { src: "/gallery/saxdor.png", alt: "Vene ennen suojausta" },
+  { src: "/gallery/isovene.jpg", altKey: "gallery.isovene" },
+  { src: "/gallery/isovene.sivu.jpg", altKey: "gallery.isoveneSivu" },
+  { src: "/gallery/auto.kelmus.jpg", altKey: "gallery.autoKelmus" },
+  { src: "/gallery/axopar28.png", altKey: "gallery.axopar28" },
+  { src: "/gallery/rekka.kelmussa.jpg", altKey: "gallery.rekkaKelmussa" },
+  { src: "/gallery/vene.ulkona.jpg", altKey: "gallery.veneUlkona" },
+  { src: "/kelmutus.talo.jpg", altKey: "gallery.talo" },
+  { src: "/gallery/vene.parkissa.jpg", altKey: "gallery.veneParkissa" },
+  { src: "/gallery/saxdor.png", altKey: "gallery.saxdor" },
 ];
 
-// Ennen / jälkeen -pariksi valitsin “ennen”: /buster.l.jpg ja “jälkeen”: /gallery/isovene.sivu.jpg
+// Ennen / jälkeen
 const beforeAfter = {
-  before: { src: "/gallery/sar.musta.jpg", alt: "Ennen: vene ilman suojausta" },
-  after: { src: "/gallery/sar.musta.kelmussa.jpg", alt: "Jälkeen: vene suojattuna kutistepussilla" },
-
-
-
+  before: { src: "/gallery/sar.musta.jpg", altKey: "beforeAfter.main.beforeAlt" },
+  after: { src: "/gallery/sar.musta.kelmussa.jpg", altKey: "beforeAfter.main.afterAlt" },
 };
 
 function CardImage({
@@ -59,7 +65,14 @@ function CardImage({
   );
 }
 
-export default function TyommePage() {
+export default async function TyommePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "tyomme" });
+
   return (
     <main className="bg-white text-slate-950">
       {/* HERO */}
@@ -74,14 +87,11 @@ export default function TyommePage() {
         {/* Content */}
         <div className="relative mx-auto max-w-6xl px-4 pt-28 pb-16 md:pt-36 md:pb-24">
           <h1 className="font-serif text-5xl leading-tight text-white drop-shadow md:text-6xl">
-            Työmme
+            {t("hero.title")}
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/90 md:text-lg">
-            Esimerkkejä toteutuksista veneisiin, teollisuuskohteisiin, autoihin ja
-            erikoismuotoihin. Tiivis suoja, siisti pinta ja varma lopputulos.
+            {t("hero.body")}
           </p>
-
-          
         </div>
       </section>
 
@@ -90,12 +100,9 @@ export default function TyommePage() {
         <div className="grid gap-8 md:grid-cols-2 md:items-start">
           <div>
             <h2 className="font-serif text-3xl md:text-4xl">
-              Kuvia toteutuksista
+              {t("gallerySection.title")}
             </h2>
-           
           </div>
-
-          
         </div>
       </section>
 
@@ -103,7 +110,7 @@ export default function TyommePage() {
       <section className="mx-auto max-w-6xl px-4 pb-16 md:pb-20">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {gallery.map((img) => (
-            <CardImage key={img.src} src={img.src} alt={img.alt} />
+            <CardImage key={img.src} src={img.src} alt={t(img.altKey)} />
           ))}
         </div>
       </section>
@@ -113,21 +120,22 @@ export default function TyommePage() {
         <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl">Ennen & jälkeen</h2>
-             
+              <h2 className="font-serif text-3xl md:text-4xl">
+                {t("beforeAfter.title")}
+              </h2>
             </div>
           </div>
 
           <div className="mt-10 grid gap-6 md:grid-cols-2">
             <CardImage
               src={beforeAfter.before.src}
-              alt={beforeAfter.before.alt}
-              label="Ennen"
+              alt={t(beforeAfter.before.altKey)}
+              label={t("beforeAfter.labels.before")}
             />
             <CardImage
               src={beforeAfter.after.src}
-              alt={beforeAfter.after.alt}
-              label="Jälkeen"
+              alt={t(beforeAfter.after.altKey)}
+              label={t("beforeAfter.labels.after")}
             />
           </div>
 
@@ -135,13 +143,13 @@ export default function TyommePage() {
           <div className="mt-6 grid grid-cols-2 gap-6">
             <CardImage
               src="/gallery/saxdor.aloitus.jpg"
-              alt="Ennen: vene ilman suojausta"
-              label="Ennen"
+              alt={t("beforeAfter.row1.beforeAlt")}
+              label={t("beforeAfter.labels.before")}
             />
             <CardImage
               src="/gallery/isovene.sivu.jpg"
-              alt="Jälkeen: vene suojattuna kutistepussilla"
-              label="Jälkeen"
+              alt={t("beforeAfter.row1.afterAlt")}
+              label={t("beforeAfter.labels.after")}
             />
           </div>
 
@@ -149,17 +157,15 @@ export default function TyommePage() {
           <div className="mt-6 grid grid-cols-2 gap-6">
             <CardImage
               src="/gallery/sar.jpg"
-              alt="Ennen: kohde ilman suojausta"
-              label="Ennen"
+              alt={t("beforeAfter.row2.beforeAlt")}
+              label={t("beforeAfter.labels.before")}
             />
             <CardImage
               src="/gallery/sar.kelmussa.jpg"
-              alt="Jälkeen: kohde suojattuna kelmulla"
-              label="Jälkeen"
+              alt={t("beforeAfter.row2.afterAlt")}
+              label={t("beforeAfter.labels.after")}
             />
           </div>
-
-
         </div>
       </section>
     </main>
