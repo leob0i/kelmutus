@@ -40,24 +40,24 @@
     "cards": {
       "industry": {
         "title": "Industry & equipment",
-        "body": "We shrink wrap industrial equipment, machines and complete assemblies so they stay well protected during transport, storage and at the worksite. We can make covers to your measurements or come on-site to do the wrapping. The protection is neat, tight and keeps equipment and machines in good condition during storage or transport.",
+        "body": "We shrink wrap industrial equipment, machines and complete assemblies so they stay well protected during transport, storage and at the worksite. We can make custom-sized covers or come on site to do the wrapping. The wrap is neat and tight, keeping equipment and machines in good condition during storage or transport.",
         "cta": "Read more about our services"
       },
       "onsite": {
         "title": "On-site shrink wrapping",
         "body1": "A ready-made cover isn’t always enough — sometimes the boat needs to be protected where it is.",
-        "body2": "If needed, we come on-site (southern Finland) and shrink wrap the boat for storage or transport.",
+        "body2": "If needed, we come on site (southern Finland) and shrink wrap the boat for storage or transport.",
         "cta": "Read more about our services"
       }
     },
     "install": {
       "title": "Fast installation, solid result.",
       "body1": "Watch the video as an Axopar 28 is wrapped quickly. Two-person installation time: 45 minutes!",
-      "body2": "Cover price only 358.80 €",
+      "body2": "Cover price only: €358.80",
       "cta": "See more of our work"
     },
     "promise": {
-      "body": "We offer durable, high-quality, and made-to-measure ready shrink wrap covers for transport, logistics and storage needs. Our solutions protect your assets from weather and transport wear, preserving the finish and overall condition. Fast delivery and, if needed, on-site installation ensure a smooth process and high customer satisfaction."
+      "body": "We offer durable, high-quality, and made-to-measure shrink wrap covers for transport, logistics and storage needs. Our solutions protect your assets from weather and transport wear, preserving the finish and overall condition. Fast delivery and, if needed, on-site installation ensure a smooth process and high customer satisfaction."
     },
     "contact": {
       "bgAlt": "Shrink wrap covers background image",
@@ -110,7 +110,7 @@
     },
     "durable": {
       "title": "Smart solution",
-      "body": "We offer high-quality, durable wrap films. With our service you can protect valuable equipment from weather and transport damage. Reliable and fast deliveries ensure high customer satisfaction."
+      "body": "We offer high-quality, durable shrink wrap covers. With our service you can protect valuable equipment from weather and transport damage. Reliable and fast deliveries ensure high customer satisfaction."
     },
     "priceExamplePrefix": "e.g.",
     "askBiggerBoats": "Ask also about larger boats and group pricing for multiple boats!",
@@ -161,15 +161,15 @@
       },
       {
         "title": "Industrial shrink wrapping",
-        "desc": "Protection for machines, equipment and other projects. We make covers to measurement or come on-site to wrap. The cover is neat and tight, keeping equipment and machines safe during storage and transport.",
-        "bullets": ["Transport protection", "Storage protection", "Packing"]
+        "desc": "Protection for machines, equipment and other projects. We provide custom-sized shrink wrap or come on site to wrap. The wrap is neat and tight, keeping equipment and machines safe during storage and transport.",
+        "bullets": ["Transport protection", "Storage protection", "Packaging"]
       },
       {
         "title": "Car shrink wrapping",
-        "desc": "A strong, tight cover for transport, storage and seasonal keeping. Helps keep surfaces clean and protected from minor knocks, dirt and scratches.",
+        "desc": "A strong, tight wrap for transport, storage (seasonal or long-term). Helps keep surfaces clean and protected from minor knocks, dirt and scratches.",
         "bullets": [
           "Transport cover",
-          "Storage & seasonal keeping",
+          "Storage (seasonal & long-term)",
           "Protects from dirt and scratches"
         ]
       },
@@ -181,12 +181,12 @@
     ],
     "onsite": {
       "imageAlt": "On-site shrink wrapping",
-      "title": "On-site shrink wrapping in the Helsinki capital area",
-      "body": "Whether it’s a boat, a hobby car, equipment or anything that needs to be protected quickly and safely for storage or transport, we can come on-site and wrap it!",
-      "priceLine": "Prices from 45 € (VAT 0%) / meter for under 10 m console boats."
+      "title": "On-site shrink wrapping in the Helsinki Capital Region",
+      "body": "Whether it’s a boat, car, equipment or anything that needs to be protected quickly and safely for storage or transport, we can come on-site and wrap it!",
+      "priceLine": "Prices start at €45 per meter (VAT 0%) for console boats under 10 m."
     },
     "pricingInfo": {
-      "paragraph1": "Prices include basic protection and work at the location specified by the customer in the Helsinki capital area. If you need additional services such as transportation or special solutions, please contact us. We tailor an offer to your needs.",
+      "paragraph1": "Prices include basic protection and work at the location specified by the customer in the Helsinki Capital Region. If you need additional services such as transportation or special solutions, please contact us. We tailor an offer to your needs.",
       "paragraph2": "We also wrap outside the capital area for an additional fee. Ask for details!"
     },
     "durable": {
