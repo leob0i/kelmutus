@@ -135,7 +135,7 @@
       "attachmentHelp": "You can attach an image or a PDF. (max 2 MB)",
       "message": "Tell us about the item and measurements",
       "messagePh": "Describe the item (boat/industrial, what?), dimensions, schedule and any additional requests.",
-      "consent": "By submitting the form you agree that we may contact you regarding an offer and any follow-up questions.",
+      "consent": "By submitting the form, you agree that we may contact you regarding an offer and any follow-up questions.",
       "submit": "Send request for quote"
     }
   },
@@ -214,8 +214,8 @@
       "attachmentHelp": "You can attach an image or a PDF. (max 2 MB)",
       "message": "Tell us about the item and measurements",
       "messagePh": "Describe the item (boat/industrial, what?), dimensions, schedule and any additional requests.",
-      "consent": "By submitting the form you agree that we may contact you regarding an offer and any follow-up questions.",
-      "submit": "Send request for quote"
+      "consent": "By submitting the form, you agree that we may contact you regarding an offer and any follow-up questions.",
+      "submit": "Send a request for quote"
     }
   },
 
@@ -262,8 +262,8 @@
       "attachmentHelp": "You can attach an image or a PDF. (max 2 MB)",
       "message": "Tell us about the item and measurements",
       "messagePh": "Describe the item (boat/industrial, what?), dimensions, schedule and any additional requests.",
-      "consent": "By submitting the form you agree that we may contact you.",
-      "submit": "Send request for quote"
+      "consent": "By submitting the form, you agree that we may contact you.",
+      "submit": "Send a request for quote"
     }
   },
 
