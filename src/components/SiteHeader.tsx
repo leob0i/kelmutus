@@ -94,7 +94,13 @@ const langLinkClass = (l: string) =>
     className={langLinkClass("fi")}
     aria-current={locale === "fi" ? "page" : undefined}
   >
-    <span aria-hidden="true">🇫🇮</span>
+    <span aria-hidden="true" className="inline-flex items-center">
+      <svg viewBox="0 0 18 12" className="h-[10px] w-auto block" xmlns="http://www.w3.org/2000/svg">
+        <rect width="18" height="12" fill="#ffffff" />
+        <rect x="5" width="3" height="12" fill="#003580" />
+        <rect y="4.5" width="18" height="3" fill="#003580" />
+      </svg>
+    </span>
     <span>FI</span>
   </Link>
 
@@ -104,7 +110,15 @@ const langLinkClass = (l: string) =>
     className={langLinkClass("en")}
     aria-current={locale === "en" ? "page" : undefined}
   >
-    <span aria-hidden="true">🇬🇧</span>
+    <span aria-hidden="true" className="inline-flex items-center">
+      <svg viewBox="0 0 60 30" className="h-[10px] w-auto block" xmlns="http://www.w3.org/2000/svg">
+        <rect width="60" height="30" fill="#012169" />
+        <path d="M0 0 L60 30 M60 0 L0 30" stroke="#ffffff" strokeWidth="6" strokeLinecap="square" />
+        <path d="M0 0 L60 30 M60 0 L0 30" stroke="#C8102E" strokeWidth="4" strokeLinecap="square" />
+        <path d="M30 0 v30 M0 15 h60" stroke="#ffffff" strokeWidth="10" strokeLinecap="square" />
+        <path d="M30 0 v30 M0 15 h60" stroke="#C8102E" strokeWidth="6" strokeLinecap="square" />
+      </svg>
+    </span>
     <span>EN</span>
   </Link>
 </div>
@@ -158,7 +172,13 @@ open
         aria-current={locale === "fi" ? "page" : undefined}
         onClick={() => setOpen(false)}
       >
-        <span aria-hidden="true">🇫🇮</span>
+        <span aria-hidden="true" className="inline-flex items-center">
+          <svg viewBox="0 0 18 12" className="h-[10px] w-auto block" xmlns="http://www.w3.org/2000/svg">
+            <rect width="18" height="12" fill="#ffffff" />
+            <rect x="5" width="3" height="12" fill="#003580" />
+            <rect y="4.5" width="18" height="3" fill="#003580" />
+          </svg>
+        </span>
         <span>FI</span>
       </Link>
 
@@ -169,7 +189,15 @@ open
         aria-current={locale === "en" ? "page" : undefined}
         onClick={() => setOpen(false)}
       >
-        <span aria-hidden="true">🇬🇧</span>
+        <span aria-hidden="true" className="inline-flex items-center">
+          <svg viewBox="0 0 60 30" className="h-[10px] w-auto block" xmlns="http://www.w3.org/2000/svg">
+            <rect width="60" height="30" fill="#012169" />
+            <path d="M0 0 L60 30 M60 0 L0 30" stroke="#ffffff" strokeWidth="6" strokeLinecap="square" />
+            <path d="M0 0 L60 30 M60 0 L0 30" stroke="#C8102E" strokeWidth="4" strokeLinecap="square" />
+            <path d="M30 0 v30 M0 15 h60" stroke="#ffffff" strokeWidth="10" strokeLinecap="square" />
+            <path d="M30 0 v30 M0 15 h60" stroke="#C8102E" strokeWidth="6" strokeLinecap="square" />
+          </svg>
+        </span>
         <span>EN</span>
       </Link>
     </div>
