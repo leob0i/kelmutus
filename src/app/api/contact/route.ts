@@ -173,13 +173,18 @@ export async function POST(req: Request) {
     const from = formatFrom(CONTACT_FROM_EMAIL);
 
     // jos lomakkeessa on email-kenttä (eri nimillä), käytetään reply-to:na
-    const replyTo =
-      fields.email ||
-      fields.Email ||
-      fields.sahkoposti ||
-      fields["sähköposti"] ||
-      fields["e-mail"] ||
-      "";
+    const replyToRaw =
+  fields.email ||
+  fields.Email ||
+  fields.sahkoposti ||
+  fields["sähköposti"] ||
+  fields["e-mail"] ||
+  fields.senderEmail ||      // (valinnainen, jos frontissa käytössä)
+  fields.userEmail ||        // (valinnainen)
+  "";
+
+const replyTo = replyToRaw.trim();
+
 
     const subject = fields.subject || fields.aihe || "Uusi yhteydenotto (Kelmutus.fi)";
 
@@ -191,14 +196,21 @@ export async function POST(req: Request) {
       `Lähetysaika: ${new Date().toISOString()}`,
     ].join("\n");
 
-    await resend.emails.send({
-      to,
-      from,
-      subject,
-      text,
-      ...(replyTo ? { reply_to: replyTo } : {}),
-      ...(attachments.length ? { attachments } : {}),
-    });
+   await resend.emails.send({
+  to,
+  from,
+  subject,
+  text,
+
+  // ✅ 1) virallinen kenttä
+  ...(replyTo ? { replyTo } : {}),
+
+  // ✅ 2) varmistus: pakota header
+  ...(replyTo ? { headers: { "Reply-To": replyTo } } : {}),
+
+  ...(attachments.length ? { attachments } : {}),
+});
+
 
     return wantsHtml(req) ? redirectBack(req, true) : NextResponse.json({ ok: true });
   } catch {
