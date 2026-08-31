@@ -4,6 +4,7 @@ import { ClickToPlayVideo } from "@/components/ClickToPlayVideo";
 
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -17,6 +18,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    alternates: await localizedAlternates(locale as "fi" | "en", "/"),
   };
 }
 
@@ -108,7 +110,7 @@ export default async function HomePage() {
       {/* Valmiit kutistepussit */}
       <section className="group relative overflow-hidden border-b border-black/10 transition hover:ring-1 hover:ring-white/20">
         <Image
-          src="/saxdor.png"
+          src="/saxdor.jpg"
           alt=""
           fill
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"

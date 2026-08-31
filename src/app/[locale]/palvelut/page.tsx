@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,6 +15,7 @@ export async function generateMetadata({
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: await localizedAlternates(locale as "fi" | "en", "/palvelut"),
   };
 }
 
@@ -144,7 +146,7 @@ export default async function PalvelutPage({
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
           <div className="relative w-full overflow-hidden bg-gray-200">
             <Image
-              src="/gallery/axopar28.png"
+              src="/gallery/axopar28.jpg"
               alt={t("onsite.imageAlt")}
               width={1200}
               height={800}

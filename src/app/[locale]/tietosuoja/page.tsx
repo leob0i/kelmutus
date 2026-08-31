@@ -1,6 +1,7 @@
 // src/app/tietosuoja/page.tsx
 import type { Metadata } from "next";
 import { getLocale, getTranslations } from "next-intl/server";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getLocale();
@@ -9,6 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: await localizedAlternates(locale as "fi" | "en", "/tietosuoja"),
   };
 }
 

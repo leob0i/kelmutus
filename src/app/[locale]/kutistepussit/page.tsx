@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,6 +15,7 @@ export async function generateMetadata({
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: await localizedAlternates(locale as "fi" | "en", "/kutistepussit"),
   };
 }
 
@@ -32,7 +34,7 @@ export default async function KutistepussitPage({
         <section className="relative min-h-[72vh] md:min-h-[78vh] overflow-hidden">
           {/* Hero taustakuva */}
           <Image
-            src="/saxdor.png"
+            src="/saxdor.jpg"
             alt={t("hero.imageAlt")}
             fill
             priority

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import TyommeHeroVideo from "@/components/TyommeHeroVideo";
 import { getTranslations } from "next-intl/server";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,6 +15,7 @@ export async function generateMetadata({
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: await localizedAlternates(locale as "fi" | "en", "/tyomme"),
   };
 }
 
@@ -21,12 +23,12 @@ const gallery = [
   { src: "/gallery/isovene.jpg", altKey: "gallery.isovene" },
   { src: "/gallery/isovene.sivu.jpg", altKey: "gallery.isoveneSivu" },
   { src: "/gallery/auto.kelmus.jpg", altKey: "gallery.autoKelmus" },
-  { src: "/gallery/axopar28.png", altKey: "gallery.axopar28" },
+  { src: "/gallery/axopar28.jpg", altKey: "gallery.axopar28" },
   { src: "/gallery/rekka.kelmussa.jpg", altKey: "gallery.rekkaKelmussa" },
   { src: "/gallery/vene.ulkona.jpg", altKey: "gallery.veneUlkona" },
   { src: "/kelmutus.talo.jpg", altKey: "gallery.talo" },
   { src: "/gallery/vene.parkissa.jpg", altKey: "gallery.veneParkissa" },
-  { src: "/gallery/saxdor.png", altKey: "gallery.saxdor" },
+  { src: "/gallery/saxdor.jpg", altKey: "gallery.saxdor" },
 ];
 
 // Ennen / jälkeen

@@ -24,7 +24,7 @@ export default function TyommeHeroVideo() {
 
   const sources = useMemo(
   () => ({
-    poster: "/videos/axopar28.png",
+    poster: "/videos/axopar28.jpg",
     mp4: "/videos/axopar28.mp4",
   }),
   []

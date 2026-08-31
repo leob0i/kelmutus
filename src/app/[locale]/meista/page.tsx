@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { getTranslations } from "next-intl/server";
+import { localizedAlternates } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -14,6 +15,7 @@ export async function generateMetadata({
   return {
     title: t("meta.title"),
     description: t("meta.description"),
+    alternates: await localizedAlternates(locale as "fi" | "en", "/meista"),
   };
 }
 
@@ -79,7 +81,7 @@ export default async function MeistaPage({
           <div className="mx-auto mt-10 flex flex-col items-center pb-2 text-center">
             <div className="relative h-24 w-24 overflow-hidden rounded-full ring-1 ring-white/25 md:h-28 md:w-28">
               <Image
-                src="/gallery/jari.png"
+                src="/gallery/jari.jpg"
                 alt={t("person.photoAlt")}
                 fill
                 sizes="112px"

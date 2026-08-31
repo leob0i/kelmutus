@@ -1,12 +1,13 @@
 import type {Metadata} from "next";
 import {notFound} from "next/navigation";
 import {NextIntlClientProvider} from "next-intl";
-import {getMessages} from "next-intl/server";
+import {getMessages, getTranslations} from "next-intl/server";
 import {setRequestLocale} from "next-intl/server";
 
 import {routing} from "@/i18n/routing";
 import {SiteHeader} from "@/components/SiteHeader";
 import {SiteFooter} from "@/components/SiteFooter";
+import {LocalBusinessJsonLd} from "@/components/LocalBusinessJsonLd";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://www.kelmutus.fi"),
@@ -34,9 +35,11 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   const messages = await getMessages();
+  const t = await getTranslations({locale, namespace: "home.meta"});
 
   return (
     <NextIntlClientProvider messages={messages}>
+      <LocalBusinessJsonLd description={t("description")} />
       <SiteHeader />
       {children}
       <SiteFooter />

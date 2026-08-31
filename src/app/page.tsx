@@ -106,7 +106,7 @@ export default async function HomePage() {
      <section className="group relative overflow-hidden border-b border-black/10 transition hover:ring-1 hover:ring-white/20">
 
        <Image
-  src="/saxdor.png"
+  src="/saxdor.jpg"
   alt=""
   fill
   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"

@@ -14,8 +14,6 @@ const routes = [
 ] as const;
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date();
-
   return Promise.all(
     routes.map(async (href) => {
       const fiPath = await getPathname({locale: "fi", href});
@@ -23,11 +21,11 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
       return {
         url: host + fiPath,
-        lastModified,
         alternates: {
           languages: {
             fi: host + fiPath,
-            en: host + enPath
+            en: host + enPath,
+            "x-default": host + fiPath
           }
         }
       };
