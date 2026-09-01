@@ -6,6 +6,7 @@ const host = "https://www.kelmutus.fi";
 const routes = [
   "/",
   "/kutistepussit",
+  "/veneenhuollot",
   "/palvelut",
   "/tyomme",
   "/meista",

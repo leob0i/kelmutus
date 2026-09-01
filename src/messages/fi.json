@@ -1,6 +1,7 @@
 {
   "nav": {
     "kutistepussit": "Kutistepussit",
+    "huollot": "Huollot ja korjaus",
     "palvelut": "Palvelut",
     "tyomme": "Työmme",
     "meista": "Meistä",
@@ -58,6 +59,11 @@
     },
     "promise": {
       "body": "Tarjoamme kestäviä, huipputason kelmuja ja mittojen mukaan tilattavia valmiita kutistepusseja kuljetus-, logistiikka- ja varastointitarpeisiin. Ratkaisumme suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan päällä varmistavat sujuvan toteutuksen ja korkean asiakastyytyväisyyden."
+    },
+    "boatService": {
+      "title": "Veneiden huollot & korjaukset",
+      "body": "Huollamme ja korjaamme veneitä pääkaupunkiseudulla ja tarvittaessa koko Suomessa. Teemme määräaikaishuollot, kausihuollot sekä erilaiset korjaus- ja kunnostustyöt veneen tarpeiden mukaan.",
+      "cta": "Katso huollot ja korjaukset"
     },
     "contact": {
       "bgAlt": "Kutistepussit taustakuva",
@@ -139,6 +145,108 @@
       "submit": "Lähetä tarjouspyyntö"
     }
   },
+  "veneenhuollot": {
+    "meta": {
+      "title": "Veneiden huollot ja korjaukset | Kelmutus.fi",
+      "description": "Veneiden määräaikaishuollot, moottorihuollot ja korjaukset pääkaupunkiseudulla, tarvittaessa muualla Suomessa. Kevät- ja talvihuollot ammattitaidolla."
+    },
+    "hero": {
+      "imageAlt": "Vene traileri huollossa",
+      "title": "Veneiden huollot ja korjaukset",
+      "subtitle": "Veneen huolto ja korjaus ammattitaidolla",
+      "cta": "Pyydä tarjous huollosta"
+    },
+    "intro": {
+      "title": "Veneen huolto ja korjaus ammattitaidolla",
+      "body1": "Huollamme ja korjaamme veneitä pääkaupunkiseudulla ja tarvittaessa muualla Suomessa. Teemme veneiden määräaikaishuollot, kauden aloitukseen ja lopetukseen liittyvät huollot sekä erilaiset korjaus- ja kunnostustyöt veneen tarpeiden mukaan.",
+      "body2": "Olipa kyseessä vuosihuolto, pienempi korjaus tai laajempi huoltotarve, hoidamme työn sovitusti ja huolellisesti.",
+      "cta": "Pyydä tarjous veneesi huollosta tai korjauksesta."
+    },
+    "maintenance": {
+      "imageAlt": "Moottorin huolto",
+      "title": "Veneiden määräaikaishuollot",
+      "body1": "Säännöllinen huolto auttaa pitämään veneen toimintakunnossa ja ehkäisemään suurempia vikoja. Teemme veneiden määräaikaishuoltoja ja tarkastuksia veneen sekä moottorin tarpeiden mukaan.",
+      "body2": "Huolto voidaan suunnitella esimerkiksi ennen veneilykautta tai kauden päättyessä, jolloin vene saadaan asianmukaisesti valmisteltua seuraavaa kautta varten.",
+      "listTitle": "Huoltopalveluihimme voivat kuulua esimerkiksi:",
+      "items": [
+        "Veneen määräaikaishuollot",
+        "Moottorin huollot",
+        "Öljyn ja suodattimien vaihdot",
+        "Järjestelmien tarkastukset",
+        "Akkujen ja sähköjärjestelmien tarkastukset",
+        "Jäähdytys- ja vesijärjestelmien tarkastukset",
+        "Veneen valmistelu talvisäilytykseen",
+        "Veneen valmistelu uuteen veneilykauteen"
+      ],
+      "footnote": "Huollon sisältö suunnitellaan aina veneen, moottorin ja käyttötarpeen mukaan."
+    },
+    "repairs": {
+      "title": "Veneiden korjaukset ja vianetsintä",
+      "body1": "Veneessä ilmenevä vika kannattaa selvittää ajoissa ennen kuin pieni ongelma muuttuu suuremmaksi korjaustarpeeksi.",
+      "body2": "Teemme erilaisia veneiden korjaus- ja kunnostustöitä sekä vianetsintää. Selvitämme ongelman syyn ja sovimme asiakkaan kanssa tarvittavista toimenpiteistä ennen työn aloittamista.",
+      "listTitle": "Korjaamme esimerkiksi:",
+      "items": [
+        "Moottoriin liittyviä vikoja",
+        "Sähköjärjestelmien ongelmia",
+        "Käynnistys- ja latausjärjestelmiä",
+        "Vesijärjestelmiä",
+        "Polttoainejärjestelmiä",
+        "Pieniä mekaanisia vikoja ja korjauksia",
+        "Muita veneen käytettävyyteen vaikuttavia ongelmia"
+      ],
+      "helpText": "Jos et ole varma, mikä veneessä on vikana, ota yhteyttä. Voimme arvioida huolto- tai korjaustarpeen ja selvittää sopivan ratkaisun.",
+      "gallery": {
+        "hullAlt": "Rungon korjaus ja lasikuitutyö",
+        "electricAlt": "Sähköjärjestelmän korjaus",
+        "waterAlt": "Vesipumpun siipipyörän huolto",
+        "shaftAlt": "Potkuriakselin tarkastus"
+      }
+    },
+    "spring": {
+      "title": "Veneen keväthuolto ennen veneilykautta",
+      "body1": "Vene kannattaa tarkistaa ja huoltaa huolellisesti ennen vesillelaskua. Keväthuollossa voidaan käydä läpi moottorin ja veneen tärkeimmät järjestelmät sekä varmistaa, että vene on valmis tulevaan kauteen.",
+      "body2": "Huolellisesti tehty keväthuolto vähentää ikävien yllätysten riskiä ensimmäisillä ajokerroilla ja auttaa varmistamaan veneen turvallisen käytön."
+    },
+    "winter": {
+      "imageAlt": "Vene talvisäilytyksessä suojapeitteen alla",
+      "title": "Veneen talvihuolto ja talvisäilytykseen valmistelu",
+      "body1": "Veneen asianmukainen valmistelu talvea varten on tärkeä osa veneen ylläpitoa. Huollon yhteydessä voidaan tarkistaa moottori, nesteet, akut, vesijärjestelmät ja muut talvisäilytyksen kannalta olennaiset asiat.",
+      "body2": "Tarvittaessa voimme yhdistää huollon ja veneen suojauksen samaan kokonaisuuteen. Kelmutuksen avulla vene voidaan suojata sääolosuhteilta, lialta ja kosteudelta talvisäilytyksen tai kuljetuksen ajaksi.",
+      "linkAria": "Lue lisää veneiden kutistepusseista",
+      "linkBtn": "Katso myös veneiden kelmutus",
+      "tipsLinkAria": "Lue vinkit veneen talvisäilytykseen",
+      "tipsLinkBtn": "Lue vinkit veneen talvisäilytykseen"
+    },
+    "area": {
+      "title": "Huolto ja korjaus pääkaupunkiseudulla – tarvittaessa koko Suomessa",
+      "body1": "Palvelemme veneenomistajia pääkaupunkiseudulla ja sovittaessa myös muualla Suomessa.",
+      "body2": "Huollon tai korjauksen laajuudesta riippuen työ voidaan toteuttaa sovitussa huoltopaikassa tai mahdollisuuksien mukaan veneen sijaintipaikalla.",
+      "body3": "Kerro meille veneesi merkki ja malli, huollon tai korjauksen tarve sekä veneen sijainti. Näiden tietojen perusteella voimme arvioida työn laajuuden ja tehdä tarjouksen."
+    },
+    "contact": {
+      "bgAlt": "Veneen huolto taustakuva",
+      "title": "Pyydä tarjous veneen huollosta tai korjauksesta",
+      "eyebrow": "Onko veneesi määräaikaishuollon tarpeessa, tarvitsetko korjausta vai haluatko valmistella veneen seuraavaa kautta varten?",
+      "body": "Ota yhteyttä ja kerro lyhyesti veneestäsi sekä tarvittavasta työstä. Voit myös lähettää kuvia veneestä tai mahdollisesta viasta. Katsotaan yhdessä sopiva ratkaisu.",
+      "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
+    },
+    "form": {
+      "name": "Nimi",
+      "namePh": "Etunimi Sukunimi",
+      "company": "Veneen merkki ja malli",
+      "companyPh": "esim. Targa 23.1",
+      "email": "Sähköposti",
+      "emailPh": "nimi@yritys.fi",
+      "phone": "Puhelin",
+      "phonePh": "Puhelinnumero",
+      "attachment": "Liitä kuva (valinnainen)",
+      "attachmentHelp": "Voit liittää kuvan veneestä tai viasta, tai PDF-tiedoston. (max 2 MB)",
+      "message": "Kerro huolto- tai korjaustarpeesta",
+      "messagePh": "Kuvaile veneen merkki ja malli, huollon tai korjauksen tarve sekä veneen sijainti.",
+      "consent": "Lähettämällä lomakkeen hyväksyt, että otamme sinuun yhteyttä tarjouksen ja lisäkysymysten kanssa.",
+      "submit": "Lähetä tarjouspyyntö"
+    }
+  },
   "palvelut": {
     "meta": {
       "title": "Palvelut | Kelmutus",
@@ -171,6 +279,11 @@
         "bullets": ["Erikoismitat", "Erikoiskohteet"]
       }
     ],
+    "boatService": {
+      "title": "Veneiden huollot & korjaukset",
+      "body": "Huollamme ja korjaamme veneitä pääkaupunkiseudulla ja tarvittaessa koko Suomessa. Teemme määräaikaishuollot, kausihuollot sekä erilaiset korjaus- ja kunnostustyöt veneen tarpeiden mukaan.",
+      "cta": "Katso huollot ja korjaukset"
+    },
     "onsite": {
       "imageAlt": "Kelmutus paikan päällä",
       "title": "Kelmutus paikan päällä pääkaupunkiseudulla",

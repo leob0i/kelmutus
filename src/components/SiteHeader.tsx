@@ -6,6 +6,7 @@ import {Link, usePathname} from "@/i18n/navigation";
 
 const navItems = [
   {key: "kutistepussit", href: "/kutistepussit"},
+  {key: "huollot", href: "/veneenhuollot"},
   {key: "palvelut", href: "/palvelut"},
   {key: "tyomme", href: "/tyomme"},
   {key: "meista", href: "/meista"}

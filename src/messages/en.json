@@ -1,6 +1,7 @@
 {
   "nav": {
     "kutistepussit": "Shrink wrap covers",
+    "huollot": "Service & repair",
     "palvelut": "Services",
     "tyomme": "Our work",
     "meista": "About",
@@ -58,6 +59,11 @@
     },
     "promise": {
       "body": "We offer durable, high-quality, and made-to-measure shrink wrap covers for transport, logistics and storage needs. Our solutions protect your assets from weather and transport wear, preserving the finish and overall condition. Fast delivery and, if needed, on-site installation ensure a smooth process and high customer satisfaction."
+    },
+    "boatService": {
+      "title": "Boat service & repairs",
+      "body": "We service and repair boats in the Helsinki region, and elsewhere in Finland when needed. We carry out scheduled maintenance, seasonal service and various repair and refurbishment work based on your boat's needs.",
+      "cta": "See boat service & repairs"
     },
     "contact": {
       "bgAlt": "Shrink wrap covers background image",
@@ -139,6 +145,108 @@
       "submit": "Send request for quote"
     }
   },
+  "veneenhuollot": {
+    "meta": {
+      "title": "Boat service and repairs | Kelmutus.fi",
+      "description": "Scheduled boat maintenance, engine service and repairs in the Helsinki region, and elsewhere in Finland by arrangement. Spring and winter service by professionals."
+    },
+    "hero": {
+      "imageAlt": "Boat on a trailer during service",
+      "title": "Boat service and repairs",
+      "subtitle": "Professional boat service and repair",
+      "cta": "Request a service quote"
+    },
+    "intro": {
+      "title": "Professional boat service and repair",
+      "body1": "We service and repair boats in the Helsinki region, and elsewhere in Finland by arrangement. We carry out scheduled boat maintenance, start-of-season and end-of-season service, and various repair and refurbishment work based on your boat's needs.",
+      "body2": "Whether it's an annual service, a small repair or a larger maintenance need, we handle the work as agreed and with care.",
+      "cta": "Request a quote for your boat's service or repair."
+    },
+    "maintenance": {
+      "imageAlt": "Engine service",
+      "title": "Scheduled boat maintenance",
+      "body1": "Regular maintenance helps keep the boat in working order and prevents bigger faults. We carry out scheduled maintenance and inspections based on the needs of the boat and the engine.",
+      "body2": "Service can be planned, for example, before the boating season or at the end of the season, so the boat is properly prepared for the next season.",
+      "listTitle": "Our maintenance services can include, for example:",
+      "items": [
+        "Scheduled boat maintenance",
+        "Engine service",
+        "Oil and filter changes",
+        "System inspections",
+        "Battery and electrical system checks",
+        "Cooling and water system checks",
+        "Preparing the boat for winter storage",
+        "Preparing the boat for a new boating season"
+      ],
+      "footnote": "The scope of service is always planned according to the boat, the engine and how it's used."
+    },
+    "repairs": {
+      "title": "Boat repairs and troubleshooting",
+      "body1": "It's worth finding the cause of a fault early, before a small problem turns into a bigger repair need.",
+      "body2": "We carry out various boat repair and refurbishment work as well as troubleshooting. We find the cause of the problem and agree with the customer on the necessary steps before starting the work.",
+      "listTitle": "We repair, for example:",
+      "items": [
+        "Engine faults",
+        "Electrical system problems",
+        "Starting and charging systems",
+        "Water systems",
+        "Fuel systems",
+        "Small mechanical faults and repairs",
+        "Other problems affecting the boat's usability"
+      ],
+      "helpText": "If you're not sure what's wrong with your boat, get in touch. We can assess the service or repair need and find a suitable solution.",
+      "gallery": {
+        "hullAlt": "Hull repair and fiberglass work",
+        "electricAlt": "Electrical system repair",
+        "waterAlt": "Water pump impeller service",
+        "shaftAlt": "Propeller shaft inspection"
+      }
+    },
+    "spring": {
+      "title": "Spring service before the boating season",
+      "body1": "The boat should be carefully inspected and serviced before launching. Spring service can cover the engine's and the boat's most important systems, and make sure the boat is ready for the coming season.",
+      "body2": "A carefully done spring service reduces the risk of unpleasant surprises on the first trips and helps ensure safe use of the boat."
+    },
+    "winter": {
+      "imageAlt": "Boat in winter storage under a protective cover",
+      "title": "Winter service and preparation for winter storage",
+      "body1": "Properly preparing the boat for winter is an important part of boat upkeep. As part of the service, we can check the engine, fluids, batteries, water systems and other things relevant to winter storage.",
+      "body2": "If needed, we can combine service and boat protection into a single package. Shrink wrapping can protect the boat from weather, dirt and moisture during winter storage or transport.",
+      "linkAria": "Read more about boat shrink wrap covers",
+      "linkBtn": "See also our boat shrink wrapping",
+      "tipsLinkAria": "Read tips for boat winter storage",
+      "tipsLinkBtn": "Read tips for boat winter storage"
+    },
+    "area": {
+      "title": "Service and repair in the Helsinki region – and across Finland when needed",
+      "body1": "We serve boat owners in the Helsinki region, and by arrangement elsewhere in Finland.",
+      "body2": "Depending on the scope of the service or repair, the work can be carried out at an agreed service location or, when possible, at the boat's own location.",
+      "body3": "Tell us your boat's make and model, the service or repair needed, and the boat's location. Based on this information, we can assess the scope of the work and provide a quote."
+    },
+    "contact": {
+      "bgAlt": "Boat service background image",
+      "title": "Request a quote for boat service or repair",
+      "eyebrow": "Does your boat need scheduled service, do you need a repair, or do you want to prepare the boat for the next season?",
+      "body": "Get in touch and briefly tell us about your boat and the work needed. You can also send photos of the boat or the possible fault. Let's find the right solution together.",
+      "whatsappAria": "Open WhatsApp and contact us"
+    },
+    "form": {
+      "name": "Name",
+      "namePh": "First name Last name",
+      "company": "Boat make and model",
+      "companyPh": "e.g. Targa 23.1",
+      "email": "Email",
+      "emailPh": "name@company.com",
+      "phone": "Phone",
+      "phonePh": "Phone number",
+      "attachment": "Attach a photo (optional)",
+      "attachmentHelp": "You can attach a photo of the boat or the fault, or a PDF. (max 2 MB)",
+      "message": "Tell us about the service or repair need",
+      "messagePh": "Describe the boat's make and model, the service or repair needed, and the boat's location.",
+      "consent": "By submitting the form, you agree that we may contact you regarding an offer and any follow-up questions.",
+      "submit": "Send request for quote"
+    }
+  },
   "palvelut": {
     "meta": {
       "title": "Services | Kelmutus",
@@ -179,6 +287,11 @@
         "bullets": ["Custom measurements", "Special items"]
       }
     ],
+    "boatService": {
+      "title": "Boat service & repairs",
+      "body": "We service and repair boats in the Helsinki region, and elsewhere in Finland when needed. We carry out scheduled maintenance, seasonal service and various repair and refurbishment work based on your boat's needs.",
+      "cta": "See boat service & repairs"
+    },
     "onsite": {
       "imageAlt": "On-site shrink wrapping",
       "title": "On-site shrink wrapping in the Helsinki Capital Region",

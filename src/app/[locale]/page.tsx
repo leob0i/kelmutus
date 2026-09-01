@@ -139,6 +139,37 @@ export default async function HomePage() {
         </div>
       </section>
 
+      {/* Veneiden huollot & korjaukset (kapeampi versio kutistepussit-kortista) */}
+      <section className="group relative overflow-hidden border-b border-black/10 transition hover:ring-1 hover:ring-white/20">
+        <Image
+          src="/gallery/whatsapp-vene-traileri.jpg"
+          alt=""
+          fill
+          sizes="100vw"
+          className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-black/15" />
+
+        <div className="relative mx-auto grid max-w-6xl gap-4 px-4 py-7 sm:grid-cols-[1fr_auto] sm:items-center">
+          <div>
+            <h2 className="font-serif text-[26px] leading-tight text-white drop-shadow sm:text-[28px]">
+              {t("boatService.title")}
+            </h2>
+            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-white/90">
+              {t("boatService.body")}
+            </p>
+          </div>
+
+          <Link
+            href="/veneenhuollot"
+            className="inline-flex items-center justify-center rounded-md bg-[#f08a00] px-5 py-3 font-semibold text-white shadow hover:bg-[#e27f00]"
+          >
+            {t("boatService.cta")}
+          </Link>
+        </div>
+      </section>
+
       {/* 2 korttia */}
       <section className="border-b border-black/10">
         <div className="grid w-full grid-cols-1 divide-y divide-white/10 sm:grid-cols-2 sm:divide-y-0 sm:divide-x sm:divide-white/10">

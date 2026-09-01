@@ -138,6 +138,38 @@ export default async function PalvelutPage({
             </div>
           ))}
         </div>
+
+        {/* Veneiden huollot & korjaukset -kortti, samat ulkoreunat kuin yllä olevilla korteilla */}
+        <div className="mt-2 group relative overflow-hidden rounded-none shadow-lg ring-1 ring-black/10 min-h-[220px] sm:min-h-[240px]">
+          <div className="absolute inset-0">
+            <Image
+              src="/gallery/whatsapp-vene-traileri.jpg"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-slate-950/70 transition-opacity duration-300 group-hover:bg-slate-950/60" />
+          </div>
+
+          <div className="relative flex h-full flex-col justify-center gap-4 p-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="font-serif text-2xl md:text-3xl text-white">
+                {t("boatService.title")}
+              </h3>
+              <p className="mt-3 max-w-2xl font-serif text-base md:text-lg leading-relaxed text-white/85">
+                {t("boatService.body")}
+              </p>
+            </div>
+
+            <Link
+              href="/veneenhuollot"
+              className="inline-flex shrink-0 items-center justify-center rounded-md bg-orange-500 px-5 py-2.5 font-semibold text-white shadow hover:bg-orange-600"
+            >
+              {t("boatService.cta")}
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* HINNAT + ALAOSA (sinun pyytämä loppu) */}
