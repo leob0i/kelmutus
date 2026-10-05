@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { ContactForm } from "@/components/ContactForm";
 import { getTranslations } from "next-intl/server";
 import { localizedAlternates } from "@/lib/seo";
 
@@ -308,14 +309,10 @@ export default async function PalvelutPage({
             </div>
           </div>
 
-          <form
-            action="/api/contact"
-            method="POST"
-            encType="multipart/form-data"
+          <ContactForm
             className="mt-10 space-y-6 rounded-2xl border border-white/10 bg-slate-900/70 p-6 shadow-xl backdrop-blur"
           >
             <input type="hidden" name="source" value="toinen välilehti / yhteys" />
-            <input type="hidden" name="redirect" value="/palvelut#yhteys" />
 
             {/* Honeypot */}
             <input
@@ -405,26 +402,6 @@ export default async function PalvelutPage({
               </div>
             </div>
 
-            {/* Tiedoston liittäminen */}
-            <div className="space-y-1.5 text-sm">
-              <label
-                htmlFor="attachment"
-                className="block text-xs font-medium uppercase tracking-[0.18em] text-slate-300"
-              >
-                {t("form.attachment")}
-              </label>
-              <input
-                id="attachment"
-                name="attachment"
-                type="file"
-                accept="image/*,application/pdf"
-                className="w-full rounded-xl border border-white/15 bg-black/40 px-3 py-2 text-xs text-slate-50 file:mr-3 file:rounded-lg file:border-0 file:bg-orange-500 file:px-3 file:py-1.5 file:text-xs file:font-semibold file:text-white hover:file:bg-orange-600"
-              />
-              <p className="text-[11px] text-slate-400">
-                {t("form.attachmentHelp")}
-              </p>
-            </div>
-
             <div className="space-y-1.5 text-sm">
               <label
                 htmlFor="message"
@@ -453,7 +430,7 @@ export default async function PalvelutPage({
                 {t("form.submit")}
               </button>
             </div>
-          </form>
+          </ContactForm>
         </div>
       </section>
     </main>

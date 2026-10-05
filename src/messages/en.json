@@ -68,7 +68,7 @@
     "contact": {
       "bgAlt": "Shrink wrap covers background image",
       "title": "Request a quote or ask about shrink wrap covers",
-      "body": "Briefly describe the item (e.g. a boat or an industrial object) and the protection you need. You can attach a photo, a sketch or a PDF file to help us understand the measurements and the item. We’ll get back to you as soon as possible!",
+      "body": "Briefly describe the item (e.g. a boat or an industrial object) and the protection you need. We’ll get back to you as soon as possible!",
       "whatsappAria": "Open WhatsApp and contact us"
     },
     "form": {
@@ -125,7 +125,7 @@
     "contact": {
       "bgAlt": "Shrink wrap covers background image",
       "title": "Request a quote or ask about shrink wrap covers",
-      "body": "Briefly describe the item (e.g., boat or industrial equipment) and the protection you need. You can attach an image, sketch or PDF to help with measurements and details. We will get back to you as soon as possible.",
+      "body": "Briefly describe the item (e.g., boat or industrial equipment) and the protection you need. We will get back to you as soon as possible.",
       "whatsappAria": "Open WhatsApp and contact us"
     },
     "form": {
@@ -311,7 +311,7 @@
     "contact": {
       "bgAlt": "Shrink wrap covers background image",
       "title": "Request a quote or ask about shrink wrap covers",
-      "body": "Briefly describe the item (e.g., a boat or an industrial site) and the protection you need. You can attach an image, sketch or PDF to help with measurements and details. We will get back to you as soon as possible.",
+      "body": "Briefly describe the item (e.g., a boat or an industrial site) and the protection you need. We will get back to you as soon as possible.",
       "whatsappAria": "Open WhatsApp and contact us"
     },
     "form": {
@@ -610,6 +610,10 @@
         "text": "We protect the data using appropriate technical and organizational measures and restrict access to the data only to those who need it for their work."
       }
     }
+  },
+  "contactForm": {
+    "success": "Thank you! We will contact you as soon as possible.",
+    "error": "Sending failed. Please try again or email us at jari@kelmutus.fi."
   }
 }
 

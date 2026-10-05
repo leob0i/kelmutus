@@ -68,7 +68,7 @@
     "contact": {
       "bgAlt": "Kutistepussit taustakuva",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
-      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Voit liittää mukaan kuvan, luonnoksen tai PDF-tiedoston mittojen ja kohteen hahmottamiseksi. Vastaamme sinulle mahdollisimman pian!",
+      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Vastaamme sinulle mahdollisimman pian!",
       "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
     },
     "form": {
@@ -125,7 +125,7 @@
     "contact": {
       "bgAlt": "Kutistepussit taustakuva",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
-      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Voit liittää mukaan kuvan, luonnoksen tai PDF-tiedoston mittojen ja kohteen hahmottamiseksi. Palaamme sinulle mahdollisimman pian.",
+      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Palaamme sinulle mahdollisimman pian.",
       "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
     },
     "form": {
@@ -303,7 +303,7 @@
     "contact": {
       "bgAlt": "Kutistepussit taustakuva",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
-      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohteesta) sekä toivotusta suojauksesta. Voit liittää mukaan kuvan, luonnoksen tai PDF-tiedoston mittojen ja kohteen hahmottamiseksi. Palaamme sinulle mahdollisimman pian.",
+      "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohteesta) sekä toivotusta suojauksesta. Palaamme sinulle mahdollisimman pian.",
       "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
     },
     "form": {
@@ -601,6 +601,10 @@
         "text": "Suojaamme tiedot asianmukaisilla teknisillä ja organisatorisilla keinoilla ja rajaamme pääsyn tietoihin vain niille, joilla on työnsä puolesta tarve käsitellä niitä."
       }
     }
+  },
+  "contactForm": {
+    "success": "Kiitos! Otamme sinuun yhteyttä mahdollisimman nopeasti.",
+    "error": "Lähetys epäonnistui. Yritä uudelleen tai lähetä viesti osoitteeseen jari@kelmutus.fi."
   }
 }
 
