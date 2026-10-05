@@ -29,6 +29,7 @@ export function ClickToPlayVideo({
         className="h-auto w-full"
         src={src}
         poster={poster}
+        preload="none"
         controls={playing}
         playsInline
         onPause={() => setPlaying(false)}

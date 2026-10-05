@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import TyommeHeroVideo from "@/components/TyommeHeroVideo";
-import { getTranslations } from "next-intl/server";
-import { localizedAlternates } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -12,11 +14,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "tyomme" });
 
-  return {
+  return pageMetadata({
+    locale: locale as "fi" | "en",
+    href: "/tyomme",
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: await localizedAlternates(locale as "fi" | "en", "/tyomme"),
-  };
+  });
 }
 
 const gallery = [
@@ -73,10 +76,19 @@ export default async function TyommePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "tyomme" });
+  const tAll = await getTranslations({ locale });
 
   return (
     <main className="bg-white text-slate-950">
+      <JsonLd
+        data={breadcrumbSchema(locale as "fi" | "en", [
+          { name: tAll("nav.home"), href: "/" },
+          { name: t("hero.title"), href: "/tyomme" },
+        ])}
+      />
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-black/10 bg-slate-950">
         {/* Video + overlay */}

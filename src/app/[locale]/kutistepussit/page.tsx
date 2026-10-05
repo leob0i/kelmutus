@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ContactForm } from "@/components/ContactForm";
+import { Faq } from "@/components/Faq";
+import { JsonLd } from "@/components/JsonLd";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { localizedAlternates } from "@/lib/seo";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, priceOffer, serviceSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -13,11 +16,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "kutistepussit" });
 
-  return {
+  return pageMetadata({
+    locale: locale as "fi" | "en",
+    href: "/kutistepussit",
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: await localizedAlternates(locale as "fi" | "en", "/kutistepussit"),
-  };
+  });
 }
 
 export default async function KutistepussitPage({
@@ -26,10 +30,38 @@ export default async function KutistepussitPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "kutistepussit" });
+  const tAll = await getTranslations({ locale });
+
+  const faqItems = t.raw("faq.items") as { q: string; a: string }[];
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale as "fi" | "en", [
+          { name: tAll("nav.home"), href: "/" },
+          { name: t("hero.title"), href: "/kutistepussit" },
+        ])}
+      />
+      <JsonLd
+        data={serviceSchema({
+          locale: locale as "fi" | "en",
+          href: "/kutistepussit",
+          name: t("hero.title"),
+          description: t("whatAre.body"),
+          serviceType: tAll("schema.bagService"),
+          areaServed: ["Finland"],
+          // samat esimerkkihinnat kuin sivuilla (Buster L: /palvelut, Axopar 28: etusivu)
+          offers: [
+            priceOffer(`${t("hero.title")} – Buster L`, "230.80"),
+            priceOffer(`${t("hero.title")} – Targa 23.1`, "351.00"),
+            priceOffer(`${t("hero.title")} – Axopar 28`, "358.80"),
+          ],
+        })}
+      />
+
       <main className="bg-white text-black">
         {/* HERO */}
         <section className="relative min-h-[72vh] md:min-h-[78vh] overflow-hidden">
@@ -91,9 +123,9 @@ export default async function KutistepussitPage({
                 </div>
               </div>
 
-              <h3 className="mt-10 font-serif text-4xl md:text-5xl">
+              <h2 className="mt-10 font-serif text-4xl md:text-5xl">
                 {t("why.title")}
-              </h3>
+              </h2>
 
               <ul className="mt-6 max-w-xl list-disc space-y-2 pl-6 font-serif text-lg text-black/90">
                 <li>{t("why.items.0")}</li>
@@ -123,7 +155,7 @@ export default async function KutistepussitPage({
             <div className="relative hidden w-full overflow-hidden bg-gray-200 md:block">
               <Image
                 src="/gallery/targa23.1.jpg"
-                alt="Targa 23.1 "
+                alt="Targa 23.1"
                 width={1200}
                 height={800}
                 className="h-auto w-full object-cover"
@@ -131,9 +163,9 @@ export default async function KutistepussitPage({
             </div>
 
             <div>
-              <h3 className="font-serif text-4xl md:text-5xl">
+              <h2 className="font-serif text-4xl md:text-5xl">
                 {t("durable.title")}
-              </h3>
+              </h2>
 
               <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
                 {t("durable.body")}
@@ -144,7 +176,7 @@ export default async function KutistepussitPage({
                 <div className="relative w-full overflow-hidden bg-gray-200">
                   <Image
                     src="/gallery/targa23.1.jpg"
-                    alt="targa 23.1"
+                    alt="Targa 23.1"
                     width={1200}
                     height={800}
                     className="h-auto w-full object-cover"
@@ -170,6 +202,8 @@ export default async function KutistepussitPage({
             </div>
           </div>
         </section>
+
+        <Faq title={t("faq.title")} items={faqItems} />
 
         {/* Pieni ohjenappi ennen yhteydenottolomaketta (oikeaan kulmaan) */}
         <div className="relative -top-6 z-10 mx-auto max-w-6xl px-6">

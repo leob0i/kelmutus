@@ -1,9 +1,12 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ContactForm } from "@/components/ContactForm";
+import { Faq } from "@/components/Faq";
+import { JsonLd } from "@/components/JsonLd";
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { localizedAlternates } from "@/lib/seo";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -13,11 +16,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "veneenhuollot" });
 
-  return {
+  return pageMetadata({
+    locale: locale as "fi" | "en",
+    href: "/veneenhuollot",
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: await localizedAlternates(locale as "fi" | "en", "/veneenhuollot"),
-  };
+  });
 }
 
 export default async function VeneenhuollotPage({
@@ -26,10 +30,32 @@ export default async function VeneenhuollotPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "veneenhuollot" });
+  const tAll = await getTranslations({ locale });
+
+  const faqItems = t.raw("faq.items") as { q: string; a: string }[];
 
   return (
     <>
+      <JsonLd
+        data={breadcrumbSchema(locale as "fi" | "en", [
+          { name: tAll("nav.home"), href: "/" },
+          { name: t("hero.title"), href: "/veneenhuollot" },
+        ])}
+      />
+      <JsonLd
+        data={serviceSchema({
+          locale: locale as "fi" | "en",
+          href: "/veneenhuollot",
+          name: t("hero.title"),
+          description: t("intro.body1"),
+          serviceType: tAll("schema.boatService"),
+          areaServed: [tAll("schema.capitalRegion"), "Finland"],
+        })}
+      />
+
       <main className="bg-white text-black">
         {/* HERO */}
         <section className="relative min-h-[46vh] md:min-h-[52vh] overflow-hidden">
@@ -78,9 +104,9 @@ export default async function VeneenhuollotPage({
           {/* Määräaikaishuollot: teksti vasen, kuva oikea */}
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-start">
             <div>
-              <h3 className="font-serif text-4xl md:text-5xl">
+              <h2 className="font-serif text-4xl md:text-5xl">
                 {t("maintenance.title")}
-              </h3>
+              </h2>
 
               <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
                 {t("maintenance.body1")}
@@ -146,7 +172,7 @@ export default async function VeneenhuollotPage({
             </div>
 
             <div>
-              <h3 className="font-serif text-4xl md:text-5xl">{t("repairs.title")}</h3>
+              <h2 className="font-serif text-4xl md:text-5xl">{t("repairs.title")}</h2>
 
               <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
                 {t("repairs.body1")}
@@ -220,7 +246,7 @@ export default async function VeneenhuollotPage({
 
           {/* Keväthuolto */}
           <div className="mt-16 max-w-3xl">
-            <h3 className="font-serif text-4xl md:text-5xl">{t("spring.title")}</h3>
+            <h2 className="font-serif text-4xl md:text-5xl">{t("spring.title")}</h2>
             <p className="mt-6 font-serif text-lg leading-relaxed text-black/90">
               {t("spring.body1")}
             </p>
@@ -232,7 +258,7 @@ export default async function VeneenhuollotPage({
           {/* Talvihuolto: teksti vasen, kuva oikea */}
           <div className="mt-16 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
             <div>
-              <h3 className="font-serif text-4xl md:text-5xl">{t("winter.title")}</h3>
+              <h2 className="font-serif text-4xl md:text-5xl">{t("winter.title")}</h2>
 
               <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
                 {t("winter.body1")}
@@ -285,6 +311,8 @@ export default async function VeneenhuollotPage({
           </div>
 
         </section>
+
+        <Faq title={t("faq.title")} items={faqItems} />
 
         {/* Alue: tumman sininen + oranssi väriteema (kontrasti muuhun sivuun) */}
         <section className="relative overflow-hidden bg-[#0b1a33]">

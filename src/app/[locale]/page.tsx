@@ -4,8 +4,9 @@ import { ClickToPlayVideo } from "@/components/ClickToPlayVideo";
 import { ContactForm } from "@/components/ContactForm";
 
 import type { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
-import { localizedAlternates } from "@/lib/seo";
+import { preload } from "react-dom";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({
   params,
@@ -16,11 +17,12 @@ export async function generateMetadata({
 
   const t = await getTranslations({ locale, namespace: "home.meta" });
 
-  return {
+  return pageMetadata({
+    locale: locale as "fi" | "en",
+    href: "/",
     title: t("title"),
     description: t("description"),
-    alternates: await localizedAlternates(locale as "fi" | "en", "/"),
-  };
+  });
 }
 
 
@@ -57,13 +59,24 @@ async function getPromo(): Promise<Promo | null> {
   }
 }
 
-export default async function HomePage() {
+export default async function HomePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations("home");
 
+  // hero-videon poster on sivun suurin elementti (LCP) -> ladataan heti
+  preload("/hero-poster.jpg", { as: "image", fetchPriority: "high" });
+
+  // Sheetin teksti ensisijainen; varateksti on ympärivuotinen ja lokalisoitu
   const promo =
     (await getPromo()) ?? {
-      title: "Kevätkauden kelmut nopeasti kotiin koko Suomeen!",
-      body: "Tilaa mittojen mukaan tehty kutistepussi – toimitus nopeasti. Kysy myös asennus paikan päällä.",
+      title: t("promo.title"),
+      body: t("promo.body"),
     };
 
   return (
@@ -184,7 +197,7 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-black/70" />
 
             <div className="relative p-6 text-white">
-              <h3 className="font-serif text-[28px]">{t("cards.industry.title")}</h3>
+              <h2 className="font-serif text-[28px]">{t("cards.industry.title")}</h2>
               <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">
                 {t("cards.industry.body")}
               </p>
@@ -210,7 +223,7 @@ export default async function HomePage() {
             <div className="absolute inset-0 bg-black/65" />
 
             <div className="relative p-6 text-white">
-              <h3 className="font-serif text-[28px]">{t("cards.onsite.title")}</h3>
+              <h2 className="font-serif text-[28px]">{t("cards.onsite.title")}</h2>
               <p className="mt-3 max-w-md text-sm leading-relaxed text-white/90">
                 {t("cards.onsite.body1")}
                 <br />

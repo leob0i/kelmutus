@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ContactForm } from "@/components/ContactForm";
-import { getTranslations } from "next-intl/server";
-import { localizedAlternates } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
+import { absoluteUrl, breadcrumbSchema, businessRef } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -13,11 +15,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "meista" });
 
-  return {
+  return pageMetadata({
+    locale: locale as "fi" | "en",
+    href: "/meista",
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: await localizedAlternates(locale as "fi" | "en", "/meista"),
-  };
+  });
 }
 
 export default async function MeistaPage({
@@ -26,10 +29,31 @@ export default async function MeistaPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "meista" });
+  const tAll = await getTranslations({ locale });
 
   return (
     <main className="bg-slate-950 text-white">
+      <JsonLd
+        data={breadcrumbSchema(locale as "fi" | "en", [
+          { name: tAll("nav.home"), href: "/" },
+          { name: tAll("nav.meista"), href: "/meista" },
+        ])}
+      />
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "AboutPage",
+          url: absoluteUrl(locale as "fi" | "en", "/meista"),
+          name: t("meta.title"),
+          description: t("meta.description"),
+          inLanguage: locale,
+          about: businessRef,
+          mainEntity: businessRef,
+        }}
+      />
       <section className="relative isolate overflow-hidden">
         {/* TAUSTAKUVA */}
         <Image

@@ -1,21 +1,32 @@
 // src/app/tietosuoja/page.tsx
 import type { Metadata } from "next";
-import { getLocale, getTranslations } from "next-intl/server";
-import { localizedAlternates } from "@/lib/seo";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const locale = await getLocale();
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "tietosuoja" });
 
-  return {
+  return pageMetadata({
+    locale: locale as "fi" | "en",
+    href: "/tietosuoja",
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: await localizedAlternates(locale as "fi" | "en", "/tietosuoja"),
-  };
+  });
 }
 
-export default async function TietosuojaselostePage() {
-  const locale = await getLocale();
+export default async function TietosuojaselostePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "tietosuoja" });
 
   return (

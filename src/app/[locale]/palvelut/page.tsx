@@ -2,8 +2,10 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ContactForm } from "@/components/ContactForm";
-import { getTranslations } from "next-intl/server";
-import { localizedAlternates } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema, businessRef, serviceSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -13,11 +15,12 @@ export async function generateMetadata({
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: "palvelut" });
 
-  return {
+  return pageMetadata({
+    locale: locale as "fi" | "en",
+    href: "/palvelut",
     title: t("meta.title"),
     description: t("meta.description"),
-    alternates: await localizedAlternates(locale as "fi" | "en", "/palvelut"),
-  };
+  });
 }
 
 export default async function PalvelutPage({
@@ -26,7 +29,10 @@ export default async function PalvelutPage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations({ locale, namespace: "palvelut" });
+  const tAll = await getTranslations({ locale });
 
   const services = [
     {
@@ -57,6 +63,52 @@ export default async function PalvelutPage({
 
   return (
     <main className="bg-white text-slate-950">
+      <JsonLd
+        data={breadcrumbSchema(locale as "fi" | "en", [
+          { name: tAll("nav.home"), href: "/" },
+          { name: t("hero.title"), href: "/palvelut" },
+        ])}
+      />
+      {services.map((s) => (
+        <JsonLd
+          key={s.title}
+          data={serviceSchema({
+            locale: locale as "fi" | "en",
+            href: "/palvelut",
+            name: s.title,
+            description: s.desc,
+            serviceType: s.title,
+            areaServed: ["Finland"],
+          })}
+        />
+      ))}
+      <JsonLd
+        data={serviceSchema({
+          locale: locale as "fi" | "en",
+          href: "/palvelut",
+          name: t("onsite.title"),
+          description: t("onsite.body"),
+          serviceType: tAll("schema.onsiteService"),
+          areaServed: [tAll("schema.capitalRegion")],
+          // sivulla näkyvä hinta: 45 € / m, alv 0 %, alle 10 m pulpettiveneet
+          offers: [
+            {
+              "@type": "Offer",
+              name: t("onsite.title"),
+              description: t("onsite.priceLine"),
+              seller: businessRef,
+              priceSpecification: {
+                "@type": "UnitPriceSpecification",
+                price: "45.00",
+                priceCurrency: "EUR",
+                unitCode: "MTR",
+                valueAddedTaxIncluded: false,
+              },
+            },
+          ],
+        })}
+      />
+
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-black/10 bg-slate-950">
         {/* Taustakuva + tumma overlay */}
@@ -119,9 +171,9 @@ export default async function PalvelutPage({
 
               {/* Sisältö */}
               <div className="relative flex h-full flex-col p-8">
-                <h3 className="font-serif text-2xl md:text-3xl text-white">
+                <h2 className="font-serif text-2xl md:text-3xl text-white">
                   {s.title}
-                </h3>
+                </h2>
 
                 <p className="mt-3 font-serif text-base md:text-lg leading-relaxed text-white/85">
                   {s.desc}
@@ -155,9 +207,9 @@ export default async function PalvelutPage({
 
           <div className="relative flex h-full flex-col justify-center gap-4 p-8 sm:flex-row sm:items-center sm:justify-between">
             <div>
-              <h3 className="font-serif text-2xl md:text-3xl text-white">
+              <h2 className="font-serif text-2xl md:text-3xl text-white">
                 {t("boatService.title")}
-              </h3>
+              </h2>
               <p className="mt-3 max-w-2xl font-serif text-base md:text-lg leading-relaxed text-white/85">
                 {t("boatService.body")}
               </p>
@@ -188,9 +240,9 @@ export default async function PalvelutPage({
           </div>
 
           <div>
-            <h3 className="font-serif text-4xl md:text-5xl">
+            <h2 className="font-serif text-4xl md:text-5xl">
               {t("onsite.title")}
-            </h3>
+            </h2>
 
             <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
               {t("onsite.body")}
@@ -229,9 +281,9 @@ export default async function PalvelutPage({
           </div>
 
           <div>
-            <h3 className="font-serif text-4xl md:text-5xl">
+            <h2 className="font-serif text-4xl md:text-5xl">
               {t("durable.title")}
-            </h3>
+            </h2>
 
             <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
               {t("durable.body")}

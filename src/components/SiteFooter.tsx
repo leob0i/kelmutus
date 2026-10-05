@@ -54,8 +54,18 @@ export function SiteFooter() {
           </div>
 
           <div className="text-sm text-white/90">
-            <div>{t("phoneLabel")}: +358 400283123</div>
-            <div>{t("emailLabel")}: jari@kelmutus.fi</div>
+            <div>
+              {t("phoneLabel")}:{" "}
+              <a href="tel:+358400283123" className="hover:text-white">
+                +358 400283123
+              </a>
+            </div>
+            <div>
+              {t("emailLabel")}:{" "}
+              <a href="mailto:jari@kelmutus.fi" className="hover:text-white">
+                jari@kelmutus.fi
+              </a>
+            </div>
           </div>
         </div>
 

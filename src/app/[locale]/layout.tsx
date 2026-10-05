@@ -1,20 +1,34 @@
+import "../globals.css";
 import type {Metadata} from "next";
 import {notFound} from "next/navigation";
-import {NextIntlClientProvider} from "next-intl";
+import {hasLocale, NextIntlClientProvider} from "next-intl";
 import {getMessages, getTranslations} from "next-intl/server";
 import {setRequestLocale} from "next-intl/server";
 
 import {routing} from "@/i18n/routing";
+import {host, siteName} from "@/lib/seo";
 import {SiteHeader} from "@/components/SiteHeader";
 import {SiteFooter} from "@/components/SiteFooter";
 import {LocalBusinessJsonLd} from "@/components/LocalBusinessJsonLd";
 
-export const metadata: Metadata = {
-    metadataBase: new URL("https://www.kelmutus.fi"),
+export async function generateMetadata({
+  params
+}: {
+  params: Promise<{locale: string}>;
+}): Promise<Metadata> {
+  const {locale} = await params;
+  if (!hasLocale(routing.locales, locale)) return {};
 
-  title: "Kelmutus",
-  description: "Kelmutus – veneiden ja laitteiden suojausratkaisut."
-};
+  const t = await getTranslations({locale, namespace: "home.meta"});
+
+  return {
+    metadataBase: new URL(host),
+    title: t("title"),
+    description: t("description"),
+    applicationName: siteName,
+    formatDetection: {telephone: false}
+  };
+}
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({locale}));
@@ -29,20 +43,23 @@ export default async function LocaleLayout({
 }) {
   const {locale} = await params;
 
-  if (!routing.locales.includes(locale as any)) notFound();
+  if (!hasLocale(routing.locales, locale)) notFound();
 
-  // auttaa tekemään tästä staattisemman kun mahdollista
+  // mahdollistaa staattisen renderöinnin (ei lueta kieltä pyynnön headereista)
   setRequestLocale(locale);
 
   const messages = await getMessages();
-  const t = await getTranslations({locale, namespace: "home.meta"});
 
   return (
-    <NextIntlClientProvider messages={messages}>
-      <LocalBusinessJsonLd description={t("description")} />
-      <SiteHeader />
-      {children}
-      <SiteFooter />
-    </NextIntlClientProvider>
+    <html lang={locale}>
+      <body className="bg-white text-slate-900">
+        <NextIntlClientProvider messages={messages}>
+          <LocalBusinessJsonLd locale={locale} />
+          <SiteHeader />
+          {children}
+          <SiteFooter />
+        </NextIntlClientProvider>
+      </body>
+    </html>
   );
 }

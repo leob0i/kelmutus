@@ -6,6 +6,7 @@
     "tyomme": "Työmme",
     "meista": "Meistä",
     "cta": "Ota yhteyttä",
+    "home": "Etusivu",
     "homeAria": "Kelmutus etusivu",
     "openMenu": "Avaa valikko",
     "closeMenu": "Sulje valikko"
@@ -57,6 +58,10 @@
       "body2": "Pussin hinta vain 358,80 €",
       "cta": "Katso lisää töitämme"
     },
+    "promo": {
+      "title": "Kelmut nopeasti kotiin koko Suomeen!",
+      "body": "Tilaa mittojen mukaan tehty kutistepussi – toimitus nopeasti. Kysy myös asennus paikan päällä."
+    },
     "promise": {
       "body": "Tarjoamme kestäviä, huipputason kelmuja ja mittojen mukaan tilattavia valmiita kutistepusseja kuljetus-, logistiikka- ja varastointitarpeisiin. Ratkaisumme suojaavat arvokkaan tuotteesi sääolosuhteilta ja kuljetuksen rasituksilta, jättäen pinnan siistiksi ja ryhdikkääksi. Nopea toimitus ja tarvittaessa asennus paikan päällä varmistavat sujuvan toteutuksen ja korkean asiakastyytyväisyyden."
     },
@@ -91,10 +96,10 @@
   "kutistepussit": {
     "meta": {
       "title": "Kutistepussit mittojen mukaan | Veneen suojaus | Kelmutus.fi",
-      "description": "Valmiiksi mitoitetut kutistepussit veneille ja teollisuuteen. UV-stabiloitu PE/LDPE (150–200 µm). Tiivis ja siisti suoja talvisäilytykseen, kuljetukseen ja varastointiin."
+      "description": "Mittojen mukaan tehdyt kutistepussit veneille ja teollisuuteen. UV-stabiloitu PE/LDPE (150–200 µm) – tiivis suoja talvisäilytykseen ja kuljetukseen."
     },
     "hero": {
-      "imageAlt": "Kutistepussit",
+      "imageAlt": "Vene suojattuna mittojen mukaan tehdyllä kutistepussilla",
       "title": "Kutistepussit mittojen mukaan",
       "subtitle": "Suojat veneille ja teollisuuteen – mitoitettu, nopea toimitus, siisti pinta.",
       "cta": "Pyydä tarjous - lähetä mitat"
@@ -103,7 +108,7 @@
       "title": "Mitä kutistepussit ovat?",
       "body": "Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE). Materiaalin paksuus on tyypillisesti 150–200 µm, mikä takaa siistin, jämäkän pinnan ja erinomaisen suojan talvisäilytykseen ja kuljetukseen. Pussi kutistetaan paikalleen lämpökäsittelyllä (kuumailmapuhallin/kaasupoltin), jolloin se kiristyy tiiviisti rungon muotoihin, ilman rypytystä ja ylimääräistä muovia."
     },
-    "diagramAlt": "Kutistepussit kaavio",
+    "diagramAlt": "Kutistepussilla suojattu vene kuljetusalustalla sivusta kuvattuna",
     "why": {
       "title": "Miksi tämä ratkaisu?",
       "items": [
@@ -122,6 +127,43 @@
     "askBiggerBoats": "Kysy myös isommista veneistä ja useamman veneen kimppahinnoista!",
     "winterStorageAria": "Avaa veneen talvisäilytyksen ohjeet",
     "winterStorageBtn": "Ohjeet veneen talvisäilytykseen",
+    "faq": {
+      "title": "Usein kysyttyä kutistepusseista",
+      "items": [
+        {
+          "q": "Mitä veneen kelmutus maksaa?",
+          "a": "Hinta riippuu veneen koosta ja mallista. Esimerkkihintoja mittojen mukaan tehdyille kutistepusseille: Buster L 230,80 €, Targa 23.1 351 € ja Axopar 28 358,80 €. Paikan päällä pääkaupunkiseudulla tehtynä kelmutus maksaa 45 €/m (alv 0 %) alle 10-metrisille pulpettiveneille. Kysy tarjous myös isommista veneistä ja useamman veneen kimppahinnoista."
+        },
+        {
+          "q": "Mikä on kutistepussi ja miten se eroaa perinteisestä kelmutuksesta?",
+          "a": "Kutistepussi on veneen mallin tai mittojen mukaan valmiiksi mitoitettu suoja, joka nostetaan veneen päälle ja kutistetaan lämmöllä tiiviiksi. Perinteinen kutistemuovirulla painaa noin 50 kg, sen asentaminen on työlästä ja siitä jää paljon hukkapaloja. Valmis pussi tarkoittaa vähemmän muovia ja nopeampaa asennusta."
+        },
+        {
+          "q": "Mistä materiaalista kutistepussit valmistetaan?",
+          "a": "Kutistepussit valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE), jonka paksuus on tyypillisesti 150–200 µm. Suoja pitää veneen puhtaana ja suojaa sitä sateelta, jäältä ja merisuolalta."
+        },
+        {
+          "q": "Kuinka kauan kutistepussin asennus kestää?",
+          "a": "Pussi nostetaan paikoilleen ja kutistetaan kuumailmapuhaltimella tai kaasupolttimella. Esimerkiksi Axopar 28 saatiin kelmuun kahden henkilön voimin 45 minuutissa."
+        },
+        {
+          "q": "Miten tilaan kutistepussin veneeseeni?",
+          "a": "Lähetä veneen malli, mitat tai piirustukset yhteydenottolomakkeella, WhatsAppilla numeroon +358 400 283 123 tai sähköpostilla osoitteeseen jari@kelmutus.fi. Teemme tarjouksen ja valmistamme pussin veneesi mittojen mukaan."
+        },
+        {
+          "q": "Toimitatteko koko Suomeen ja saako asennuksen paikan päälle?",
+          "a": "Kutistepussit toimitetaan koko Suomeen. Kelmutus paikan päällä onnistuu pääkaupunkiseudulla ja lisähinnasta myös sen ulkopuolella."
+        },
+        {
+          "q": "Tarvitseeko kelmutettu vene tuuletusta talvisäilytyksessä?",
+          "a": "Kyllä. Kutistepussiin saa lisävarusteina tuuletusventtiilit ja tarkistusikkunan. Talvisäilytyksessä kannattaa jättää luukut ja ovet hieman auki sekä varmistaa, että kelmussa on tuuletusaukot."
+        },
+        {
+          "q": "Voiko kelmuttaa muutakin kuin veneitä?",
+          "a": "Kyllä. Kelmutamme myös autoja, teollisuuden koneita ja laitteita, rakennuksia sekä erikoiskohteita, joko mittojen mukaan tehdyllä suojalla tai paikan päällä."
+        }
+      ]
+    },
     "contact": {
       "bgAlt": "Kutistepussit taustakuva",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
@@ -147,7 +189,7 @@
   },
   "veneenhuollot": {
     "meta": {
-      "title": "Veneiden huollot ja korjaukset | Kelmutus.fi",
+      "title": "Veneen huolto ja korjaus pääkaupunkiseudulla | Kelmutus.fi",
       "description": "Veneiden määräaikaishuollot, moottorihuollot ja korjaukset pääkaupunkiseudulla, tarvittaessa muualla Suomessa. Kevät- ja talvihuollot ammattitaidolla."
     },
     "hero": {
@@ -223,6 +265,27 @@
       "body2": "Huollon tai korjauksen laajuudesta riippuen työ voidaan toteuttaa sovitussa huoltopaikassa tai mahdollisuuksien mukaan veneen sijaintipaikalla.",
       "body3": "Kerro meille veneesi merkki ja malli, huollon tai korjauksen tarve sekä veneen sijainti. Näiden tietojen perusteella voimme arvioida työn laajuuden ja tehdä tarjouksen."
     },
+    "faq": {
+      "title": "Usein kysyttyä veneen huollosta",
+      "items": [
+        {
+          "q": "Missä huollatte ja korjaatte veneitä?",
+          "a": "Palvelemme veneenomistajia pääkaupunkiseudulla ja sovittaessa myös muualla Suomessa. Työ tehdään sovitussa huoltopaikassa tai mahdollisuuksien mukaan veneen sijaintipaikalla."
+        },
+        {
+          "q": "Mitä veneen määräaikaishuoltoon kuuluu?",
+          "a": "Huollon sisältö suunnitellaan aina veneen, moottorin ja käyttötarpeen mukaan. Huoltoon voi kuulua esimerkiksi moottorin huolto, öljyn ja suodattimien vaihto sekä akkujen, sähköjärjestelmien, jäähdytysjärjestelmän ja vesijärjestelmien tarkastukset."
+        },
+        {
+          "q": "Voiko talvihuollon ja veneen kelmutuksen tilata samalla kertaa?",
+          "a": "Kyllä. Talvihuolto ja veneen suojaus kelmuttamalla voidaan yhdistää samaan kokonaisuuteen, jolloin vene on valmis talvisäilytykseen yhdellä käynnillä."
+        },
+        {
+          "q": "Miten saan tarjouksen veneen huollosta tai korjauksesta?",
+          "a": "Kerro veneen merkki ja malli, huollon tai korjauksen tarve sekä veneen sijainti yhteydenottolomakkeella, WhatsAppilla tai puhelimitse numeroon +358 400 283 123. Voit lähettää myös kuvia veneestä tai viasta."
+        }
+      ]
+    },
     "contact": {
       "bgAlt": "Veneen huolto taustakuva",
       "title": "Pyydä tarjous veneen huollosta tai korjauksesta",
@@ -249,8 +312,8 @@
   },
   "palvelut": {
     "meta": {
-      "title": "Palvelut | Kelmutus",
-      "description": "Kutistepussitus veneille, autoille ja teollisuuskohteille. Suojaus säältä, kuljetukselta ja varastoinnilta – nopeasti ja kestävästi."
+      "title": "Veneiden, autojen ja teollisuuden kelmutus | Kelmutus.fi",
+      "description": "Kelmutus paikan päällä pääkaupunkiseudulla: veneet 45 €/m (alv 0 %, alle 10 m). Myös autot, koneet ja teollisuuskohteet – suoja säältä ja kuljetukselta."
     },
     "hero": {
       "title": "Palvelut",
@@ -326,7 +389,7 @@
 
   "meista": {
     "meta": {
-      "title": "Meistä | Kelmutus",
+      "title": "Meistä – ShrinkPro Finland Oy | Kelmutus.fi",
       "description": "Kelmutus.fi – ShrinkPro Finland Oy. Tarina, tekemisen tapa ja kaksi selkeää ratkaisua veneille ja teollisuuteen."
     },
     "brand": {
@@ -374,7 +437,7 @@
 
   "tyomme": {
     "meta": {
-      "title": "Työmme | Kelmutus",
+      "title": "Työmme – kelmutetut veneet, autot ja koneet | Kelmutus.fi",
       "description": "Esimerkkejä Kelmutus.fi toteutuksista – veneet, teollisuus, autot ja erikoiskohteet. Katso ennen/jälkeen ja kuvagalleria."
     },
     "hero": {
@@ -404,25 +467,33 @@
       }
     },
     "gallery": {
-      "isovene": "Vene kelmutettuna – valmis lopputulos",
-      "isoveneSivu": "Vene kelmutettuna sivusta",
-      "autoKelmus": "Auto suojattuna kelmulla varastointiin",
-      "axopar28": "Vene kelmutettuna hallissa",
-      "rekkaKelmussa": "Kelmutus käynnissä veneen päällä",
-      "veneUlkona": "Iso kohde kelmutettuna kuljetusalustalla",
-      "talo": "Rakennuskohteen suojaus kelmulla",
-      "veneParkissa": "Mitoitus/kaavio kutistepussille",
-      "saxdor": "Vene ennen suojausta"
+      "isovene": "Kelmutettu vene kuljetusalustalla – valmis lopputulos",
+      "isoveneSivu": "Kutistepussilla suojattu iso vene sivusta kuvattuna",
+      "autoKelmus": "Harrasteauto suojattuna kelmulla varastointiin",
+      "axopar28": "Vene kutistepussissa trailerilla hallissa",
+      "rekkaKelmussa": "Kelmutettu kuljetuslasti rekan lavalla",
+      "veneUlkona": "Kelmutettu vene talvisäilytyksessä ulkona",
+      "talo": "Pientalon suojaus kelmulla kuljetusta varten",
+      "veneParkissa": "Kelmutettuja veneitä talvisäilytysalueella",
+      "saxdor": "Kutistepussilla suojattu vene kuljetusalustalla"
     }
   },
 
 
   "talvisailytys": {
     "meta": {
-      "title": "Veneen talvisäilytyksen ohjeet | Kelmutus",
-      "description": "Veneen talvisäilytyksen ohjeet: puhdistus, moottori, varusteet, suojaus ja turvallisuus."
+      "title": "Veneen talvisäilytys: ohjeet ja muistilista | Kelmutus.fi",
+      "description": "Veneen talvisäilytys vaihe vaiheelta: puhdistus ja kuivaus, moottori ja polttoaine, akut, tuuletus sekä veneen suojaus kelmuttamalla. Lue muistilista."
     },
     "title": "Veneen talvisäilytyksen ohjeet",
+    "intro": "Huolellinen valmistelu suojaa venettä kosteudelta, homeelta ja jäätymisvaurioilta talven aikana. Käy tämä muistilista läpi ennen kuin vene jää talviteloille.",
+    "cta": {
+      "title": "Tarvitsetko apua veneen talvisäilytykseen?",
+      "body": "Teemme veneellesi kutistepussin mittojen mukaan, kelmutamme veneen paikan päällä pääkaupunkiseudulla ja hoidamme tarvittaessa myös talvihuollon.",
+      "bags": "Kutistepussit mittojen mukaan",
+      "service": "Veneen talvihuolto",
+      "contact": "Pyydä tarjous"
+    },
     "sections": {
       "cleaning": {
         "title": "1. Puhdistus ja kuivaus",
@@ -479,7 +550,11 @@
             "label": "Pese köydet:",
             "text": "Huuhtele köydet makealla vedellä ja kuivaa hyvin ennen säilytystä."
           },
-          "shrinkWrap": "Kelmuta vene. Lisää tietoa: www.kelmutus.fi",
+          "shrinkWrap": {
+            "label": "Kelmuta vene:",
+            "text": "Mittojen mukaan tehty kutistepussi suojaa veneen lialta, sateelta, jäältä ja merisuolalta.",
+            "link": "Katso kutistepussit"
+          },
           "ventilation": {
             "label": "Huolehdi ilmanvaihdosta:",
             "text": "Jätä luukut ja ovet hieman auki, sekä varmista tuuletusaukot kelmuun."
@@ -506,7 +581,7 @@
 
   "tietosuoja": {
     "meta": {
-      "title": "Tietosuojaseloste | Kelmutus",
+      "title": "Tietosuojaseloste | Kelmutus.fi",
       "description": "Kelmutuksen tietosuojaseloste: mitä henkilötietoja kerätään, mihin niitä käytetään ja mitkä ovat oikeutesi."
     },
     "brand": "Kelmutus",
@@ -601,6 +676,28 @@
         "text": "Suojaamme tiedot asianmukaisilla teknisillä ja organisatorisilla keinoilla ja rajaamme pääsyn tietoihin vain niille, joilla on työnsä puolesta tarve käsitellä niitä."
       }
     }
+  },
+  "schema": {
+    "capitalRegion": "Pääkaupunkiseutu",
+    "bagService": "Veneen kelmutus kutistepussilla",
+    "onsiteService": "Kelmutus paikan päällä",
+    "boatService": "Veneen huolto ja korjaus",
+    "knowsAbout": [
+      "veneen kelmutus",
+      "kutistepussit mittojen mukaan",
+      "veneen talvisäilytys",
+      "veneen kuljetussuojaus",
+      "teollisuuskelmutus",
+      "autojen kelmutus",
+      "veneiden huolto ja korjaus"
+    ]
+  },
+  "notFound": {
+    "title": "Sivua ei löytynyt",
+    "body": "Etsimääsi sivua ei löytynyt. Se on voitu siirtää tai osoite on kirjoitettu väärin.",
+    "home": "Etusivulle",
+    "bags": "Kutistepussit",
+    "service": "Huollot ja korjaus"
   },
   "contactForm": {
     "success": "Kiitos! Otamme sinuun yhteyttä mahdollisimman nopeasti.",
