@@ -29,6 +29,37 @@ export async function generateMetadata({
 
 type Promo = { title: string; body: string };
 
+// heron nappien tyyli (kaikki napit samanvärisiä)
+const heroButton =
+  "inline-flex h-11 items-center justify-center gap-1.5 rounded-md border border-white/60 bg-white/10 px-3 text-[14px] font-semibold text-white shadow backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:h-12 sm:gap-2 sm:px-6 sm:text-[16px]";
+
+function PhoneIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 20 20" className={className} aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        d="M2 3.5A1.5 1.5 0 0 1 3.5 2h1.148a1.5 1.5 0 0 1 1.465 1.175l.716 3.223a1.5 1.5 0 0 1-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 0 0 6.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 0 1 1.767-1.052l3.223.716A1.5 1.5 0 0 1 18 15.352V16.5a1.5 1.5 0 0 1-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 0 1 2.43 8.326 13.019 13.019 0 0 1 2 5V3.5Z"
+      />
+    </svg>
+  );
+}
+
+function WhatsAppIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 32 32" className={className} aria-hidden="true" focusable="false">
+      <path
+        fill="currentColor"
+        transform="translate(1.5 -0)"
+        d="M19.11 17.53c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.18.28-.74.9-.9 1.08-.17.18-.33.2-.6.06-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.66-1.56-1.94-.17-.28-.02-.43.13-.57.13-.13.28-.33.42-.49.14-.17.18-.28.28-.46.1-.18.05-.35-.02-.49-.07-.14-.64-1.55-.87-2.12-.23-.56-.46-.49-.64-.49h-.55c-.2 0-.49.07-.74.35-.26.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.97 3 4.77 4.2.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.64.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"
+      />
+      <path
+        fill="currentColor"
+        d="M16.01 3.2c-7.03 0-12.75 5.7-12.75 12.7 0 2.23.6 4.41 1.73 6.33L3.2 28.8l6.75-1.77a12.8 12.8 0 0 0 6.06 1.54c7.03 0 12.75-5.7 12.75-12.7S23.04 3.2 16.01 3.2zm0 23.12c-1.93 0-3.82-.52-5.47-1.5l-.39-.23-4.01 1.05 1.07-3.9-.25-.4a10.51 10.51 0 0 1-1.61-5.57c0-5.8 4.75-10.52 10.66-10.52 5.9 0 10.66 4.72 10.66 10.52 0 5.8-4.76 10.55-10.66 10.55z"
+      />
+    </svg>
+  );
+}
+
 async function getPromo(): Promise<Promo | null> {
   const url = process.env.SHEETS_PROMO_GVIZ_URL;
   if (!url) return null;
@@ -99,21 +130,53 @@ export default async function HomePage({
 
         {/* header on absolute; varataan tilaa */}
         <div className="relative mx-auto max-w-6xl px-4 pb-14 pt-24">
-          <div className="mt-50 max-w-3xl">
-            <h1 className="font-serif text-[44px] leading-[1.05] text-white drop-shadow sm:text-[56px]">
-              {t("hero.title")}
-            </h1>
-            <p className="mt-4 max-w-2xl text-[16px] leading-relaxed text-white/95 drop-shadow sm:text-[18px]">
-              {t("hero.body")}
-            </p>
-            {/* VAIN mobiili: ei vie tilaa (h-0), nappi oikealle tekstin alle */}
-            <div className="relative h-0 sm:hidden">
-              <Link
-                href="/#yhteys"
-                className="absolute right-0 -top-1 z-20 inline-flex h-8 items-center justify-center rounded-md bg-[#f08a00] px-4 text-[12px] font-semibold text-white shadow hover:bg-[#e27f00] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
-              >
-                {t("hero.mobileCta")}
-              </Link>
+          <div className="relative mt-50 max-w-3xl">
+            {/* Näkymättömät tilanvaraajat alkuperäisellä tekstikoolla: ne määräävät heron korkeuden,
+                joten hero ei veny, vaikka näkyvää tekstiä suurennetaan. Teksti tulee data-attribuutista,
+                jotta se ei ole sivun sisällössä kahteen kertaan. */}
+            <div
+              aria-hidden
+              data-text={t("hero.title")}
+              className="invisible font-serif text-[44px] leading-[1.05] before:content-[attr(data-text)] sm:text-[56px]"
+            />
+            <div
+              aria-hidden
+              data-text={t("hero.body")}
+              className="invisible mt-4 max-w-2xl text-[16px] leading-relaxed before:content-[attr(data-text)] sm:text-[18px]"
+            />
+
+            {/* Näkyvä teksti ja napit: ankkuroitu tilanvaraajien alareunan alapuolelle (heron alatäytteeseen)
+                ja kasvavat ylöspäin, joten napitkaan eivät venytä heroa */}
+            <div className="absolute -bottom-8 left-0 w-full sm:-bottom-6 lg:w-[56rem]">
+              {/* mobiilissa fonttikoko seuraa näytön leveyttä, jotta otsikko rivittyy samoin kaikissa puhelimissa */}
+              <h1 className="font-serif text-[length:clamp(44px,calc((100vw_-_32px)/6.8),58px)] leading-[1.05] text-white drop-shadow sm:text-[64px] lg:text-[80px]">
+                {t("hero.title")}
+              </h1>
+              <p className="mt-4 max-w-2xl text-[20px] leading-relaxed text-white/95 drop-shadow sm:text-[21px] lg:max-w-3xl lg:text-[24px]">
+                {t("hero.body")}
+              </p>
+
+              <div className="mt-4 flex flex-wrap gap-2 sm:mt-7 sm:gap-3">
+                <a href="tel:+358400283123" className={heroButton}>
+                  <PhoneIcon className="h-4 w-4 shrink-0 sm:h-5 sm:w-5" />
+                  {t("hero.callCta")}
+                </a>
+
+                <a
+                  href="https://wa.me/358400283123"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t("contact.whatsappAria")}
+                  className={heroButton}
+                >
+                  <WhatsAppIcon className="h-[18px] w-[18px] shrink-0 sm:h-[22px] sm:w-[22px]" />
+                  WhatsApp
+                </a>
+
+                <Link href="/palvelut" className={heroButton}>
+                  {t("hero.servicesCta")}
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -348,22 +411,7 @@ export default async function HomePage({
                 className="group inline-flex h-12 items-center gap-3 rounded-full bg-[#25D366] px-5 shadow-lg shadow-black/30 ring-1 ring-white/10 transition hover:bg-[#1EBE5D] hover:shadow-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70"
               >
                 {/* WhatsApp-logo (isompi) */}
-                <svg
-                  viewBox="0 0 32 32"
-                  className="h-7 w-7 shrink-0 text-white"
-                  aria-hidden="true"
-                  focusable="false"
-                >
-                  <path
-                    fill="currentColor"
-                    transform="translate(1.5 -0)"
-                    d="M19.11 17.53c-.28-.14-1.65-.81-1.9-.9-.26-.1-.45-.14-.64.14-.18.28-.74.9-.9 1.08-.17.18-.33.2-.6.06-.28-.14-1.18-.43-2.25-1.39-.83-.74-1.39-1.66-1.56-1.94-.17-.28-.02-.43.13-.57.13-.13.28-.33.42-.49.14-.17.18-.28.28-.46.1-.18.05-.35-.02-.49-.07-.14-.64-1.55-.87-2.12-.23-.56-.46-.49-.64-.49h-.55c-.2 0-.49.07-.74.35-.26.28-.97.95-.97 2.32 0 1.37 1 2.69 1.14 2.88.14.18 1.97 3 4.77 4.2.67.29 1.19.46 1.6.59.67.21 1.28.18 1.76.11.54-.08 1.65-.67 1.88-1.32.23-.64.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"
-                  />
-                  <path
-                    fill="currentColor"
-                    d="M16.01 3.2c-7.03 0-12.75 5.7-12.75 12.7 0 2.23.6 4.41 1.73 6.33L3.2 28.8l6.75-1.77a12.8 12.8 0 0 0 6.06 1.54c7.03 0 12.75-5.7 12.75-12.7S23.04 3.2 16.01 3.2zm0 23.12c-1.93 0-3.82-.52-5.47-1.5l-.39-.23-4.01 1.05 1.07-3.9-.25-.4a10.51 10.51 0 0 1-1.61-5.57c0-5.8 4.75-10.52 10.66-10.52 5.9 0 10.66 4.72 10.66 10.52 0 5.8-4.76 10.55-10.66 10.55z"
-                  />
-                </svg>
+                <WhatsAppIcon className="h-7 w-7 shrink-0 text-white" />
 
                 {/* Teksti isompi mutta nappi ei kasva (h-12) */}
                 <span className="flex flex-col leading-[1.05]">

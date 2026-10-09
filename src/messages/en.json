@@ -31,7 +31,8 @@
     "hero": {
       "title": "Your boat deserves the best winter protection",
       "body": "A well-protected boat keeps its value, finish and appearance. Shrink wrapping is tailored to your boat — not the other way around. We also provide wrapping for cars, houses and machinery.",
-      "mobileCta": "Contact us"
+      "callCta": "Call",
+      "servicesCta": "Services"
     },
     "bags": {
       "title": "Made-to-measure shrink wrap covers",

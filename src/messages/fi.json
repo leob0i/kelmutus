@@ -31,7 +31,8 @@
     "hero": {
       "title": "Veneesi ansaitsee talven parhaat vaatteet",
       "body": "Hyvin suojattu vene säilyttää arvonsa, pintansa ja edustavuutensa. Kelmutus tehdään veneesi mukaan eikä toisinpäin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.",
-      "mobileCta": "Ota yhteyttä"
+      "callCta": "Soita",
+      "servicesCta": "Palvelut"
     },
     "bags": {
       "title": "Valmiit kutistepussit mittojen mukaan",
