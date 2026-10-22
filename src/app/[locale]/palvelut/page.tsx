@@ -86,6 +86,16 @@ export default async function PalvelutPage({
         data={serviceSchema({
           locale: locale as "fi" | "en",
           href: "/palvelut",
+          name: t("venepaja.title"),
+          description: `${t("venepaja.body1")} ${t("venepaja.body2")}`,
+          serviceType: t("venepaja.title"),
+          areaServed: ["Finland"],
+        })}
+      />
+      <JsonLd
+        data={serviceSchema({
+          locale: locale as "fi" | "en",
+          href: "/palvelut",
           name: t("onsite.title"),
           description: t("onsite.body"),
           serviceType: tAll("schema.onsiteService"),
@@ -190,6 +200,42 @@ export default async function PalvelutPage({
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Venepajat & suojatut työtilat -kortti, linkki Työmme-sivun referenssiin */}
+        <div className="mt-2 group relative overflow-hidden rounded-none shadow-lg ring-1 ring-black/10 min-h-[220px] sm:min-h-[240px]">
+          <div className="absolute inset-0">
+            <Image
+              src="/gallery/venevaja.oviauki.jpeg"
+              alt={t("venepaja.imageAlt")}
+              fill
+              sizes="100vw"
+              className="object-cover object-[30%_70%] transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-slate-950/70 transition-opacity duration-300 group-hover:bg-slate-950/60" />
+          </div>
+
+          <div className="relative flex h-full flex-col justify-center gap-4 p-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="font-serif text-2xl md:text-3xl text-white">
+                {t("venepaja.title")}
+              </h2>
+              <p className="mt-3 max-w-2xl font-serif text-base md:text-lg leading-relaxed text-white/85">
+                {t("venepaja.body1")}
+              </p>
+              <p className="mt-2 max-w-2xl font-serif text-base md:text-lg leading-relaxed text-white/85">
+                {t("venepaja.body2")}
+              </p>
+            </div>
+
+            <Link
+              href="/tyomme#venepaja"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-orange-500 px-5 py-2.5 font-semibold text-white shadow hover:bg-orange-600"
+            >
+              {t("venepaja.cta")}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
 
         {/* Veneiden huollot & korjaukset -kortti, samat ulkoreunat kuin yllä olevilla korteilla */}

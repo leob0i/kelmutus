@@ -71,6 +71,12 @@
       "body": "Huollamme ja korjaamme veneitä pääkaupunkiseudulla ja tarvittaessa koko Suomessa. Teemme määräaikaishuollot, kausihuollot sekä erilaiset korjaus- ja kunnostustyöt veneen tarpeiden mukaan.",
       "cta": "Katso huollot ja korjaukset"
     },
+    "venepaja": {
+      "title": "Venepajat ja suojatut työtilat",
+      "body": "Veneen huolto- ja korjaustöihin sopivat kelmutetut suojatilat – myös talvikaudelle.",
+      "cta": "Tutustu toteutukseen",
+      "imageAlt": "Valkoiseksi kelmutettu venepaja veneen ympärillä venesäilytysalueella"
+    },
     "contact": {
       "bgAlt": "Kutistepussit taustakuva",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
@@ -348,6 +354,13 @@
       "body": "Huollamme ja korjaamme veneitä pääkaupunkiseudulla ja tarvittaessa koko Suomessa. Teemme määräaikaishuollot, kausihuollot sekä erilaiset korjaus- ja kunnostustyöt veneen tarpeiden mukaan.",
       "cta": "Katso huollot ja korjaukset"
     },
+    "venepaja": {
+      "title": "Venepajat ja suojatut työtilat",
+      "body1": "Veneen ympärille rakennettu kelmutettu suojatila mahdollistaa huolto- ja korjaustyöt säältä suojassa. Oviaukolla varustettuun tilaan pääsee työskentelemään myös talvella.",
+      "body2": "Toteutus suunnitellaan kohteen ja käyttötarpeen mukaan.",
+      "cta": "Tutustu toteutukseen",
+      "imageAlt": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään"
+    },
     "onsite": {
       "imageAlt": "Kelmutus paikan päällä",
       "title": "Kelmutus paikan päällä pääkaupunkiseudulla",
@@ -477,6 +490,17 @@
       "talo": "Pientalon suojaus kelmulla kuljetusta varten",
       "veneParkissa": "Kelmutettuja veneitä talvisäilytysalueella",
       "saxdor": "Kutistepussilla suojattu vene kuljetusalustalla"
+    },
+    "venepaja": {
+      "title": "Venepaja – säältä suojattu työtila veneen korjaukseen",
+      "body1": "Rakennamme veneen ympärille kelmutetun suojarakenteen, joka mahdollistaa huolto- ja korjaustöiden tekemisen myös talvikaudella. Rakenteeseen voidaan toteuttaa oviaukko, josta pääsee työskentelemään suojan sisällä.",
+      "body2": "Räätälöity ratkaisu veneen ja työskentelytarpeen mukaan.",
+      "cta": "Kysy tarjous",
+      "images": {
+        "main": "Valkoiseksi kelmutettu venepaja veneen ympärillä venesäilytysalueella",
+        "door": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään",
+        "frame": "Venepajan puurunko veneen ympärillä sekä mitoituspiirrokset sivusta, päädystä, ylhäältä ja poikkileikkauksena"
+      }
     }
   },
 

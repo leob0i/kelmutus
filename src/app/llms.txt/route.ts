@@ -41,6 +41,7 @@ Kelmutus.fi on ShrinkPro Finland Oy:n (Y-tunnus ${fi.footer.businessIdValue}) pa
 ## Palvelut
 
 ${services}
+- **${fi.palvelut.venepaja.title}**: ${fi.palvelut.venepaja.body1} ${fi.palvelut.venepaja.body2}
 - **${fi.veneenhuollot.hero.title}**: ${fi.veneenhuollot.intro.body1}
 
 ## Hinnat
