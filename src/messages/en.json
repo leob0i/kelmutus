@@ -134,6 +134,11 @@
     "askBiggerBoats": "Ask also about larger boats and group pricing for multiple boats!",
     "winterStorageAria": "Open winter storage instructions for boats",
     "winterStorageBtn": "Winter storage instructions for boats",
+    "cableReels": {
+      "title": "Cable reels to France",
+      "body": "These cable reels also made it safely and well protected all the way to France. We make custom-sized covers for many different purposes – ask us for more!",
+      "imageAlt": "Large cable reels protected with white shrink wrap in a factory hall"
+    },
     "faq": {
       "title": "Frequently asked questions about shrink wrap covers",
       "items": [
@@ -498,7 +503,9 @@
       "veneUlkona": "Shrink-wrapped boat in outdoor winter storage",
       "talo": "Small house protected with shrink wrap for transport",
       "veneParkissa": "Shrink-wrapped boats in a winter storage yard",
-      "saxdor": "Boat protected with a shrink wrap cover on a transport flatbed"
+      "saxdor": "Boat protected with a shrink wrap cover on a transport flatbed",
+      "kaapelikelat": "Large cable reels protected with white shrink wrap in a factory hall",
+      "kelaKutistumassa": "Worker on a ladder fitting shrink wrap over a large blue cable reel"
     },
     "venepaja": {
       "title": "Boat repair shelter – a weather-protected workspace",

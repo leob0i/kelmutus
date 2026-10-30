@@ -203,6 +203,32 @@ export default async function KutistepussitPage({
           </div>
         </section>
 
+        {/* Kaapelikelat: vasen teksti + oikea kuva (mobiilissa kuva tekstin jälkeen) */}
+        <section className="mx-auto max-w-6xl px-6 pb-14">
+          <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+            <div>
+              <h2 className="font-serif text-4xl md:text-5xl">
+                {t("cableReels.title")}
+              </h2>
+
+              <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
+                {t("cableReels.body")}
+              </p>
+            </div>
+
+            <div className="relative w-full overflow-hidden bg-gray-200">
+              <Image
+                src="/gallery/kelmutus.kelmut1.jpeg"
+                alt={t("cableReels.imageAlt")}
+                width={1920}
+                height={1080}
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="h-auto w-full object-cover"
+              />
+            </div>
+          </div>
+        </section>
+
         <Faq title={t("faq.title")} items={faqItems} />
 
         {/* Pieni ohjenappi ennen yhteydenottolomaketta (oikeaan kulmaan) */}

@@ -134,6 +134,11 @@
     "askBiggerBoats": "Kysy myös isommista veneistä ja useamman veneen kimppahinnoista!",
     "winterStorageAria": "Avaa veneen talvisäilytyksen ohjeet",
     "winterStorageBtn": "Ohjeet veneen talvisäilytykseen",
+    "cableReels": {
+      "title": "Kaapelikeloja Ranskaan",
+      "body": "Nämäkin kaapelikelat lähtivät turvallisesti ja hyvin suojattuna Ranskaan saakka. Valmistamme kelmuja eri tarkoituksiin mittojen mukaan, kysy lisää!",
+      "imageAlt": "Valkoisella kelmulla suojattuja suuria kaapelikeloja tehdashallissa"
+    },
     "faq": {
       "title": "Usein kysyttyä kutistepusseista",
       "items": [
@@ -489,7 +494,9 @@
       "veneUlkona": "Kelmutettu vene talvisäilytyksessä ulkona",
       "talo": "Pientalon suojaus kelmulla kuljetusta varten",
       "veneParkissa": "Kelmutettuja veneitä talvisäilytysalueella",
-      "saxdor": "Kutistepussilla suojattu vene kuljetusalustalla"
+      "saxdor": "Kutistepussilla suojattu vene kuljetusalustalla",
+      "kaapelikelat": "Valkoisella kelmulla suojattuja suuria kaapelikeloja tehdashallissa",
+      "kelaKutistumassa": "Työntekijä asentaa kelmua suuren sinisen kaapelikelan päälle tikkailta"
     },
     "venepaja": {
       "title": "Venepaja – säältä suojattu työtila veneen korjaukseen",

@@ -33,6 +33,14 @@ const gallery = [
   { src: "/kelmutus.talo.jpg", altKey: "gallery.talo" },
   { src: "/gallery/vene.parkissa.jpg", altKey: "gallery.veneParkissa" },
   { src: "/gallery/saxdor.jpg", altKey: "gallery.saxdor" },
+  { src: "/gallery/kelmutus.kelmut1.jpeg", altKey: "gallery.kaapelikelat" },
+  // Pystykuva: rajaus ylemmäs, jotta työntekijä ja kelmu näkyvät
+  {
+    src: "/gallery/kela.kutistumassa.jpeg",
+    altKey: "gallery.kelaKutistumassa",
+    position: "object-[50%_28%]",
+  },
+  { src: "/gallery/venevaja.oviauki.jpeg", altKey: "venepaja.images.door" },
 ];
 
 // Ennen / jälkeen
@@ -54,12 +62,14 @@ function CardImage({
   label,
   aspect = "aspect-[4/3]",
   sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  position = "",
 }: {
   src: string;
   alt: string;
   label?: string;
   aspect?: string;
   sizes?: string;
+  position?: string;
 }) {
   return (
     <div className="group relative overflow-hidden rounded-2xl border border-black/10 bg-black/5">
@@ -69,7 +79,7 @@ function CardImage({
           alt={alt}
           fill
           sizes={sizes}
-          className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+          className={`object-cover ${position} transition-transform duration-500 group-hover:scale-[1.03]`}
         />
       </div>
 
@@ -136,7 +146,12 @@ export default async function TyommePage({
       <section className="mx-auto max-w-6xl px-4 pb-16 md:pb-20">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
           {gallery.map((img) => (
-            <CardImage key={img.src} src={img.src} alt={t(img.altKey)} />
+            <CardImage
+              key={img.src}
+              src={img.src}
+              alt={t(img.altKey)}
+              position={img.position}
+            />
           ))}
         </div>
       </section>
