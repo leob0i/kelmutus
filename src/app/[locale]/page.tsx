@@ -27,8 +27,6 @@ export async function generateMetadata({
 
 
 
-type Promo = { title: string; body: string };
-
 // heron nappien tyyli (kaikki napit samanvärisiä)
 const heroButton =
   "inline-flex h-11 items-center justify-center gap-1.5 rounded-md border border-white/60 bg-white/10 px-3 text-[14px] font-semibold text-white shadow backdrop-blur-sm transition hover:bg-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/70 sm:h-12 sm:gap-2 sm:px-6 sm:text-[16px]";
@@ -60,36 +58,6 @@ function WhatsAppIcon({ className }: { className?: string }) {
   );
 }
 
-async function getPromo(): Promise<Promo | null> {
-  const url = process.env.SHEETS_PROMO_GVIZ_URL;
-  if (!url) return null;
-
-  try {
-    const res = await fetch(url, { next: { revalidate: 60 } }); // päivittyy ~60s välein
-    if (!res.ok) return null;
-
-    const raw = await res.text();
-
-    // GVIZ palauttaa: google.visualization.Query.setResponse({...});
-    const start = raw.indexOf("{");
-    const end = raw.lastIndexOf("}");
-    if (start === -1 || end === -1) return null;
-
-    const data = JSON.parse(raw.slice(start, end + 1));
-    const row = data?.table?.rows?.[0]?.c ?? [];
-
-    const getCell = (cell: any) => cell?.v ?? cell?.f ?? "";
-    const title = getCell(row?.[0]);
-    const body = getCell(row?.[1]);
-
-    if (!title && !body) return null;
-
-    return { title: String(title), body: String(body) };
-  } catch {
-    return null;
-  }
-}
-
 export default async function HomePage({
   params,
 }: {
@@ -102,13 +70,6 @@ export default async function HomePage({
 
   // hero-videon poster on sivun suurin elementti (LCP) -> ladataan heti
   preload("/hero-poster.jpg", { as: "image", fetchPriority: "high" });
-
-  // Sheetin teksti ensisijainen; varateksti on ympärivuotinen ja lokalisoitu
-  const promo =
-    (await getPromo()) ?? {
-      title: t("promo.title"),
-      body: t("promo.body"),
-    };
 
   return (
     <main className="pt-0">
@@ -387,11 +348,11 @@ export default async function HomePage({
             {/* Promo vasen */}
             <div className="lg:col-span-7">
               <h2 className="font-serif text-[28px] leading-tight text-white sm:text-[34px]">
-                {promo.title}
+                {t("promo.title")}
               </h2>
 
               <p className="mt-3 max-w-2xl text-sm leading-relaxed text-white/85 sm:text-[15px] whitespace-pre-line">
-                {promo.body}
+                {t("promo.body")}
               </p>
             </div>
 
