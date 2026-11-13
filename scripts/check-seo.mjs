@@ -12,8 +12,13 @@ const BASE = (process.env.BASE_URL || "http://localhost:3000").replace(/\/$/, ""
 const SITE = "https://www.kelmutus.fi";
 const INDEXNOW_KEY = "416ed2a082bab799a78e75bf7d1f3b2e";
 
-const routes = ["/", "/kutistepussit", "/veneenhuollot", "/palvelut", "/tyomme", "/meista", "/talvisailytys", "/tietosuoja"];
-const faqRoutes = new Set(["/kutistepussit", "/veneenhuollot"]);
+const routes = [
+  "/", "/kutistepussit", "/veneenhuollot", "/palvelut", "/tyomme", "/meista", "/talvisailytys",
+  "/kutistepussi-vai-pressu", "/veneen-talvikatos", "/tietosuoja",
+];
+const faqRoutes = new Set([
+  "/kutistepussit", "/veneenhuollot", "/talvisailytys", "/kutistepussi-vai-pressu", "/veneen-talvikatos",
+]);
 const AREA_COUNT = 13;
 
 const errors = [];
@@ -48,7 +53,7 @@ function jsonLdNodes(html, where) {
   return nodes;
 }
 
-function checkNode(node, where) {
+function checkNode(node, where, href) {
   const need = (cond, msg) => cond || fail(where, `${node["@type"]}: ${msg}`);
   switch (node["@type"]) {
     case "Organization":
@@ -65,7 +70,13 @@ function checkNode(node, where) {
     case "Service":
       need(node.name && node.description && node.url, "name/description/url");
       need(node.provider?.["@id"] === `${SITE}/#organization`, "provider = Organization");
-      need(node.areaServed?.length === AREA_COUNT, `areaServed (${node.areaServed?.length})`);
+      // Neljä pääpalvelua ja talvikatos: 13 aluetta. Palvelut-sivun palvelukortit (veneiden ja
+      // autojen kelmutus, Laitamme kelmuun, venepaja): alueena Suomi.
+      need(
+        node.areaServed?.length === AREA_COUNT ||
+          (href === "/palvelut" && JSON.stringify(node.areaServed) === '[{"@type":"Place","name":"Finland"}]'),
+        `areaServed (${node.areaServed?.length})`
+      );
       break;
     case "Product": {
       const offer = node.offers;
@@ -131,7 +142,7 @@ async function checkPage(href, locale) {
   if (/040 ?028 ?3123|400283123|400 283123/.test(text)) fail(where, "puhelinnumero väärässä muodossa");
 
   const nodes = jsonLdNodes(html, where);
-  nodes.forEach((node) => checkNode(node, where));
+  nodes.forEach((node) => checkNode(node, where, href));
   const types = nodes.map((n) => n["@type"]);
   if (!types.includes("Organization")) fail(where, "Organization puuttuu");
   if (href !== "/" && !types.includes("BreadcrumbList")) fail(where, "BreadcrumbList puuttuu");
