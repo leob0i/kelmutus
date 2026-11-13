@@ -39,7 +39,8 @@
       "title": "Made-to-measure shrink wrap covers",
       "body1": "Made-to-measure shrink wrap covers fit perfectly, protect reliably and look neat. Less plastic, faster installation, fast delivery.",
       "body2": "Send the measurements or specs! We’ll take care of the rest!",
-      "cta": "Read more about shrink wrap covers"
+      "cta": "Read more about shrink wrap covers",
+      "compareLink": "Shrink wrap cover or tarp? See the comparison"
     },
     "cards": {
       "industry": {
@@ -167,7 +168,7 @@
         },
         {
           "q": "Do you deliver across Finland, and is on-site installation available?",
-          "a": "Shrink wrap covers are delivered across Finland. On-site shrink wrapping is available in the Helsinki Capital Region, and outside it for an additional fee."
+          "a": "Yes. Made-to-measure shrink wrap covers are delivered across Finland in 2–3 weeks, and elsewhere in Europe when needed. On-site installation is available especially in the Helsinki Capital Region and on the coast between Turku and Kokkola (Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari, Kokkola). Installation elsewhere for an additional fee."
         },
         {
           "q": "Does a shrink-wrapped boat need ventilation during winter storage?",
@@ -176,7 +177,19 @@
         {
           "q": "Can you shrink wrap things other than boats?",
           "a": "Yes. We also shrink wrap cars, industrial machinery and equipment, buildings and special items, either with a made-to-measure cover or on site."
+        },
+      {
+        "q": "Can I install a shrink wrap cover myself?",
+        "a": "Yes. The cover is lifted over the boat and shrunk with a heat gun or gas burner. For example, installing a cover on an Axopar 28 takes two people about 45 minutes. If you don't have the tools or experience, we can come and install it on site."
+      },
+      {
+        "q": "Which is better, a shrink wrap cover or a tarp?",
+        "a": "A shrink wrap cover is tighter, doesn't flap in the wind and needs no frame. A tarp is reusable but needs a sturdy frame. Read the full comparison.",
+        "link": {
+          "text": "full comparison",
+          "href": "/kutistepussi-vai-pressu"
         }
+      }
       ]
     },
     "contact": {
@@ -375,7 +388,8 @@
       "body1": "A shrink-wrapped shelter built around the boat lets you carry out maintenance and repair work protected from the weather. With a door opening, you can work inside the shelter even in winter.",
       "body2": "Each shelter is planned around the site and how it will be used.",
       "cta": "View the project",
-      "imageAlt": "Open door in the end wall of the boat repair shelter, giving access to work inside"
+      "imageAlt": "Open door in the end wall of the boat repair shelter, giving access to work inside",
+      "shelterLink": "Read about boat winter shelters"
     },
     "onsite": {
       "imageAlt": "On-site shrink wrapping",
@@ -386,6 +400,10 @@
     "pricingInfo": {
       "paragraph1": "Prices include basic protection and work at the location specified by the customer in the Helsinki Capital Region. If you need additional services such as transportation or special solutions, please contact us. We tailor an offer to your needs.",
       "paragraph2": "We also wrap outside the capital area for an additional fee. Ask for details!"
+    },
+    "area": {
+      "title": "Service area",
+      "body": "We shrink wrap on site especially in the Helsinki Capital Region (Helsinki, Espoo, Vantaa) and on the coast between Turku and Kokkola: Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari and Kokkola. In urgent cases we can even come the same day. We also take jobs elsewhere in Finland and in Europe – ask us for details. We deliver made-to-measure shrink wrap covers across Finland in 2–3 weeks."
     },
     "durable": {
       "imageAlt": "Buster L boat on the water",
@@ -527,11 +545,86 @@
 
   "talvisailytys": {
     "meta": {
-      "title": "Boat winter storage: guide and checklist | Kelmutus.fi",
-      "description": "Boat winter storage step by step: cleaning and drying, engine and fuel, batteries, ventilation and shrink wrapping the boat. Read the checklist."
+      "title": "Boat winter storage: guide, storage options and protection | Kelmutus.fi",
+      "description": "Boat winter storage outdoors, in a cold or heated hall. A checklist, protection options and tips for choosing between a tarp and a shrink wrap cover."
     },
-    "title": "Boat winter storage guide",
+    "title": "Boat winter storage – guide and checklist",
     "intro": "Careful preparation protects your boat from moisture, mold and frost damage over the winter. Go through this checklist before the boat is laid up for the season.",
+    "lead": "There are three ways to store a boat over the winter: outdoors on stands or a trailer, in a cold hall or in a heated hall. Outdoor storage is the most affordable, but then the boat's protection decides how well it copes with snow, ice and moisture. On this page you will find a winter storage checklist and a comparison of the different protection options.",
+    "options": {
+      "title": "Winter storage options",
+      "headers": [
+        "Storage option",
+        "Protects against",
+        "Things to consider"
+      ],
+      "rows": [
+        [
+          "Outdoors on stands or a trailer",
+          "Weather protection depends on the cover",
+          "The most affordable. The boat needs a tight cover and sturdy support."
+        ],
+        [
+          "Cold hall or shelter",
+          "Rain, snow and wind",
+          "The engine and water systems must still be drained to prevent freezing."
+        ],
+        [
+          "Heated hall",
+          "Frost and moisture",
+          "The most expensive option. Suitable for valuable and wooden boats."
+        ]
+      ],
+      "body": "For outdoor storage, the boat is covered either with a tarp and a cover frame or with a made-to-measure shrink wrap cover. Both work as long as the cover is tight and the boat is ventilated."
+    },
+    "covering": {
+      "title": "Covering a boat for winter – tarp or shrink wrap cover?",
+      "tarpLabel": "A tarp",
+      "tarp": "is reusable, but it needs a sturdy cover frame so that snow and water don't collect in pockets. The tarp must not touch the boat's surface, because a tarp rubbing in the wind wears down the gelcoat.",
+      "bagLabel": "A shrink wrap cover",
+      "bag": "is heat-shrunk tightly to the shape of the boat. It doesn't flap in the wind, snow slides off the tight surface, and no separate frame is needed. For example, installing a made-to-measure shrink wrap cover on an Axopar 28 takes two people about 45 minutes.",
+      "comparePrefix": "A more detailed comparison with prices:",
+      "compareLink": "Shrink wrap cover or tarp for boat winter storage?"
+    },
+    "outdoor": {
+      "title": "Checklist for outdoor storage",
+      "items": [
+        "Wash and dry the boat before covering it. A damp boat will get moldy under the cover.",
+        "Support the boat on stands or a trailer so that the weight is evenly distributed and the stern is slightly lower than the bow.",
+        "Leave the hull drain plugs open.",
+        "Make sure there is ventilation: gaps at the bow and stern under a tarp, ventilation vents in a shrink wrap cover.",
+        "Check the cover after storms and heavy snowfall."
+      ]
+    },
+    "regions": {
+      "title": "Winter storage and shrink wrapping by region",
+      "body": "Kelmutus.fi delivers made-to-measure shrink wrap covers across Finland in 2–3 weeks. We come on site to shrink wrap especially in the Helsinki Capital Region and on the coast between Turku and Kokkola: Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari and Kokkola. In urgent cases we can even come the same day. Ask us about other locations in Finland and Europe too."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "How do you store a boat over the winter?",
+          "a": "The boat is washed, the engine and water systems are serviced and drained, the batteries are removed or kept charged, and the boat is supported on stands or a trailer. Outdoors, the boat is covered tightly with a tarp and a cover frame or with a shrink wrap cover so that it can still ventilate."
+        },
+        {
+          "q": "Can a boat be stored outdoors over the winter?",
+          "a": "Yes. Outdoor storage is the most affordable option when the boat is carefully supported and protected. A tight shrink wrap cover or a good tarp with a frame protects against snow, ice and UV radiation."
+        },
+        {
+          "q": "Which is better for winter storage, a tarp or a shrink wrap cover?",
+          "a": "A shrink wrap cover is tighter, doesn't flap in the wind and needs no frame. A tarp is reusable but needs a frame and regular checks. See the comparison.",
+          "link": {
+            "text": "comparison",
+            "href": "/kutistepussi-vai-pressu"
+          }
+        },
+        {
+          "q": "When should a boat be covered for the winter?",
+          "a": "Right after the boat has been lifted out and washed, once it is dry. It's worth ordering a made-to-measure shrink wrap cover in good time, as the delivery time is 2–3 weeks."
+        }
+      ]
+    },
     "cta": {
       "title": "Need help with winter storage for your boat?",
       "body": "We make a made-to-measure shrink wrap cover for your boat, shrink wrap it on site in the Helsinki Capital Region and can also take care of winter service.",
@@ -624,6 +717,144 @@
   },
 
 
+  "kutistepussiVaiPressu": {
+    "meta": {
+      "title": "Shrink wrap cover or tarp for boat winter storage? | Kelmutus.fi",
+      "description": "Shrink wrap cover vs. boat tarp: price, installation, durability, snow and ventilation. How to choose the right winter protection for your boat."
+    },
+    "title": "Shrink wrap cover or tarp for boat winter storage?",
+    "intro": "A shrink wrap cover suits you if you want tight, hassle-free winter protection without a separate frame. A tarp suits you if you want a reusable cover and already have a sturdy cover frame. With either, the boat keeps well as long as the cover is tight and the boat can ventilate.",
+    "compare": {
+      "title": "Comparison",
+      "headers": [
+        "",
+        "Shrink wrap cover",
+        "Tarp and cover frame"
+      ],
+      "rows": [
+        [
+          "Fit",
+          "Heat-shrunk to the shape of the boat",
+          "Loose, needs tightening with ropes or straps"
+        ],
+        [
+          "Snow and water",
+          "Slide off the tight surface",
+          "The frame prevents pockets if it is sturdy"
+        ],
+        [
+          "Wind",
+          "Doesn't flap",
+          "Can flap and rub against the boat's surface"
+        ],
+        [
+          "Frame",
+          "Not needed",
+          "Needed"
+        ],
+        [
+          "Ventilation",
+          "Ventilation vents in the cover",
+          "Gaps at the bow and stern"
+        ],
+        [
+          "Installation",
+          "E.g. Axopar 28 in about 45 min with two people",
+          "Assembling the frame and fastening the tarp"
+        ],
+        [
+          "Price",
+          "E.g. Buster L €230.80, Targa 23.1 €351, Axopar 28 €358.80 (VAT 0%)",
+          "Ready-made boat covers in stores about €50–350 and a cover frame about €175–260 (November 2026)"
+        ]
+      ]
+    },
+    "whenBag": {
+      "title": "When is a shrink wrap cover the better choice?",
+      "items": [
+        "The boat is outdoors in a windy spot, for example on the coast.",
+        "You want protection that doesn't need checking after every storm.",
+        "You don't have a cover frame or don't want to build one.",
+        "You want a neat, tight result for transport as well."
+      ]
+    },
+    "whenTarp": {
+      "title": "When is a tarp the better choice?",
+      "items": [
+        "You already have a sturdy cover frame.",
+        "The boat is in a sheltered spot.",
+        "You want to use the same cover for several winters and check it regularly."
+      ]
+    },
+    "price": {
+      "title": "How much does a shrink wrap cover cost?",
+      "body": "The price of a made-to-measure shrink wrap cover depends on the size and model of the boat. Example prices (VAT 0%): Buster L €230.80, Targa 23.1 €351 and Axopar 28 €358.80. On-site shrink wrapping in the Helsinki Capital Region costs €45 per meter for console boats under 10 m. Request a quote for your boat: send us the boat model, measurements or drawings."
+    },
+    "quoteCta": "Request a quote",
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Can a shrink wrap cover handle a snow load?",
+          "a": "A shrink wrap cover is shrunk tightly to the shape of the boat, so snow can't collect in pockets the way it does on a loose tarp. It's still a good idea to check the cover after heavy snowfall."
+        },
+        {
+          "q": "Does a shrink wrap cover need ventilation underneath?",
+          "a": "Yes. Ventilation vents are available for the shrink wrap cover, and it's a good idea to leave the boat's hatches and doors slightly open so that moisture doesn't condense."
+        },
+        {
+          "q": "Can I install a shrink wrap cover myself?",
+          "a": "Yes. The cover is lifted over the boat and shrunk with a heat gun or gas burner. If you don't have the tools or experience, we can also install it for you on site."
+        },
+        {
+          "q": "How quickly can I get a shrink wrap cover?",
+          "a": "The delivery time for a made-to-measure shrink wrap cover is 2–3 weeks anywhere in Finland."
+        }
+      ]
+    }
+  },
+  "talvikatos": {
+    "meta": {
+      "title": "Boat winter shelters and repair shelters from shrink wrap | Kelmutus.fi",
+      "description": "A shrink-wrapped winter shelter or repair shelter built around your boat: a protected workspace for service and repairs, even in winter. Ask for a quote."
+    },
+    "title": "Boat winter shelters and repair shelters from shrink wrap",
+    "intro": "A winter shelter, or repair shelter, built from shrink wrap protects the boat over the winter and also gives you a covered workspace for servicing and repairing the boat. The shelter is built around the boat where it is stored, so the boat doesn't need to be moved into a hall.",
+    "imageAlt": "Boat repair shelter shrink-wrapped in white around a boat in a boat storage yard",
+    "when": {
+      "title": "When is a winter shelter worth it?",
+      "items": [
+        "Service, repair or refurbishment work is being done on the boat during the winter.",
+        "The boat is large or shaped so that a ready-made cover won't fit.",
+        "No hall space is available, or it is too expensive.",
+        "You want to protect several boats or other items under the same shelter."
+      ]
+    },
+    "how": {
+      "title": "How is a winter shelter built?",
+      "body": "A frame is built around the boat, covered with shrink film and heat-shrunk tight. The shelter can have a door opening and ventilation, so you can work inside even in winter.",
+      "linkPrefix": "See the project:",
+      "linkText": "Our work – boat repair shelter"
+    },
+    "area": {
+      "title": "Area and quotes",
+      "body": "We build winter shelters in the Helsinki Capital Region and on the coast between Turku and Kokkola (Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari, Kokkola), and elsewhere in Finland and Europe on request. The price depends on the size of the site, so request a quote: tell us the size of the boat, its location and your preferred schedule."
+    },
+    "quoteCta": "Request a quote",
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "Can a shrink-wrapped repair shelter be built around a boat for the winter?",
+          "a": "Yes. A shrink-wrapped winter shelter is built around the boat where it is stored, and it serves as both protection and a workspace over the winter."
+        },
+        {
+          "q": "How much does a boat winter shelter cost?",
+          "a": "The price depends on the size of the boat and the structure of the shelter. Request a quote by telling us the boat's measurements and location."
+        }
+      ]
+    }
+  },
   "tietosuoja": {
     "meta": {
       "title": "Privacy policy | Kelmutus.fi",
@@ -738,7 +969,8 @@
       "onsite": "On-site boat shrink wrapping",
       "bags": "Made-to-measure shrink wrap covers",
       "industrial": "Industrial shrink wrapping",
-      "boatService": "Boat service and repairs"
+      "boatService": "Boat service and repairs",
+      "shelter": "Boat winter shelter and repair shelter from shrink wrap"
     },
     "country": "Finland",
     "continent": "Europe",

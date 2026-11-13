@@ -88,8 +88,9 @@ export default async function PalvelutPage({
       <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "industrial")} />
       <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "bags")} />
       <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "boatService")} />
-      {/* autojen kelmutus, Laitamme kelmuun ja venepaja omina palveluinaan */}
+      {/* veneiden kelmutus, autojen kelmutus, Laitamme kelmuun ja venepaja omina palveluinaan */}
       {[
+        { name: services[0].title, description: services[0].desc },
         { name: services[2].title, description: services[2].desc },
         { name: services[3].title, description: services[3].desc },
         { name: t("venepaja.title"), description: `${t("venepaja.body1")} ${t("venepaja.body2")}` },
@@ -222,13 +223,22 @@ export default async function PalvelutPage({
               </p>
             </div>
 
-            <Link
-              href="/tyomme#venepaja"
-              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-orange-500 px-5 py-2.5 font-semibold text-white shadow hover:bg-orange-600"
-            >
-              {t("venepaja.cta")}
-              <span aria-hidden="true">→</span>
-            </Link>
+            <div className="flex shrink-0 flex-col gap-2 sm:items-stretch">
+              <Link
+                href="/tyomme#venepaja"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-orange-500 px-5 py-2.5 font-semibold text-white shadow hover:bg-orange-600"
+              >
+                {t("venepaja.cta")}
+                <span aria-hidden="true">→</span>
+              </Link>
+              <Link
+                href="/veneen-talvikatos"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md border border-white/40 px-5 py-2.5 font-semibold text-white hover:bg-white/10"
+              >
+                {t("venepaja.shelterLink")}
+                <span aria-hidden="true">→</span>
+              </Link>
+            </div>
           </div>
         </div>
 
@@ -339,6 +349,14 @@ export default async function PalvelutPage({
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Toiminta-alue (heti hintatietojen jälkeen) */}
+      <section id="toiminta-alue" className="mx-auto max-w-6xl scroll-mt-24 px-4 pb-16 md:pb-20">
+        <h2 className="font-serif text-4xl md:text-5xl">{t("area.title")}</h2>
+        <p className="mt-6 max-w-3xl font-serif text-lg leading-relaxed text-black/90">
+          {t("area.body")}
+        </p>
       </section>
 
       {/* Yhteydenottolomake */}

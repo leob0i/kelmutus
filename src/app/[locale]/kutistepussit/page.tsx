@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
 import { ContactForm } from "@/components/ContactForm";
-import { Faq } from "@/components/Faq";
+import { Faq, type FaqItem } from "@/components/Faq";
 import { JsonLd } from "@/components/JsonLd";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -38,7 +38,7 @@ export default async function KutistepussitPage({
   const t = await getTranslations({ locale, namespace: "kutistepussit" });
   const tAll = await getTranslations({ locale });
 
-  const faqItems = t.raw("faq.items") as { q: string; a: string }[];
+  const faqItems = t.raw("faq.items") as FaqItem[];
 
   return (
     <>

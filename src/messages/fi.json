@@ -39,7 +39,8 @@
       "title": "Valmiit kutistepussit mittojen mukaan",
       "body1": "Mittojen mukaan tehdyt kutistepussit istuvat täydellisesti, suojaavat varmasti ja näyttävät siistiltä. Vähemmän muovia, nopeampi asennus, nopea toimitus.",
       "body2": "Lähetä mitat tai veneen piirustukset! Me hoidamme loput!",
-      "cta": "Lue lisää kutistepusseista"
+      "cta": "Lue lisää kutistepusseista",
+      "compareLink": "Kutistepussi vai pressu? Katso vertailu"
     },
     "cards": {
       "industry": {
@@ -167,7 +168,7 @@
         },
         {
           "q": "Toimitatteko koko Suomeen ja saako asennuksen paikan päälle?",
-          "a": "Kutistepussit toimitetaan koko Suomeen. Kelmutus paikan päällä onnistuu pääkaupunkiseudulla ja lisähinnasta myös sen ulkopuolella."
+          "a": "Kyllä. Mittojen mukaan tehdyt kutistepussit toimitetaan koko Suomeen 2–3 viikossa, ja tarvittaessa myös muualle Eurooppaan. Asennus paikan päällä onnistuu erityisesti pääkaupunkiseudulla ja Turun ja Kokkolan välisellä rannikolla (Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari, Kokkola). Muualle asennus lisämaksusta."
         },
         {
           "q": "Tarvitseeko kelmutettu vene tuuletusta talvisäilytyksessä?",
@@ -176,7 +177,19 @@
         {
           "q": "Voiko kelmuttaa muutakin kuin veneitä?",
           "a": "Kyllä. Kelmutamme myös autoja, teollisuuden koneita ja laitteita, rakennuksia sekä erikoiskohteita, joko mittojen mukaan tehdyllä suojalla tai paikan päällä."
+        },
+      {
+        "q": "Voiko kutistepussin asentaa itse?",
+        "a": "Voi. Pussi nostetaan veneen päälle ja kiristetään kuumailmapuhaltimella tai kaasupolttimella. Esimerkiksi Axopar 28:n asennus vie kahdelta henkilöltä noin 45 minuuttia. Jos välineitä tai kokemusta ei ole, tulemme asentamaan paikan päälle."
+      },
+      {
+        "q": "Kumpi on parempi, kutistepussi vai pressu?",
+        "a": "Kutistepussi on tiiviimpi, ei lepata tuulessa eikä tarvitse telinettä. Pressu on uudelleenkäytettävä, mutta tarvitsee tukevan telineen. Lue koko vertailu.",
+        "link": {
+          "text": "koko vertailu",
+          "href": "/kutistepussi-vai-pressu"
         }
+      }
       ]
     },
     "contact": {
@@ -367,7 +380,8 @@
       "body1": "Veneen ympärille rakennettu kelmutettu suojatila mahdollistaa huolto- ja korjaustyöt säältä suojassa. Oviaukolla varustettuun tilaan pääsee työskentelemään myös talvella.",
       "body2": "Toteutus suunnitellaan kohteen ja käyttötarpeen mukaan.",
       "cta": "Tutustu toteutukseen",
-      "imageAlt": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään"
+      "imageAlt": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään",
+      "shelterLink": "Lue veneen talvikatoksesta"
     },
     "onsite": {
       "imageAlt": "Kelmutus paikan päällä",
@@ -378,6 +392,10 @@
     "pricingInfo": {
       "paragraph1": "Hinnat sisältävät perustason suojauksen ja työn asiakkaan osoittamassa paikassa pääkaupunkiseudulla. Mikäli tarvitset lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan.",
       "paragraph2": "Kelmutamme myös pääkaupunkiseudun ulkopuolella lisähinnasta. Kysy lisää!"
+    },
+    "area": {
+      "title": "Toiminta-alue",
+      "body": "Kelmutamme paikan päällä erityisesti pääkaupunkiseudulla (Helsinki, Espoo, Vantaa) sekä Turun ja Kokkolan välisellä rannikolla: Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari ja Kokkola. Kiireellisissä tapauksissa tulemme paikalle jopa samana päivänä. Teemme keikkoja myös muualle Suomeen ja Eurooppaan, kysy lisää. Mittojen mukaan tehdyt kutistepussit toimitamme koko Suomeen 2–3 viikossa."
     },
     "durable": {
       "imageAlt": "Buster L -vene merellä",
@@ -518,11 +536,86 @@
 
   "talvisailytys": {
     "meta": {
-      "title": "Veneen talvisäilytys: ohjeet ja muistilista | Kelmutus.fi",
-      "description": "Veneen talvisäilytys vaihe vaiheelta: puhdistus ja kuivaus, moottori ja polttoaine, akut, tuuletus sekä veneen suojaus kelmuttamalla. Lue muistilista."
+      "title": "Veneen talvisäilytys: ohjeet, säilytystavat ja suojaus | Kelmutus.fi",
+      "description": "Veneen talvisäilytys ulkona, kylmässä tai lämpimässä hallissa. Muistilista, suojausvaihtoehdot ja vinkit pressun ja kutistepussin valintaan."
     },
-    "title": "Veneen talvisäilytyksen ohjeet",
+    "title": "Veneen talvisäilytys – ohjeet ja muistilista",
     "intro": "Huolellinen valmistelu suojaa venettä kosteudelta, homeelta ja jäätymisvaurioilta talven aikana. Käy tämä muistilista läpi ennen kuin vene jää talviteloille.",
+    "lead": "Veneen talvisäilytys onnistuu kolmella tavalla: ulkona pukeilla tai trailerilla, kylmässä hallissa tai lämpimässä hallissa. Ulkosäilytys on edullisin, mutta silloin veneen suojaus ratkaisee, miten vene selviää lumesta, jäästä ja kosteudesta. Tältä sivulta löydät muistilistan talvisäilytykseen ja vertailun eri suojausvaihtoehdoista.",
+    "options": {
+      "title": "Talvisäilytyksen vaihtoehdot",
+      "headers": [
+        "Säilytystapa",
+        "Suojaa",
+        "Huomioitavaa"
+      ],
+      "rows": [
+        [
+          "Ulkona pukeilla tai trailerilla",
+          "Sää riippuu suojauksesta",
+          "Edullisin. Vene tarvitsee tiiviin suojan ja tukevan tuennan."
+        ],
+        [
+          "Kylmä halli tai katos",
+          "Sateelta, lumelta ja tuulelta",
+          "Moottori ja vesijärjestelmät on silti tyhjennettävä jäätymisen varalta."
+        ],
+        [
+          "Lämmin halli",
+          "Pakkaselta ja kosteudelta",
+          "Kallein vaihtoehto. Sopii arvo- ja puuveneille."
+        ]
+      ],
+      "body": "Ulkosäilytyksessä vene peitetään joko pressulla ja peitetelineellä tai mittojen mukaan tehdyllä kutistepussilla. Kumpikin toimii, kun suoja on tiivis ja vene tuulettuu."
+    },
+    "covering": {
+      "title": "Veneen peittäminen talveksi – pressu vai kutistepussi?",
+      "tarpLabel": "Pressu",
+      "tarp": "on uudelleenkäytettävä, mutta se tarvitsee tukevan peitetelineen, ettei lumi ja vesi kerry taskuiksi. Pressu ei saa koskettaa veneen pintaa, koska tuulessa hankautuva pressu kuluttaa gelcoatia.",
+      "bagLabel": "Kutistepussi",
+      "bag": "kiristetään lämmöllä tiiviisti veneen muotoon. Se ei lepata tuulessa, lumi liukuu kireältä pinnalta, eikä erillistä telinettä tarvita. Mittojen mukaan tehdyn kutistepussin asennus vie esimerkiksi Axopar 28 -veneeseen kahdelta henkilöltä noin 45 minuuttia.",
+      "comparePrefix": "Tarkempi vertailu hintoineen:",
+      "compareLink": "Kutistepussi vai pressu veneen talvisäilytykseen?"
+    },
+    "outdoor": {
+      "title": "Muistilista ulkosäilytykseen",
+      "items": [
+        "Pese ja kuivaa vene ennen peittämistä. Kostea vene suojan alla homehtuu.",
+        "Tue vene pukeille tai trailerille niin, että paino jakautuu tasaisesti ja perä on hieman keulaa alempana.",
+        "Jätä pohjan tyhjennystulpat auki.",
+        "Varmista tuuletus: pressun alle raot keulaan ja perään, kutistepussiin tuuletusventtiilit.",
+        "Tarkista suoja myrskyjen ja kovien lumisateiden jälkeen."
+      ]
+    },
+    "regions": {
+      "title": "Talvisäilytys ja kelmutus alueittain",
+      "body": "Kelmutus.fi toimittaa mittojen mukaan tehdyt kutistepussit koko Suomeen 2–3 viikossa. Paikan päälle kelmuttamaan tulemme erityisesti pääkaupunkiseudulle sekä Turun ja Kokkolan väliselle rannikolle: Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari ja Kokkola. Kiireellisissä tapauksissa tulemme paikalle jopa samana päivänä. Kysy myös muualle Suomeen ja Eurooppaan."
+    },
+    "faq": {
+      "title": "Usein kysyttyä",
+      "items": [
+        {
+          "q": "Miten vene säilytetään talvella?",
+          "a": "Vene pestään, moottori ja vesijärjestelmät huolletaan ja tyhjennetään, akut irrotetaan tai pidetään ladattuina, ja vene tuetaan pukeille tai trailerille. Ulkona vene peitetään tiiviisti pressulla ja peitetelineellä tai kutistepussilla niin, että se pääsee tuulettumaan."
+        },
+        {
+          "q": "Voiko veneen säilyttää talven ulkona?",
+          "a": "Voi. Ulkosäilytys on edullisin tapa, kun vene on huolellisesti tuettu ja suojattu. Tiivis kutistepussi tai hyvä pressu telineen kanssa suojaa lumelta, jäältä ja UV-säteilyltä."
+        },
+        {
+          "q": "Kumpi on parempi talvisäilytykseen, pressu vai kutistepussi?",
+          "a": "Kutistepussi on tiiviimpi, ei lepata tuulessa eikä tarvitse telinettä. Pressu on uudelleenkäytettävä, mutta vaatii telineen ja säännöllistä tarkistamista. Katso vertailu.",
+          "link": {
+            "text": "vertailu",
+            "href": "/kutistepussi-vai-pressu"
+          }
+        },
+        {
+          "q": "Milloin vene kannattaa suojata talveksi?",
+          "a": "Heti noston ja pesun jälkeen, kun vene on kuiva. Mittojen mukaan tehty kutistepussi kannattaa tilata hyvissä ajoin, koska toimitusaika on 2–3 viikkoa."
+        }
+      ]
+    },
     "cta": {
       "title": "Tarvitsetko apua veneen talvisäilytykseen?",
       "body": "Teemme veneellesi kutistepussin mittojen mukaan, kelmutamme veneen paikan päällä pääkaupunkiseudulla ja hoidamme tarvittaessa myös talvihuollon.",
@@ -615,6 +708,144 @@
   },
 
 
+  "kutistepussiVaiPressu": {
+    "meta": {
+      "title": "Kutistepussi vai pressu veneen talvisäilytykseen? | Kelmutus.fi",
+      "description": "Kutistepussin ja venepressun vertailu: hinta, asennus, kestävyys, lumi ja tuuletus. Näin valitset veneellesi oikean talvisuojan."
+    },
+    "title": "Kutistepussi vai pressu veneen talvisäilytykseen?",
+    "intro": "Kutistepussi sopii, kun haluat tiiviin ja huolettoman talvisuojan ilman erillistä telinettä. Pressu sopii, kun haluat uudelleenkäytettävän peitteen ja sinulla on jo tukeva peiteteline. Molemmilla vene säilyy hyvin, kun suoja on tiivis ja vene pääsee tuulettumaan.",
+    "compare": {
+      "title": "Vertailu",
+      "headers": [
+        "",
+        "Kutistepussi",
+        "Pressu ja peiteteline"
+      ],
+      "rows": [
+        [
+          "Istuvuus",
+          "Kiristetään lämmöllä veneen muotoon",
+          "Löysä, vaatii kiristyksen narulla tai liinoilla"
+        ],
+        [
+          "Lumi ja vesi",
+          "Liukuu kireältä pinnalta",
+          "Teline estää taskut, jos se on tukeva"
+        ],
+        [
+          "Tuuli",
+          "Ei lepata",
+          "Voi lepattaa ja hangata veneen pintaa"
+        ],
+        [
+          "Teline",
+          "Ei tarvita",
+          "Tarvitaan"
+        ],
+        [
+          "Tuuletus",
+          "Tuuletusventtiilit pussissa",
+          "Raot keulassa ja perässä"
+        ],
+        [
+          "Asennus",
+          "Esim. Axopar 28 noin 45 min kahdella henkilöllä",
+          "Telineen kokoaminen ja pressun kiinnitys"
+        ],
+        [
+          "Hinta",
+          "Esim. Buster L 230,80 €, Targa 23.1 351 €, Axopar 28 358,80 € (alv 0 %)",
+          "Valmis venepeite kaupoissa noin 50–350 € ja peiteteline noin 175–260 € (marraskuu 2026)"
+        ]
+      ]
+    },
+    "whenBag": {
+      "title": "Milloin kutistepussi on parempi valinta?",
+      "items": [
+        "Vene on ulkona tuulisella paikalla, esimerkiksi rannikolla.",
+        "Haluat suojan, joka ei vaadi tarkistamista jokaisen myrskyn jälkeen.",
+        "Sinulla ei ole peitetelinettä tai et halua rakentaa sellaista.",
+        "Haluat siistin ja tiiviin lopputuloksen myös kuljetukseen."
+      ]
+    },
+    "whenTarp": {
+      "title": "Milloin pressu on parempi valinta?",
+      "items": [
+        "Sinulla on jo tukeva peiteteline.",
+        "Vene on suojaisessa paikassa.",
+        "Haluat käyttää samaa peitettä useana talvena ja tarkistaa sen säännöllisesti."
+      ]
+    },
+    "price": {
+      "title": "Mitä kutistepussi maksaa?",
+      "body": "Mittojen mukaan tehdyn kutistepussin hinta riippuu veneen koosta ja mallista. Esimerkkihintoja (alv 0 %): Buster L 230,80 €, Targa 23.1 351 € ja Axopar 28 358,80 €. Paikan päällä tehtävä kelmutus pääkaupunkiseudulla alle 10 metrin pulpettiveneille maksaa 45 €/m. Pyydä tarjous omalle veneellesi: lähetä veneen malli, mitat tai piirustukset."
+    },
+    "quoteCta": "Pyydä tarjous",
+    "faq": {
+      "title": "Usein kysyttyä",
+      "items": [
+        {
+          "q": "Kestääkö kutistepussi lumikuorman?",
+          "a": "Kutistepussi on kiristetty tiiviiksi veneen muotoon, joten lumi ei pääse kertymään taskuiksi kuten löysän pressun päälle. Suoja kannattaa silti tarkistaa runsaiden lumisateiden jälkeen."
+        },
+        {
+          "q": "Tarvitseeko kutistepussin alla tuuletusta?",
+          "a": "Tarvitsee. Kutistepussiin saa tuuletusventtiilit, ja veneen luukut ja ovet kannattaa jättää hieman raolleen, ettei kosteus tiivisty."
+        },
+        {
+          "q": "Voiko kutistepussin asentaa itse?",
+          "a": "Voi. Pussi nostetaan veneen päälle ja kiristetään kuumailmapuhaltimella tai kaasupolttimella. Jos sinulla ei ole välineitä tai kokemusta, asennus onnistuu myös meiltä paikan päällä."
+        },
+        {
+          "q": "Kuinka nopeasti kutistepussin saa?",
+          "a": "Mittojen mukaan tehdyn kutistepussin toimitusaika on 2–3 viikkoa koko Suomeen."
+        }
+      ]
+    }
+  },
+  "talvikatos": {
+    "meta": {
+      "title": "Veneen talvikatos ja venepaja kelmusta | Kelmutus.fi",
+      "description": "Kelmutettu talvikatos tai venepaja veneen ympärille: suojattu työtila huoltoihin ja korjauksiin myös talvella. Kysy tarjous."
+    },
+    "title": "Veneen talvikatos ja venepaja kelmusta",
+    "intro": "Kelmusta rakennettu talvikatos eli venepaja suojaa veneen talven yli ja antaa samalla katetun työtilan veneen huoltoon ja korjaukseen. Katos rakennetaan veneen ympärille sen säilytyspaikalle, joten venettä ei tarvitse siirtää halliin.",
+    "imageAlt": "Valkoiseksi kelmutettu venepaja veneen ympärillä venesäilytysalueella",
+    "when": {
+      "title": "Milloin talvikatos kannattaa?",
+      "items": [
+        "Veneelle tehdään talven aikana huolto-, korjaus- tai kunnostustöitä.",
+        "Vene on iso tai muodoltaan sellainen, että valmis peite ei sovi.",
+        "Hallipaikkaa ei ole saatavilla tai se on liian kallis.",
+        "Halutaan suojata useampi vene tai muu kohde saman katoksen alle."
+      ]
+    },
+    "how": {
+      "title": "Miten talvikatos tehdään?",
+      "body": "Veneen ympärille rakennetaan runko, joka päällystetään kutistekalvolla ja kiristetään lämmöllä tiiviiksi. Katokseen voidaan tehdä oviaukko ja tuuletus, jolloin sisällä voi työskennellä myös talvella.",
+      "linkPrefix": "Katso toteutus:",
+      "linkText": "Työmme – venepaja"
+    },
+    "area": {
+      "title": "Alue ja tarjous",
+      "body": "Teemme talvikatoksia pääkaupunkiseudulla sekä Turun ja Kokkolan välisellä rannikolla (Turku, Uusikaupunki, Rauma, Pori, Kristiinankaupunki, Vaasa, Pietarsaari, Kokkola), ja kysyttäessä muualle Suomeen ja Eurooppaan. Hinta riippuu kohteen koosta, joten pyydä tarjous: kerro veneen koko, sijainti ja toivottu aikataulu."
+    },
+    "quoteCta": "Pyydä tarjous",
+    "faq": {
+      "title": "Usein kysyttyä",
+      "items": [
+        {
+          "q": "Voiko veneen ympärille tehdä kelmusta venepajan talveksi?",
+          "a": "Voi. Kelmutettu talvikatos rakennetaan veneen ympärille sen säilytyspaikalle, ja se toimii talven ajan sekä suojana että työtilana."
+        },
+        {
+          "q": "Mitä veneen talvikatos maksaa?",
+          "a": "Hinta riippuu veneen koosta ja katoksen rakenteesta. Pyydä tarjous kertomalla veneen mitat ja sijainti."
+        }
+      ]
+    }
+  },
   "tietosuoja": {
     "meta": {
       "title": "Tietosuojaseloste | Kelmutus.fi",
@@ -729,7 +960,8 @@
       "onsite": "Veneen kelmutus paikan päällä",
       "bags": "Kutistepussit mittojen mukaan",
       "industrial": "Teollisuuskelmutus",
-      "boatService": "Veneiden huollot ja korjaukset"
+      "boatService": "Veneiden huollot ja korjaukset",
+      "shelter": "Veneen talvikatos ja venepaja kelmusta"
     },
     "country": "Suomi",
     "continent": "Eurooppa",

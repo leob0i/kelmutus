@@ -74,6 +74,7 @@ const services = {
   bags: { href: "/kutistepussit", descriptionKey: "kutistepussit.whatAre.body" },
   industrial: { href: "/palvelut", descriptionKey: "palvelut.services.1.desc" },
   boatService: { href: "/veneenhuollot", descriptionKey: "veneenhuollot.intro.body1" },
+  shelter: { href: "/veneen-talvikatos", descriptionKey: "talvikatos.intro" },
 } as const;
 
 export type ServiceKey = keyof typeof services;
@@ -120,29 +121,32 @@ export function onsitePriceOffer(t: Translator) {
 
 // Sivuilla näkyvät kutistepussien esimerkkihinnat (alv 0 %, ks. footer.vatNote)
 const bagPrices = {
-  busterL: { model: "Buster L", price: "230.80" },
-  targa231: { model: "Targa 23.1", price: "351.00" },
-  // kuva: sama vene ja pussi kuin etusivun asennusvideossa
+  busterL: { model: "Buster L", price: "230.80", image: "/buster.l.jpg" },
+  // kutistepussilla suojattu moottorivene kuljetusalustalla (kutistepussit-sivun hero)
+  targa231: { model: "Targa 23.1", price: "351.00", image: "/saxdor.jpg" },
+  // sama vene ja pussi kuin etusivun asennusvideossa
   axopar28: { model: "Axopar 28", price: "358.80", image: "/gallery/axopar28.jpg" },
 } as const;
 
 export type BagProductKey = keyof typeof bagPrices;
 
 export function bagProductSchema(locale: Locale, t: Translator, key: BagProductKey) {
-  const bag: { model: string; price: string; image?: string } = bagPrices[key];
+  const bag = bagPrices[key];
 
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: t("schema.product.name", { model: bag.model }),
     description: t("schema.product.description", { model: bag.model }),
-    ...(bag.image ? { image: host + bag.image } : {}),
+    image: host + bag.image,
+    brand: { "@type": "Brand", name: "Kelmutus.fi" },
     category: t("schema.services.bags"),
     offers: {
       "@type": "Offer",
       url: absoluteUrl(locale, "/kutistepussit"),
       price: bag.price,
       priceCurrency: "EUR",
+      availability: "https://schema.org/MadeToOrder",
       priceSpecification: {
         "@type": "PriceSpecification",
         price: bag.price,

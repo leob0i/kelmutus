@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Link } from "@/i18n/navigation";
+import { Faq, type FaqItem } from "@/components/Faq";
+import { GuideTable } from "@/components/GuideTable";
 import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { host, pageMetadata } from "@/lib/seo";
@@ -7,7 +9,7 @@ import { absoluteUrl, breadcrumbSchema, organizationRef } from "@/lib/schema";
 
 // Ohjeen julkaisupäivä (git) ja viimeisin sisältöpäivitys – päivitä kun tekstiä muutetaan
 const DATE_PUBLISHED = "2026-02-12";
-const DATE_MODIFIED = "2026-10-05";
+const DATE_MODIFIED = "2026-11-13";
 
 // Osiot ja kohdat samassa järjestyksessä kuin käännöstiedostossa (talvisailytys.sections)
 const sections = [
@@ -19,6 +21,10 @@ const sections = [
 ];
 
 type Item = string | { label: string; text: string; link?: string };
+
+const h2Class = "text-xl font-semibold tracking-tight text-white md:text-2xl";
+const textClass = "mt-4 text-[15px] leading-relaxed md:text-base";
+const linkClass = "text-white underline decoration-white/30 underline-offset-4 hover:decoration-white";
 
 export async function generateMetadata({
   params,
@@ -48,6 +54,7 @@ export default async function VeneenTalvisailytysPage({
   const tAll = await getTranslations({ locale });
 
   const url = absoluteUrl(locale as "fi" | "en", "/talvisailytys");
+  const faqItems = t.raw("faq.items") as FaqItem[];
   const getItem = (section: string, item: string) =>
     t.raw(`sections.${section}.items.${item}`) as Item;
 
@@ -107,10 +114,43 @@ export default async function VeneenTalvisailytysPage({
         </h1>
 
         <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-white/85 md:text-base">
+          {t("lead")}
+        </p>
+
+        <p className="mt-4 max-w-2xl text-[15px] leading-relaxed text-white/85 md:text-base">
           {t("intro")}
         </p>
 
         <div className="mt-10 space-y-10 text-white/85">
+          {/* Talvisäilytyksen vaihtoehdot */}
+          <div id="vaihtoehdot" className="scroll-mt-24">
+            <h2 className={h2Class}>{t("options.title")}</h2>
+            <GuideTable
+              headers={t.raw("options.headers") as string[]}
+              rows={t.raw("options.rows") as string[][]}
+            />
+            <p className={textClass}>{t("options.body")}</p>
+          </div>
+
+          {/* Pressu vai kutistepussi */}
+          <div id="peittaminen" className="scroll-mt-24">
+            <h2 className={h2Class}>{t("covering.title")}</h2>
+            <p className={textClass}>
+              <span className="font-medium text-white">{t("covering.tarpLabel")}</span>{" "}
+              {t("covering.tarp")}
+            </p>
+            <p className={textClass}>
+              <span className="font-medium text-white">{t("covering.bagLabel")}</span>{" "}
+              {t("covering.bag")}
+            </p>
+            <p className={textClass}>
+              {t("covering.comparePrefix")}{" "}
+              <Link href="/kutistepussi-vai-pressu" className={linkClass}>
+                {t("covering.compareLink")}
+              </Link>
+            </p>
+          </div>
+
           {sections.map((section) => (
             <div key={section.key} id={section.key} className="scroll-mt-24">
               <h2 className="text-xl font-semibold tracking-tight text-white md:text-2xl">
@@ -143,7 +183,25 @@ export default async function VeneenTalvisailytysPage({
               </ul>
             </div>
           ))}
+
+          {/* Muistilista ulkosäilytykseen */}
+          <div id="ulkosailytys" className="scroll-mt-24">
+            <h2 className={h2Class}>{t("outdoor.title")}</h2>
+            <ul className="mt-4 list-disc space-y-2 pl-5 text-[15px] leading-relaxed md:text-base">
+              {(t.raw("outdoor.items") as string[]).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Alueet */}
+          <div id="alueet" className="scroll-mt-24">
+            <h2 className={h2Class}>{t("regions.title")}</h2>
+            <p className={textClass}>{t("regions.body")}</p>
+          </div>
         </div>
+
+        <Faq title={t("faq.title")} items={faqItems} variant="dark" />
 
         {/* Linkit palveluihin */}
         <div className="mt-14 border-t border-white/15 pt-10">

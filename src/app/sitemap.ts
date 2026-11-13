@@ -12,6 +12,8 @@ const routes = [
   {href: "/tyomme", lastModified: "2026-11-13"},
   {href: "/meista", lastModified: "2026-11-13"},
   {href: "/talvisailytys", lastModified: "2026-11-13"},
+  {href: "/kutistepussi-vai-pressu", lastModified: "2026-11-13"},
+  {href: "/veneen-talvikatos", lastModified: "2026-11-13"},
   {href: "/tietosuoja", lastModified: "2026-11-13"}
 ];
 

@@ -179,6 +179,12 @@ export default async function HomePage({
               <br />
               <br /> {t("bags.body2")}
             </p>
+            <Link
+              href="/kutistepussi-vai-pressu"
+              className="mt-4 inline-block text-sm font-semibold text-white underline decoration-white/40 underline-offset-4 drop-shadow hover:decoration-white"
+            >
+              {t("bags.compareLink")} →
+            </Link>
           </div>
 
           <Link
