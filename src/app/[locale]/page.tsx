@@ -123,10 +123,12 @@ export default async function HomePage({
             {/* Näkyvä teksti ja napit: ankkuroitu tilanvaraajien alareunan alapuolelle (heron alatäytteeseen)
                 ja kasvavat ylöspäin, joten napitkaan eivät venytä heroa */}
             <div className="absolute -bottom-8 left-0 w-full sm:-bottom-6 lg:w-[56rem]">
+              {/* H1 kuvaa sivun aiheen (hakukoneet ja ruudunlukijat); näkyvä iso otsikko on iskulause */}
+              <h1 className="sr-only">{t("hero.h1")}</h1>
               {/* mobiilissa fonttikoko seuraa näytön leveyttä, jotta otsikko rivittyy samoin kaikissa puhelimissa */}
-              <h1 className="font-serif text-[length:clamp(44px,calc((100vw_-_32px)/6.8),58px)] leading-[1.05] text-white drop-shadow sm:text-[64px] lg:text-[80px]">
+              <p className="font-serif text-[length:clamp(44px,calc((100vw_-_32px)/6.8),58px)] leading-[1.05] text-white drop-shadow sm:text-[64px] lg:text-[80px]">
                 {t("hero.title")}
-              </h1>
+              </p>
               <p className="mt-4 max-w-2xl text-[20px] leading-relaxed text-white/95 drop-shadow sm:text-[21px] lg:max-w-3xl lg:text-[24px]">
                 {t("hero.body")}
               </p>

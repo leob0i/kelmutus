@@ -136,8 +136,8 @@ export default async function PalvelutPage({
         {/* Sisältö alemmas */}
         <div className="relative mx-auto max-w-6xl px-4 pt-28 pb-16 md:pt-36 md:pb-24">
           <div className="flex flex-wrap items-center gap-4">
-            <h1 className="font-serif text-5xl md:text-6xl text-white">
-              {t("hero.title")}
+            <h1 className="max-w-4xl font-serif text-4xl leading-tight text-white md:text-5xl">
+              {t("hero.h1")}
             </h1>
 
             <a

@@ -44,6 +44,7 @@
       "description": "Boat shrink wrapping for winter storage, transport and warehousing. Made-to-measure shrink wrap covers – also industrial shrink wrapping."
     },
     "hero": {
+      "h1": "Boat shrink wrapping and made-to-measure shrink wrap covers",
       "title": "Your boat deserves the best winter protection",
       "body": "A well-protected boat keeps its value, finish and appearance. Shrink wrapping is tailored to your boat — not the other way around. We also provide wrapping for cars, houses and machinery.",
       "callCta": "Call",
@@ -359,6 +360,7 @@
       "description": "On-site shrink wrapping on the Turku–Kokkola–Helsinki region axis and across Europe. Boats from €45/m (VAT 0%, under 10 m). Also cars and machinery."
     },
     "hero": {
+      "h1": "Shrink wrapping services for boats, industry and winter shelters",
       "title": "Services",
       "cta": "Request a quote",
       "body": "We create durable shrink wraps for boats, industrial sites and various equipment. The result is tight, clean and designed to protect the item from weather, storage conditions and transport stress."
@@ -404,8 +406,7 @@
       "body1": "A shrink-wrapped shelter built around the boat lets you carry out maintenance and repair work protected from the weather. With a door opening, you can work inside the shelter even in winter.",
       "body2": "Each shelter is planned around the site and how it will be used.",
       "cta": "View the project",
-      "imageAlt": "Open door in the end wall of the boat repair shelter, giving access to work inside",
-      "shelterLink": "Read about boat winter shelters"
+      "imageAlt": "Open door in the end wall of the boat repair shelter, giving access to work inside"
     },
     "onsite": {
       "imageAlt": "On-site shrink wrapping",
@@ -546,14 +547,8 @@
       "kelaKutistumassa": "Worker on a ladder fitting shrink wrap over a large blue cable reel"
     },
     "venepaja": {
-      "title": "Boat repair shelter – a weather-protected workspace",
-      "body1": "We build a shrink-wrapped protective structure around the boat, so maintenance and repair work can be carried out during the winter season as well. The structure can include a door opening that lets you work inside the shelter.",
-      "body2": "A tailored solution based on the boat and your working needs.",
-      "cta": "Request a quote",
       "images": {
-        "main": "Boat repair shelter shrink-wrapped in white around a boat in a boat storage yard",
-        "door": "Open door in the end wall of the boat repair shelter, giving access to work inside",
-        "frame": "Timber frame of the boat repair shelter around a boat, with dimension drawings from the side, end, top and in cross-section"
+        "door": "Open door in the end wall of the boat repair shelter, giving access to work inside"
       }
     }
   },
@@ -841,9 +836,7 @@
     },
     "how": {
       "title": "How is a winter shelter built?",
-      "body": "A frame is built around the boat, covered with shrink film and heat-shrunk tight. The shelter can have a door opening and ventilation, so you can work inside even in winter.",
-      "linkPrefix": "See the project:",
-      "linkText": "Our work – boat repair shelter"
+      "body": "A frame is built around the boat, covered with shrink film and heat-shrunk tight. The shelter can have a door opening and ventilation, so you can work inside even in winter."
     },
     "area": {
       "title": "Area and quotes",

@@ -44,6 +44,7 @@
       "description": "Veneen suojaus talvisäilytykseen, kuljetukseen ja varastointiin. Kutistepussit mittojen mukaan – myös teollisuuskelmutus ja kuljetussuojaukset."
     },
     "hero": {
+      "h1": "Veneen kelmutus ja kutistepussit mittojen mukaan",
       "title": "Veneesi ansaitsee talven parhaat vaatteet",
       "body": "Hyvin suojattu vene säilyttää arvonsa, pintansa ja edustavuutensa. Kelmutus tehdään veneesi mukaan eikä toisinpäin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.",
       "callCta": "Soita",
@@ -359,6 +360,7 @@
       "description": "Kelmutus paikan päällä Turku–Kokkola–pääkaupunkiseutu-akselilla ja koko Euroopassa. Veneet 45 €/m (alv 0 %, alle 10 m). Myös autot, koneet ja teollisuus."
     },
     "hero": {
+      "h1": "Kelmutuspalvelut veneille, teollisuudelle ja talvikatoksille",
       "title": "Palvelut",
       "cta": "Pyydä tarjous",
       "body": "Teemme kestävät kutistepussitukset veneille, teollisuuskohteille ja erilaisille laitteille. Lopputulos on tiivis, siisti ja suunniteltu suojaamaan kohdetta säältä, varastoinnilta ja kuljetuksen rasituksilta."
@@ -396,8 +398,7 @@
       "body1": "Veneen ympärille rakennettu kelmutettu suojatila mahdollistaa huolto- ja korjaustyöt säältä suojassa. Oviaukolla varustettuun tilaan pääsee työskentelemään myös talvella.",
       "body2": "Toteutus suunnitellaan kohteen ja käyttötarpeen mukaan.",
       "cta": "Tutustu toteutukseen",
-      "imageAlt": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään",
-      "shelterLink": "Lue veneen talvikatoksesta"
+      "imageAlt": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään"
     },
     "onsite": {
       "imageAlt": "Kelmutus paikan päällä",
@@ -537,14 +538,8 @@
       "kelaKutistumassa": "Työntekijä asentaa kelmua suuren sinisen kaapelikelan päälle tikkailta"
     },
     "venepaja": {
-      "title": "Venepaja – säältä suojattu työtila veneen korjaukseen",
-      "body1": "Rakennamme veneen ympärille kelmutetun suojarakenteen, joka mahdollistaa huolto- ja korjaustöiden tekemisen myös talvikaudella. Rakenteeseen voidaan toteuttaa oviaukko, josta pääsee työskentelemään suojan sisällä.",
-      "body2": "Räätälöity ratkaisu veneen ja työskentelytarpeen mukaan.",
-      "cta": "Kysy tarjous",
       "images": {
-        "main": "Valkoiseksi kelmutettu venepaja veneen ympärillä venesäilytysalueella",
-        "door": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään",
-        "frame": "Venepajan puurunko veneen ympärillä sekä mitoituspiirrokset sivusta, päädystä, ylhäältä ja poikkileikkauksena"
+        "door": "Venepajan päädyn oviaukko auki – suojan sisään pääsee työskentelemään"
       }
     }
   },
@@ -832,9 +827,7 @@
     },
     "how": {
       "title": "Miten talvikatos tehdään?",
-      "body": "Veneen ympärille rakennetaan runko, joka päällystetään kutistekalvolla ja kiristetään lämmöllä tiiviiksi. Katokseen voidaan tehdä oviaukko ja tuuletus, jolloin sisällä voi työskennellä myös talvella.",
-      "linkPrefix": "Katso toteutus:",
-      "linkText": "Työmme – venepaja"
+      "body": "Veneen ympärille rakennetaan runko, joka päällystetään kutistekalvolla ja kiristetään lämmöllä tiiviiksi. Katokseen voidaan tehdä oviaukko ja tuuletus, jolloin sisällä voi työskennellä myös talvella."
     },
     "area": {
       "title": "Alue ja tarjous",
