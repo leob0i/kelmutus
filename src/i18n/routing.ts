@@ -8,7 +8,11 @@ export const routing = defineRouting({
   localePrefix: "as-needed",
 
   // turvallinen: ei automaattisia redirectejä selaimen kielestä
-  localeDetection: false
+  localeDetection: false,
+
+  // hreflang-linkit tulevat vain sivun metadatasta (lib/seo.ts). Middlewaren oma
+  // Link-header tekisi jokaiselle sivulle toisen hreflang-sarjan.
+  alternateLinks: false
 });
 
 export type Locale = (typeof routing.locales)[number];

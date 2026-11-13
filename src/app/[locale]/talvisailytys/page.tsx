@@ -3,7 +3,7 @@ import { Link } from "@/i18n/navigation";
 import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { host, pageMetadata } from "@/lib/seo";
-import { absoluteUrl, breadcrumbSchema, businessRef } from "@/lib/schema";
+import { absoluteUrl, breadcrumbSchema, organizationRef } from "@/lib/schema";
 
 // Ohjeen julkaisupäivä (git) ja viimeisin sisältöpäivitys – päivitä kun tekstiä muutetaan
 const DATE_PUBLISHED = "2026-02-12";
@@ -85,8 +85,8 @@ export default async function VeneenTalvisailytysPage({
           image: `${host}/opengraph-image.jpg`,
           datePublished: DATE_PUBLISHED,
           dateModified: DATE_MODIFIED,
-          author: businessRef,
-          publisher: businessRef,
+          author: organizationRef,
+          publisher: organizationRef,
         }}
       />
       <JsonLd

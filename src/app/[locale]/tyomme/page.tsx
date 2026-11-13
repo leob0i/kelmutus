@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
-import TyommeHeroVideo from "@/components/TyommeHeroVideo";
+import { BackgroundVideo } from "@/components/BackgroundVideo";
 import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
@@ -56,12 +56,17 @@ const venepaja = {
   frame: { src: "/gallery/venevaja.pohjat.jpeg", altKey: "venepaja.images.frame" },
 };
 
+// Kuvien sizes-arvot ruudukon mukaan (max-w-6xl = 1152 px, px-4, gap-6)
+const thirdSizes = "(min-width: 1152px) 368px, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw";
+const halfSizes = "(min-width: 1152px) 552px, (min-width: 768px) 50vw, 100vw";
+const halfAlwaysSizes = "(min-width: 1152px) 552px, 50vw";
+
 function CardImage({
   src,
   alt,
   label,
   aspect = "aspect-[4/3]",
-  sizes = "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw",
+  sizes = thirdSizes,
   position = "",
 }: {
   src: string;
@@ -115,7 +120,18 @@ export default async function TyommePage({
       <section className="relative overflow-hidden border-b border-black/10 bg-slate-950">
         {/* Video + overlay */}
         <div className="absolute inset-0">
-          <TyommeHeroVideo />
+          {/* Posteri (LCP) heti, video vasta sivun latauduttua. sizes: object-cover rajaa
+              leveän kuvan (~2:1) noin 400 px korkeaan heroon, joten mobiilissa se on ~820 px leveä. */}
+          <Image
+            src="/videos/axopar28.jpg"
+            alt={t("gallery.axopar28")}
+            fill
+            preload
+            fetchPriority="high"
+            sizes="max(100vw, 820px)"
+            className="object-cover"
+          />
+          <BackgroundVideo src="/videos/axopar28.mp4" />
           <div className="absolute inset-0 bg-slate-950/70" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-black/35 to-black/65" />
         </div>
@@ -185,20 +201,20 @@ export default async function TyommePage({
               src={venepaja.frame.src}
               alt={t(venepaja.frame.altKey)}
               aspect="aspect-[3/2]"
-              sizes="(max-width: 1200px) 100vw, 1152px"
+              sizes="(min-width: 1152px) 1120px, 100vw"
             />
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
               <CardImage
                 src={venepaja.main.src}
                 alt={t(venepaja.main.altKey)}
                 aspect="aspect-[2048/922]"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes={halfSizes}
               />
               <CardImage
                 src={venepaja.door.src}
                 alt={t(venepaja.door.altKey)}
                 aspect="aspect-[2048/922]"
-                sizes="(max-width: 768px) 100vw, 50vw"
+                sizes={halfSizes}
               />
             </div>
           </div>
@@ -221,11 +237,13 @@ export default async function TyommePage({
               src={beforeAfter.before.src}
               alt={t(beforeAfter.before.altKey)}
               label={t("beforeAfter.labels.before")}
+              sizes={halfSizes}
             />
             <CardImage
               src={beforeAfter.after.src}
               alt={t(beforeAfter.after.altKey)}
               label={t("beforeAfter.labels.after")}
+              sizes={halfSizes}
             />
           </div>
 
@@ -235,11 +253,13 @@ export default async function TyommePage({
               src="/gallery/saxdor.aloitus.jpg"
               alt={t("beforeAfter.row1.beforeAlt")}
               label={t("beforeAfter.labels.before")}
+              sizes={halfAlwaysSizes}
             />
             <CardImage
               src="/gallery/isovene.sivu.jpg"
               alt={t("beforeAfter.row1.afterAlt")}
               label={t("beforeAfter.labels.after")}
+              sizes={halfAlwaysSizes}
             />
           </div>
 
@@ -249,11 +269,13 @@ export default async function TyommePage({
               src="/gallery/sar.jpg"
               alt={t("beforeAfter.row2.beforeAlt")}
               label={t("beforeAfter.labels.before")}
+              sizes={halfAlwaysSizes}
             />
             <CardImage
               src="/gallery/sar.kelmussa.jpg"
               alt={t("beforeAfter.row2.afterAlt")}
               label={t("beforeAfter.labels.after")}
+              sizes={halfAlwaysSizes}
             />
           </div>
         </div>

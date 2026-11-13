@@ -24,6 +24,9 @@ export async function generateMetadata({
   });
 }
 
+// Kahden sarakkeen kuva max-w-6xl-säiliössä (px-6, gap-10): sarake on enintään 532 px
+const halfColumnSizes = "(min-width: 1152px) 532px, 50vw";
+
 export default async function VeneenhuollotPage({
   params,
 }: {
@@ -45,16 +48,7 @@ export default async function VeneenhuollotPage({
           { name: t("hero.title"), href: "/veneenhuollot" },
         ])}
       />
-      <JsonLd
-        data={serviceSchema({
-          locale: locale as "fi" | "en",
-          href: "/veneenhuollot",
-          name: t("hero.title"),
-          description: t("intro.body1"),
-          serviceType: tAll("schema.boatService"),
-          areaServed: [tAll("schema.capitalRegion"), "Finland"],
-        })}
-      />
+      <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "boatService")} />
 
       <main className="bg-white text-black">
         {/* HERO */}
@@ -63,7 +57,8 @@ export default async function VeneenhuollotPage({
             src="/gallery/whatsapp-vene-traileri.jpg"
             alt={t("hero.imageAlt")}
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="object-cover"
           />
@@ -122,6 +117,7 @@ export default async function VeneenhuollotPage({
                     alt={t("maintenance.imageAlt")}
                     width={1050}
                     height={1400}
+                    sizes="100vw"
                     className="h-auto w-full object-cover"
                   />
                 </div>
@@ -153,6 +149,7 @@ export default async function VeneenhuollotPage({
                   alt={t("maintenance.imageAlt")}
                   width={1050}
                   height={1400}
+                  sizes={halfColumnSizes}
                   className="h-auto w-full object-cover"
                 />
               </div>
@@ -167,6 +164,7 @@ export default async function VeneenhuollotPage({
                 alt={t("repairs.gallery.hullAlt")}
                 width={788}
                 height={1400}
+                sizes={halfColumnSizes}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -185,6 +183,7 @@ export default async function VeneenhuollotPage({
                     alt={t("repairs.gallery.hullAlt")}
                     width={788}
                     height={1400}
+                    sizes="100vw"
                     className="h-auto w-full object-cover"
                   />
                 </div>
@@ -271,6 +270,7 @@ export default async function VeneenhuollotPage({
                     alt={t("winter.imageAlt")}
                     width={788}
                     height={1400}
+                    sizes="100vw"
                     className="h-auto w-full object-cover"
                   />
                 </div>
@@ -305,6 +305,7 @@ export default async function VeneenhuollotPage({
                 alt={t("winter.imageAlt")}
                 width={788}
                 height={1400}
+                sizes={halfColumnSizes}
                 className="h-auto w-full object-cover"
               />
             </div>

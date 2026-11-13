@@ -25,14 +25,15 @@
   },
   "home": {
     "meta": {
-      "title": "Veneen kelmutus & kutistepussit mittojen mukaan | Kelmutus.fi",
+      "title": "Veneen kelmutus, kutistepussit mittojen mukaan | Kelmutus.fi",
       "description": "Veneen suojaus talvisäilytykseen, kuljetukseen ja varastointiin. Kutistepussit mittojen mukaan – myös teollisuuskelmutus ja kuljetussuojaukset."
     },
     "hero": {
       "title": "Veneesi ansaitsee talven parhaat vaatteet",
       "body": "Hyvin suojattu vene säilyttää arvonsa, pintansa ja edustavuutensa. Kelmutus tehdään veneesi mukaan eikä toisinpäin. Meiltä saat kelmut myös autoihin, taloihin sekä koneisiin.",
       "callCta": "Soita",
-      "servicesCta": "Palvelut"
+      "servicesCta": "Palvelut",
+      "imageAlt": "Moottorivene ajaa sinisellä merellä ilmasta kuvattuna"
     },
     "bags": {
       "title": "Valmiit kutistepussit mittojen mukaan",
@@ -57,7 +58,9 @@
       "title": "Nopea asennus, jämäkkä lopputulos.",
       "body1": "Katso video kun Axopar 28 menee ketterästi kelmuun. Kahden henkilön asennusaika 45 minuuttia!",
       "body2": "Pussin hinta vain 358,80 €",
-      "cta": "Katso lisää töitämme"
+      "cta": "Katso lisää töitämme",
+      "posterAlt": "Asentaja vetää kutistepussia trailerilla olevan Axopar 28 -veneen päälle hallissa",
+      "playAria": "Toista video: Axopar 28 -veneen kutistepussin asennus"
     },
     "promo": {
       "title": "Kelmut nopeasti kotiin koko Suomeen ja maailmalle!",
@@ -78,7 +81,7 @@
       "imageAlt": "Valkoiseksi kelmutettu venepaja veneen ympärillä venesäilytysalueella"
     },
     "contact": {
-      "bgAlt": "Kutistepussit taustakuva",
+      "bgAlt": "Iso moottorivene suojattuna valkoisella kutistepussilla kuljetusalustalla",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
       "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Vastaamme sinulle mahdollisimman pian!",
       "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
@@ -177,7 +180,7 @@
       ]
     },
     "contact": {
-      "bgAlt": "Kutistepussit taustakuva",
+      "bgAlt": "Iso moottorivene suojattuna valkoisella kutistepussilla kuljetusalustalla",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
       "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohde) sekä toivotusta suojauksesta. Palaamme sinulle mahdollisimman pian.",
       "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
@@ -299,7 +302,7 @@
       ]
     },
     "contact": {
-      "bgAlt": "Veneen huolto taustakuva",
+      "bgAlt": "Iso moottorivene suojattuna valkoisella kutistepussilla kuljetusalustalla",
       "title": "Pyydä tarjous veneen huollosta tai korjauksesta",
       "eyebrow": "Onko veneesi määräaikaishuollon tarpeessa, tarvitsetko korjausta vai haluatko valmistella veneen seuraavaa kautta varten?",
       "body": "Ota yhteyttä ja kerro lyhyesti veneestäsi sekä tarvittavasta työstä. Voit myös lähettää kuvia veneestä tai mahdollisesta viasta. Katsotaan yhdessä sopiva ratkaisu.",
@@ -377,13 +380,13 @@
       "paragraph2": "Kelmutamme myös pääkaupunkiseudun ulkopuolella lisähinnasta. Kysy lisää!"
     },
     "durable": {
-      "imageAlt": "Vene kutistepussissa",
+      "imageAlt": "Buster L -vene merellä",
       "title": "Kestävä ratkaisu",
       "body": "Tarjoamme korkealaatuisia, kestäviä kelmuja arvokkaan tavaran suojaamiseen. Palvelumme auttaa ehkäisemään sään ja kuljetuksen aiheuttamia vaurioita, ja luotettavat sekä nopeat toimitukset tukevat korkeaa asiakastyytyväisyyttä. Valmiiksi mitoitetut kutistepussimme valmistetaan kestävästä UV-stabiloidusta polyeteenistä (PE/LDPE), ja materiaalin paksuus on tyypillisesti 150–200 µm.",
       "examplePrefix": "esim."
     },
     "contact": {
-      "bgAlt": "Kutistepussit taustakuva",
+      "bgAlt": "Iso moottorivene suojattuna valkoisella kutistepussilla kuljetusalustalla",
       "title": "Pyydä tarjous tai kysy lisää kutistepusseista",
       "body": "Kerro lyhyesti kohteesta (esim. vene tai teollisuuskohteesta) sekä toivotusta suojauksesta. Palaamme sinulle mahdollisimman pian.",
       "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
@@ -412,6 +415,7 @@
       "description": "Kelmutus.fi – ShrinkPro Finland Oy. Tarina, tekemisen tapa ja kaksi selkeää ratkaisua veneille ja teollisuuteen."
     },
     "brand": {
+      "heading": "Meistä – ShrinkPro Finland Oy / Kelmutus.fi",
       "title": "KELMUTUS",
       "company": "ShrinkPro Finland Oy",
       "businessId": "Y-tunnus 3578472-2"
@@ -430,9 +434,9 @@
       "emailLabel": "Sähköposti:"
     },
     "contact": {
-      "bgAlt": "Kutistepussit taustakuva",
+      "bgAlt": "Iso moottorivene suojattuna valkoisella kutistepussilla kuljetusalustalla",
       "title": "Ota yhteyttä",
-      "body": "Kiireellisissä asioissa voit soittaa numeroon: +358 400283123. \nVastaamme sinulle mahdollisimman pian!",
+      "body": "Kiireellisissä asioissa voit soittaa numeroon: +358 400 283 123. \nVastaamme sinulle mahdollisimman pian!",
       "whatsappAria": "Avaa WhatsApp ja ota yhteyttä"
     },
     "form": {
@@ -630,7 +634,7 @@
           "emailLabel": "Sähköposti:",
           "email": "jari@kelmutus.fi",
           "phoneLabel": "Puhelin:",
-          "phone": "+358 400 283123"
+          "phone": "+358 400 283 123"
         }
       },
       "2": {
@@ -709,11 +713,34 @@
       }
     }
   },
+  "images": {
+    "kelmutetaan": "Työntekijä kutistaa kelmua kaasupuhaltimella pukeilla olevan veneen ympärille",
+    "rekkaKelmussa": "Valkoisella kelmulla suojattu lasti rekan perävaunussa",
+    "saxdor": "Kutistepussilla suojattu moottorivene kuljetusalustalla",
+    "veneTraileri": "Keltainen vene ja Yamaha-perämoottori trailerilla",
+    "autoKelmus": "Klassikkoauto suojattuna valkoisella kelmulla tallissa",
+    "isoveneSivu": "Iso moottorivene suojattuna valkoisella kutistepussilla kuljetusalustalla",
+    "isovene": "Kutistepussilla suojattu iso moottorivene kuljetusalustalla viistosti edestä",
+    "mitat": "3D-malli veneen kutistepussin mitoista: pituus 9,86 m, leveys 3,00 m ja korkeus 3,42 m",
+    "veneMerella": "Moottorivene jättää vanaveden merelle ilmasta kuvattuna"
+  },
   "schema": {
-    "capitalRegion": "Pääkaupunkiseutu",
-    "bagService": "Veneen kelmutus kutistepussilla",
-    "onsiteService": "Kelmutus paikan päällä",
-    "boatService": "Veneen huolto ja korjaus",
+    "services": {
+      "onsite": "Veneen kelmutus paikan päällä",
+      "bags": "Kutistepussit mittojen mukaan",
+      "industrial": "Teollisuuskelmutus",
+      "boatService": "Veneiden huollot ja korjaukset"
+    },
+    "country": "Suomi",
+    "continent": "Eurooppa",
+    "businessId": "Y-tunnus",
+    "product": {
+      "name": "Kutistepussi – {model}",
+      "description": "Mittojen mukaan tehty kutistepussi veneeseen {model}."
+    },
+    "video": {
+      "name": "Axopar 28 -veneen kutistepussin asennus"
+    },
     "knowsAbout": [
       "veneen kelmutus",
       "kutistepussit mittojen mukaan",

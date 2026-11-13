@@ -25,14 +25,15 @@
   },
   "home": {
     "meta": {
-      "title": "Boat shrink wrapping & made-to-measure shrink wrap covers | Kelmutus.fi",
-      "description": "Boat protection for winter storage, transport and warehousing. Made-to-measure shrink wrap covers – also industrial shrink wrapping and transport protection."
+      "title": "Boat shrink wrapping & made-to-measure covers | Kelmutus.fi",
+      "description": "Boat shrink wrapping for winter storage, transport and warehousing. Made-to-measure shrink wrap covers – also industrial shrink wrapping."
     },
     "hero": {
       "title": "Your boat deserves the best winter protection",
       "body": "A well-protected boat keeps its value, finish and appearance. Shrink wrapping is tailored to your boat — not the other way around. We also provide wrapping for cars, houses and machinery.",
       "callCta": "Call",
-      "servicesCta": "Services"
+      "servicesCta": "Services",
+      "imageAlt": "Aerial view of a motor yacht cruising on a blue sea"
     },
     "bags": {
       "title": "Made-to-measure shrink wrap covers",
@@ -57,7 +58,9 @@
       "title": "Fast installation, solid result.",
       "body1": "Watch the video as an Axopar 28 is wrapped quickly. Two-person installation time: 45 minutes!",
       "body2": "Cover price only: €358.80",
-      "cta": "See more of our work"
+      "cta": "See more of our work",
+      "posterAlt": "Installer pulling a shrink wrap cover over an Axopar 28 on a trailer in a hall",
+      "playAria": "Play video: installing a shrink wrap cover on an Axopar 28"
     },
     "promo": {
       "title": "Shrink wrap covers delivered fast across Finland and worldwide!",
@@ -78,7 +81,7 @@
       "imageAlt": "Boat repair shelter shrink-wrapped in white around a boat in a boat storage yard"
     },
     "contact": {
-      "bgAlt": "Shrink wrap covers background image",
+      "bgAlt": "Large motorboat in a white shrink wrap cover on a transport flatbed",
       "title": "Request a quote or ask about shrink wrap covers",
       "body": "Briefly describe the item (e.g. a boat or an industrial object) and the protection you need. We’ll get back to you as soon as possible!",
       "whatsappAria": "Open WhatsApp and contact us"
@@ -177,7 +180,7 @@
       ]
     },
     "contact": {
-      "bgAlt": "Shrink wrap covers background image",
+      "bgAlt": "Large motorboat in a white shrink wrap cover on a transport flatbed",
       "title": "Request a quote or ask about shrink wrap covers",
       "body": "Briefly describe the item (e.g., boat or industrial equipment) and the protection you need. We will get back to you as soon as possible.",
       "whatsappAria": "Open WhatsApp and contact us"
@@ -201,7 +204,7 @@
   },
   "veneenhuollot": {
     "meta": {
-      "title": "Boat service and repairs in the Helsinki region | Kelmutus.fi",
+      "title": "Boat service and repair in the Helsinki region | Kelmutus.fi",
       "description": "Scheduled boat maintenance, engine service and repairs in the Helsinki region, and elsewhere in Finland by arrangement. Spring and winter service."
     },
     "hero": {
@@ -299,7 +302,7 @@
       ]
     },
     "contact": {
-      "bgAlt": "Boat service background image",
+      "bgAlt": "Large motorboat in a white shrink wrap cover on a transport flatbed",
       "title": "Request a quote for boat service or repair",
       "eyebrow": "Does your boat need scheduled service, do you need a repair, or do you want to prepare the boat for the next season?",
       "body": "Get in touch and briefly tell us about your boat and the work needed. You can also send photos of the boat or the possible fault. Let's find the right solution together.",
@@ -385,13 +388,13 @@
       "paragraph2": "We also wrap outside the capital area for an additional fee. Ask for details!"
     },
     "durable": {
-      "imageAlt": "Boat in shrink wrap",
+      "imageAlt": "Buster L boat on the water",
       "title": "A durable solution",
       "body": "We provide high-quality, durable films for protecting valuable items. Our service helps prevent weather- and transport-related damage, and reliable, fast deliveries support high customer satisfaction. Our made-to-measure shrink wrap covers are made from UV-stabilized polyethylene (PE/LDPE) with a typical thickness of 150–200 µm.",
       "examplePrefix": "e.g."
     },
     "contact": {
-      "bgAlt": "Shrink wrap covers background image",
+      "bgAlt": "Large motorboat in a white shrink wrap cover on a transport flatbed",
       "title": "Request a quote or ask about shrink wrap covers",
       "body": "Briefly describe the item (e.g., a boat or an industrial site) and the protection you need. We will get back to you as soon as possible.",
       "whatsappAria": "Open WhatsApp and contact us"
@@ -421,6 +424,7 @@
       "description": "Kelmutus.fi – ShrinkPro Finland Oy. Our story, how we work, and two clear solutions for boats and industry."
     },
     "brand": {
+      "heading": "About us – ShrinkPro Finland Oy / Kelmutus.fi",
       "title": "KELMUTUS",
       "company": "ShrinkPro Finland Oy",
       "businessId": "Business ID 3578472-2"
@@ -439,9 +443,9 @@
       "emailLabel": "Email:"
     },
     "contact": {
-      "bgAlt": "Shrink wrap covers background image",
+      "bgAlt": "Large motorboat in a white shrink wrap cover on a transport flatbed",
       "title": "Contact",
-      "body": "For urgent matters, you can call: +358 400283123.\nWe will get back to you as soon as possible!",
+      "body": "For urgent matters, you can call: +358 400 283 123.\nWe will get back to you as soon as possible!",
       "whatsappAria": "Open WhatsApp and contact us"
     },
     "form": {
@@ -465,7 +469,7 @@
 
   "tyomme": {
     "meta": {
-      "title": "Our work – shrink-wrapped boats, cars and machinery | Kelmutus.fi",
+      "title": "Our work – shrink-wrapped boats, cars and more | Kelmutus.fi",
       "description": "Examples of Kelmutus.fi projects – boats, industrial sites, cars and special shapes. View before/after and the gallery."
     },
     "hero": {
@@ -524,7 +528,7 @@
   "talvisailytys": {
     "meta": {
       "title": "Boat winter storage: guide and checklist | Kelmutus.fi",
-      "description": "Boat winter storage step by step: cleaning and drying, engine and fuel, batteries, ventilation and protecting the boat with shrink wrap. Read the checklist."
+      "description": "Boat winter storage step by step: cleaning and drying, engine and fuel, batteries, ventilation and shrink wrapping the boat. Read the checklist."
     },
     "title": "Boat winter storage guide",
     "intro": "Careful preparation protects your boat from moisture, mold and frost damage over the winter. Go through this checklist before the boat is laid up for the season.",
@@ -639,7 +643,7 @@
           "emailLabel": "Email:",
           "email": "jari@kelmutus.fi",
           "phoneLabel": "Phone:",
-          "phone": "+358 400 283123"
+          "phone": "+358 400 283 123"
         }
       },
       "2": {
@@ -718,11 +722,34 @@
       }
     }
   },
+  "images": {
+    "kelmutetaan": "Worker heat-shrinking wrap around a boat on stands with a gas heat gun",
+    "rekkaKelmussa": "Cargo protected with white shrink wrap on a truck trailer",
+    "saxdor": "Motorboat protected with a shrink wrap cover on a transport flatbed",
+    "veneTraileri": "Yellow boat with a Yamaha outboard motor on a trailer",
+    "autoKelmus": "Classic car protected with white shrink wrap in a garage",
+    "isoveneSivu": "Large motorboat in a white shrink wrap cover on a transport flatbed",
+    "isovene": "Large motorboat in a shrink wrap cover on a transport flatbed, front three-quarter view",
+    "mitat": "3D model of a boat shrink wrap cover with dimensions: length 9.86 m, width 3.00 m, height 3.42 m",
+    "veneMerella": "Aerial view of a motorboat leaving a wake at sea"
+  },
   "schema": {
-    "capitalRegion": "Helsinki Capital Region",
-    "bagService": "Boat shrink wrapping with a made-to-measure cover",
-    "onsiteService": "On-site shrink wrapping",
-    "boatService": "Boat service and repair",
+    "services": {
+      "onsite": "On-site boat shrink wrapping",
+      "bags": "Made-to-measure shrink wrap covers",
+      "industrial": "Industrial shrink wrapping",
+      "boatService": "Boat service and repairs"
+    },
+    "country": "Finland",
+    "continent": "Europe",
+    "businessId": "Finnish Business ID (Y-tunnus)",
+    "product": {
+      "name": "Shrink wrap cover – {model}",
+      "description": "Made-to-measure shrink wrap cover for the {model}."
+    },
+    "video": {
+      "name": "Installing a shrink wrap cover on an Axopar 28"
+    },
     "knowsAbout": [
       "boat shrink wrapping",
       "made-to-measure shrink wrap covers",

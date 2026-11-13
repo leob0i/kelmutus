@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { Link } from "@/i18n/navigation";
+import { BackgroundVideo } from "@/components/BackgroundVideo";
 import { ClickToPlayVideo } from "@/components/ClickToPlayVideo";
 import { ContactForm } from "@/components/ContactForm";
+import { JsonLd } from "@/components/JsonLd";
 
 import type { Metadata } from "next";
-import { preload } from "react-dom";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
+import { bagProductSchema, installVideoSchema, serviceSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -67,24 +69,36 @@ export default async function HomePage({
   setRequestLocale(locale);
 
   const t = await getTranslations("home");
-
-  // hero-videon poster on sivun suurin elementti (LCP) -> ladataan heti
-  preload("/hero-poster.jpg", { as: "image", fetchPriority: "high" });
+  const tAll = await getTranslations();
+  const l = locale as "fi" | "en";
 
   return (
     <main className="pt-0">
+      {/* etusivulla esitellyt palvelut, näkyvä pussin hinta (Axopar 28) ja asennusvideo */}
+      <JsonLd data={serviceSchema(l, tAll, "bags")} />
+      <JsonLd data={serviceSchema(l, tAll, "boatService")} />
+      <JsonLd data={serviceSchema(l, tAll, "industrial")} />
+      <JsonLd data={serviceSchema(l, tAll, "onsite")} />
+      <JsonLd data={bagProductSchema(l, tAll, "axopar28")} />
+      <JsonLd data={installVideoSchema(l, tAll)} />
+
       {/* HERO (looppaava video taustalla) */}
       <section className="relative min-h-[78vh] overflow-hidden border-b border-black/10">
-        <video
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster="/hero-poster.jpg"
-        >
-          <source src="/hero-loop.mp4" type="video/mp4" />
-        </video>
+        {/* Posteri on sivun LCP-elementti: ladataan heti. Video ladataan vasta sivun latauduttua
+            ja peittää posterin, kun se alkaa pyöriä. sizes: object-cover rajaa 16:9-kuvan
+            heron korkeuden (min. 78vh) mukaan, joten pystynäytöllä kuva on 78vh × 16/9 ≈ 139vh leveä.
+            Laatu 50 pitää täyden resoluution mutta pudottaa koon 49 kB -> 16 kB (AVIF). */}
+        <Image
+          src="/hero-poster.jpg"
+          alt={t("hero.imageAlt")}
+          fill
+          preload
+          fetchPriority="high"
+          sizes="max(100vw, 139vh)"
+          quality={50}
+          className="object-cover"
+        />
+        <BackgroundVideo src="/hero-loop.mp4" />
 
         {/* sinertävä overlay kuten kuvassa */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#4f90b4]/60 via-[#5aa0c0]/35 to-transparent" />
@@ -147,8 +161,9 @@ export default async function HomePage({
       <section className="group relative overflow-hidden border-b border-black/10 transition hover:ring-1 hover:ring-white/20">
         <Image
           src="/saxdor.jpg"
-          alt=""
+          alt={tAll("images.saxdor")}
           fill
+          sizes="100vw"
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
         />
 
@@ -182,8 +197,9 @@ export default async function HomePage({
           <div className="group relative min-h-[260px] overflow-hidden transition hover:ring-1 hover:ring-white/20">
             <Image
               src="/gallery/whatsapp-vene-traileri.jpg"
-              alt=""
+              alt={tAll("images.veneTraileri")}
               fill
+              quality={50}
               sizes="(min-width: 640px) 50vw, 100vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
             />
@@ -211,6 +227,7 @@ export default async function HomePage({
               src="/gallery/venevaja.jpeg"
               alt={t("venepaja.imageAlt")}
               fill
+              quality={50}
               sizes="(min-width: 640px) 50vw, 100vw"
               className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
             />
@@ -242,8 +259,10 @@ export default async function HomePage({
           <div className="group relative min-h-[260px] overflow-hidden transition hover:ring-1 hover:ring-white/20">
             <Image
               src="/gallery/rekka.kelmussa.jpg"
-              alt=""
+              alt={tAll("images.rekkaKelmussa")}
               fill
+              quality={50}
+              sizes="(min-width: 640px) 50vw, 100vw"
               className="object-cover object-[50%_23%] transition-transform duration-700 ease-out group-hover:scale-[1.05]"
             />
 
@@ -268,8 +287,10 @@ export default async function HomePage({
           <div className="group relative min-h-[260px] overflow-hidden transition hover:ring-1 hover:ring-white/20">
             <Image
               src="/kelmutetaan.jpg"
-              alt=""
+              alt={tAll("images.kelmutetaan")}
               fill
+              quality={50}
+              sizes="(min-width: 640px) 50vw, 100vw"
               className="object-cover object-[50%_20%] transition-transform duration-700 ease-out group-hover:scale-[1.05]"
             />
 
@@ -317,7 +338,12 @@ export default async function HomePage({
 
           <div className="mx-auto mt-10 max-w-5xl">
             <div className="overflow-hidden rounded-2xl border border-black/10 bg-black shadow-[0_24px_70px_-40px_rgba(0,0,0,0.45)]">
-              <ClickToPlayVideo src="/axopar38.mp4" poster="/axopar38-poster.jpg" />
+              <ClickToPlayVideo
+                src="/axopar38.mp4"
+                poster={{ src: "/axopar38-poster.jpg", width: 1803, height: 869, alt: t("install.posterAlt") }}
+                sizes="(min-width: 1056px) 1024px, 100vw"
+                playLabel={t("install.playAria")}
+              />
             </div>
           </div>
 
@@ -376,6 +402,8 @@ export default async function HomePage({
             src="/kutistepussi.sivu.jpg"
             alt={t("contact.bgAlt")}
             fill
+            quality={50}
+            sizes="100vw"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-slate-950/80" />

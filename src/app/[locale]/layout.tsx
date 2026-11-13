@@ -9,7 +9,7 @@ import {routing} from "@/i18n/routing";
 import {host, siteName} from "@/lib/seo";
 import {SiteHeader} from "@/components/SiteHeader";
 import {SiteFooter} from "@/components/SiteFooter";
-import {LocalBusinessJsonLd} from "@/components/LocalBusinessJsonLd";
+import {OrganizationJsonLd} from "@/components/OrganizationJsonLd";
 
 export async function generateMetadata({
   params
@@ -48,13 +48,15 @@ export default async function LocaleLayout({
   // mahdollistaa staattisen renderöinnin (ei lueta kieltä pyynnön headereista)
   setRequestLocale(locale);
 
-  const messages = await getMessages();
+  // Selaimeen vain client-komponenttien käännökset (SiteHeader: nav, ContactForm: contactForm);
+  // palvelinkomponentit kääntävät tekstinsä palvelimella. Pienentää HTML:ää ja hydraatiota.
+  const {nav, contactForm} = await getMessages();
 
   return (
     <html lang={locale}>
       <body className="bg-white text-slate-900">
-        <NextIntlClientProvider messages={messages}>
-          <LocalBusinessJsonLd locale={locale} />
+        <NextIntlClientProvider messages={{nav, contactForm}}>
+          <OrganizationJsonLd locale={locale} />
           <SiteHeader />
           {children}
           <SiteFooter />

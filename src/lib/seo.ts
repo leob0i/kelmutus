@@ -4,6 +4,8 @@ import { getPathname } from "@/i18n/navigation";
 export const host = "https://www.kelmutus.fi";
 export const siteName = "Kelmutus.fi";
 
+// canonical + hreflang (fi, en, x-default = fi). Ainoa paikka, jossa hreflang määritetään:
+// sivujen metadata (pageMetadata) ja sitemap.xml käyttävät tätä.
 export async function localizedAlternates(locale: "fi" | "en", href: string) {
   const [fi, en] = await Promise.all([
     getPathname({ locale: "fi", href }),

@@ -5,7 +5,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
-import { absoluteUrl, breadcrumbSchema, businessRef } from "@/lib/schema";
+import { absoluteUrl, breadcrumbSchema, organizationRef } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -50,17 +50,18 @@ export default async function MeistaPage({
           name: t("meta.title"),
           description: t("meta.description"),
           inLanguage: locale,
-          about: businessRef,
-          mainEntity: businessRef,
+          about: organizationRef,
+          mainEntity: organizationRef,
         }}
       />
       <section className="relative isolate overflow-hidden">
         {/* TAUSTAKUVA */}
         <Image
           src="/gallery/vene.merella.jpg"
-          alt=""
+          alt={tAll("images.veneMerella")}
           fill
-          priority
+          preload
+          fetchPriority="high"
           sizes="100vw"
           className="object-cover object-center scale-105"
         />
@@ -71,9 +72,13 @@ export default async function MeistaPage({
 
         {/* SISÄLTÖ */}
         <div className="relative mx-auto max-w-6xl px-4 pt-32 pb-14 md:pt-44 md:pb-20">
-          <h1 className="text-center font-serif text-6xl tracking-[0.08em] drop-shadow-[0_2px_2px_rgba(0,0,0,0.75)] md:text-8xl">
-            {t("brand.title")}
+          {/* Kuvaava H1 pienenä yläotsikkona; KELMUTUS-sanamerkki pysyy ennallaan */}
+          <h1 className="text-center text-xs uppercase tracking-[0.22em] text-white/80 drop-shadow-[0_2px_2px_rgba(0,0,0,0.75)] md:text-sm">
+            {t("brand.heading")}
           </h1>
+          <p className="mt-3 text-center font-serif text-6xl tracking-[0.08em] drop-shadow-[0_2px_2px_rgba(0,0,0,0.75)] md:text-8xl">
+            {t("brand.title")}
+          </p>
 
           <p className="mt-5 text-center font-serif text-lg text-white/90 drop-shadow-[0_2px_2px_rgba(0,0,0,0.75)] md:text-xl">
             {t("brand.company")}
@@ -129,7 +134,7 @@ export default async function MeistaPage({
                   href="tel:+358400283123"
                   className="text-white/90 underline decoration-white/30 underline-offset-4 hover:text-white"
                 >
-                  +358 400283123
+                  +358 400 283 123
                 </a>
               </p>
               <p>
@@ -154,6 +159,7 @@ export default async function MeistaPage({
             src="/kutistepussi.sivu.jpg"
             alt={t("contact.bgAlt")}
             fill
+            sizes="100vw"
             className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 bg-slate-950/80" />

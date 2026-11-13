@@ -5,7 +5,12 @@ import { ContactForm } from "@/components/ContactForm";
 import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
-import { breadcrumbSchema, businessRef, serviceSchema } from "@/lib/schema";
+import {
+  bagProductSchema,
+  breadcrumbSchema,
+  onsitePriceOffer,
+  serviceSchema,
+} from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -23,6 +28,9 @@ export async function generateMetadata({
   });
 }
 
+// Kahden sarakkeen kuva max-w-6xl-säiliössä (px-4, gap-10): sarake on enintään 536 px
+const halfColumnSizes = "(min-width: 1152px) 536px, (min-width: 768px) 50vw, 100vw";
+
 export default async function PalvelutPage({
   params,
 }: {
@@ -39,24 +47,28 @@ export default async function PalvelutPage({
       title: t("services.0.title"),
       desc: t("services.0.desc"),
       img: "/gallery/isovene.jpg",
+      alt: tAll("images.isovene"),
       bullets: [t("services.0.bullets.0"), t("services.0.bullets.1"), t("services.0.bullets.2")],
     },
     {
       title: t("services.1.title"),
       desc: t("services.1.desc"),
       img: "/gallery/rekka.kelmussa.jpg",
+      alt: tAll("images.rekkaKelmussa"),
       bullets: [t("services.1.bullets.0"), t("services.1.bullets.1"), t("services.1.bullets.2")],
     },
     {
       title: t("services.2.title"),
       desc: t("services.2.desc"),
       img: "/gallery/auto.kelmus.jpg",
+      alt: tAll("images.autoKelmus"),
       bullets: [t("services.2.bullets.0"), t("services.2.bullets.1"), t("services.2.bullets.2")],
     },
     {
       title: t("services.3.title"),
       desc: t("services.3.desc"),
       img: "/gallery/mitat.jpg",
+      alt: tAll("images.mitat"),
       bullets: [t("services.3.bullets.0"), t("services.3.bullets.1")],
     },
   ];
@@ -69,55 +81,13 @@ export default async function PalvelutPage({
           { name: t("hero.title"), href: "/palvelut" },
         ])}
       />
-      {services.map((s) => (
-        <JsonLd
-          key={s.title}
-          data={serviceSchema({
-            locale: locale as "fi" | "en",
-            href: "/palvelut",
-            name: s.title,
-            description: s.desc,
-            serviceType: s.title,
-            areaServed: ["Finland"],
-          })}
-        />
-      ))}
-      <JsonLd
-        data={serviceSchema({
-          locale: locale as "fi" | "en",
-          href: "/palvelut",
-          name: t("venepaja.title"),
-          description: `${t("venepaja.body1")} ${t("venepaja.body2")}`,
-          serviceType: t("venepaja.title"),
-          areaServed: ["Finland"],
-        })}
-      />
-      <JsonLd
-        data={serviceSchema({
-          locale: locale as "fi" | "en",
-          href: "/palvelut",
-          name: t("onsite.title"),
-          description: t("onsite.body"),
-          serviceType: tAll("schema.onsiteService"),
-          areaServed: [tAll("schema.capitalRegion")],
-          // sivulla näkyvä hinta: 45 € / m, alv 0 %, alle 10 m pulpettiveneet
-          offers: [
-            {
-              "@type": "Offer",
-              name: t("onsite.title"),
-              description: t("onsite.priceLine"),
-              seller: businessRef,
-              priceSpecification: {
-                "@type": "UnitPriceSpecification",
-                price: "45.00",
-                priceCurrency: "EUR",
-                unitCode: "MTR",
-                valueAddedTaxIncluded: false,
-              },
-            },
-          ],
-        })}
-      />
+      {/* palvelut, jotka sivulla esitellään; hinta 45 €/m näkyy osiossa #hinnat */}
+      <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "onsite", [onsitePriceOffer(tAll)])} />
+      <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "industrial")} />
+      <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "bags")} />
+      <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "boatService")} />
+      {/* esimerkkihinta näkyy sivulla: Buster L 230,80 € */}
+      <JsonLd data={bagProductSchema(locale as "fi" | "en", tAll, "busterL")} />
 
       {/* HERO */}
       <section className="relative overflow-hidden border-b border-black/10 bg-slate-950">
@@ -125,11 +95,12 @@ export default async function PalvelutPage({
         <div className="absolute inset-0">
           <Image
             src="/gallery/isovene.sivu.jpg"
-            alt=""
+            alt={tAll("images.isoveneSivu")}
             fill
             sizes="100vw"
             className="object-cover object-center"
-            priority
+            preload
+            fetchPriority="high"
           />
           <div className="absolute inset-0 bg-slate-950/70" />
         </div>
@@ -171,7 +142,7 @@ export default async function PalvelutPage({
               <div className="absolute inset-0">
                 <Image
                   src={s.img}
-                  alt=""
+                  alt={s.alt}
                   fill
                   sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -243,7 +214,7 @@ export default async function PalvelutPage({
           <div className="absolute inset-0">
             <Image
               src="/gallery/whatsapp-vene-traileri.jpg"
-              alt=""
+              alt={tAll("images.veneTraileri")}
               fill
               sizes="100vw"
               className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
@@ -279,8 +250,9 @@ export default async function PalvelutPage({
             <Image
               src="/gallery/axopar28.jpg"
               alt={t("onsite.imageAlt")}
-              width={1200}
-              height={800}
+              width={1803}
+              height={869}
+              sizes={halfColumnSizes}
               className="h-auto w-full object-cover"
             />
           </div>
@@ -320,8 +292,9 @@ export default async function PalvelutPage({
             <Image
               src="/buster.l.jpg"
               alt={t("durable.imageAlt")}
-              width={1200}
-              height={800}
+              width={1400}
+              height={948}
+              sizes={halfColumnSizes}
               className="h-auto w-full object-cover"
             />
           </div>

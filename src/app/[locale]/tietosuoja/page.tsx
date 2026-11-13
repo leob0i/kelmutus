@@ -1,7 +1,9 @@
 // src/app/tietosuoja/page.tsx
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { JsonLd } from "@/components/JsonLd";
 import { pageMetadata } from "@/lib/seo";
+import { breadcrumbSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -28,9 +30,16 @@ export default async function TietosuojaselostePage({
   setRequestLocale(locale);
 
   const t = await getTranslations({ locale, namespace: "tietosuoja" });
+  const tAll = await getTranslations({ locale });
 
   return (
     <main className="min-h-screen bg-[#06142F] text-slate-100 pt-24 md:pt-28">
+      <JsonLd
+        data={breadcrumbSchema(locale as "fi" | "en", [
+          { name: tAll("nav.home"), href: "/" },
+          { name: t("pageTitle"), href: "/tietosuoja" },
+        ])}
+      />
       {/* Header */}
       <header className="border-b border-white/10">
         <div className="mx-auto max-w-2xl px-4 py-8">

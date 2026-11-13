@@ -1,35 +1,29 @@
 import type {MetadataRoute} from "next";
-import {getPathname} from "@/i18n/navigation";
+import {routing} from "@/i18n/routing";
+import {localizedAlternates} from "@/lib/seo";
 
-const host = "https://www.kelmutus.fi";
-
+// Sivut ja niiden viimeisin sisältömuutos (teksti, kuvat, title/description).
+// Päivitä päivämäärä, kun sivun sisältöä muutetaan – sama arvo menee molemmille kieliversioille.
 const routes = [
-  "/",
-  "/kutistepussit",
-  "/veneenhuollot",
-  "/palvelut",
-  "/tyomme",
-  "/meista",
-  "/talvisailytys",
-  "/tietosuoja"
-] as const;
+  {href: "/", lastModified: "2026-11-13"},
+  {href: "/kutistepussit", lastModified: "2026-11-13"},
+  {href: "/veneenhuollot", lastModified: "2026-11-13"},
+  {href: "/palvelut", lastModified: "2026-11-13"},
+  {href: "/tyomme", lastModified: "2026-11-13"},
+  {href: "/meista", lastModified: "2026-11-13"},
+  {href: "/talvisailytys", lastModified: "2026-11-13"},
+  {href: "/tietosuoja", lastModified: "2026-11-13"}
+];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  return Promise.all(
-    routes.map(async (href) => {
-      const fiPath = await getPathname({locale: "fi", href});
-      const enPath = await getPathname({locale: "en", href});
-
-      return {
-        url: host + fiPath,
-        alternates: {
-          languages: {
-            fi: host + fiPath,
-            en: host + enPath,
-            "x-default": host + fiPath
-          }
-        }
-      };
-    })
+  const entries = await Promise.all(
+    routes.flatMap(({href, lastModified}) =>
+      routing.locales.map(async (locale) => {
+        const {canonical, languages} = await localizedAlternates(locale, href);
+        return {url: canonical, lastModified, alternates: {languages}};
+      })
+    )
   );
+
+  return entries;
 }

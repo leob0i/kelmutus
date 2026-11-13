@@ -1,8 +1,10 @@
 "use client";
 
 import {useEffect, useRef, useState} from "react";
+import NextLink from "next/link";
 import {useLocale, useTranslations} from "next-intl";
-import {Link, usePathname} from "@/i18n/navigation";
+import {Link, getPathname, usePathname} from "@/i18n/navigation";
+import type {Locale} from "@/i18n/routing";
 
 const navItems = [
   {key: "kutistepussit", href: "/kutistepussit"},
@@ -16,6 +18,10 @@ export function SiteHeader() {
   const t = useTranslations("nav");
   const locale = useLocale();
   const pathname = usePathname();
+
+  // Kielivalitsin linkittää suoraan lopullisiin osoitteisiin (fi ilman etuliitettä, en /en/...).
+  // next-intl:n <Link locale="fi"> lisäisi /fi-etuliitteen, joka vain ohjautuisi uudelleen.
+  const langHref = (l: Locale) => getPathname({locale: l, href: pathname || "/"});
 
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
@@ -89,9 +95,8 @@ const langLinkClass = (l: string) =>
 
             {/* Kielenvaihdin */}
 <div className="inline-flex items-center rounded-full border border-white/25 bg-black/20 p-0.5">
-  <Link
-    href={pathname || "/"}
-    locale="fi"
+  <NextLink
+    href={langHref("fi")}
     className={langLinkClass("fi")}
     aria-current={locale === "fi" ? "page" : undefined}
   >
@@ -103,11 +108,10 @@ const langLinkClass = (l: string) =>
       </svg>
     </span>
     <span>FI</span>
-  </Link>
+  </NextLink>
 
-  <Link
-    href={pathname || "/"}
-    locale="en"
+  <NextLink
+    href={langHref("en")}
     className={langLinkClass("en")}
     aria-current={locale === "en" ? "page" : undefined}
   >
@@ -121,7 +125,7 @@ const langLinkClass = (l: string) =>
       </svg>
     </span>
     <span>EN</span>
-  </Link>
+  </NextLink>
 </div>
 
           </div>
@@ -166,9 +170,8 @@ open
 <li className="mt-1 px-2 pb-2">
   <div className="flex items-center justify-end">
     <div className="inline-flex items-center rounded-full border border-white/25 bg-black/20 p-0.5">
-      <Link
-        href={pathname || "/"}
-        locale="fi"
+      <NextLink
+        href={langHref("fi")}
         className={langLinkClass("fi")}
         aria-current={locale === "fi" ? "page" : undefined}
         onClick={() => setOpen(false)}
@@ -181,11 +184,10 @@ open
           </svg>
         </span>
         <span>FI</span>
-      </Link>
+      </NextLink>
 
-      <Link
-        href={pathname || "/"}
-        locale="en"
+      <NextLink
+        href={langHref("en")}
         className={langLinkClass("en")}
         aria-current={locale === "en" ? "page" : undefined}
         onClick={() => setOpen(false)}
@@ -200,7 +202,7 @@ open
           </svg>
         </span>
         <span>EN</span>
-      </Link>
+      </NextLink>
     </div>
   </div>
 </li>

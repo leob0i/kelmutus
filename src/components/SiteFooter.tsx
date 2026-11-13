@@ -57,7 +57,7 @@ export function SiteFooter() {
             <div>
               {t("phoneLabel")}:{" "}
               <a href="tel:+358400283123" className="hover:text-white">
-                +358 400283123
+                +358 400 283 123
               </a>
             </div>
             <div>

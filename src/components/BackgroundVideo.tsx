@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type Conn = {
   saveData?: boolean;
@@ -18,44 +18,45 @@ function getConnection(): Conn | null {
   return navigator.connection || navigator.mozConnection || navigator.webkitConnection || null;
 }
 
-export default function TyommeHeroVideo() {
+// Looppaava taustavideo heron taakse. Posterikuva renderöidään erikseen next/imagella
+// (preload), joten se on LCP-elementti; video ladataan vasta hetki load-tapahtuman jälkeen
+// (load voi laueta ennen kuin posteri on piirretty), jotta se ei kilpaile kaistasta
+// posterin ja muiden kriittisten tiedostojen kanssa. Ennen ensimmäistä ruutua video on
+// läpinäkyvä ja posteri näkyy sen alta.
+const START_DELAY_MS = 2000;
+
+export function BackgroundVideo({ src }: { src: string }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [canLoadVideo, setCanLoadVideo] = useState(false);
 
-  const sources = useMemo(
-  () => ({
-    poster: "/videos/axopar28.jpg",
-    mp4: "/videos/axopar28.mp4",
-  }),
-  []
-);
-
-
   useEffect(() => {
     // 1) Jos käyttäjä haluaa vähemmän animaatiota → ei videota
-    if (prefersReducedMotion()) {
-      setCanLoadVideo(false);
-      return;
-    }
+    if (prefersReducedMotion()) return;
 
     // 2) Jos Data Saver / hidas yhteys → ei videota (poster jää)
     const conn = getConnection();
     const saveData = !!conn?.saveData;
     const effectiveType = conn?.effectiveType ?? "";
     const slow = effectiveType === "2g" || effectiveType === "slow-2g" || effectiveType === "3g";
+    if (saveData || slow) return;
 
-    if (saveData || slow) {
-      setCanLoadVideo(false);
-      return;
-    }
+    // 3) Muuten ladataan hetki sen jälkeen, kun sivu on latautunut
+    let timer: number | undefined;
+    const start = () => {
+      timer = window.setTimeout(() => setCanLoadVideo(true), START_DELAY_MS);
+    };
+    if (document.readyState === "complete") start();
+    else window.addEventListener("load", start, { once: true });
 
-    // 3) Muuten annetaan ladata
-    setCanLoadVideo(true);
+    return () => {
+      window.removeEventListener("load", start);
+      window.clearTimeout(timer);
+    };
   }, []);
 
   useEffect(() => {
     const v = videoRef.current;
-    if (!v) return;
+    if (!v || !canLoadVideo) return;
 
     // Pysäytä kun ei ole näkyvissä → ei CPU-nykimistä skrollatessa
     const io = new IntersectionObserver(
@@ -79,17 +80,14 @@ export default function TyommeHeroVideo() {
     <video
       ref={videoRef}
       className="absolute inset-0 h-full w-full object-cover"
-      autoPlay
       muted
       loop
       playsInline
       preload="none"
-      poster={sources.poster}
       aria-hidden="true"
     >
-      {/* Ladataan source-URL:t vasta kun päätetään että yhteys riittää */}
-      {canLoadVideo ? <source src={sources.mp4} type="video/mp4" /> : null}
-
+      {/* Ladataan source-URL vasta kun päätetään että yhteys riittää */}
+      {canLoadVideo ? <source src={src} type="video/mp4" /> : null}
     </video>
   );
 }

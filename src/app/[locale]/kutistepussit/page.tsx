@@ -6,7 +6,7 @@ import { JsonLd } from "@/components/JsonLd";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
-import { breadcrumbSchema, priceOffer, serviceSchema } from "@/lib/schema";
+import { bagProductSchema, breadcrumbSchema, serviceSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -23,6 +23,9 @@ export async function generateMetadata({
     description: t("meta.description"),
   });
 }
+
+// Kahden sarakkeen kuva max-w-6xl-säiliössä (px-6, gap-10): sarake on enintään 532 px
+const halfColumnSizes = "(min-width: 1152px) 532px, (min-width: 768px) 50vw, 100vw";
 
 export default async function KutistepussitPage({
   params,
@@ -45,22 +48,11 @@ export default async function KutistepussitPage({
           { name: t("hero.title"), href: "/kutistepussit" },
         ])}
       />
-      <JsonLd
-        data={serviceSchema({
-          locale: locale as "fi" | "en",
-          href: "/kutistepussit",
-          name: t("hero.title"),
-          description: t("whatAre.body"),
-          serviceType: tAll("schema.bagService"),
-          areaServed: ["Finland"],
-          // samat esimerkkihinnat kuin sivuilla (Buster L: /palvelut, Axopar 28: etusivu)
-          offers: [
-            priceOffer(`${t("hero.title")} – Buster L`, "230.80"),
-            priceOffer(`${t("hero.title")} – Targa 23.1`, "351.00"),
-            priceOffer(`${t("hero.title")} – Axopar 28`, "358.80"),
-          ],
-        })}
-      />
+      <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "bags")} />
+      {/* esimerkkihinnat näkyvät sivulla (Targa 23.1 tekstissä, kaikki kolme UKK:ssa) */}
+      {(["busterL", "targa231", "axopar28"] as const).map((key) => (
+        <JsonLd key={key} data={bagProductSchema(locale as "fi" | "en", tAll, key)} />
+      ))}
 
       <main className="bg-white text-black">
         {/* HERO */}
@@ -70,7 +62,9 @@ export default async function KutistepussitPage({
             src="/saxdor.jpg"
             alt={t("hero.imageAlt")}
             fill
-            priority
+            preload
+            fetchPriority="high"
+            sizes="100vw"
             className="object-cover"
           />
 
@@ -116,8 +110,9 @@ export default async function KutistepussitPage({
                   <Image
                     src="/gallery/isovene.sivu.jpg"
                     alt={t("diagramAlt")}
-                    width={1200}
-                    height={900}
+                    width={2048}
+                    height={1152}
+                    sizes="100vw"
                     className="h-auto w-full object-contain"
                   />
                 </div>
@@ -142,8 +137,9 @@ export default async function KutistepussitPage({
                 <Image
                   src="/gallery/isovene.sivu.jpg"
                   alt={t("diagramAlt")}
-                  width={1200}
-                  height={900}
+                  width={2048}
+                  height={1152}
+                  sizes={halfColumnSizes}
                   className="h-auto w-full object-contain"
                 />
               </div>
@@ -157,7 +153,8 @@ export default async function KutistepussitPage({
                 src="/gallery/targa23.1.jpg"
                 alt="Targa 23.1"
                 width={1200}
-                height={800}
+                height={630}
+                sizes={halfColumnSizes}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -178,7 +175,8 @@ export default async function KutistepussitPage({
                     src="/gallery/targa23.1.jpg"
                     alt="Targa 23.1"
                     width={1200}
-                    height={800}
+                    height={630}
+                    sizes="100vw"
                     className="h-auto w-full object-cover"
                   />
                 </div>
@@ -222,7 +220,7 @@ export default async function KutistepussitPage({
                 alt={t("cableReels.imageAlt")}
                 width={1920}
                 height={1080}
-                sizes="(min-width: 768px) 50vw, 100vw"
+                sizes={halfColumnSizes}
                 className="h-auto w-full object-cover"
               />
             </div>
@@ -252,6 +250,7 @@ export default async function KutistepussitPage({
               src="/kutistepussi.sivu.jpg"
               alt={t("contact.bgAlt")}
               fill
+              sizes="100vw"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-slate-950/80" />
