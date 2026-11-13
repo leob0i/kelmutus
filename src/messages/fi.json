@@ -5,10 +5,10 @@
     "palvelut": "Palvelut",
     "tyomme": "Työmme",
     "meista": "Meistä",
-    "kutistepussiVaiPressu": "Kutistepussi vai pressu?",
-    "talvisailytys": "Veneen talvisäilytys",
     "teollisuuskelmutus": "Teollisuuskelmutus",
-    "talvikatos": "Veneen talvikatos",
+    "venepaja": "Venepaja",
+    "paikanPaalla": "Kelmutus paikan päällä",
+    "kaikkiPalvelut": "Kaikki palvelut",
     "cta": "Ota yhteyttä",
     "home": "Etusivu",
     "homeAria": "Kelmutus etusivu",
@@ -78,6 +78,28 @@
       "cta": "Katso lisää töitämme",
       "posterAlt": "Asentaja vetää kutistepussia trailerilla olevan Axopar 28 -veneen päälle hallissa",
       "playAria": "Toista video: Axopar 28 -veneen kutistepussin asennus"
+    },
+    "order": {
+      "title": "Näin tilaat kutistepussin veneeseesi",
+      "steps": [
+        {
+          "title": "Lähetä veneen tiedot.",
+          "text": "Kerro veneen malli, mitat tai lähetä piirustukset lomakkeella, WhatsAppilla tai sähköpostilla."
+        },
+        {
+          "title": "Saat tarjouksen.",
+          "text": "Hinta määräytyy veneen koon ja mallin mukaan. Esimerkiksi Axopar 28:n pussi maksaa 358,80 € (alv 0 %)."
+        },
+        {
+          "title": "Pussi valmistetaan mittojen mukaan.",
+          "text": "UV-stabiloitua PE/LDPE-muovia, 150–200 µm. Toimitus koko Suomeen 2–3 viikossa."
+        },
+        {
+          "title": "Asennus itse tai meidän tekemänä.",
+          "text": "Paikan päälle tulemme pääkaupunkiseudulla ja Turun ja Kokkolan välisellä rannikolla, tarvittaessa jopa samana päivänä."
+        }
+      ],
+      "quoteCta": "Pyydä tarjous"
     },
     "promo": {
       "title": "Kelmut nopeasti kotiin koko Suomeen ja maailmalle!",

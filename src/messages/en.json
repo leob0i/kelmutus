@@ -5,10 +5,10 @@
     "palvelut": "Services",
     "tyomme": "Our work",
     "meista": "About",
-    "kutistepussiVaiPressu": "Shrink wrap cover or tarp?",
-    "talvisailytys": "Boat winter storage",
     "teollisuuskelmutus": "Industrial shrink wrapping",
-    "talvikatos": "Boat winter shelter",
+    "venepaja": "Boat repair shelter",
+    "paikanPaalla": "On-site shrink wrapping",
+    "kaikkiPalvelut": "All services",
     "cta": "Contact",
     "home": "Home",
     "homeAria": "Kelmutus home",
@@ -78,6 +78,28 @@
       "cta": "See more of our work",
       "posterAlt": "Installer pulling a shrink wrap cover over an Axopar 28 on a trailer in a hall",
       "playAria": "Play video: installing a shrink wrap cover on an Axopar 28"
+    },
+    "order": {
+      "title": "How to order a shrink wrap cover for your boat",
+      "steps": [
+        {
+          "title": "Send us your boat's details.",
+          "text": "Tell us the boat model and measurements, or send drawings using the form, WhatsApp or email."
+        },
+        {
+          "title": "Get a quote.",
+          "text": "The price depends on the size and model of the boat. For example, a cover for an Axopar 28 costs €358.80 (VAT 0%)."
+        },
+        {
+          "title": "The cover is made to measure.",
+          "text": "UV-stabilized PE/LDPE plastic, 150–200 µm. Delivery anywhere in Finland in 2–3 weeks."
+        },
+        {
+          "title": "Install it yourself or let us do it.",
+          "text": "We come on site in the Helsinki Capital Region and on the coast between Turku and Kokkola – even the same day if needed."
+        }
+      ],
+      "quoteCta": "Request a quote"
     },
     "promo": {
       "title": "Shrink wrap covers delivered fast across Finland and worldwide!",

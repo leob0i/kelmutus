@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/JsonLd";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
-import { bagProductSchema, installVideoSchema, serviceSchema } from "@/lib/schema";
+import { bagProductSchema, installVideoSchema, orderHowToSchema, serviceSchema } from "@/lib/schema";
 
 export async function generateMetadata({
   params,
@@ -71,6 +71,7 @@ export default async function HomePage({
   const t = await getTranslations("home");
   const tAll = await getTranslations();
   const l = locale as "fi" | "en";
+  const orderSteps = t.raw("order.steps") as { title: string; text: string }[];
 
   return (
     <main className="pt-0">
@@ -81,6 +82,7 @@ export default async function HomePage({
       <JsonLd data={serviceSchema(l, tAll, "onsite")} />
       <JsonLd data={bagProductSchema(l, tAll, "axopar28")} />
       <JsonLd data={installVideoSchema(l, tAll)} />
+      <JsonLd data={orderHowToSchema(l, tAll, orderSteps)} />
 
       {/* HERO (looppaava video taustalla) */}
       <section className="relative min-h-[78vh] overflow-hidden border-b border-black/10">
@@ -363,6 +365,49 @@ export default async function HomePage({
               className="inline-flex items-center justify-center rounded-full bg-[#f08a00] px-8 py-3 font-semibold text-white shadow hover:bg-[#e27f00]"
             >
               {t("install.cta")}
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Näin tilaat kutistepussin: numeroidut vaiheet + tarjouspyyntö ja vertailulinkki */}
+      <section id="tilaus" className="scroll-mt-24 border-t border-black/5 bg-slate-50">
+        <div className="mx-auto max-w-3xl px-4 py-14 sm:py-16">
+          <h2 className="text-center font-serif text-[32px] leading-tight text-slate-900 sm:text-[38px]">
+            {t("order.title")}
+          </h2>
+
+          <ol className="mt-8 space-y-3">
+            {orderSteps.map((step, i) => (
+              <li
+                key={step.title}
+                className="flex gap-4 rounded-2xl border border-black/10 bg-white p-5 shadow-sm"
+              >
+                <span
+                  aria-hidden="true"
+                  className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-[#f08a00] font-semibold text-white"
+                >
+                  {i + 1}
+                </span>
+                <p className="text-sm leading-relaxed text-slate-700 sm:text-[15px]">
+                  <strong className="font-semibold text-slate-900">{step.title}</strong> {step.text}
+                </p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="mt-8 flex flex-wrap justify-center gap-3">
+            <a
+              href="#yhteys"
+              className="inline-flex items-center justify-center rounded-full bg-[#f08a00] px-8 py-3 font-semibold text-white shadow hover:bg-[#e27f00]"
+            >
+              {t("order.quoteCta")}
+            </a>
+            <Link
+              href="/kutistepussi-vai-pressu"
+              className="inline-flex items-center justify-center rounded-full border border-slate-300 bg-white px-5 py-3 text-center text-sm font-semibold leading-snug text-slate-900 shadow-sm hover:bg-slate-100 sm:px-6 sm:text-base"
+            >
+              {t("bags.compareLink")} →
             </Link>
           </div>
         </div>

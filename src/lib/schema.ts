@@ -158,6 +158,29 @@ export function bagProductSchema(locale: Locale, t: Translator, key: BagProductK
   };
 }
 
+// Etusivun "Näin tilaat kutistepussin" -vaiheet: sama teksti kuin sivulla näkyvässä listassa
+export function orderHowToSchema(
+  locale: Locale,
+  t: Translator,
+  steps: { title: string; text: string }[]
+) {
+  const url = `${absoluteUrl(locale, "/")}#tilaus`;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: t("home.order.title"),
+    inLanguage: locale,
+    step: steps.map((step, i) => ({
+      "@type": "HowToStep",
+      position: i + 1,
+      name: step.title.replace(/\.$/, ""),
+      text: `${step.title} ${step.text}`,
+      url,
+    })),
+  };
+}
+
 // Etusivun asennusvideo (public/axopar38.mp4). uploadDate = päivä, jolloin video lisättiin
 // sivustolle (git), kesto videotiedostosta (37,8 s).
 export function installVideoSchema(locale: Locale, t: Translator) {

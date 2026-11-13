@@ -6,30 +6,42 @@ import {useLocale, useTranslations} from "next-intl";
 import {Link, getPathname, usePathname} from "@/i18n/navigation";
 import type {Locale} from "@/i18n/routing";
 
-type NavItem = {key: string; href: string; children?: {key: string; href: string}[]};
+type NavLink = {key: string; href: string};
+type NavItem = NavLink & {children?: NavLink[]};
 
-// Alasivut näkyvät työpöydällä pääkohdan pudotusvalikossa ja mobiilissa sisennettyinä
+// Kohta, jolla on alasivuja, on nappi, joka avaa listan (työpöydällä pudotusvalikko,
+// mobiilissa avautuva alalista). Listan viimeinen linkki vie kohdan pääsivulle.
 const navItems: NavItem[] = [
-  {
-    key: "kutistepussit",
-    href: "/kutistepussit",
-    children: [
-      {key: "kutistepussiVaiPressu", href: "/kutistepussi-vai-pressu"},
-      {key: "talvisailytys", href: "/talvisailytys"}
-    ]
-  },
-  {key: "huollot", href: "/veneenhuollot"},
+  {key: "kutistepussit", href: "/kutistepussit"},
   {
     key: "palvelut",
     href: "/palvelut",
     children: [
+      {key: "huollot", href: "/veneenhuollot"},
       {key: "teollisuuskelmutus", href: "/teollisuuskelmutus"},
-      {key: "talvikatos", href: "/veneen-talvikatos"}
+      {key: "venepaja", href: "/veneen-talvikatos"},
+      {key: "paikanPaalla", href: "/palvelut#hinnat"},
+      {key: "kaikkiPalvelut", href: "/palvelut"}
     ]
   },
   {key: "tyomme", href: "/tyomme"},
   {key: "meista", href: "/meista"}
 ];
+
+function Chevron({open, className = ""}: {open: boolean; className?: string}) {
+  return (
+    <svg
+      viewBox="0 0 20 20"
+      className={`h-3.5 w-3.5 opacity-70 transition ${open ? "rotate-180" : ""} ${className}`}
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      aria-hidden="true"
+    >
+      <path d="M5 7.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
 
 export function SiteHeader() {
   const t = useTranslations("nav");
@@ -43,6 +55,28 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const panelRef = useRef<HTMLDivElement | null>(null);
   const toggleRef = useRef<HTMLButtonElement | null>(null);
+
+  // Työpöydän pudotusvalikko (avoimen kohdan key) ja mobiilivalikon avattu alalista
+  const [dropdown, setDropdown] = useState<string | null>(null);
+  const dropdownRef = useRef<HTMLLIElement | null>(null);
+  const [mobileSub, setMobileSub] = useState<string | null>(null);
+
+  useEffect(() => {
+    if (!dropdown) return;
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setDropdown(null);
+    };
+    const onMouseDown = (e: MouseEvent) => {
+      const el = dropdownRef.current;
+      if (el && !el.contains(e.target as Node)) setDropdown(null);
+    };
+    document.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onMouseDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onMouseDown);
+    };
+  }, [dropdown]);
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -92,33 +126,41 @@ const langLinkClass = (l: string) =>
           <div className="hidden lg:flex items-center gap-6 xl:-mr-6">
             <nav className="block">
               <ul className="flex items-center gap-4 whitespace-nowrap font-serif text-[15px] text-white/95 drop-shadow sm:gap-6 sm:text-[16px]">
-                {navItems.map((i) => (
-                  <li key={i.href} className="group relative">
-                    <Link href={i.href} className="inline-flex items-center gap-1 hover:text-white">
-                      {t(i.key)}
-                      {i.children ? (
-                        <svg
-                          viewBox="0 0 20 20"
-                          className="h-3.5 w-3.5 opacity-70 transition group-hover:rotate-180 group-focus-within:rotate-180"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          aria-hidden="true"
-                        >
-                          <path d="M5 7.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      ) : null}
-                    </Link>
+                {navItems.map((i) =>
+                  i.children ? (
+                    <li
+                      key={i.key}
+                      ref={dropdown === i.key ? dropdownRef : undefined}
+                      className="group relative"
+                    >
+                      {/* Nappi avaa listan klikkaamalla (myös kosketusnäytöillä ja näppäimistöllä), hiirellä myös hoverilla */}
+                      <button
+                        type="button"
+                        className="inline-flex cursor-pointer items-center gap-1 hover:text-white"
+                        aria-expanded={dropdown === i.key}
+                        aria-controls={`menu-${i.key}`}
+                        onClick={() => setDropdown((d) => (d === i.key ? null : i.key))}
+                      >
+                        {t(i.key)}
+                        <Chevron open={dropdown === i.key} className="group-hover:rotate-180" />
+                      </button>
 
-                    {/* Pudotusvalikko: aukeaa hiirellä ja näppäimistöllä (focus-within) */}
-                    {i.children ? (
-                      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 group-hover:visible group-focus-within:visible">
-                        <ul className="min-w-[230px] rounded-xl border border-white/20 bg-slate-950/95 p-2 text-[15px] shadow-xl">
-                          {i.children.map((c) => (
-                            <li key={c.href}>
+                      <div
+                        id={`menu-${i.key}`}
+                        className={`absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 ${
+                          dropdown === i.key ? "visible" : "invisible group-hover:visible"
+                        }`}
+                      >
+                        <ul className="min-w-[240px] rounded-xl border border-white/20 bg-slate-950/95 p-2 text-[15px] shadow-xl">
+                          {i.children.map((c, n) => (
+                            <li
+                              key={c.key}
+                              className={n === i.children!.length - 1 ? "mt-1 border-t border-white/15 pt-1" : undefined}
+                            >
                               <Link
                                 href={c.href}
                                 className="block rounded-lg px-3 py-2 text-white/90 transition hover:bg-white/10 hover:text-white"
+                                onClick={() => setDropdown(null)}
                               >
                                 {t(c.key)}
                               </Link>
@@ -126,9 +168,15 @@ const langLinkClass = (l: string) =>
                           ))}
                         </ul>
                       </div>
-                    ) : null}
-                  </li>
-                ))}
+                    </li>
+                  ) : (
+                    <li key={i.key}>
+                      <Link href={i.href} className="hover:text-white">
+                        {t(i.key)}
+                      </Link>
+                    </li>
+                  )
+                )}
               </ul>
             </nav>
 
@@ -255,29 +303,43 @@ open
 </li>
 
               {navItems.map((i) => (
-                <li key={i.href}>
-                  <Link
-                    href={i.href}
-                    className="block rounded-lg px-4 py-3 hover:bg-white/10 hover:text-white transition"
-                    onClick={() => setOpen(false)}
-                  >
-                    {t(i.key)}
-                  </Link>
+                <li key={i.key}>
                   {i.children ? (
-                    <ul className="-mt-1 mb-1">
-                      {i.children.map((c) => (
-                        <li key={c.href}>
-                          <Link
-                            href={c.href}
-                            className="block rounded-lg py-2 pl-8 pr-4 text-[15px] text-white/80 hover:bg-white/10 hover:text-white transition"
-                            onClick={() => setOpen(false)}
-                          >
-                            {t(c.key)}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  ) : null}
+                    <>
+                      <button
+                        type="button"
+                        className="flex w-full cursor-pointer items-center justify-between rounded-lg px-4 py-3 text-left hover:bg-white/10 hover:text-white transition"
+                        aria-expanded={mobileSub === i.key}
+                        aria-controls={`mobile-menu-${i.key}`}
+                        onClick={() => setMobileSub((m) => (m === i.key ? null : i.key))}
+                      >
+                        {t(i.key)}
+                        <Chevron open={mobileSub === i.key} />
+                      </button>
+                      {/* Linkit ovat HTML:ssä myös suljettuna (hakukoneet), näkyvissä kun lista avataan */}
+                      <ul id={`mobile-menu-${i.key}`} className={mobileSub === i.key ? "-mt-1 mb-1" : "hidden"}>
+                        {i.children.map((c) => (
+                          <li key={c.key}>
+                            <Link
+                              href={c.href}
+                              className="block rounded-lg py-2 pl-8 pr-4 text-[15px] text-white/80 hover:bg-white/10 hover:text-white transition"
+                              onClick={() => setOpen(false)}
+                            >
+                              {t(c.key)}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </>
+                  ) : (
+                    <Link
+                      href={i.href}
+                      className="block rounded-lg px-4 py-3 hover:bg-white/10 hover:text-white transition"
+                      onClick={() => setOpen(false)}
+                    >
+                      {t(i.key)}
+                    </Link>
+                  )}
                 </li>
               ))}
 

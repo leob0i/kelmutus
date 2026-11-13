@@ -22,10 +22,11 @@ const faqRoutes = new Set([
   "/kutistepussit", "/veneenhuollot", "/talvisailytys", "/kutistepussi-vai-pressu", "/veneen-talvikatos",
 ]);
 const AREA_COUNT = 13;
-// Sivut, joille pääsee navbarista (työpöytä + mobiilivalikko)
+// Sivut, joille pääsee navbarista (työpöytä + mobiilivalikko); Palvelut-listassa huollot,
+// teollisuuskelmutus, venepaja, paikan päällä (#hinnat) ja kaikki palvelut
 const navTargets = [
   "/kutistepussit", "/veneenhuollot", "/palvelut", "/tyomme", "/meista",
-  "/talvisailytys", "/kutistepussi-vai-pressu", "/veneen-talvikatos", "/teollisuuskelmutus",
+  "/teollisuuskelmutus", "/veneen-talvikatos", "/palvelut#hinnat",
 ];
 
 const errors = [];
