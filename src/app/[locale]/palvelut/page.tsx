@@ -6,9 +6,11 @@ import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { pageMetadata } from "@/lib/seo";
 import {
+  absoluteUrl,
   bagProductSchema,
   breadcrumbSchema,
   onsitePriceOffer,
+  organizationRef,
   serviceSchema,
 } from "@/lib/schema";
 
@@ -86,6 +88,27 @@ export default async function PalvelutPage({
       <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "industrial")} />
       <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "bags")} />
       <JsonLd data={serviceSchema(locale as "fi" | "en", tAll, "boatService")} />
+      {/* autojen kelmutus, Laitamme kelmuun ja venepaja omina palveluinaan */}
+      {[
+        { name: services[2].title, description: services[2].desc },
+        { name: services[3].title, description: services[3].desc },
+        { name: t("venepaja.title"), description: `${t("venepaja.body1")} ${t("venepaja.body2")}` },
+      ].map((s) => (
+        <JsonLd
+          key={s.name}
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Service",
+            name: s.name,
+            description: s.description,
+            serviceType: s.name,
+            url: absoluteUrl(locale as "fi" | "en", "/palvelut"),
+            inLanguage: locale,
+            provider: organizationRef,
+            areaServed: [{ "@type": "Place", name: "Finland" }],
+          }}
+        />
+      ))}
       {/* esimerkkihinta näkyy sivulla: Buster L 230,80 € */}
       <JsonLd data={bagProductSchema(locale as "fi" | "en", tAll, "busterL")} />
 
