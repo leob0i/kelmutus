@@ -6,13 +6,30 @@ import {useLocale, useTranslations} from "next-intl";
 import {Link, getPathname, usePathname} from "@/i18n/navigation";
 import type {Locale} from "@/i18n/routing";
 
-const navItems = [
-  {key: "kutistepussit", href: "/kutistepussit"},
+type NavItem = {key: string; href: string; children?: {key: string; href: string}[]};
+
+// Alasivut näkyvät työpöydällä pääkohdan pudotusvalikossa ja mobiilissa sisennettyinä
+const navItems: NavItem[] = [
+  {
+    key: "kutistepussit",
+    href: "/kutistepussit",
+    children: [
+      {key: "kutistepussiVaiPressu", href: "/kutistepussi-vai-pressu"},
+      {key: "talvisailytys", href: "/talvisailytys"}
+    ]
+  },
   {key: "huollot", href: "/veneenhuollot"},
-  {key: "palvelut", href: "/palvelut"},
+  {
+    key: "palvelut",
+    href: "/palvelut",
+    children: [
+      {key: "teollisuuskelmutus", href: "/teollisuuskelmutus"},
+      {key: "talvikatos", href: "/veneen-talvikatos"}
+    ]
+  },
   {key: "tyomme", href: "/tyomme"},
   {key: "meista", href: "/meista"}
-] as const;
+];
 
 export function SiteHeader() {
   const t = useTranslations("nav");
@@ -72,14 +89,44 @@ const langLinkClass = (l: string) =>
           </Link>
 
           {/* DESKTOP: NAV + CTA + LANG */}
-          <div className="hidden md:flex items-center gap-6 md:-mr-6">
+          <div className="hidden lg:flex items-center gap-6 xl:-mr-6">
             <nav className="block">
               <ul className="flex items-center gap-4 whitespace-nowrap font-serif text-[15px] text-white/95 drop-shadow sm:gap-6 sm:text-[16px]">
                 {navItems.map((i) => (
-                  <li key={i.href}>
-                    <Link href={i.href} className="hover:text-white">
+                  <li key={i.href} className="group relative">
+                    <Link href={i.href} className="inline-flex items-center gap-1 hover:text-white">
                       {t(i.key)}
+                      {i.children ? (
+                        <svg
+                          viewBox="0 0 20 20"
+                          className="h-3.5 w-3.5 opacity-70 transition group-hover:rotate-180 group-focus-within:rotate-180"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          aria-hidden="true"
+                        >
+                          <path d="M5 7.5l5 5 5-5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      ) : null}
                     </Link>
+
+                    {/* Pudotusvalikko: aukeaa hiirellä ja näppäimistöllä (focus-within) */}
+                    {i.children ? (
+                      <div className="invisible absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3 group-hover:visible group-focus-within:visible">
+                        <ul className="min-w-[230px] rounded-xl border border-white/20 bg-slate-950/95 p-2 text-[15px] shadow-xl">
+                          {i.children.map((c) => (
+                            <li key={c.href}>
+                              <Link
+                                href={c.href}
+                                className="block rounded-lg px-3 py-2 text-white/90 transition hover:bg-white/10 hover:text-white"
+                              >
+                                {t(c.key)}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ) : null}
                   </li>
                 ))}
               </ul>
@@ -134,7 +181,7 @@ const langLinkClass = (l: string) =>
           <button
             ref={toggleRef}
             type="button"
-            className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-white/95 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
+            className="lg:hidden inline-flex items-center justify-center rounded-md p-2 text-white/95 hover:text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60"
             aria-label={open ? t("closeMenu") : t("openMenu")}
             aria-expanded={open}
             aria-controls="mobile-nav"
@@ -156,12 +203,12 @@ const langLinkClass = (l: string) =>
             id="mobile-nav"
             ref={panelRef}
             className={[
-              "md:hidden absolute right-4 top-full mt-2 w-[min(88vw,300px)]",
+              "lg:hidden absolute right-4 top-full mt-2 w-[min(88vw,300px)]",
               "rounded-xl border border-white/20 bg-black/55 backdrop-blur-md shadow-xl",
-              "overflow-hidden transition-[max-height,opacity,transform] duration-300 ease-out",
+              "transition-[max-height,opacity,transform] duration-300 ease-out",
 open
-  ? "max-h-[70vh] opacity-100 translate-y-0 pointer-events-auto"
-  : "max-h-0 opacity-0 -translate-y-2 pointer-events-none"
+  ? "max-h-[calc(100dvh-5rem)] overflow-y-auto opacity-100 translate-y-0 pointer-events-auto"
+  : "max-h-0 overflow-hidden opacity-0 -translate-y-2 pointer-events-none"
 
             ].join(" ")}
           >
@@ -216,6 +263,21 @@ open
                   >
                     {t(i.key)}
                   </Link>
+                  {i.children ? (
+                    <ul className="-mt-1 mb-1">
+                      {i.children.map((c) => (
+                        <li key={c.href}>
+                          <Link
+                            href={c.href}
+                            className="block rounded-lg py-2 pl-8 pr-4 text-[15px] text-white/80 hover:bg-white/10 hover:text-white transition"
+                            onClick={() => setOpen(false)}
+                          >
+                            {t(c.key)}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
                 </li>
               ))}
 

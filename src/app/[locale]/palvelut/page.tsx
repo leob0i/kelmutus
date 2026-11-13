@@ -75,6 +75,10 @@ export default async function PalvelutPage({
     },
   ];
 
+  // Teollisuuskelmutus on oma pitkä kortti (linkki /teollisuuskelmutus), muut ruudukossa
+  const industrial = services[1];
+  const gridServices = [services[0], services[2], services[3]];
+
   return (
     <main className="bg-white text-slate-950">
       <JsonLd
@@ -150,54 +154,95 @@ export default async function PalvelutPage({
         </div>
       </section>
 
+      {/* KELMUTUS PAIKAN PÄÄLLÄ + HINNAT (heti heron alla; etusivun linkki /palvelut#hinnat) */}
+      <section id="hinnat" className="mx-auto max-w-6xl scroll-mt-24 px-4 py-16 md:py-20">
+        {/* UUSI BLOKKI #1: vasen kuva + oikea teksti (ennen "Kestävä ratkaisu") */}
+        <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
+          <div className="relative w-full overflow-hidden bg-gray-200">
+            <Image
+              src="/gallery/axopar28.jpg"
+              alt={t("onsite.imageAlt")}
+              width={1803}
+              height={869}
+              sizes={halfColumnSizes}
+              className="h-auto w-full object-cover"
+            />
+          </div>
+
+          <div>
+            {/* pitkä otsikko ("…pääkaupunkiseutu-akselilla…"): iso koko vasta lg-leveydellä, ettei sana ylitä palstaa */}
+            <h2 className="font-serif text-4xl break-words lg:text-5xl">
+              {t("onsite.title")}
+            </h2>
+
+            <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
+              {t("onsite.body")}
+              <br />
+            </p>
+
+            <p className="mt-8 font-serif text-lg text-black/90">
+              <span className="block">{t("onsite.priceLine")}</span>
+            </p>
+          </div>
+        </div>
+
+        {/* UUSI INFO (Kestava ratkaisu) */}
+        <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
+          <div className="md:col-span-2">
+            <p className="font-serif text-lg leading-relaxed text-black/90 max-w-none">
+              {t("pricingInfo.paragraph1")}
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* PALVELUT */}
       <section
         id="palvelut"
         className="mx-auto max-w-7xl px-4 pt-6 pb-16 md:pt-8 md:pb-20"
       >
-        {/* 4 korttia / sama rivi desktopissa + taustakuva tummalla overlayllä */}
-        <div className="mt-4 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <div
-              key={s.title}
-              className="group relative overflow-hidden rounded-none shadow-lg ring-1 ring-black/10 min-h-[380px] sm:min-h-[420px] lg:min-h-[520px]"
-            >
-              {/* Taustakuva */}
-              <div className="absolute inset-0">
-                <Image
-                  src={s.img}
-                  alt={s.alt}
-                  fill
-                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                  className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-slate-950/70 transition-opacity duration-300 group-hover:bg-slate-950/60" />
-              </div>
+        {/* Teollisuuskelmutus-kortti, linkki teollisuuskelmutussivulle */}
+        <div className="mt-4 group relative overflow-hidden rounded-none shadow-lg ring-1 ring-black/10 min-h-[220px] sm:min-h-[240px]">
+          <div className="absolute inset-0">
+            <Image
+              src={industrial.img}
+              alt={industrial.alt}
+              fill
+              sizes="100vw"
+              className="object-cover object-[50%_23%] transition-transform duration-700 group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-slate-950/70 transition-opacity duration-300 group-hover:bg-slate-950/60" />
+          </div>
 
-              {/* Sisältö */}
-              <div className="relative flex h-full flex-col p-8">
-                <h2 className="font-serif text-2xl md:text-3xl text-white">
-                  {s.title}
-                </h2>
-
-                <p className="mt-3 font-serif text-base md:text-lg leading-relaxed text-white/85">
-                  {s.desc}
-                </p>
-
-                <ul className="mt-5 space-y-2 text-sm md:text-base text-white/85">
-                  {s.bullets.map((b) => (
-                    <li key={b} className="flex gap-2">
-                      <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
-                      <span className="font-serif">{b}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+          <div className="relative flex h-full flex-col justify-center gap-4 p-8 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 className="font-serif text-2xl md:text-3xl text-white">
+                {industrial.title}
+              </h2>
+              <p className="mt-3 max-w-2xl font-serif text-base md:text-lg leading-relaxed text-white/85">
+                {industrial.desc}
+              </p>
+              <ul className="mt-4 space-y-2 text-sm md:text-base text-white/85">
+                {industrial.bullets.map((b) => (
+                  <li key={b} className="flex gap-2">
+                    <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
+                    <span className="font-serif">{b}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
+
+            <Link
+              href="/teollisuuskelmutus"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-orange-500 px-5 py-2.5 font-semibold text-white shadow hover:bg-orange-600"
+            >
+              {t("services.1.cta")}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
 
-        {/* Venepajat & suojatut työtilat -kortti, linkki Työmme-sivun referenssiin */}
+        {/* Venepajat & suojatut työtilat -kortti, linkki talvikatossivulle */}
         <div className="mt-2 group relative overflow-hidden rounded-none shadow-lg ring-1 ring-black/10 min-h-[220px] sm:min-h-[240px]">
           <div className="absolute inset-0">
             <Image
@@ -223,22 +268,13 @@ export default async function PalvelutPage({
               </p>
             </div>
 
-            <div className="flex shrink-0 flex-col gap-2 sm:items-stretch">
-              <Link
-                href="/tyomme#venepaja"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-orange-500 px-5 py-2.5 font-semibold text-white shadow hover:bg-orange-600"
-              >
-                {t("venepaja.cta")}
-                <span aria-hidden="true">→</span>
-              </Link>
-              <Link
-                href="/veneen-talvikatos"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md border border-white/40 px-5 py-2.5 font-semibold text-white hover:bg-white/10"
-              >
-                {t("venepaja.shelterLink")}
-                <span aria-hidden="true">→</span>
-              </Link>
-            </div>
+            <Link
+              href="/veneen-talvikatos"
+              className="inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-orange-500 px-5 py-2.5 font-semibold text-white shadow hover:bg-orange-600"
+            >
+              {t("venepaja.cta")}
+              <span aria-hidden="true">→</span>
+            </Link>
           </div>
         </div>
 
@@ -273,54 +309,67 @@ export default async function PalvelutPage({
             </Link>
           </div>
         </div>
+
+        {/* 3 korttia yhtenä lohkona ilman rakoja (tabletilla 2 + 1, viimeinen koko levyinen);
+            lohkon alaosan keskellä nappi kutistepussit-sivulle. Kortit ovat sisällön korkuisia,
+            alimman rivin korteissa lisätilaa (pb-20) napille. */}
+        <div className="relative mt-2 shadow-lg ring-1 ring-black/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+            {gridServices.map((s) => (
+              <div
+                key={s.title}
+                className="group relative overflow-hidden last:pb-20 lg:pb-20 sm:last:col-span-2 lg:last:col-span-1"
+              >
+                {/* Taustakuva */}
+                <div className="absolute inset-0">
+                  <Image
+                    src={s.img}
+                    alt={s.alt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-slate-950/70 transition-opacity duration-300 group-hover:bg-slate-950/60" />
+                </div>
+
+                {/* Sisältö */}
+                <div className="relative flex h-full flex-col p-8">
+                  <h2 className="font-serif text-2xl md:text-3xl text-white">
+                    {s.title}
+                  </h2>
+
+                  <p className="mt-3 font-serif text-base md:text-lg leading-relaxed text-white/85">
+                    {s.desc}
+                  </p>
+
+                  <ul className="mt-5 space-y-2 text-sm md:text-base text-white/85">
+                    {s.bullets.map((b) => (
+                      <li key={b} className="flex gap-2">
+                        <span className="mt-[6px] h-1.5 w-1.5 shrink-0 rounded-full bg-orange-500" />
+                        <span className="font-serif">{b}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="pointer-events-none absolute inset-x-0 bottom-8 flex justify-center px-3">
+            <Link
+              href="/kutistepussit"
+              className="pointer-events-auto inline-flex items-center justify-center gap-2 rounded-md bg-orange-500 px-5 py-3.5 text-center text-[15px] font-semibold text-white shadow-lg hover:bg-orange-600 sm:px-8 sm:py-4 sm:text-lg"
+            >
+              {t("bagsCta")}
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+        </div>
       </section>
 
-      {/* HINNAT + ALAOSA (sinun pyytämä loppu) */}
-      <section id="hinnat" className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-        {/* UUSI BLOKKI #1: vasen kuva + oikea teksti (ennen "Kestävä ratkaisu") */}
+      {/* Kestävä ratkaisu: vasen kuva + oikea teksti */}
+      <section className="mx-auto max-w-6xl px-4 py-16 md:py-20">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
-          <div className="relative w-full overflow-hidden bg-gray-200">
-            <Image
-              src="/gallery/axopar28.jpg"
-              alt={t("onsite.imageAlt")}
-              width={1803}
-              height={869}
-              sizes={halfColumnSizes}
-              className="h-auto w-full object-cover"
-            />
-          </div>
-
-          <div>
-            <h2 className="font-serif text-4xl md:text-5xl">
-              {t("onsite.title")}
-            </h2>
-
-            <p className="mt-6 max-w-xl font-serif text-lg leading-relaxed text-black/90">
-              {t("onsite.body")}
-              <br />
-            </p>
-
-            <p className="mt-8 font-serif text-lg text-black/90">
-              <span className="block">{t("onsite.priceLine")}</span>
-            </p>
-          </div>
-        </div>
-
-        {/* UUSI INFO (Kestava ratkaisu) */}
-        <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2">
-          <div className="md:col-span-2">
-            <p className="font-serif text-lg leading-relaxed text-black/90 max-w-none">
-              {t("pricingInfo.paragraph1")}
-            </p>
-
-            <p className="mt-3 font-serif text-lg leading-relaxed text-black/90 max-w-none">
-              {t("pricingInfo.paragraph2")}
-            </p>
-          </div>
-        </div>
-
-        {/* Alaosa: vasen kuva + oikea teksti */}
-        <div className="mt-14 grid grid-cols-1 gap-10 md:grid-cols-2 md:items-center">
           <div className="relative w-full overflow-hidden bg-gray-200">
             <Image
               src="/buster.l.jpg"

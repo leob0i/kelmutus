@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { Link } from "@/i18n/navigation";
 import { BackgroundVideo } from "@/components/BackgroundVideo";
 import { JsonLd } from "@/components/JsonLd";
 import { getTranslations, setRequestLocale } from "next-intl/server";
@@ -49,12 +48,6 @@ const beforeAfter = {
   after: { src: "/gallery/sar.musta.kelmussa.jpg", altKey: "beforeAfter.main.afterAlt" },
 };
 
-// Venepaja-referenssi (kuvat näytetään alkuperäisessä kuvasuhteessa, ei rajausta)
-const venepaja = {
-  main: { src: "/gallery/venevaja.jpeg", altKey: "venepaja.images.main" },
-  door: { src: "/gallery/venevaja.oviauki.jpeg", altKey: "venepaja.images.door" },
-  frame: { src: "/gallery/venevaja.pohjat.jpeg", altKey: "venepaja.images.frame" },
-};
 
 // Kuvien sizes-arvot ruudukon mukaan (max-w-6xl = 1152 px, px-4, gap-6)
 const thirdSizes = "(min-width: 1152px) 368px, (min-width: 768px) 33vw, (min-width: 640px) 50vw, 100vw";
@@ -169,55 +162,6 @@ export default async function TyommePage({
               position={img.position}
             />
           ))}
-        </div>
-      </section>
-
-      {/* Venepaja (etusivun ja palvelusivun linkit osoittavat tähän: /tyomme#venepaja) */}
-      <section id="venepaja" className="border-t border-black/10">
-        <div className="mx-auto max-w-6xl px-4 py-16 md:py-20">
-          <div className="grid gap-6 md:grid-cols-2 md:items-start md:gap-8">
-            <div>
-              <h2 className="font-serif text-3xl md:text-4xl">
-                {t("venepaja.title")}
-              </h2>
-
-              {/* Tarjouspyyntö -> etusivun yhteydenottolomake */}
-              <Link
-                href="/#yhteys"
-                className="mt-6 inline-flex items-center justify-center rounded-md bg-[#f08a00] px-5 py-2.5 font-semibold text-white shadow hover:bg-[#e27f00]"
-              >
-                {t("venepaja.cta")}
-              </Link>
-            </div>
-            <div className="space-y-3 font-serif text-lg leading-relaxed text-black/90">
-              <p>{t("venepaja.body1")}</p>
-              <p>{t("venepaja.body2")}</p>
-            </div>
-          </div>
-
-          {/* Iso runko/mitoituskuva + alle valmis paja ja oviaukko (samat kuvasuhteet -> yhtä korkeat) */}
-          <div className="mt-10 space-y-6">
-            <CardImage
-              src={venepaja.frame.src}
-              alt={t(venepaja.frame.altKey)}
-              aspect="aspect-[3/2]"
-              sizes="(min-width: 1152px) 1120px, 100vw"
-            />
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-              <CardImage
-                src={venepaja.main.src}
-                alt={t(venepaja.main.altKey)}
-                aspect="aspect-[2048/922]"
-                sizes={halfSizes}
-              />
-              <CardImage
-                src={venepaja.door.src}
-                alt={t(venepaja.door.altKey)}
-                aspect="aspect-[2048/922]"
-                sizes={halfSizes}
-              />
-            </div>
-          </div>
         </div>
       </section>
 

@@ -5,15 +5,16 @@ import {localizedAlternates} from "@/lib/seo";
 // Sivut ja niiden viimeisin sisältömuutos (teksti, kuvat, title/description).
 // Päivitä päivämäärä, kun sivun sisältöä muutetaan – sama arvo menee molemmille kieliversioille.
 const routes = [
-  {href: "/", lastModified: "2026-11-13"},
-  {href: "/kutistepussit", lastModified: "2026-11-13"},
+  {href: "/", lastModified: "2026-11-14"},
+  {href: "/kutistepussit", lastModified: "2026-11-14"},
   {href: "/veneenhuollot", lastModified: "2026-11-13"},
-  {href: "/palvelut", lastModified: "2026-11-13"},
-  {href: "/tyomme", lastModified: "2026-11-13"},
+  {href: "/palvelut", lastModified: "2026-11-14"},
+  {href: "/tyomme", lastModified: "2026-11-14"},
   {href: "/meista", lastModified: "2026-11-13"},
   {href: "/talvisailytys", lastModified: "2026-11-13"},
-  {href: "/kutistepussi-vai-pressu", lastModified: "2026-11-13"},
-  {href: "/veneen-talvikatos", lastModified: "2026-11-13"},
+  {href: "/kutistepussi-vai-pressu", lastModified: "2026-11-14"},
+  {href: "/veneen-talvikatos", lastModified: "2026-11-14"},
+  {href: "/teollisuuskelmutus", lastModified: "2026-11-14"},
   {href: "/tietosuoja", lastModified: "2026-11-13"}
 ];
 

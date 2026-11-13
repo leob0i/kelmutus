@@ -3,10 +3,12 @@
 //   npm run build && npm run start   (toisessa terminaalissa)
 //   npm run check:seo                tai  BASE_URL=https://www.kelmutus.fi npm run check:seo
 //
-// Tarkistaa jokaiselta sivulta: JSON-LD (JSON.parse + pakolliset kentät), täsmälleen yksi
-// hreflang-sarja (fi, en, x-default), canonical, title/description-pituudet, yksi H1,
-// kuvien alt-tekstit, ei /fi-linkkejä ja puhelinnumeron muodon. Lisäksi /fi-ohjaukset,
-// sitemap.xml ja IndexNow-avaintiedosto.
+// Tarkistaa jokaiselta sivulta: JSON-LD (JSON.parse + pakolliset kentät), UKK:n näkyvä teksti
+// = FAQPage-skeema, täsmälleen yksi hreflang-sarja (fi, en, x-default), canonical,
+// title/description-pituudet ja yksilöllisyys, yksi H1, kuvien alt-tekstit, puhelinnumeron
+// muodon, navbarin linkit ja kielivalitsimen. Lisäksi kaikki sisäiset linkit (200, ei
+// uudelleenohjauksia, ei /fi-osoitteita, #ankkurit olemassa), /fi-ohjaukset, sitemap.xml,
+// robots.txt ja IndexNow-avaintiedosto.
 
 const BASE = (process.env.BASE_URL || "http://localhost:3000").replace(/\/$/, "");
 const SITE = "https://www.kelmutus.fi";
@@ -14,17 +16,28 @@ const INDEXNOW_KEY = "416ed2a082bab799a78e75bf7d1f3b2e";
 
 const routes = [
   "/", "/kutistepussit", "/veneenhuollot", "/palvelut", "/tyomme", "/meista", "/talvisailytys",
-  "/kutistepussi-vai-pressu", "/veneen-talvikatos", "/tietosuoja",
+  "/kutistepussi-vai-pressu", "/veneen-talvikatos", "/teollisuuskelmutus", "/tietosuoja",
 ];
 const faqRoutes = new Set([
   "/kutistepussit", "/veneenhuollot", "/talvisailytys", "/kutistepussi-vai-pressu", "/veneen-talvikatos",
 ]);
 const AREA_COUNT = 13;
+// Sivut, joille pääsee navbarista (työpöytä + mobiilivalikko)
+const navTargets = [
+  "/kutistepussit", "/veneenhuollot", "/palvelut", "/tyomme", "/meista",
+  "/talvisailytys", "/kutistepussi-vai-pressu", "/veneen-talvikatos", "/teollisuuskelmutus",
+];
 
 const errors = [];
 const fail = (where, msg) => errors.push(`${where}: ${msg}`);
 const fiPath = (href) => href;
 const enPath = (href) => (href === "/" ? "/en" : `/en${href}`);
+const localePath = (locale, href) => (locale === "fi" ? fiPath(href) : enPath(href));
+
+// sisäiset linkit kaikilta sivuilta: polku -> sivut, joilla linkki on
+const internalLinks = new Map();
+const titles = new Map();
+const descriptions = new Map();
 
 // "https://www.kelmutus.fi" ja ".../" ovat sama osoite
 const same = (a, b) => Boolean(a && b) && new URL(a).href === new URL(b).href;
@@ -36,6 +49,9 @@ function attr(tag, name) {
 function decode(s) {
   return s.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#x27;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
 }
+
+// HTML-pätkä tekstiksi (tagit ja Reactin <!-- -->-merkit pois)
+const plain = (s) => decode(s.replace(/<!-- -->/g, "").replace(/<[^>]+>/g, "")).trim();
 
 function jsonLdNodes(html, where) {
   const nodes = [];
@@ -72,6 +88,9 @@ function checkNode(node, where, href) {
       need(node.provider?.["@id"] === `${SITE}/#organization`, "provider = Organization");
       // Neljä pääpalvelua ja talvikatos: 13 aluetta. Palvelut-sivun palvelukortit (veneiden ja
       // autojen kelmutus, Laitamme kelmuun, venepaja): alueena Suomi.
+      if (/teollisuuskelmutus|industrial shrink wrapping/i.test(node.name)) {
+        need(/^https:\/\/www\.kelmutus\.fi(\/en)?\/teollisuuskelmutus$/.test(node.url), `url ${node.url}`);
+      }
       need(
         node.areaServed?.length === AREA_COUNT ||
           (href === "/palvelut" && JSON.stringify(node.areaServed) === '[{"@type":"Place","name":"Finland"}]'),
@@ -83,6 +102,10 @@ function checkNode(node, where, href) {
       need(node.name, "name");
       need(/^\d+\.\d{2}$/.test(offer?.price) && offer?.priceCurrency === "EUR", "offers.price/priceCurrency");
       need(offer?.priceSpecification?.valueAddedTaxIncluded === false, "valueAddedTaxIncluded false");
+      need(/^https:\/\/www\.kelmutus\.fi\/.+\.(jpe?g|png|webp)$/.test(node.image) && !/logo|opengraph/.test(node.image), `image ${node.image}`);
+      need(node.brand?.["@type"] === "Brand" && node.brand?.name === "Kelmutus.fi", "brand");
+      need(offer?.availability === "https://schema.org/MadeToOrder", "availability MadeToOrder");
+      need(!["hasMerchantReturnPolicy", "shippingDetails"].some((k) => k in node || k in (offer ?? {})), "ei palautus-/toimituskenttiä");
       break;
     }
     case "VideoObject":
@@ -126,6 +149,22 @@ async function checkPage(href, locale) {
   const description = decode(head.match(/<meta name="description" content="([^"]*)"/)?.[1] ?? "");
   if (!title || title.length > 60) fail(where, `title ${title.length} merkkiä: ${title}`);
   if (!description || description.length > 155) fail(where, `description ${description.length} merkkiä`);
+  titles.set(title, [...(titles.get(title) ?? []), path]);
+  descriptions.set(description, [...(descriptions.get(description) ?? []), path]);
+
+  // navbar ja kielivalitsin (ensimmäinen <header> on sivuston yläpalkki)
+  const header = html.match(/<header[\s\S]*?<\/header>/)?.[0] ?? "";
+  for (const target of navTargets) {
+    const count = header.split(`href="${localePath(locale, target)}"`).length - 1;
+    if (count < 2) fail(where, `navbarista (työpöytä + mobiili) puuttuu linkki ${localePath(locale, target)}`);
+  }
+  const other = localePath(locale === "fi" ? "en" : "fi", href);
+  if (header.split(`href="${other}"`).length - 1 < 2) fail(where, `kielivalitsin ei vie sivulle ${other}`);
+
+  for (const [, link] of html.matchAll(/<a\b[^>]*\shref="(\/[^"]*)"/g)) {
+    if (link.startsWith("/_next")) continue;
+    internalLinks.set(link, [...new Set([...(internalLinks.get(link) ?? []), path])]);
+  }
 
   const h1s = [...html.matchAll(/<h1[^>]*>([\s\S]*?)<\/h1>/g)].map(([, inner]) => decode(inner.replace(/<[^>]+>/g, "").trim()));
   if (h1s.length !== 1) fail(where, `H1-otsikoita ${h1s.length}`);
@@ -143,6 +182,15 @@ async function checkPage(href, locale) {
 
   const nodes = jsonLdNodes(html, where);
   nodes.forEach((node) => checkNode(node, where, href));
+
+  // UKK: näkyvät kysymykset ja vastaukset sanatarkasti samat kuin FAQPage-skeemassa
+  const visibleFaq = [...html.matchAll(/<details[\s\S]*?<h3[^>]*>([\s\S]*?)<\/h3>[\s\S]*?<p[^>]*>([\s\S]*?)<\/p>\s*<\/details>/g)]
+    .map(([, q, a]) => ({ q: plain(q), a: plain(a) }));
+  const faqNode = nodes.find((n) => n["@type"] === "FAQPage");
+  if (faqNode) {
+    const schemaFaq = faqNode.mainEntity.map((m) => ({ q: m.name, a: m.acceptedAnswer.text }));
+    if (JSON.stringify(schemaFaq) !== JSON.stringify(visibleFaq)) fail(where, "FAQPage-skeema ei vastaa sivulla näkyvää UKK:ta");
+  } else if (visibleFaq.length) fail(where, "näkyvä UKK ilman FAQPage-skeemaa");
   const types = nodes.map((n) => n["@type"]);
   if (!types.includes("Organization")) fail(where, "Organization puuttuu");
   if (href !== "/" && !types.includes("BreadcrumbList")) fail(where, "BreadcrumbList puuttuu");
@@ -183,10 +231,33 @@ async function main() {
   const key = await fetch(`${BASE}/${INDEXNOW_KEY}.txt`);
   if (!key.ok || (await key.text()).trim() !== INDEXNOW_KEY) fail("IndexNow", "avaintiedosto puuttuu");
 
+  const robots = await (await fetch(`${BASE}/robots.txt`)).text();
+  if (!/Allow: \/\s/.test(robots) || /Disallow: \S/.test(robots)) fail("robots.txt", "ei salli kaikkea");
+  if (!robots.includes(`Sitemap: ${SITE}/sitemap.xml`)) fail("robots.txt", "sitemap-viittaus puuttuu");
+
+  for (const [map, label] of [[titles, "title"], [descriptions, "description"]]) {
+    for (const [value, paths] of map) if (paths.length > 1) fail(label, `sama ${label} sivuilla ${paths.join(", ")}: ${value}`);
+  }
+
+  // sisäiset linkit: 200 ilman uudelleenohjausta, #ankkuri löytyy kohdesivulta
+  const pageHtml = new Map();
+  for (const [link, from] of internalLinks) {
+    const [pathPart, hash] = link.split("#");
+    const target = pathPart || "/";
+    if (/^\/fi(\/|$|\?)/.test(target)) fail(from[0], `linkki /fi-osoitteeseen: ${link}`);
+    if (!pageHtml.has(target)) {
+      const res = await fetch(BASE + target, { redirect: "manual" });
+      pageHtml.set(target, { status: res.status, html: res.status === 200 ? await res.text() : "" });
+    }
+    const { status, html } = pageHtml.get(target);
+    if (status !== 200) fail(from.join(", "), `linkki ${link} -> HTTP ${status}`);
+    else if (hash && !html.includes(`id="${hash}"`)) fail(from.join(", "), `linkin ${link} ankkuria #${hash} ei löydy`);
+  }
+
   for (const page of pages.filter(Boolean)) {
     console.log(`${page.path.padEnd(18)} ${page.types.join(", ")}`);
   }
-  console.log(`\nsitemap.xml: ${sitemapCount} URL:ia`);
+  console.log(`\nsitemap.xml: ${sitemapCount} URL:ia, sisäisiä linkkejä tarkistettu: ${internalLinks.size}`);
 
   if (errors.length) {
     console.error(`\n${errors.length} virhettä:\n  ${errors.join("\n  ")}`);

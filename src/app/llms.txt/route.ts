@@ -27,14 +27,17 @@ Kelmutus.fi on ShrinkPro Finland Oy:n (Y-tunnus ${fi.footer.businessIdValue}) pa
 - Sähköposti: jari@kelmutus.fi
 - Yhteyshenkilö: ${fi.meista.person.name}, ${fi.meista.person.title.toLowerCase()}
 - Tarjouspyyntö: ${host}/#yhteys
-- Toiminta-alue: kutistepussit toimitetaan koko Suomeen; kelmutus paikan päällä sekä veneiden huollot ja korjaukset pääkaupunkiseudulla, sovittaessa muualla Suomessa
+- Toiminta-alue: kutistepussit toimitetaan koko Suomeen; kelmutus paikan päällä koko Turku–Kokkola–pääkaupunkiseutu-akselilla ja koko Euroopassa; veneiden huollot ja korjaukset pääkaupunkiseudulla, sovittaessa muualla Suomessa
 
 ## Sivut
 
 - [${fi.kutistepussit.hero.title}](${host}/kutistepussit): ${fi.kutistepussit.meta.description}
 - [${fi.palvelut.hero.title}](${host}/palvelut): ${fi.palvelut.meta.description}
+- [${fi.teollisuuskelmutus.title}](${host}/teollisuuskelmutus): ${fi.teollisuuskelmutus.meta.description}
+- [${fi.talvikatos.title}](${host}/veneen-talvikatos): ${fi.talvikatos.meta.description}
 - [${fi.veneenhuollot.hero.title}](${host}/veneenhuollot): ${fi.veneenhuollot.meta.description}
 - [${fi.talvisailytys.title}](${host}/talvisailytys): ${fi.talvisailytys.meta.description}
+- [${fi.kutistepussiVaiPressu.title}](${host}/kutistepussi-vai-pressu): ${fi.kutistepussiVaiPressu.meta.description}
 - [${fi.tyomme.hero.title}](${host}/tyomme): ${fi.tyomme.meta.description}
 - [${fi.nav.meista}](${host}/meista): ${fi.meista.meta.description}
 
@@ -60,7 +63,7 @@ ${faqLines(fi.veneenhuollot.faq.items)}
 
 ## In English
 
-Kelmutus.fi (ShrinkPro Finland Oy) makes made-to-measure shrink wrap covers for boats and delivers them across Finland. The company also does on-site shrink wrapping of boats, cars, machinery and industrial equipment, and boat service and repairs in the Helsinki Capital Region. English pages: ${host}/en
+Kelmutus.fi (ShrinkPro Finland Oy) makes made-to-measure shrink wrap covers for boats and delivers them across Finland. The company also does on-site shrink wrapping of boats, cars, machinery and industrial equipment along the Turku–Kokkola–Helsinki region axis and across Europe, and boat service and repairs in the Helsinki Capital Region. English pages: ${host}/en
 `;
 
   return new Response(body, {

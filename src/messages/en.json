@@ -5,6 +5,10 @@
     "palvelut": "Services",
     "tyomme": "Our work",
     "meista": "About",
+    "kutistepussiVaiPressu": "Shrink wrap cover or tarp?",
+    "talvisailytys": "Boat winter storage",
+    "teollisuuskelmutus": "Industrial shrink wrapping",
+    "talvikatos": "Boat winter shelter",
     "cta": "Contact",
     "home": "Home",
     "homeAria": "Kelmutus home",
@@ -19,8 +23,19 @@
     "emailLabel": "Email",
     "copyright": "© 2026 Kelmutus.fi. All rights reserved.",
     "vatNote": "Prices shown without VAT (VAT 0%).",
-    "winterStorage": "Winter storage guide",
-    "privacy": "Privacy policy",
+    "pages": {
+      "title": "Pages",
+      "kutistepussit": "Shrink wrap covers",
+      "veneenhuollot": "Service & repair",
+      "palvelut": "Services",
+      "teollisuuskelmutus": "Industrial shrink wrapping",
+      "tyomme": "Our work",
+      "meista": "About",
+      "talvisailytys": "Boat winter storage",
+      "kutistepussiVaiPressu": "Shrink wrap cover or tarp?",
+      "talvikatos": "Boat winter shelter",
+      "tietosuoja": "Privacy policy"
+    },
     "credit": "High-quality websites by LeoDigital"
   },
   "home": {
@@ -46,12 +61,12 @@
       "industry": {
         "title": "Industry & equipment",
         "body": "We shrink wrap industrial equipment, machines and complete assemblies so they stay well protected during transport, storage and at the worksite. We can make custom-sized covers or come on site to do the wrapping. The wrap is neat and tight, keeping equipment and machines in good condition during storage or transport.",
-        "cta": "Read more about our services"
+        "cta": "Explore industrial shrink wrapping"
       },
       "onsite": {
         "title": "On-site shrink wrapping",
         "body1": "A ready-made cover isn’t always enough — sometimes the boat needs to be protected where it is.",
-        "body2": "If needed, we come on site (southern Finland) and shrink wrap the boat for storage or transport.",
+        "body2": "If needed, we come on site (the Turku–Kokkola–Helsinki region axis and all of Europe) and shrink wrap the boat for storage or transport.",
         "cta": "Read more about our services"
       }
     },
@@ -148,7 +163,7 @@
       "items": [
         {
           "q": "How much does boat shrink wrapping cost?",
-          "a": "The price depends on the size and model of the boat. Example prices for made-to-measure shrink wrap covers: Buster L €230.80, Targa 23.1 €351 and Axopar 28 €358.80. On-site shrink wrapping in the Helsinki Capital Region costs €45 per meter (VAT 0%) for console boats under 10 m. Ask for a quote for larger boats and group pricing for multiple boats."
+          "a": "The price depends on the size and model of the boat. Example prices for made-to-measure shrink wrap covers: Buster L €230.80, Targa 23.1 €351 and Axopar 28 €358.80. On-site shrink wrapping on the Turku–Kokkola–Helsinki region axis costs €45 per meter (VAT 0%) for console boats under 10 m. We also shrink wrap on site anywhere in Europe. Ask for a quote for larger boats and group pricing for multiple boats."
         },
         {
           "q": "What is a shrink wrap cover and how does it differ from traditional shrink wrapping?",
@@ -341,7 +356,7 @@
   "palvelut": {
     "meta": {
       "title": "Shrink wrapping for boats, cars and industry | Kelmutus.fi",
-      "description": "On-site shrink wrapping in the Helsinki Capital Region: boats from €45 per meter (VAT 0%, under 10 m). Also cars, machinery and industrial sites."
+      "description": "On-site shrink wrapping on the Turku–Kokkola–Helsinki region axis and across Europe. Boats from €45/m (VAT 0%, under 10 m). Also cars and machinery."
     },
     "hero": {
       "title": "Services",
@@ -360,6 +375,7 @@
       },
       {
         "title": "Industrial shrink wrapping",
+        "cta": "Explore the service",
         "desc": "Protection for machines, equipment and other projects. We provide custom-sized shrink wrap or come on site to wrap. The wrap is neat and tight, keeping equipment and machines safe during storage and transport.",
         "bullets": ["Transport protection", "Storage protection", "Packaging"]
       },
@@ -393,13 +409,13 @@
     },
     "onsite": {
       "imageAlt": "On-site shrink wrapping",
-      "title": "On-site shrink wrapping in the Helsinki Capital Region",
+      "title": "On-site shrink wrapping along the Turku–Kokkola–Helsinki region axis and across Europe",
       "body": "Whether it’s a boat, car, equipment or anything that needs to be protected quickly and safely for storage or transport, we can come on-site and wrap it!",
       "priceLine": "Prices start at €45 per meter (VAT 0%) for console boats under 10 m."
     },
+    "bagsCta": "See our shrink wrap covers",
     "pricingInfo": {
-      "paragraph1": "Prices include basic protection and work at the location specified by the customer in the Helsinki Capital Region. If you need additional services such as transportation or special solutions, please contact us. We tailor an offer to your needs.",
-      "paragraph2": "We also wrap outside the capital area for an additional fee. Ask for details!"
+      "paragraph1": "Prices include basic protection and work at the location specified by the customer anywhere along the Turku–Kokkola–Helsinki region axis. We also shrink wrap on site anywhere in Europe. If you need additional services such as transportation or special solutions, please contact us. We tailor an offer to your needs."
     },
     "area": {
       "title": "Service area",
@@ -753,11 +769,6 @@
           "Needed"
         ],
         [
-          "Ventilation",
-          "Ventilation vents in the cover",
-          "Gaps at the bow and stern"
-        ],
-        [
           "Installation",
           "E.g. Axopar 28 in about 45 min with two people",
           "Assembling the frame and fastening the tarp"
@@ -788,7 +799,7 @@
     },
     "price": {
       "title": "How much does a shrink wrap cover cost?",
-      "body": "The price of a made-to-measure shrink wrap cover depends on the size and model of the boat. Example prices (VAT 0%): Buster L €230.80, Targa 23.1 €351 and Axopar 28 €358.80. On-site shrink wrapping in the Helsinki Capital Region costs €45 per meter for console boats under 10 m. Request a quote for your boat: send us the boat model, measurements or drawings."
+      "body": "The price of a made-to-measure shrink wrap cover depends on the size and model of the boat. Example prices (VAT 0%): Buster L €230.80, Targa 23.1 €351 and Axopar 28 €358.80. On-site shrink wrapping on the Turku–Kokkola–Helsinki region axis costs €45 per meter for console boats under 10 m. We also shrink wrap on site anywhere in Europe. Request a quote for your boat: send us the boat model, measurements or drawings."
     },
     "quoteCta": "Request a quote",
     "faq": {
@@ -797,10 +808,6 @@
         {
           "q": "Can a shrink wrap cover handle a snow load?",
           "a": "A shrink wrap cover is shrunk tightly to the shape of the boat, so snow can't collect in pockets the way it does on a loose tarp. It's still a good idea to check the cover after heavy snowfall."
-        },
-        {
-          "q": "Does a shrink wrap cover need ventilation underneath?",
-          "a": "Yes. Ventilation vents are available for the shrink wrap cover, and it's a good idea to leave the boat's hatches and doors slightly open so that moisture doesn't condense."
         },
         {
           "q": "Can I install a shrink wrap cover myself?",
@@ -821,6 +828,8 @@
     "title": "Boat winter shelters and repair shelters from shrink wrap",
     "intro": "A winter shelter, or repair shelter, built from shrink wrap protects the boat over the winter and also gives you a covered workspace for servicing and repairing the boat. The shelter is built around the boat where it is stored, so the boat doesn't need to be moved into a hall.",
     "imageAlt": "Boat repair shelter shrink-wrapped in white around a boat in a boat storage yard",
+    "doorAlt": "Gable end of a shrink-wrapped boat repair shelter with the door opening open",
+    "planAlt": "Timber frame of a boat repair shelter around a boat with measurements: 11.00 m long, 3.75 m wide and about 2.25 m ridge height",
     "when": {
       "title": "When is a winter shelter worth it?",
       "items": [
@@ -851,8 +860,53 @@
         {
           "q": "How much does a boat winter shelter cost?",
           "a": "The price depends on the size of the boat and the structure of the shelter. Request a quote by telling us the boat's measurements and location."
+        },
+        {
+          "q": "Shrink-wrapped shelters for industry and other uses",
+          "a": "We also build shrink-wrapped shelters for industry and other purposes. Ask us for more.",
+          "link": {
+            "text": "Ask us for more",
+            "href": "/#yhteys"
+          }
         }
       ]
+    }
+  },
+  "teollisuuskelmutus": {
+    "meta": {
+      "title": "Industrial shrink wrapping for transport | Kelmutus.fi",
+      "description": "Industrial shrink wrapping on site: machinery, steel structures, reels and modules protected for transport and storage. Turku–Kokkola and Helsinki region."
+    },
+    "title": "Industrial shrink wrapping",
+    "intro": "We shrink wrap large and awkwardly shaped items: machinery, equipment, steel structures, reels and modules. Tight shrink film protects them from rain, dirt and wind during transport and storage.",
+    "imageAlt": "Large cable reels protected with white shrink wrap in a factory hall",
+    "transport": {
+      "title": "Transport protection that stays in place",
+      "body": "The shrink film is heat-shrunk tightly around the item, so the wind can't tear it open on the way. The protection lasts even a long journey – on the road, on a ship or while waiting in a yard.",
+      "exampleLabel": "Example:",
+      "example": "We shrink wrapped large reels that were shipped to Europe. They stayed protected and dry throughout the journey."
+    },
+    "items": {
+      "title": "What we shrink wrap",
+      "list": [
+        "Machinery and equipment",
+        "Steel and concrete structures",
+        "Reels and rolls",
+        "Modules and elements",
+        "Parts stored in a warehouse or outdoors"
+      ]
+    },
+    "onsite": {
+      "title": "We come to you",
+      "body": "We shrink wrap the item where it is: at the factory, on the construction site or in the port. Our main areas are the Turku–Kokkola coast and the Helsinki Capital Region, but we also come elsewhere in Finland and Europe when needed."
+    },
+    "enclosure": {
+      "title": "Shrink-wrapped workspace or shelter",
+      "body": "When needed, we build a shed or shelter from shrink wrap that you can work inside. It keeps the dust in, the weather out and the workspace dry, for example during sandblasting, painting or repair work."
+    },
+    "cta": {
+      "body": "Tell us about the item and your schedule, and we'll calculate a quote.",
+      "button": "Request a quote"
     }
   },
   "tietosuoja": {

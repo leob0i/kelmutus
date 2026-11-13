@@ -72,7 +72,7 @@ function areaServed(t: Translator) {
 const services = {
   onsite: { href: "/palvelut", descriptionKey: "palvelut.onsite.body" },
   bags: { href: "/kutistepussit", descriptionKey: "kutistepussit.whatAre.body" },
-  industrial: { href: "/palvelut", descriptionKey: "palvelut.services.1.desc" },
+  industrial: { href: "/teollisuuskelmutus", descriptionKey: "teollisuuskelmutus.intro" },
   boatService: { href: "/veneenhuollot", descriptionKey: "veneenhuollot.intro.body1" },
   shelter: { href: "/veneen-talvikatos", descriptionKey: "talvikatos.intro" },
 } as const;

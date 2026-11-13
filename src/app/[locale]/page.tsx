@@ -247,7 +247,7 @@ export default async function HomePage({
               </p>
 
               <Link
-                href="/tyomme#venepaja"
+                href="/veneen-talvikatos"
                 className="mt-6 inline-flex items-center gap-2 rounded-md bg-[#f08a00] px-5 py-2.5 font-semibold text-white shadow hover:bg-[#e27f00]"
               >
                 {t("venepaja.cta")}
@@ -281,7 +281,7 @@ export default async function HomePage({
               </p>
 
               <Link
-                href="/palvelut"
+                href="/teollisuuskelmutus"
                 className="mt-6 inline-flex rounded-md bg-[#f08a00] px-5 py-2.5 font-semibold text-white shadow hover:bg-[#e27f00]"
               >
                 {t("cards.industry.cta")}

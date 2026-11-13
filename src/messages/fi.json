@@ -5,6 +5,10 @@
     "palvelut": "Palvelut",
     "tyomme": "Työmme",
     "meista": "Meistä",
+    "kutistepussiVaiPressu": "Kutistepussi vai pressu?",
+    "talvisailytys": "Veneen talvisäilytys",
+    "teollisuuskelmutus": "Teollisuuskelmutus",
+    "talvikatos": "Veneen talvikatos",
     "cta": "Ota yhteyttä",
     "home": "Etusivu",
     "homeAria": "Kelmutus etusivu",
@@ -19,8 +23,19 @@
     "emailLabel": "Sähköposti",
     "copyright": "© 2026 Kelmutus.fi. Kaikki oikeudet pidätetään.",
     "vatNote": "Hinnat esitetty ilman arvonlisäveroa (ALV 0 %).",
-    "winterStorage": "Veneen talvisäilytyksen ohjeet",
-    "privacy": "Tietosuojaseloste",
+    "pages": {
+      "title": "Sivut",
+      "kutistepussit": "Kutistepussit",
+      "veneenhuollot": "Huollot ja korjaus",
+      "palvelut": "Palvelut",
+      "teollisuuskelmutus": "Teollisuuskelmutus",
+      "tyomme": "Työmme",
+      "meista": "Meistä",
+      "talvisailytys": "Veneen talvisäilytys",
+      "kutistepussiVaiPressu": "Kutistepussi vai pressu?",
+      "talvikatos": "Veneen talvikatos",
+      "tietosuoja": "Tietosuojaseloste"
+    },
     "credit": "Laadukkaat kotisivut LeoDigital"
   },
   "home": {
@@ -46,12 +61,12 @@
       "industry": {
         "title": "Teollisuus & laitteet",
         "body": "Kelmutamme teollisuuden laitteet, koneet ja valmiit laitekokonaisuudet niin, että ne ovat hyvin suojattuja kuljetuksen, varastoinnin ja työmaan aikana. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet sekä koneet hyvässä kunnossa säilytyksen tai kuljetuksen ajan.",
-        "cta": "Lue lisää palveluistamme"
+        "cta": "Tutustu teollisuuskelmutukseen"
       },
       "onsite": {
         "title": "Kelmutus paikan päällä",
         "body1": "Pelkkä valmis pussi ei aina riitä, vaan joskus vene pitää suojata siellä missä se on.",
-        "body2": "Tulemme tarvittaessa paikan päälle (eteläinen Suomi) ja kelmutamme veneen säilytystä tai kuljetusta varten.",
+        "body2": "Tulemme tarvittaessa paikan päälle (Turku–Kokkola–pääkaupunkiseutu-akseli ja koko Eurooppa) ja kelmutamme veneen säilytystä tai kuljetusta varten.",
         "cta": "Lue lisää palveluistamme"
       }
     },
@@ -148,7 +163,7 @@
       "items": [
         {
           "q": "Mitä veneen kelmutus maksaa?",
-          "a": "Hinta riippuu veneen koosta ja mallista. Esimerkkihintoja mittojen mukaan tehdyille kutistepusseille: Buster L 230,80 €, Targa 23.1 351 € ja Axopar 28 358,80 €. Paikan päällä pääkaupunkiseudulla tehtynä kelmutus maksaa 45 €/m (alv 0 %) alle 10-metrisille pulpettiveneille. Kysy tarjous myös isommista veneistä ja useamman veneen kimppahinnoista."
+          "a": "Hinta riippuu veneen koosta ja mallista. Esimerkkihintoja mittojen mukaan tehdyille kutistepusseille: Buster L 230,80 €, Targa 23.1 351 € ja Axopar 28 358,80 €. Paikan päällä Turku–Kokkola–pääkaupunkiseutu-akselilla tehtynä kelmutus maksaa 45 €/m (alv 0 %) alle 10-metrisille pulpettiveneille. Kelmutamme paikan päällä myös kaikkialla Euroopassa. Kysy tarjous myös isommista veneistä ja useamman veneen kimppahinnoista."
         },
         {
           "q": "Mikä on kutistepussi ja miten se eroaa perinteisestä kelmutuksesta?",
@@ -341,7 +356,7 @@
   "palvelut": {
     "meta": {
       "title": "Veneiden, autojen ja teollisuuden kelmutus | Kelmutus.fi",
-      "description": "Kelmutus paikan päällä pääkaupunkiseudulla: veneet 45 €/m (alv 0 %, alle 10 m). Myös autot, koneet ja teollisuuskohteet – suoja säältä ja kuljetukselta."
+      "description": "Kelmutus paikan päällä Turku–Kokkola–pääkaupunkiseutu-akselilla ja koko Euroopassa. Veneet 45 €/m (alv 0 %, alle 10 m). Myös autot, koneet ja teollisuus."
     },
     "hero": {
       "title": "Palvelut",
@@ -356,6 +371,7 @@
       },
       {
         "title": "Teollisuuskelmutus",
+        "cta": "Tutustu palveluun",
         "desc": "Suojaukset koneille, laitteille ja muille projekteille. Teemme suojat mittojen mukaan tai tulemme paikan päälle kelmuttamaan. Suojaus on siisti, tiivis ja pitää laitteet sekä koneet turvassa säilytyksen ja kuljetuksen ajan.",
         "bullets": ["Kuljetussuojaukset", "Varastointisuojaus", "Pakkaus"]
       },
@@ -385,13 +401,13 @@
     },
     "onsite": {
       "imageAlt": "Kelmutus paikan päällä",
-      "title": "Kelmutus paikan päällä pääkaupunkiseudulla",
+      "title": "Kelmutus paikan päällä Turku–Kokkola–pääkaupunkiseutu-akselilla ja koko Euroopassa",
       "body": "On kyseessä sitten vene, harrasteauto, laite taikka mikä vaan joka pitää saada nopeasti ja turvallisesti suojattua varastointia tai kuljetusta varten, me tulemme paikalle kelmuttamaan!",
       "priceLine": "Hinnat 45 € alv 0 % / m alle 10 m pulpettiveneet."
     },
+    "bagsCta": "Lue lisää kutistepusseistamme",
     "pricingInfo": {
-      "paragraph1": "Hinnat sisältävät perustason suojauksen ja työn asiakkaan osoittamassa paikassa pääkaupunkiseudulla. Mikäli tarvitset lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan.",
-      "paragraph2": "Kelmutamme myös pääkaupunkiseudun ulkopuolella lisähinnasta. Kysy lisää!"
+      "paragraph1": "Hinnat sisältävät perustason suojauksen ja työn asiakkaan osoittamassa paikassa koko Turku–Kokkola–pääkaupunkiseutu-akselilla. Kelmutamme paikan päällä myös kaikkialla Euroopassa. Mikäli tarvitset lisäpalveluita, kuten kuljetuksen tai erikoisratkaisut, otathan yhteyttä. Räätälöimme tarjouksen tarpeesi mukaan."
     },
     "area": {
       "title": "Toiminta-alue",
@@ -744,11 +760,6 @@
           "Tarvitaan"
         ],
         [
-          "Tuuletus",
-          "Tuuletusventtiilit pussissa",
-          "Raot keulassa ja perässä"
-        ],
-        [
           "Asennus",
           "Esim. Axopar 28 noin 45 min kahdella henkilöllä",
           "Telineen kokoaminen ja pressun kiinnitys"
@@ -779,7 +790,7 @@
     },
     "price": {
       "title": "Mitä kutistepussi maksaa?",
-      "body": "Mittojen mukaan tehdyn kutistepussin hinta riippuu veneen koosta ja mallista. Esimerkkihintoja (alv 0 %): Buster L 230,80 €, Targa 23.1 351 € ja Axopar 28 358,80 €. Paikan päällä tehtävä kelmutus pääkaupunkiseudulla alle 10 metrin pulpettiveneille maksaa 45 €/m. Pyydä tarjous omalle veneellesi: lähetä veneen malli, mitat tai piirustukset."
+      "body": "Mittojen mukaan tehdyn kutistepussin hinta riippuu veneen koosta ja mallista. Esimerkkihintoja (alv 0 %): Buster L 230,80 €, Targa 23.1 351 € ja Axopar 28 358,80 €. Paikan päällä tehtävä kelmutus Turku–Kokkola–pääkaupunkiseutu-akselilla alle 10 metrin pulpettiveneille maksaa 45 €/m. Kelmutamme paikan päällä myös kaikkialla Euroopassa. Pyydä tarjous omalle veneellesi: lähetä veneen malli, mitat tai piirustukset."
     },
     "quoteCta": "Pyydä tarjous",
     "faq": {
@@ -788,10 +799,6 @@
         {
           "q": "Kestääkö kutistepussi lumikuorman?",
           "a": "Kutistepussi on kiristetty tiiviiksi veneen muotoon, joten lumi ei pääse kertymään taskuiksi kuten löysän pressun päälle. Suoja kannattaa silti tarkistaa runsaiden lumisateiden jälkeen."
-        },
-        {
-          "q": "Tarvitseeko kutistepussin alla tuuletusta?",
-          "a": "Tarvitsee. Kutistepussiin saa tuuletusventtiilit, ja veneen luukut ja ovet kannattaa jättää hieman raolleen, ettei kosteus tiivisty."
         },
         {
           "q": "Voiko kutistepussin asentaa itse?",
@@ -812,6 +819,8 @@
     "title": "Veneen talvikatos ja venepaja kelmusta",
     "intro": "Kelmusta rakennettu talvikatos eli venepaja suojaa veneen talven yli ja antaa samalla katetun työtilan veneen huoltoon ja korjaukseen. Katos rakennetaan veneen ympärille sen säilytyspaikalle, joten venettä ei tarvitse siirtää halliin.",
     "imageAlt": "Valkoiseksi kelmutettu venepaja veneen ympärillä venesäilytysalueella",
+    "doorAlt": "Kelmutetun venepajan pääty, jossa oviaukko auki",
+    "planAlt": "Venepajan puurunko veneen ympärillä mittoineen: 11,00 m pitkä, 3,75 m leveä ja harjan korkeus noin 2,25 m",
     "when": {
       "title": "Milloin talvikatos kannattaa?",
       "items": [
@@ -842,8 +851,53 @@
         {
           "q": "Mitä veneen talvikatos maksaa?",
           "a": "Hinta riippuu veneen koosta ja katoksen rakenteesta. Pyydä tarjous kertomalla veneen mitat ja sijainti."
+        },
+        {
+          "q": "Kelmutuspajat teollisuuteen ja muihin tarkoituksiin",
+          "a": "Toteutamme myös erilaisia kelmutuspajoja teollisuuteen ja muihin tarkoituksiin. Kysy lisää.",
+          "link": {
+            "text": "Kysy lisää",
+            "href": "/#yhteys"
+          }
         }
       ]
+    }
+  },
+  "teollisuuskelmutus": {
+    "meta": {
+      "title": "Teollisuuskelmutus ja kuljetussuojaus | Kelmutus.fi",
+      "description": "Teollisuuskelmutus paikan päällä: koneet, teräsrakenteet, kelat ja moduulit suojaan kuljetukseen ja varastointiin. Turku–Kokkola ja pääkaupunkiseutu."
+    },
+    "title": "Teollisuuskelmutus",
+    "intro": "Kelmutamme isot ja hankalan muotoiset kohteet: koneet, laitteet, teräsrakenteet, kelat ja moduulit. Tiivis kutistekalvo suojaa ne sateelta, lialta ja tuulelta kuljetuksen ja varastoinnin ajan.",
+    "imageAlt": "Valkoisella kelmulla suojattuja suuria kaapelikeloja tehdashallissa",
+    "transport": {
+      "title": "Kuljetussuoja, joka pysyy paikallaan",
+      "body": "Kutistekalvo kiristetään lämmöllä tiukasti kohteen ympärille, joten tuuli ei pääse repimään sitä auki matkalla. Suoja kestää pitkänkin kuljetuksen, maantiellä, laivalla tai pihalla odotellessa.",
+      "exampleLabel": "Esimerkki:",
+      "example": "Kelmutimme suuria keloja, jotka lähtivät kuljetukseen Eurooppaan. Ne pysyivät matkan ajan suojassa ja kuivina."
+    },
+    "items": {
+      "title": "Mitä kelmutamme",
+      "list": [
+        "Koneet ja laitteet",
+        "Teräs- ja betonirakenteet",
+        "Kelat ja rullat",
+        "Moduulit ja elementit",
+        "Varastoon tai ulos jäävät osat"
+      ]
+    },
+    "onsite": {
+      "title": "Tulemme paikan päälle",
+      "body": "Kelmutamme kohteen siellä, missä se on: tehtaalla, työmaalla tai satamassa. Pääalueemme ovat Turku–Kokkola-väli ja pääkaupunkiseutu, mutta tarvittaessa tulemme muuallekin Suomeen ja Eurooppaan."
+    },
+    "enclosure": {
+      "title": "Kelmutettu työtila tai katos",
+      "body": "Tarvittaessa rakennamme kelmusta vajan tai katoksen, jonka sisällä voi tehdä töitä. Se pitää pölyn sisällä, sään ulkona ja työtilan kuivana, esimerkiksi hiekkapuhalluksen, maalauksen tai korjaustöiden aikana."
+    },
+    "cta": {
+      "body": "Kerro kohteesta ja aikataulusta, niin lasketaan tarjous.",
+      "button": "Pyydä tarjous"
     }
   },
   "tietosuoja": {

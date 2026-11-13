@@ -22,6 +22,20 @@ function FacebookIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+// Kaikki alasivut footerin Sivut-listaan
+const pages = [
+  {key: "kutistepussit", href: "/kutistepussit"},
+  {key: "veneenhuollot", href: "/veneenhuollot"},
+  {key: "palvelut", href: "/palvelut"},
+  {key: "teollisuuskelmutus", href: "/teollisuuskelmutus"},
+  {key: "tyomme", href: "/tyomme"},
+  {key: "meista", href: "/meista"},
+  {key: "talvisailytys", href: "/talvisailytys"},
+  {key: "kutistepussiVaiPressu", href: "/kutistepussi-vai-pressu"},
+  {key: "talvikatos", href: "/veneen-talvikatos"},
+  {key: "tietosuoja", href: "/tietosuoja"}
+] as const;
+
 export function SiteFooter() {
   const t = useTranslations("footer");
 
@@ -69,6 +83,24 @@ export function SiteFooter() {
           </div>
         </div>
 
+        <nav aria-labelledby="footer-pages" className="mt-6 border-t border-white/15 pt-5">
+          <p
+            id="footer-pages"
+            className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/55"
+          >
+            {t("pages.title")}
+          </p>
+          <ul className="mt-3 grid grid-cols-2 gap-x-6 gap-y-2 text-sm lg:grid-cols-5">
+            {pages.map((page) => (
+              <li key={page.href}>
+                <Link href={page.href} className="text-white/80 transition hover:text-white">
+                  {t(`pages.${page.key}`)}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
         <div className="mt-6 flex flex-col gap-2 border-t border-white/15 pt-4 text-xs text-white/75 sm:flex-row sm:items-center sm:justify-between">
           <div className="space-y-1">
             <div>{t("copyright")}</div>
@@ -76,16 +108,6 @@ export function SiteFooter() {
           </div>
 
           <div className="flex flex-col items-start gap-1 sm:items-end">
-            <div className="flex gap-3">
-              <Link href="/talvisailytys" className="hover:text-white">
-                {t("winterStorage")}
-              </Link>
-
-              <Link href="/tietosuoja" className="hover:text-white">
-                {t("privacy")}
-              </Link>
-            </div>
-
             <a
               href="https://www.leodigital.fi/"
               className="text-[10px] text-white/60 hover:text-white"

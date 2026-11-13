@@ -10,7 +10,6 @@ import { breadcrumbSchema, serviceSchema } from "@/lib/schema";
 // Sama rakenne ja tyylit kuin /talvisailytys
 const h2Class = "text-xl font-semibold tracking-tight text-white md:text-2xl";
 const textClass = "mt-4 text-[15px] leading-relaxed md:text-base";
-const linkClass = "text-white underline decoration-white/30 underline-offset-4 hover:decoration-white";
 
 export async function generateMetadata({
   params,
@@ -58,10 +57,10 @@ export default async function VeneenTalvikatosPage({
         </p>
 
         <Image
-          src="/gallery/venevaja.jpeg"
-          alt={t("imageAlt")}
-          width={2048}
-          height={922}
+          src="/gallery/venevaja.pohjat.jpeg"
+          alt={t("planAlt")}
+          width={1536}
+          height={1024}
           sizes="(min-width: 896px) 848px, calc(100vw - 48px)"
           className="mt-10 h-auto w-full rounded-2xl"
         />
@@ -79,12 +78,24 @@ export default async function VeneenTalvikatosPage({
           <div>
             <h2 className={h2Class}>{t("how.title")}</h2>
             <p className={textClass}>{t("how.body")}</p>
-            <p className={textClass}>
-              {t("how.linkPrefix")}{" "}
-              <Link href="/tyomme#venepaja" className={linkClass}>
-                {t("how.linkText")}
-              </Link>
-            </p>
+            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+              <Image
+                src="/gallery/venevaja.jpeg"
+                alt={t("imageAlt")}
+                width={2048}
+                height={922}
+                sizes="(min-width: 896px) 416px, (min-width: 640px) calc(50vw - 32px), calc(100vw - 48px)"
+                className="h-auto w-full rounded-xl"
+              />
+              <Image
+                src="/gallery/venevaja.oviauki.jpeg"
+                alt={t("doorAlt")}
+                width={2048}
+                height={922}
+                sizes="(min-width: 896px) 416px, (min-width: 640px) calc(50vw - 32px), calc(100vw - 48px)"
+                className="h-auto w-full rounded-xl"
+              />
+            </div>
           </div>
 
           <div id="tarjous" className="scroll-mt-24">
